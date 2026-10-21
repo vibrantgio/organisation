@@ -24613,3 +24613,32 @@ tasks here run when none is waiting.
 - [ ] Exit: green in `workbench`, every app module and `components`
   by name; guard OK; guides gate OK; commit and push per repo and
   in `.github`; no tag.
+
+#### CK2.2: The workbench's groups stand on a material over the painted backdrop
+
+- [ ] Owner question 2026-10-21: "is it possible to have a slightly
+  translucent group background that lightens (adds white) in light
+  mode and darkens it in dark mode?" Ruled by the ontology session
+  from the platform (the Material entry at 84e697a): over a painted
+  backdrop a material is the one case painted translucent, the
+  window background colour at the platform's alpha so the field
+  shows through, lighter in light and darker in dark, measured from
+  Control Center over the desktop; the workbench's groups stand on
+  such a material, each keeping its hairline. The reference holds
+  no Control Center capture: the worker takes one on this machine
+  in both appearances with wallpaper tinting off (the capture
+  mechanics: appearance through System Events, tinting off, Control
+  Center opened from the menu bar, the panel cropped), stores it
+  under `reference/macos/` with its reading in `controls.md`, and
+  reads the alpha off the panel's fill against the desktop behind
+  it. `theme/tokens` gains the measured alpha as the material's
+  translucent value beside the measured materials; the workbench's
+  tiles draw that fill under the group's hairline, and every
+  foreground on a tile is measured against the window background at
+  that alpha over the field's mean colour (recorded in the commit
+  body with the contrast gate's reading). The workbench's goldens
+  regenerate with the cause named; the field stands in them as a
+  flat plane as today, so the material shows over the plane.
+- [ ] Exit: green in `theme` and `workbench` by name; guard OK; gofmt
+  gate OK; commit and push in `theme`, `workbench` and `.github`;
+  no tag.
