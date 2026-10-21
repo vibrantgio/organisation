@@ -24820,7 +24820,7 @@ tasks here run when none is waiting.
   by name; guard OK; guides gate OK; commit and push per repo and
   in `.github`; no tag.
 
-#### CK4.2: The last launcher sites migrate and their guard exclusions go
+#### CK4.2: The retired word of CK4.1 leaves its last sites and their guard exclusions go
 
 - [ ] Found under CK4.1: three sites outside the workbench's code and
   guide still carry the word under guard exclusions: the org
