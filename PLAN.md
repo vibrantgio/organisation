@@ -24532,14 +24532,14 @@ tasks here run when none is waiting.
 
 #### CK3.1: The whole-window renderer lives in the library
 
-- [ ] Section 5 of the shell document, the precondition. A renderer
+- [x] Section 5 of the shell document, the precondition. A renderer
   that lays a layer stack out at a size, with a theme and a model,
   to an image in both schemes with no display, lives in
   `components/golden` beside its single-component renderer (or `mvu/render`
   if the layer stack is mvu's, the worker saying which off the
   layer gate); vaultview, mindchat and the workbench adopt it and
   their local renderers go, goldens byte-identical.
-- [ ] Exit: green in the library module and the three apps by name;
+- [x] Exit: green in the library module and the three apps by name;
   guard OK; commit and push per repo; no tag.
 
 #### CK3.2: The shell pattern is extracted from vaultview's frame and vaultview stands on it
