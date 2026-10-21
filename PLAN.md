@@ -24340,7 +24340,7 @@ listed for him.
 
 #### CJ7.1: The paragraph reports the link under the pointer and vaultview's status bar says its address
 
-- [ ] Owner request 2026-10-21, his words: "I would like to see the
+- [x] Owner request 2026-10-21, his words: "I would like to see the
   address of the link I'm hovering over in vaultview. Perhaps
   immediately in the status bar and after hovering a while in a
   tooltip near the link?" The library first. `components/paragraph`
@@ -24363,12 +24363,12 @@ listed for him.
   bar's own existing text treatment, the file saying which. A
   wikilink shows the note's vault path; an external link shows its
   URL. No tooltip in this task.
-- [ ] Router-driven tests: the paragraph calls the hover callback once
+- [x] Router-driven tests: the paragraph calls the hover callback once
   on entering a link with its URL and once on leaving with the
   empty string, not per frame; vaultview's status bar shows the
   address while the pointer is over a link and the line count when
   it is not; goldens do not move (a hover is not in any golden).
-- [ ] Exit: green in `components`, `markdown` and `workbench/
+- [x] Exit: green in `components`, `markdown` and `workbench/
   vaultview` by name; guard OK; gofmt gate OK; one commit per repo
   with the heading as subject; push every one; no tag (the next
   round carries it, a minor on `components` and `markdown` for the
