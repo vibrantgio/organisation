@@ -24710,20 +24710,84 @@ tasks here run when none is waiting.
 - [x] Exit: green in `workbench/mindchat` by name; guard OK; commit
   and push in `workbench` and `.github`; no tag.
 
-#### CK7.5: Feeds stands on the shell and the old layouts leave the library
+#### CK7.5: The sidebar-header-main and three-column layouts leave the library
 
-- [ ] Section 11 item 5. Feeds adopts the two-column arrangement with
-  the inspector slot holding the article (or the three-column
-  arrangement if its reading needs the list as its own column: the
-  worker reads feeds' window and says which, the shell document's
-  ruling 4); the shell's sidebar-header-main, split-pane and
-  three-column layouts leave the library since nothing consumes
-  them; the gallery's shell specimens become the named
-  arrangements. Goldens regenerate with the cause named; a
-  fresh-eyes review in both schemes.
+- [ ] Feeds was read off its running window on 2026-10-21 and is the
+  three-column arrangement (Mail's window): the pane, an article
+  list on the control background with its own head and footer,
+  and the article as the content column on the same background;
+  the inspector slot does not fit it (an inspector is chrome and
+  shows properties; the article is the document). So feeds waits
+  for CK7.6, and what is unblocked leaves first: `shell.
+  SidebarHeaderMain` has no consumer anywhere, `shell.ThreeColumn`
+  only the gallery's specimen. Both layouts leave `patterns/shell`
+  with their constants, the `Props` fields only they read, their
+  render paths, tests and six goldens; the gallery's old shell
+  specimen goes and the two-column specimen stands; the guide
+  names the two-column arrangement and nothing removed. `SplitPane`
+  stays until feeds moves. An exported contract move on
+  `patterns`: the next round bumps the minor; no alias.
 - [ ] Exit: green in `patterns`, `components/gallery`,
-  `workbench/feeds` by name; guard OK; `scripts/check-layers.sh`
-  OK; commit and push per repo; no tag.
+  `workbench/sitedocs` (its gallery tab's golden regenerated with
+  the cause named), `workbench/feeds` by name; guard OK; guides
+  gate OK; `scripts/check-layers.sh` OK; one commit per repo with
+  the heading as subject; push every one; no tag.
+
+#### CK7.6: The shell ships the three-column arrangement
+
+- [ ] Section 11 item 7 and section 4 item 3 of the shell document,
+  brought ahead on the critical path by feeds' reading. The shell
+  gains the three-column arrangement: the pane, then a list column
+  of absolute width on a splitter with its own head and footer
+  slots (the Pane entry's column has a head; the list column
+  mirrors it, since Mail's search field and feeds' filter field
+  stand above their lists), then the content column absorbing the
+  rest; one toolbar across list and content with one share per
+  column (the list's share holding its title, the content's the
+  acts), the list's width remembered with the arrangement. Three
+  inputs settled by the Language's own rule and listed for the
+  owner: the list's default width and clamp are the window's
+  statement (as the toolbar's lead is), the shell shipping no
+  default, with the recorder's 300 dp clamped 220 to 480 and
+  feeds' table's own minimum as the two windows' statements; the
+  width is absolute, keeping itself on a window resize as Mail's
+  does, so a window that kept a ratio states a width instead; the
+  head slot exists. A gallery specimen shows the arrangement; a
+  fresh-eyes review of it in both schemes is recorded, the known
+  misreads briefed.
+- [ ] Exit: green in `patterns` and `components/gallery` by name;
+  guard OK; `scripts/check-layers.sh` OK; commit and push per
+  repo; no tag.
+
+#### CK7.7: Feeds stands on the three-column arrangement and the split pane leaves
+
+- [ ] Feeds adopts the three-column arrangement: the pane a
+  `PaneColumn` (no marks, no head, the rail as rows, no footer),
+  the list column's head the filter field, its rows the article
+  table, its footer the pager, its width stated by feeds off its
+  table's columns (today it opens at 582 px by a ratio of 0.6; it
+  states an absolute width and the clamp its table allows, and the
+  document gets the larger share of the content area, which today
+  it does not: 388 px against 582 in a 1200 px window, a sizing
+  defect the arrangement corrects); the content column the article
+  with its tabs; the toolbar's groups the brand, Add feed and the
+  share anchor that the navbar carried; one Toggle Sidebar button;
+  a kept file in the new shape (feeds kept nothing before). Then
+  `shell.SplitPane` leaves with its render path, state, tests and
+  three goldens, and `shell.Shell`, `Props` and `Render` trim to
+  what `StackedPage`, the marketing shell, reads (`Navbar`,
+  `Sections`, `Footer`, `ContentMaxWidth`), `Render` folding into
+  `RenderStackedPage`; `StackedPage` itself has no consumer in the
+  org and stands for the marketing shell by the shell document's
+  inventory. Goldens regenerate with the cause named per golden; a
+  fresh-eyes review of feeds' window in both schemes, by the
+  worker and by a fresh reader with no checklist, recorded
+  verbatim with the known misreads briefed.
+- [ ] Exit: green in `patterns`, `components/gallery`,
+  `workbench/feeds`, `workbench/sitedocs`, `workbench` and every
+  app by name; guard OK; guides gate OK; `scripts/check-layers.sh`
+  OK; one commit per repo with the heading as subject; push every
+  one; no tag.
 
 ### G-CK4: The workbench is called by its name
 
