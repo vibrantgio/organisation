@@ -24512,7 +24512,7 @@ tasks here run when none is waiting.
 
 #### CK2.1: The launcher's triangular field is more saturated
 
-- [ ] Owner finding 2026-10-21: the animated triangles read as very
+- [x] Owner finding 2026-10-21: the animated triangles read as very
   pale, and he asks for more saturation in the window's backdrop
   (his words are in TRANSCRIPTS.md). The field's palette is two fixed numbers
   in `workbench/field.go`: saturation 0.45 and lightness 0.80 on a
@@ -24525,7 +24525,7 @@ tasks here run when none is waiting.
   launcher's window goldens regenerate with the cause named.
   Nothing else moves. If the owner wants it stronger or weaker, the
   two numbers are the whole knob.
-- [ ] Exit: green in `workbench` by name; guard OK; gofmt gate OK;
+- [x] Exit: green in `workbench` by name; guard OK; gofmt gate OK;
   commit and push in `workbench` and `.github`; no tag.
 
 ### G-CK3: The library ships vaultview's shell and every window stands on it
