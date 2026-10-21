@@ -24458,3 +24458,21 @@ listed for him.
 - [x] Exit: green in `components`, `markdown` and `workbench/
   vaultview` by name; guard OK; gofmt gate OK; commit and push per
   repo; no tag.
+
+#### CJ7.4: The link report is named for what it carries
+
+- [ ] Found under CJ7.3: the paragraph's report fires for a link the
+  pointer enters and for one the keyboard reaches, and three names
+  still say hover: `paragraph.Style.OnLinkHover`, `markdown`'s
+  collector in `hover.go` behind `hoverState`, and vaultview's
+  `HoverLink` message with `Model.HoveredLink`. Under the rule that
+  a name says what a thing is, the callback is `OnLink` (or
+  `OnLinkUnder`, the worker saying which reads as the Language
+  does: the link under the pointer or holding the keyboard), the
+  collector's file and type follow, and vaultview's message is
+  `LinkUnder{URL}` with `Model.LinkUnder`. None of the three is in
+  any tag, so no alias and no deprecation: the names move and the
+  next round carries them. Docs and tests follow. No pixel moves.
+- [ ] Exit: green in `components`, `markdown` and `workbench/
+  vaultview` by name; guard OK; gofmt gate OK; commit and push per
+  repo; no tag.
