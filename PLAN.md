@@ -24923,7 +24923,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK8.1: The download wait shows what the platform's own wait shows
 
-- [ ] Found under CK6.2, ruled by the ontology session 2026-10-21:
+- [x] Found under CK6.2, ruled by the ontology session 2026-10-21:
   the text needs no name, since the opening note's title stands in
   the toolbar's centre over the column that says "Downloading…";
   progress follows the Progress entry, the platform's
@@ -24943,7 +24943,7 @@ run, and no capture runs while the owner is at the machine
   place and strength. No other composition change; goldens do not
   move (the downloading state is in none) unless a golden case is
   added for it, which it should be, in both schemes.
-- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
+- [x] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
 
 ### G-CK9: The note's measure is a page's

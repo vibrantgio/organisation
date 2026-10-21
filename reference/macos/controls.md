@@ -1578,6 +1578,62 @@ triggers cap the line box to the control's height and clip what they draw to
 their own shape, and the role's size does not move. Whether BodyLarge is the
 right size for a control's label at all is typography's question and is pooled.
 
+## What TextEdit's download wait measures
+
+`textedit-download-wait-light.png` and `textedit-download-wait-dark.png`,
+656 × 422 px each, the window's outer bounds on the 2560×1440 display at 1x
+where one pixel is one point, macOS 26, wallpaper tinting reduced, taken
+2026-10-22.
+
+**What was asked of the platform.** A 9,240,000-byte text file was written
+into this machine's iCloud Drive, left until the service accepted
+`brctl evict` for it, and evicted — `stat -f %b` then reads 0 blocks, so the
+machine holds none of its contents. It was opened with `open -a TextEdit`
+and the display was captured from the moment of the open, a frame every
+80–170 ms over the window's region, with the file's block count read on
+every frame. The same was done in each appearance, the file re-evicted
+between the two runs.
+
+**What stood on screen during the wait.** Nothing.
+
+| run | the file is on disk by | the window first exists at | what that first frame holds |
+| --- | --- | --- | --- |
+| light | 1153 ms (0 blocks through 1071 ms, 18048 blocks at 1153 ms) | 1458 ms | the text, already set |
+| dark | 531 ms (0 blocks through 388 ms) | 931 ms | the text, already set |
+
+Every frame from the open until the window exists is pixel-identical to the
+frame taken before the open — a difference over the whole region returns no
+bounding box — so through the whole second the file was absent the platform
+drew no window, no standing message, no text and no indicator of any kind.
+The window first exists about 300 ms *after* the contents are on disk, and
+the text is in it on the first frame it exists. A 21,691-byte probe measured
+the same way agrees: no window through the wait, and the first frame holding
+a window holds the text.
+
+**The reading.** TextEdit shows nothing for a download wait of this length.
+It does not open an empty window and fill it in; it opens no window at all
+until the contents are there, and the window it then opens holds the text
+alone. There is no wait text, no indeterminate indicator, no spinner and no
+progress bar: none of the window is spent on the wait, because the window
+does not exist while the wait lasts.
+
+**What this settles for a window of our own.** A window already open when
+its reader asks for a note the cloud holds cannot copy the platform here,
+because the platform's own text editor never reaches that state — it has no
+window in which to put an indicator. So a wait of this length gets no
+indicator, and a window that says it is downloading says it in text alone.
+
+**What the arrived window holds**, since the pair records it. In light, a
+white title bar (255,255,255) over a white document (255,255,255), parted by
+a one-pixel hairline (230,230,230); in dark, a title bar (34,42,47) over a
+document (30,30,30), parted by a one-pixel hairline (35,35,35). The dark
+capture repeats ADR-019's plain title bar exactly — fill through y=30,
+hairline at y=31, the document from y=32 — and the light one repeats the
+same band two pixels down, the window having been placed two pixels lower
+inside the captured region on that run. So the pair adds no new band number;
+what is new in it is the light appearance of a plain title bar, which the
+stored reference did not hold.
+
 ## The gap, and what is left of it
 
 One capture closed the regular-size gap: a **dialog or standard sheet**
