@@ -682,7 +682,10 @@ lines tire the reader, so a paragraph stops at its measure however
 wide the region is. Content narrower than its region is centred
 within the region; nothing widens to fill. Wide content that keeps
 its own size — a code block, a table — sits in a scroll area no
-wider than the measure.
+wider than the measure. A measure is stated as a count of
+characters of the body text, the typographer's unit, never in
+millimetres and never from the type's size against the reader's
+distance.
 
 ### Menu
 

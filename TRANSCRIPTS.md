@@ -1197,3 +1197,15 @@ Rene (to the vibrantgio session, relayed in its words): a huge
 iCloud vault blocks the window while it is scanned; "Let's go" on
 the scan listing first, reading in bounded parallel newest folder
 first, delivering in batches.
+
+Rene (to the vibrantgio session, relayed in its words): the note
+column read narrow on the Thunderbolt Display; he rejected a type
+size derived from visual angle, since he reads the 16 px body fine
+at 750 mm; the measure is a count of characters, an A4 page at
+15 mm margins holding 85 to 100 a line; he tries 90.
+^0005-measure-is-a-count
+
+Rene (to the vibrantgio session, relayed in its words): a capture
+task keeps the desktop awake with caffeinate the moment it is
+queued, never waits on his return, and never runs while he is at
+the machine.
