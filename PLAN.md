@@ -24803,7 +24803,7 @@ tasks here run when none is waiting.
 
 #### CK4.1: The word launcher leaves the workbench's code and guide
 
-- [ ] Owner-ruled 2026-10-21: "Instead of talking about launcher, why
+- [x] Owner-ruled 2026-10-21: "Instead of talking about launcher, why
   not talk about workbench and also add that as an entry to the
   DOMAIN.md language." The Language gains a Workbench entry (the
   ontology session's); the window at the root of the `workbench`
@@ -24816,7 +24816,7 @@ tasks here run when none is waiting.
   `launcher` with no kept sense, in the same commit as the
   migration so the gate goes red and green in one step;
   `scripts/sync-agents.sh` runs clean. No pixel moves.
-- [ ] Exit: green in `workbench`, every app module and `components`
+- [x] Exit: green in `workbench`, every app module and `components`
   by name; guard OK; guides gate OK; commit and push per repo and
   in `.github`; no tag.
 
