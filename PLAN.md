@@ -24435,7 +24435,7 @@ listed for him.
 
 #### CJ7.3: A link holding the keyboard says its address as a hovered one does
 
-- [ ] Ruled by the ontology session 2026-10-21 from the platform
+- [x] Ruled by the ontology session 2026-10-21 from the platform
   (Safari's status bar says a focused link's address as a hovered
   one's; the Link entry at 332b338). The paragraph's hover report
   also fires for the focused link: when a link takes the keyboard
@@ -24451,10 +24451,10 @@ listed for him.
   status bar's address the same); a wrapped link is annotated under
   the run under the pointer, not the union of its runs. No
   composition changes; goldens do not move.
-- [ ] Router-driven tests: Tab onto a link shows its address in the
+- [x] Router-driven tests: Tab onto a link shows its address in the
   bar and, after the delay, the tooltip; Tab off clears both; the
   tooltip's left and right edges stay inside the window at a narrow
   width; a wrapped link's tooltip stands under the pointed run.
-- [ ] Exit: green in `components`, `markdown` and `workbench/
+- [x] Exit: green in `components`, `markdown` and `workbench/
   vaultview` by name; guard OK; gofmt gate OK; commit and push per
   repo; no tag.
