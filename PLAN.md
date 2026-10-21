@@ -24585,6 +24585,38 @@ tasks here run when none is waiting.
 - [x] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
 
+#### CK6.2: A note iCloud has not downloaded is fetched when the reader opens it
+
+- [ ] Found under CK6.1: a note iCloud holds as a placeholder is
+  listed under its name so the tree is whole, but reading it
+  refuses (the placeholder's own path holds no file) and opening
+  it in the window refuses the same way, silently. After this task
+  opening such a note asks the platform to download it
+  (`mvu/desktop` gains the bridge: the platform's own start of a
+  download for a file in iCloud, a message when the file is written
+  or the download fails, hopping off the main queue as the package's
+  callbacks do; a stub for other platforms answers that nothing is
+  in the cloud), the note column says "Downloading…" in place of
+  the note until the file arrives, the status bar the same, and the
+  note then loads as any note does; the scan's last batch asks for
+  nothing (a vault of thousands must not download itself on open).
+  Two chores from the same work close here: the note the window
+  opens on is read once, not twice (the listing's note message and
+  the first load); `ScanVault`, now a test helper standing in
+  application code, moves beside its tests. No composition changes.
+- [ ] A darwin test drives the bridge on a file under the user's
+  iCloud Drive if one exists on this machine (skip if not, saying
+  so), and a unit test drives the window's part with a stand-in
+  that answers written; the stub's test answers nothing in the
+  cloud.
+- [ ] Exit: green in `mvu/desktop` and `workbench/vaultview` by name;
+  `GOOS=windows CGO_ENABLED=0 go build ./...` in `mvu/desktop`;
+  guard OK; gofmt gate OK; commit and push in `mvu`, `workbench`
+  and `.github`; then `mvu/desktop` is tagged `desktop/v1.1.4` on
+  the root's `v1.1.4` (`example/v1.1.4` mirrored), `GOWORK=off`
+  verified, `scripts/check-versions.sh` OK, `scripts/
+  sync-versions.sh` run, `workbench` re-pinned.
+
 ### G-CK5: The workbench's groups stand on a material over the painted backdrop
 
 #### CK5.1: The workbench's groups stand on a material over the painted backdrop
