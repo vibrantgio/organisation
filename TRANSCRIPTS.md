@@ -1182,3 +1182,7 @@ entry): 'the backdrop is only ever what shows around' huh?
 Rene (to the vibrantgio session, relayed in its words): the
 launcher's animated field is the backdrop of the window; it is not
 the Background entry's single colour. ^0005-launcher-backdrop
+
+Rene (to the vibrantgio session, relayed verbatim): Instead of
+talking about launcher, why not talk about workbench and also add
+that as an entry to the DOMAIN.md language. ^0005-workbench-entry

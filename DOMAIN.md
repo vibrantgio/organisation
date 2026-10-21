@@ -97,7 +97,7 @@ platform's window background colour. It is visible only where
 nothing else is drawn, as around an inset pane. No text and no
 control stands directly on it, so no foreground is measured for
 contrast against it. An application may paint its backdrop, as the
-launcher does with its animated field; what stands over a painted
+workbench does with its animated field; what stands over a painted
 backdrop stands on its own surface and is measured against that.
 
 ### Background
@@ -1330,6 +1330,14 @@ The platform's window: the frame the application draws in, with the
 title bar, the window buttons and the shadow drawn by the platform,
 its background the backdrop. Every component and pattern is drawn
 inside one.
+
+### Workbench
+
+The repository of example applications the library is proved
+against, and the application at its root: one window listing those
+applications, each with a control that starts it, standing on its
+own painted backdrop. The window at the workbench's root is the
+workbench.
 
 ## Decisions
 
