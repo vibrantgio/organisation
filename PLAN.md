@@ -24683,7 +24683,15 @@ tasks here run when none is waiting.
   `renderWindowFinding` go; every window golden builds vaultview's
   own layer stack through `components/golden`'s `Layers`, `Window`
   and `WindowGolden` and reads the arrangement through
-  `TwoColumn.Report`. Goldens byte-identical to CK7.2's.
+  `TwoColumn.Report`. Goldens byte-identical to CK7.2's. Three
+  chores from CK7.2 close here: vaultview opens on the pane's
+  shown state it already writes (the Pane entry: the shown state
+  is kept across launches), so a reader who collapsed the sidebar
+  finds it collapsed; the kept arrangement's old keys (`rail`,
+  `aside`) are read once into the new (`pane`, `inspector`,
+  `paneShown`) so a launch after the change keeps its widths, and
+  the file is written in the new shape, no further compatibility
+  kept; `noteName`, called from nowhere, goes.
 - [ ] Exit: green in `workbench/vaultview` by name; no golden moves;
   guard OK; commit and push in `workbench` and `.github`; no tag.
 
