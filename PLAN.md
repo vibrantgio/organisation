@@ -24587,7 +24587,7 @@ tasks here run when none is waiting.
 
 #### CK6.2: A note iCloud has not downloaded is fetched when the reader opens it
 
-- [ ] Found under CK6.1: a note iCloud holds as a placeholder is
+- [x] Found under CK6.1: a note iCloud holds as a placeholder is
   listed under its name so the tree is whole, but reading it
   refuses (the placeholder's own path holds no file) and opening
   it in the window refuses the same way, silently. After this task
@@ -24604,12 +24604,12 @@ tasks here run when none is waiting.
   opens on is read once, not twice (the listing's note message and
   the first load); `ScanVault`, now a test helper standing in
   application code, moves beside its tests. No composition changes.
-- [ ] A darwin test drives the bridge on a file under the user's
+- [x] A darwin test drives the bridge on a file under the user's
   iCloud Drive if one exists on this machine (skip if not, saying
   so), and a unit test drives the window's part with a stand-in
   that answers written; the stub's test answers nothing in the
   cloud.
-- [ ] Exit: green in `mvu/desktop` and `workbench/vaultview` by name;
+- [x] Exit: green in `mvu/desktop` and `workbench/vaultview` by name;
   `GOOS=windows CGO_ENABLED=0 go build ./...` in `mvu/desktop`;
   guard OK; gofmt gate OK; commit and push in `mvu`, `workbench`
   and `.github`; then `mvu/desktop` is tagged `desktop/v1.1.4` on
