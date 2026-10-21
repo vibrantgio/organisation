@@ -24394,3 +24394,41 @@ listed for him.
 - [ ] Exit: green in `components` (if the bounds reporting was added)
   and `workbench/vaultview` by name; guard OK; gofmt gate OK;
   commit and push per repo; no tag.
+
+### G-CJ8: A document with a wide table scrolls as smoothly as one without
+
+#### CJ8.1: The markdown table block measures its columns once and draws its cells from a cache
+
+- [ ] Owner finding 2026-10-21: vaultview with the solidcraft ROADMAP
+  open stutters when scrolling through the milestones. Measured on
+  this plan root with a throwaway frame probe over that document at
+  1400 by 1600 px: any frame without the milestone table in view
+  costs under 1 ms; a frame with it in view costs about 220 ms; the
+  milestone table alone (15 rows, cells up to 2,300 characters)
+  costs 218 ms a frame; the document's other, six-row table costs
+  0.5 ms. Cause, read off `markdown/document.go`'s `table`: every
+  frame shapes every cell at natural width for the column widths,
+  then, when the natural total overflows, shapes every cell again at
+  minimum width (`minColumnWidths`), then shapes them a third time
+  to draw (`tableGrid`); nothing is kept between frames. After this
+  task the table block keeps, per table and per available width and
+  style, the natural and minimum column widths it measured and the
+  widths it distributed, so the two measuring passes run once until
+  the width or the style changes; and each cell's drawn call is
+  recorded once per (cell, column width, style) and replayed, as the
+  document records its other blocks. A frame with the milestone
+  table in view then costs the cells' replay alone. The cache
+  invalidates on a style change (the theme's colours or typography)
+  and on a width change; the find's marks on a cell still draw
+  (the mark layer is outside the recorded call, or the record is
+  keyed on the match set, the worker saying which). No pixel moves.
+- [ ] A benchmark test in `markdown` over a table of 15 rows with
+  2,000-character cells at an overflowing width asserts a steady
+  frame under 5 ms after the first (the first may measure), and the
+  existing table goldens and tests pass unchanged.
+- [ ] Exit: green in `markdown` and `workbench/vaultview` by name;
+  guard OK; gofmt gate OK; commit and push in `markdown` and
+  `.github`; then `markdown` is tagged at its next patch (`v0.8.2`),
+  pushed, `GOWORK=off` verified, `workbench`'s pins bumped and
+  `scripts/sync-versions.sh` run, `scripts/check-versions.sh` OK;
+  vaultview reinstalled into `~/go/bin` by the orchestrator.
