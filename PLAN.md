@@ -24679,7 +24679,7 @@ tasks here run when none is waiting.
 
 #### CK7.3: Vaultview's window goldens render its own layer stack
 
-- [ ] The second half of CK3.1's finding: `renderWindow` and
+- [x] The second half of CK3.1's finding: `renderWindow` and
   `renderWindowFinding` go; every window golden builds vaultview's
   own layer stack through `components/golden`'s `Layers`, `Window`
   and `WindowGolden` and reads the arrangement through
@@ -24692,7 +24692,7 @@ tasks here run when none is waiting.
   the old (the ruling of 2026-10-10: no compatibility reads; the
   owner's own file is migrated by hand at the landing);
   `noteName`, called from nowhere, goes.
-- [ ] Exit: green in `workbench/vaultview` by name; no golden moves;
+- [x] Exit: green in `workbench/vaultview` by name; no golden moves;
   guard OK; commit and push in `workbench` and `.github`; no tag.
 
 #### CK7.4: Mindchat stands on the shell
