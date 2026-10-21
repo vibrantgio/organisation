@@ -24617,75 +24617,6 @@ tasks here run when none is waiting.
   verified, `scripts/check-versions.sh` OK, `scripts/
   sync-versions.sh` run, `workbench` re-pinned.
 
-#### CK6.3: The download wait shows what the platform's own wait shows
-
-- [ ] Found under CK6.2, ruled by the ontology session 2026-10-21:
-  the text needs no name, since the opening note's title stands in
-  the toolbar's centre over the column that says "Downloading…";
-  progress follows the Progress entry, the platform's
-  indeterminate indicator while the size is unknown, read and
-  never operated; whether an indicator stands beside the text is
-  read off the platform. The reading: evict a small file on this
-  machine's iCloud Drive (`brctl evict`), open it in TextEdit, and
-  capture the window during the wait in both appearances (the
-  capture mechanics as the other captures; the wait is short, so
-  capture at once after the open, several frames); store the
-  capture under `reference/macos/` with its reading in
-  `controls.md`. The note column then shows what the capture
-  shows: the text alone, or the text with the platform's
-  indeterminate indicator beside it (the `components/progress`
-  signal if it exists by then, else the indicator drawn as the
-  capture measures it and pooled for the component), in the same
-  place and strength. No other composition change; goldens do not
-  move (the downloading state is in none) unless a golden case is
-  added for it, which it should be, in both schemes.
-- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
-  gate OK; commit and push in `workbench` and `.github`; no tag.
-
-### G-CK5: The workbench's groups stand on a material over the painted backdrop
-
-#### CK5.1: The workbench's groups stand on a material over the painted backdrop
-
-- [ ] Owner question 2026-10-21: "is it possible to have a slightly
-  translucent group background that lightens (adds white) in light
-  mode and darkens it in dark mode?" Ruled by the ontology session
-  from the platform (the Material entry at 84e697a): over a painted
-  backdrop a material is the one case painted translucent, the
-  window background colour at the platform's alpha so the field
-  shows through, lighter in light and darker in dark, measured from
-  Control Center over the desktop; the workbench's groups stand on
-  such a material, each keeping its hairline. The reference holds
-  no Control Center capture: the worker takes one on this machine
-  in both appearances with wallpaper tinting off (the capture
-  mechanics: appearance through System Events, tinting off, Control
-  Center opened from the menu bar, its pane cropped), stores it
-  under `reference/macos/` with its reading in `controls.md`, and
-  reads the alpha off that fill against the desktop behind
-  it. `theme/tokens` gains the measured alpha as the material's
-  translucent value beside the measured materials; the workbench's
-  tiles draw that fill under the group's hairline, and every
-  foreground on a tile is measured against the window background at
-  that alpha over the field's mean colour (recorded in the commit
-  body with the contrast gate's reading; the field's mean, read
-  off a headless render, is #ceeaff light and #29577f dark). The
-  measured value is a `tokens` constant beside `DisabledCoverage`,
-  not a `PlatformColors` field, so the catalogue copies, the
-  export's name table and the design bundle stay untouched. The
-  workbench's goldens do not move: they stand the field in as the
-  window's own plane, and the material is that plane at a
-  coverage, so over it the material is that plane byte for byte;
-  the exit says so, and `window_render_test.go`'s test claiming the
-  tiles take the page's own fill has its prose corrected to say
-  what it reads (the static stand-in, not the live window). A
-  first attempt on 2026-10-21 was blocked by the locked screen and
-  left its prepared diff at
-  `/private/tmp/claude-501/ck5.1-prepared/{theme,workbench,github}.patch`
-  with every part green but the one unmeasured number; the
-  completing run starts from it.
-- [ ] Exit: green in `theme` and `workbench` by name; no golden moves;
-  guard OK; gofmt gate OK; commit and push in `theme`, `workbench`
-  and `.github`; no tag.
-
 ### G-CK7: The library ships vaultview's shell and every window stands on it
 
 #### CK7.1: The shell pattern is extracted from vaultview's frame and vaultview stands on it
@@ -24762,3 +24693,74 @@ tasks here run when none is waiting.
 - [ ] Exit: green in `workbench`, every app module and `components`
   by name; guard OK; guides gate OK; commit and push per repo and
   in `.github`; no tag.
+
+### G-CK5: The workbench's groups stand on a material over the painted backdrop
+
+#### CK5.1: The workbench's groups stand on a material over the painted backdrop
+
+- [ ] Owner question 2026-10-21: "is it possible to have a slightly
+  translucent group background that lightens (adds white) in light
+  mode and darkens it in dark mode?" Ruled by the ontology session
+  from the platform (the Material entry at 84e697a): over a painted
+  backdrop a material is the one case painted translucent, the
+  window background colour at the platform's alpha so the field
+  shows through, lighter in light and darker in dark, measured from
+  Control Center over the desktop; the workbench's groups stand on
+  such a material, each keeping its hairline. The reference holds
+  no Control Center capture: the worker takes one on this machine
+  in both appearances with wallpaper tinting off (the capture
+  mechanics: appearance through System Events, tinting off, Control
+  Center opened from the menu bar, its pane cropped), stores it
+  under `reference/macos/` with its reading in `controls.md`, and
+  reads the alpha off that fill against the desktop behind
+  it. `theme/tokens` gains the measured alpha as the material's
+  translucent value beside the measured materials; the workbench's
+  tiles draw that fill under the group's hairline, and every
+  foreground on a tile is measured against the window background at
+  that alpha over the field's mean colour (recorded in the commit
+  body with the contrast gate's reading; the field's mean, read
+  off a headless render, is #ceeaff light and #29577f dark). The
+  measured value is a `tokens` constant beside `DisabledCoverage`,
+  not a `PlatformColors` field, so the catalogue copies, the
+  export's name table and the design bundle stay untouched. The
+  workbench's goldens do not move: they stand the field in as the
+  window's own plane, and the material is that plane at a
+  coverage, so over it the material is that plane byte for byte;
+  the exit says so, and `window_render_test.go`'s test claiming the
+  tiles take the page's own fill has its prose corrected to say
+  what it reads (the static stand-in, not the live window). A
+  first attempt on 2026-10-21 was blocked by the locked screen and
+  left its prepared diff at
+  `/private/tmp/claude-501/ck5.1-prepared/{theme,workbench,github}.patch`
+  with every part green but the one unmeasured number; the
+  completing run starts from it.
+- [ ] Exit: green in `theme` and `workbench` by name; no golden moves;
+  guard OK; gofmt gate OK; commit and push in `theme`, `workbench`
+  and `.github`; no tag.
+
+### G-CK8: The download wait shows what the platform shows
+
+#### CK8.1: The download wait shows what the platform's own wait shows
+
+- [ ] Found under CK6.2, ruled by the ontology session 2026-10-21:
+  the text needs no name, since the opening note's title stands in
+  the toolbar's centre over the column that says "Downloading…";
+  progress follows the Progress entry, the platform's
+  indeterminate indicator while the size is unknown, read and
+  never operated; whether an indicator stands beside the text is
+  read off the platform. The reading: evict a small file on this
+  machine's iCloud Drive (`brctl evict`), open it in TextEdit, and
+  capture the window during the wait in both appearances (the
+  capture mechanics as the other captures; the wait is short, so
+  capture at once after the open, several frames); store the
+  capture under `reference/macos/` with its reading in
+  `controls.md`. The note column then shows what the capture
+  shows: the text alone, or the text with the platform's
+  indeterminate indicator beside it (the `components/progress`
+  signal if it exists by then, else the indicator drawn as the
+  capture measures it and pooled for the component), in the same
+  place and strength. No other composition change; goldens do not
+  move (the downloading state is in none) unless a golden case is
+  added for it, which it should be, in both schemes.
+- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
+  gate OK; commit and push in `workbench` and `.github`; no tag.
