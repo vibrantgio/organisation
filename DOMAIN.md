@@ -668,7 +668,12 @@ controls; everything else is read.
 The platform's term for a background that shows what is behind the
 window through it, blurred and tinted: the sidebar material, the
 menu material. Each is painted here flat, at its value measured with
-wallpaper tinting off.
+wallpaper tinting off. Over a painted backdrop a material is the one
+case painted translucent: the window background colour at the
+platform's alpha, so the field shows through, lighter in light and
+darker in dark, measured from Control Center over the
+desktop. The workbench's groups stand on such a material, each
+keeping its hairline.
 
 ### Measure
 

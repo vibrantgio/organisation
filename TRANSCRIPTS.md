@@ -1186,3 +1186,9 @@ the Background entry's single colour. ^0005-launcher-backdrop
 Rene (to the vibrantgio session, relayed verbatim): Instead of
 talking about launcher, why not talk about workbench and also add
 that as an entry to the DOMAIN.md language. ^0005-workbench-entry
+
+Rene (to the vibrantgio session, relayed verbatim, on the
+workbench): is it possible to have a slightly translucent group
+background that lightens (adds white) in light mode and darkens it
+in dark mode? The shown workbench grid is made up of groups right?
+^0005-translucent-group-over-backdrop
