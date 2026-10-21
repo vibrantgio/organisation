@@ -24528,38 +24528,23 @@ tasks here run when none is waiting.
 - [x] Exit: green in `workbench` by name; guard OK; gofmt gate OK;
   commit and push in `workbench` and `.github`; no tag.
 
-#### CK2.2: The workbench's groups stand on a material over the painted backdrop
+### G-CK3: The whole-window renderer lives in the library
 
-- [ ] Owner question 2026-10-21: "is it possible to have a slightly
-  translucent group background that lightens (adds white) in light
-  mode and darkens it in dark mode?" Ruled by the ontology session
-  from the platform (the Material entry at 84e697a): over a painted
-  backdrop a material is the one case painted translucent, the
-  window background colour at the platform's alpha so the field
-  shows through, lighter in light and darker in dark, measured from
-  Control Center over the desktop; the workbench's groups stand on
-  such a material, each keeping its hairline. The reference holds
-  no Control Center capture: the worker takes one on this machine
-  in both appearances with wallpaper tinting off (the capture
-  mechanics: appearance through System Events, tinting off, Control
-  Center opened from the menu bar, its pane cropped), stores it
-  under `reference/macos/` with its reading in `controls.md`, and
-  reads the alpha off that fill against the desktop behind
-  it. `theme/tokens` gains the measured alpha as the material's
-  translucent value beside the measured materials; the workbench's
-  tiles draw that fill under the group's hairline, and every
-  foreground on a tile is measured against the window background at
-  that alpha over the field's mean colour (recorded in the commit
-  body with the contrast gate's reading). The workbench's goldens
-  regenerate with the cause named; the field stands in them as a
-  flat plane as today, so the material shows over the plane.
-- [ ] Exit: green in `theme` and `workbench` by name; guard OK; gofmt
-  gate OK; commit and push in `theme`, `workbench` and `.github`;
-  no tag.
+#### CK3.1: The whole-window renderer lives in the library
 
-### G-CK5: A huge vault opens at once and fills in as it is read
+- [x] Section 5 of the shell document, the precondition. A renderer
+  that lays a layer stack out at a size, with a theme and a model,
+  to an image in both schemes with no display, lives in
+  `components/golden` beside its single-component renderer (or `mvu/render`
+  if the layer stack is mvu's, the worker saying which off the
+  layer gate); vaultview, mindchat and the workbench adopt it and
+  their local renderers go, goldens byte-identical.
+- [x] Exit: green in the library module and the three apps by name;
+  guard OK; commit and push per repo; no tag.
 
-#### CK5.1: The vault scan lists first, reads in bounded parallel recent-first, and delivers in batches
+### G-CK6: A huge vault opens at once and fills in as it is read
+
+#### CK6.1: The vault scan lists first, reads in bounded parallel recent-first, and delivers in batches
 
 - [ ] Owner finding 2026-10-21, his words: "while starting the
   vaultviewer in a proper huge Obsidian vault on iCloud, I noticed
@@ -24600,21 +24585,40 @@ tasks here run when none is waiting.
 - [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
 
-### G-CK3: The library ships vaultview's shell and every window stands on it
+### G-CK5: The workbench's groups stand on a material over the painted backdrop
 
-#### CK3.1: The whole-window renderer lives in the library
+#### CK5.1: The workbench's groups stand on a material over the painted backdrop
 
-- [x] Section 5 of the shell document, the precondition. A renderer
-  that lays a layer stack out at a size, with a theme and a model,
-  to an image in both schemes with no display, lives in
-  `components/golden` beside its single-component renderer (or `mvu/render`
-  if the layer stack is mvu's, the worker saying which off the
-  layer gate); vaultview, mindchat and the workbench adopt it and
-  their local renderers go, goldens byte-identical.
-- [x] Exit: green in the library module and the three apps by name;
-  guard OK; commit and push per repo; no tag.
+- [ ] Owner question 2026-10-21: "is it possible to have a slightly
+  translucent group background that lightens (adds white) in light
+  mode and darkens it in dark mode?" Ruled by the ontology session
+  from the platform (the Material entry at 84e697a): over a painted
+  backdrop a material is the one case painted translucent, the
+  window background colour at the platform's alpha so the field
+  shows through, lighter in light and darker in dark, measured from
+  Control Center over the desktop; the workbench's groups stand on
+  such a material, each keeping its hairline. The reference holds
+  no Control Center capture: the worker takes one on this machine
+  in both appearances with wallpaper tinting off (the capture
+  mechanics: appearance through System Events, tinting off, Control
+  Center opened from the menu bar, its pane cropped), stores it
+  under `reference/macos/` with its reading in `controls.md`, and
+  reads the alpha off that fill against the desktop behind
+  it. `theme/tokens` gains the measured alpha as the material's
+  translucent value beside the measured materials; the workbench's
+  tiles draw that fill under the group's hairline, and every
+  foreground on a tile is measured against the window background at
+  that alpha over the field's mean colour (recorded in the commit
+  body with the contrast gate's reading). The workbench's goldens
+  regenerate with the cause named; the field stands in them as a
+  flat plane as today, so the material shows over the plane.
+- [ ] Exit: green in `theme` and `workbench` by name; guard OK; gofmt
+  gate OK; commit and push in `theme`, `workbench` and `.github`;
+  no tag.
 
-#### CK3.2: The shell pattern is extracted from vaultview's frame and vaultview stands on it
+### G-CK7: The library ships vaultview's shell and every window stands on it
+
+#### CK7.1: The shell pattern is extracted from vaultview's frame and vaultview stands on it
 
 - [ ] Section 11 item 3 and section 6 of the shell document. The
   shell pattern gains the two-column arrangement with the inspector
@@ -24641,7 +24645,7 @@ tasks here run when none is waiting.
   `workbench/vaultview` by name; guard OK; `scripts/
   check-layers.sh` OK; commit and push per repo; no tag.
 
-#### CK3.3: Mindchat stands on the shell
+#### CK7.2: Mindchat stands on the shell
 
 - [ ] Section 11 item 4. Mindchat adopts the two-column arrangement
   without the inspector: its `frame.go` goes; the pane gains the
@@ -24653,7 +24657,7 @@ tasks here run when none is waiting.
 - [ ] Exit: green in `workbench/mindchat` by name; guard OK; commit
   and push in `workbench` and `.github`; no tag.
 
-#### CK3.4: Feeds stands on the shell and the old layouts leave the library
+#### CK7.3: Feeds stands on the shell and the old layouts leave the library
 
 - [ ] Section 11 item 5. Feeds adopts the two-column arrangement with
   the inspector slot holding the article (or the three-column
