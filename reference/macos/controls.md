@@ -20,7 +20,9 @@ compose symbol's band and where a sidebar-side control stands in the band are
 CG5.3i, and what the whole band's composition measures capture by capture is
 CG5.3l. The magnifier's lens, the round and curved allowance it fixes and the
 set's one band are CG5.10.
-The push button's own corner is CG7.8.
+The push button's own corner is CG7.8. What Control Center measures,
+and the coverage a material over a painted backdrop is painted at, is
+CK5.1.
 
 ## How coverage is read off a rendered component
 
@@ -1246,6 +1248,86 @@ columns run through are one number, so the pane already knows where the band
 ends. An application's own chrome row may be shallower than that and the band
 is unaffected: the row is what the application puts IN the band, not what the
 band is.
+
+## What Control Center measures
+
+Control Center is the platform's own case of a material standing over a
+painted backdrop rather than over a window: the desktop is behind it, and
+what it keeps of its own fill is the coverage a material is painted at
+there. Added 2026-10-22 by CK5.1.
+
+Four captures, all on the same 2560x1440 display, cropped to the same box
+— screen (2100,0) to (2560,675), so the crop's (0,0) is screen (2100,0) and
+every coordinate below is a crop coordinate:
+
+| capture | what is behind the pane |
+| --- | --- |
+| `control-center-light.png` | the desktop, light appearance |
+| `control-center-dark.png` | the desktop, dark appearance |
+| `control-center-bands-light.png` | four flat horizontal bands of known value, light appearance |
+| `control-center-bands-dark.png` | the same four bands at other values, dark appearance |
+
+**The pane is a blur.** Over the desktop the wallpaper's detail is visible
+through it and softened: in `control-center-light.png` the mean neighbouring-
+pixel step over a run of desktop icon labels is 4.4 inside the pane against
+23.7 over the same labels outside it. A flat backdrop is therefore what a
+coverage is read against, which is what the two band captures are for; the
+desktop pair is what the pane looks like over detail.
+
+**The method.** A window of four flat bands stands under Control Center,
+each band wider and taller than the blur, so inside a band the blurred
+backdrop is the band itself. Each of the pane's modules — the rounded
+blocks the pane is built from, which is what a group standing on a material
+is here — then reads one flat value against a known one, and the pairs give
+the coverage as the slope of the line through them: a module painted at
+coverage a over a backdrop D reads a*C + (1-a)*D, so the slope is 1-a and
+the intercept is a*C. The platform composites in encoded sRGB, so the fit is
+in encoded sRGB (see "How coverage is read off a rendered component").
+
+Every value below is the red channel; the bands and every fill read are
+neutral, and green and blue read the same byte.
+
+| capture | backdrop | module fill | at crop |
+| --- | --- | --- | --- |
+| `control-center-bands-light.png` | 26 | 46 | (206,77) |
+| `control-center-bands-light.png` | 77 | 76 | (210,229) |
+| `control-center-bands-light.png` | 153 | 121 | (195,425) |
+| `control-center-bands-light.png` | 230 | 168 | (299,612) |
+| `control-center-bands-dark.png` | 0 | 31 | (201,76) |
+| `control-center-bands-dark.png` | 51 | 61 | (187,229) |
+| `control-center-bands-dark.png` | 179 | 136 | (216,426) |
+| `control-center-bands-dark.png` | 255 | 183 | (299,612) |
+
+The backdrop of each row is read on the same row of the same capture at crop
+x 5-25, which is band outside the pane and outside its shadow. The last row
+of each pair is the "Edit Controls" module, which is the only one standing
+over the fourth band.
+
+| what | value | method |
+| --- | --- | --- |
+| the material's coverage, light | 102.6 of 255 | least squares through the four light pairs: fill = 0.5978*backdrop + 30.1, largest residual 0.6 |
+| the material's coverage, dark | 103.4 of 255 | the same through the four dark pairs: fill = 0.5944*backdrop + 30.7, largest residual 1.1 |
+| the material's coverage | 103 of 255 | all eight pairs: fill = 0.5956*backdrop + 30.5, largest residual 1.1. The two appearances differ by 0.9 of 255, under the residual the fit itself carries, so one value serves both |
+
+The colour the platform keeps there is the intercept over the coverage, 75
+of 255 — a fixed mid grey, the same in both appearances, and not the
+platform's window background. So what this reading gives is the coverage
+alone. What is painted there is the window's own background colour, which
+is what makes a material over a painted backdrop that colour byte for byte
+where the backdrop already carries it.
+
+The pane's own container, the rounded region the modules stand in, is a
+separate and much weaker layer: it reads 0.905*backdrop with no intercept in
+both appearances, which is the platform's own and is recorded here rather
+than carried as a token.
+
+Two notes on how the captures were taken. The pane sits flush against the
+right edge of the screen, so there is no margin of backdrop on that side;
+the left margin is 150 px so that band outside the pane's shadow is in
+frame. Control Center was opened by a click posted at the menu bar's Control
+Center item on this display, because pressing the item through the
+accessibility API opens the pane on whichever display holds the active menu
+bar.
 
 ## Where the measured heights supersede the published ones
 

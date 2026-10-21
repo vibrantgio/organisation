@@ -6191,6 +6191,7 @@ them.
 | what the platform publishes — push button 22 / 19 / 16 pt, text field and pop-up button 22 pt, label 13 / 11 pt, about 8 pt beside a push button's label | `controls.md` | PUBLISHED: Apple's Human Interface Guidelines for macOS, not read off this machine. Superseded wherever a capture reads the same control |
 | the dialog controls themselves — push button 24 px, pop-up button 24 px, text field 27 px, checkbox 16 px square, the label's cap band 10 px | `save-dialog-light.png`, `save-dialog-dark.png` | MEASURED 2026-09-11 by CE1.5: a Save panel at regular size, window-bounded, one capture per appearance; luminance runs down a column clear of each label, both appearances agreeing to the pixel |
 | the heights the density scale takes — control 24 dp Comfortable (MEASURED), 19 dp Compact (PUBLISHED, uncaptured); text field 27 dp Comfortable (MEASURED), 21 dp Compact (DERIVED, 27 × 19/24 rounded); padding 8/2 and 7/0 | `controls.md`, `theme/tokens/density.go` | CE1.6, 2026-09-11: the measured numbers over the published ones, per number, with the derivations shown |
+| the coverage a material over a painted backdrop is painted at — 103 of 255, one value for both appearances | `control-center-light.png`, `control-center-dark.png`, `control-center-bands-light.png`, `control-center-bands-dark.png` | MEASURED 2026-10-22 by CK5.1: Control Center over the desktop in both appearances and over four flat bands of known value in each; the coverage is the slope of the line through the eight backdrop-and-module-fill pairs, read in encoded sRGB |
 
 **The gap closed on 2026-09-11 for the regular size.** The reference now
 holds a push button, a checkbox, a pop-up button and a text field at regular
@@ -24849,7 +24850,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK5.1: The workbench's groups stand on a material over the painted backdrop
 
-- [ ] Owner question 2026-10-21: "is it possible to have a slightly
+- [x] Owner question 2026-10-21: "is it possible to have a slightly
   translucent group background that lightens (adds white) in light
   mode and darkens it in dark mode?" Ruled by the ontology session
   from the platform (the Material entry at 84e697a): over a painted
@@ -24885,7 +24886,7 @@ run, and no capture runs while the owner is at the machine
   `/private/tmp/claude-501/ck5.1-prepared/{theme,workbench,github}.patch`
   with every part green but the one unmeasured number; the
   completing run starts from it.
-- [ ] Exit: green in `theme` and `workbench` by name; no golden moves;
+- [x] Exit: green in `theme` and `workbench` by name; no golden moves;
   guard OK; gofmt gate OK; commit and push in `theme`, `workbench`
   and `.github`; no tag.
 
