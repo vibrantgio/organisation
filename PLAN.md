@@ -24742,7 +24742,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK7.6: The shell ships the three-column arrangement
 
-- [ ] Section 11 item 7 and section 4 item 3 of the shell document,
+- [x] Section 11 item 7 and section 4 item 3 of the shell document,
   brought ahead on the critical path by feeds' reading. The shell
   gains the three-column arrangement: the pane, then a list column
   of absolute width on a splitter with its own header and footer
@@ -24768,8 +24768,12 @@ run, and no capture runs while the owner is at the machine
   renamed `Header` with it (no tag carries it; vaultview and
   mindchat follow in the same commit). A gallery specimen shows the arrangement; a
   fresh-eyes review of it in both schemes is recorded, the known
-  misreads briefed.
-- [ ] Exit: green in `patterns` and `components/gallery` by name;
+  misreads briefed. Landed 2026-10-22 at patterns b89bc36,
+  components f785919, workbench 3f629a3 (vaultview's rename and
+  sitedocs' tab golden). Mail's measured default is 447 and its
+  minimum 200; it states no maximum of its own, the content column's
+  floor of 360 standing in for one.
+- [x] Exit: green in `patterns` and `components/gallery` by name;
   guard OK; `scripts/check-layers.sh` OK; commit and push per
   repo; no tag.
 

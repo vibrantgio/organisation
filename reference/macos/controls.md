@@ -22,7 +22,9 @@ CG5.3l. The magnifier's lens, the round and curved allowance it fixes and the
 set's one band are CG5.10.
 The push button's own corner is CG7.8. What Control Center measures,
 and the coverage a material over a painted backdrop is painted at, is
-CK5.1.
+CK5.1. What Mail's window measures — the three columns, the two seams,
+the list column's width and its bounds, and the toolbar's three shares —
+is CK7.6.
 
 ## How coverage is read off a rendered component
 
@@ -1328,6 +1330,138 @@ frame. Control Center was opened by a click posted at the menu bar's Control
 Center item on this display, because pressing the item through the
 accessibility API opens the pane on whichever display holds the active menu
 bar.
+
+## What Mail's window measures
+
+The three-column arrangement, read off `mail-three-column-light.png` and
+`mail-three-column-dark.png` — one capture of Mail's own viewer window in
+each appearance, taken 2026-10-22 on the 2560×1440 display at 1x where one
+pixel is one point, with Reduce desktop tinting on so no desktop colour
+reaches the sidebar's vibrancy. The window was set to 1400×875 at the
+window's top-leading corner through AppleScript, and the capture is the
+window's own bounds with no shadow and nothing cropped away. The readings
+are geometry and fills; no message content is copied anywhere.
+
+**Method, geometry.** The accessibility tree reports every column's frame
+in window coordinates, so the widths are the platform's own numbers and not
+a pixel hunt: `System Events` → `process "Mail"` → `splitter group 1 of
+window 1` holds the sidebar's scroll area and the pane's splitter, and the
+splitter group inside it holds the list column, the list's splitter and the
+content column. **Method, fills and seams.** PIL over the stored PNG at 1x,
+reading the commonest colour down a column or across a row.
+
+### The columns and the seams
+
+| What | Light | Dark | How |
+| --- | --- | --- | --- |
+| the pane's own scroll area | x 8–332, 324 wide | the same | accessibility frame; the 8 is the pane's margin |
+| **the list column at Mail's default** | **x 332–779, 447 wide** | the same | accessibility frame, window 1400 wide |
+| the content column | x 780–1400, 620 wide | the same | the rest of the window |
+| the seam between the list and the content | `#e6e6e6` beside the rows, `#dddddd`–`#e2e2e2` under the toolbar | `#000000` at every row | one pixel at x=779, read at y=8, 20, 36, 46, 300 and 600 |
+| the seam between the pane and the list | `#ffffff`, one pixel at x=331 | `#38444a` under the toolbar, `#3b464d` beside the rows | the vibrant pane's own trailing highlight, not a separator |
+| the list column's leading edge | `#f2f2f2` at x=332 rising to `#ffffff` by x=366 | `#21282c` at x=332 rising to `#232a2e` by x=352 | the shadow the pane casts, about 34 px light and 20 px dark |
+| the list column's trailing edge | no gradient at all | the same | the hairline is the whole of the boundary |
+
+**The seam between the list and the content runs the window's WHOLE
+height, the toolbar included.** It is one pixel at x=779 at every row from
+the window's top edge to its foot. This is where the three-column
+arrangement parts from the two-column's inspector, whose seam stops at the
+toolbar's foot because nothing parts the toolbar over it: here the toolbar
+has two shares and the seam is what says where one ends.
+
+### The fills
+
+| What | Light | Dark | How |
+| --- | --- | --- | --- |
+| the pane | `#f9fafa`, `#fafafa` | `#1b2023`, `#1c2124` | commonest colour over x 20–300, y 100–800; it is vibrant, so it is a range and not a value |
+| the list column | `#ffffff` | `#232a2e` | commonest colour over x 340–770, y 100–800 |
+| the content column | `#ffffff` | `#232a2e` | commonest colour over x 800–1370, y 300–800 |
+
+**The list column and the content column carry ONE fill.** The seam
+between them is the whole of what says where the boundary is.
+
+### The list column's width, and what bounds it
+
+| What | Reading | How |
+| --- | --- | --- |
+| **the default** | **447** | the width a new viewer window opens at on this machine |
+| **the minimum** | **200** | the trailing seam dragged to the window's leading edge stops with the list 200 wide; what is dragged past that comes out of the pane, whose own seam moved from x=332 to x=198 |
+| **the maximum** | **none of its own** | the seam dragged the other way stops with the content column 360 wide: at a window 1400 wide with the pane at 324 the list clamped at 707 and the seam at x=1039 |
+| **the content column's floor** | **360** | the number the clamp above leaves, and the same number a window resize leaves |
+
+**The width is absolute and keeps itself when the window is resized.** At
+windows 1400 and 1800 wide the list measured 447 both times and the content
+column absorbed every pixel of the difference. At 1000 the list was
+squeezed to 307 — leaving the content its 360 — and it was handed its 447
+back as soon as the window was widened again, so what is kept is the width
+and not what the squeeze left.
+
+**Dragged to the window's trailing edge in one sweep, Mail collapses the
+content column entirely** and turns View ▸ Side Preview off; the list then
+takes the whole window and grows with it. That is a collapse, not a
+maximum.
+
+The splitter could NOT be driven by UI scripting: `AXValue` on the list
+splitter reports settable and ignores what is written to it, and
+`AXMinValue` and `AXMaxValue` report the window's own bounds (0 and 1399)
+rather than the column's. The bounds above were read by posting a real
+mouse drag through `CGEvent` and reading the accessibility frames back
+after each drag, with Mail's own layout restored to 447 at the end.
+
+### The header, and where the collection names itself
+
+**Mail's list column has no header row.** Its rows begin at the toolbar's
+underside — the list's scroll area is y 82–905, which is the toolbar's foot
+to the window's own — and there is no footer under them. The mailbox name
+and the filter stand in the toolbar's share over the list, not in a row
+inside the column.
+
+**The name and the rows under it stand in ONE window column.** The
+mailbox name's first painted column is x=352 and so is its rows' own —
+read band by band down the list, the rows that carry no leading mark begin
+at x=352 or 353, and the ones that do begin at 342. Both are 20 past the
+seam the pane leaves at x=332, which is the measurement the arrangement's
+list share leads from and the one a window's own rows should lead from
+with it: a name that does not stand over what it names does not read as
+its name.
+
+### The toolbar's two shares
+
+The toolbar is one strip, 52 deep, across the window's whole width, and the
+columns' seams part it into three shares. Accessibility frames, with the
+painted extents read off the capture beside them.
+
+| Share | What stands in it | Where |
+| --- | --- | --- |
+| over the pane, x 0–332 | the three window control buttons, then the Toggle Sidebar button at the share's TRAILING end | buttons painted at x 19–33, 42–56 and 65–79; the toggle's symbol painted 300–320, frame 288–332 |
+| over the list, x 332–779 | the collection's name with its count under it, LEADING; the filter and the view options, TRAILING | the title's first painted column is x=352, 20 past the seam; the title's frame is 336 wide 356; the filter's frame is 692 wide 42 and the view options' 734 wide 41 |
+| over the content, x 780–1400 | New Message, then the message acts, then the search field at the window's own trailing edge | New Message's frame 784 wide 45; Reply/Reply All/Forward at 841, 878, 915, each 36; Archive/Delete/Junk at 959, 996, 1033; Move at 1074 wide 60; Flag at 1137 wide 75; the search field at 1226 wide 167, ending 7 from the window's edge |
+
+**Each share is a composition in its own right**, with its own leading
+group and its own trailing group. One toolbar value with a list group added
+could state only one end of the list's share, which is why the arrangement
+takes two toolbar values and not one.
+
+**The list share's gutters.** Leading, 20 to the title's first painted
+column — the measurement the arrangement's list share leads from. Trailing,
+the dark capture paints the view-options control's own box out to x=769, 10
+short of the seam, which is the platform's measured trailing gutter of 8
+within the pixel a control's own box costs; the arrangement spends the same
+`Trail` there as at the window's edge.
+
+**The toolbar casts a shadow onto the content column and not onto the
+list**, because the content was scrolled under it and the list was not:
+light `#f7f7f7` at y=52 fading to `#ffffff` by y≈80, dark `#22292d` fading
+to `#232a2e` by y≈59.
+
+### Against what was stated
+
+The recorder's statement was a default of 300 clamped 220 to 480. Mail's
+measured default of **447 stands inside that 220 to 480**, so the stated
+clamp is not contradicted at the top; the measured minimum of 200 is below
+the stated 220, and the measured maximum does not exist. The measurement is
+what the shell ships: `shell.PlatformList` carries 447, 200 and the content
+column's floor of 360.
 
 ## Where the measured heights supersede the published ones
 
