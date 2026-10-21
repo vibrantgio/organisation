@@ -24920,7 +24920,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK9.1: Vaultview's note measure is 90 characters
 
-- [ ] Owner-ruled 2026-10-22: the note column reads narrow beside an
+- [x] Owner-ruled 2026-10-22: the note column reads narrow beside an
   A4 page, which at 15 mm margins carries 85 to 100 characters a
   line at book sizes; he tries 90. `noteMeasureDp` becomes 90
   characters at the body's measured average advance of 7.19 dp,
@@ -24934,7 +24934,7 @@ run, and no capture runs while the owner is at the machine
   named; the window goldens at 1100 px may not reach 647 beside
   the pane and the inspector, in which case they do not move; say
   which. No other composition change.
-- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
+- [x] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag;
   vaultview installed into `~/go/bin` with `vv` linked to it by
   the orchestrator.
