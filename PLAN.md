@@ -24692,8 +24692,11 @@ tasks here run when none is waiting.
   the old (the ruling of 2026-10-10: no compatibility reads; the
   owner's own file is migrated by hand at the landing);
   `noteName`, called from nowhere, goes.
-- [x] Exit: green in `workbench/vaultview` by name; no golden moves;
-  guard OK; commit and push in `workbench` and `.github`; no tag.
+- [x] Exit: green in `workbench/vaultview` by name; goldens
+  byte-identical but the two the live composition corrected (the
+  find pictures: the caret the reader left and the page at the
+  match it reports), named; guard OK; commit and push in
+  `workbench` and `.github`; no tag.
 
 #### CK7.4: Mindchat stands on the shell
 
