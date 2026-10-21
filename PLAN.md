@@ -24512,9 +24512,9 @@ tasks here run when none is waiting.
 
 #### CK2.1: The launcher's triangular field is more saturated
 
-- [ ] Owner finding 2026-10-21: "the animated triangles are very
-  washed out, is there a way to get some more saturation into the
-  backdrop of the window." The field's palette is two fixed numbers
+- [ ] Owner finding 2026-10-21: the animated triangles read as very
+  pale, and he asks for more saturation in the window's backdrop
+  (his words are in TRANSCRIPTS.md). The field's palette is two fixed numbers
   in `workbench/field.go`: saturation 0.45 and lightness 0.80 on a
   light window background, 0.38 and 0.30 on a dark one, the hue the
   platform's accent. The saturation rises to 0.70 light and 0.55
@@ -24535,7 +24535,7 @@ tasks here run when none is waiting.
 - [ ] Section 5 of the shell document, the precondition. A renderer
   that lays a layer stack out at a size, with a theme and a model,
   to an image in both schemes with no display, lives in
-  `components/golden` beside its widget renderer (or `mvu/render`
+  `components/golden` beside its single-component renderer (or `mvu/render`
   if the layer stack is mvu's, the worker saying which off the
   layer gate); vaultview, mindchat and the launcher adopt it and
   their local renderers go, goldens byte-identical.
