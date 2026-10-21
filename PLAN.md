@@ -24617,6 +24617,31 @@ tasks here run when none is waiting.
   verified, `scripts/check-versions.sh` OK, `scripts/
   sync-versions.sh` run, `workbench` re-pinned.
 
+#### CK6.3: The download wait shows what the platform's own wait shows
+
+- [ ] Found under CK6.2, ruled by the ontology session 2026-10-21:
+  the text needs no name, since the opening note's title stands in
+  the toolbar's centre over the column that says "Downloading…";
+  progress follows the Progress entry, the platform's
+  indeterminate indicator while the size is unknown, read and
+  never operated; whether an indicator stands beside the text is
+  read off the platform. The reading: evict a small file on this
+  machine's iCloud Drive (`brctl evict`), open it in TextEdit, and
+  capture the window during the wait in both appearances (the
+  capture mechanics as the other captures; the wait is short, so
+  capture at once after the open, several frames); store the
+  capture under `reference/macos/` with its reading in
+  `controls.md`. The note column then shows what the capture
+  shows: the text alone, or the text with the platform's
+  indeterminate indicator beside it (the `components/progress`
+  signal if it exists by then, else the indicator drawn as the
+  capture measures it and pooled for the component), in the same
+  place and strength. No other composition change; goldens do not
+  move (the downloading state is in none) unless a golden case is
+  added for it, which it should be, in both schemes.
+- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
+  gate OK; commit and push in `workbench` and `.github`; no tag.
+
 ### G-CK5: The workbench's groups stand on a material over the painted backdrop
 
 #### CK5.1: The workbench's groups stand on a material over the painted backdrop
