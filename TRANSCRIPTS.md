@@ -1192,3 +1192,8 @@ workbench): is it possible to have a slightly translucent group
 background that lightens (adds white) in light mode and darkens it
 in dark mode? The shown workbench grid is made up of groups right?
 ^0005-translucent-group-over-backdrop
+
+Rene (to the vibrantgio session, relayed in its words): a huge
+iCloud vault blocks the window while it is scanned; "Let's go" on
+the scan listing first, reading in bounded parallel newest folder
+first, delivering in batches.
