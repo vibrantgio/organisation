@@ -24399,7 +24399,7 @@ listed for him.
 
 #### CJ8.1: The markdown table block measures its columns once and draws its cells from a cache
 
-- [ ] Owner finding 2026-10-21: vaultview with the solidcraft ROADMAP
+- [x] Owner finding 2026-10-21: vaultview with the solidcraft ROADMAP
   open stutters when scrolling through the milestones. Measured on
   this plan root with a throwaway frame probe over that document at
   1400 by 1600 px: any frame without the milestone table in view
@@ -24422,11 +24422,11 @@ listed for him.
   and on a width change; the find's marks on a cell still draw
   (the mark layer is outside the recorded call, or the record is
   keyed on the match set, the worker saying which). No pixel moves.
-- [ ] A benchmark test in `markdown` over a table of 15 rows with
+- [x] A benchmark test in `markdown` over a table of 15 rows with
   2,000-character cells at an overflowing width asserts a steady
   frame under 5 ms after the first (the first may measure), and the
   existing table goldens and tests pass unchanged.
-- [ ] Exit: green in `markdown` and `workbench/vaultview` by name;
+- [x] Exit: green in `markdown` and `workbench/vaultview` by name;
   guard OK; gofmt gate OK; commit and push in `markdown` and
   `.github`; then `markdown` is tagged at its next patch (`v0.8.2`),
   pushed, `GOWORK=off` verified, `workbench`'s pins bumped and
