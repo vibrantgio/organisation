@@ -24605,9 +24605,11 @@ tasks here run when none is waiting.
   code, comments, tests, `llms.txt`, READMEs and the gallery (one
   site in `components`) says the workbench, identifiers included
   where one carries the word; the frozen records keep theirs. The
-  guard gains `launcher` as a retired word with no kept sense if
-  the ontology session's table row says so, else nothing is added.
-  No pixel moves.
+  Retired words table in `AGENTS.md` gains the row (launcher, the
+  window at the workbench's root, workbench) and the guard gains
+  `launcher` with no kept sense, in the same commit as the
+  migration so the gate goes red and green in one step;
+  `scripts/sync-agents.sh` runs clean. No pixel moves.
 - [ ] Exit: green in `workbench`, every app module and `components`
   by name; guard OK; guides gate OK; commit and push per repo and
   in `.github`; no tag.
