@@ -207,8 +207,6 @@ wcag::doc::path::^\.github/explorations/::A pool item records what a review meas
 launcher::doc::path::^\.github/explorations/::A pool item records what a review found on a date, in the language of that day.
 launcher::doc::line::^#### ck4\.1: the word launcher leaves::CK4.1's own heading names the word it retires; the heading does not use it.
 launcher::doc::line::retired words table in .agents\.md. gains the row \(launcher,::CK4.1 names the row it adds to AGENTS.md's Retired words table; it does not use the word.
-launcher::doc::path::^\.github/profile/readme\.md$::Pooled at explorations/open-rulings.md 1023: the org profile's screenshots and prose are outside CK4.1's scope, neither workbench nor components.
-launcher::*::path::^seen/::Pooled at explorations/open-rulings.md 1023: seen's benchmark comment and test fixture name are outside CK4.1's scope, neither workbench nor components.
 RULES
 #
 # Two exemptions the plan names carry no rule, because nothing in the tree

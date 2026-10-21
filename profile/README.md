@@ -8,8 +8,8 @@ design decisions follow the platform's own colours, control metrics and
 semantic names rather than a transcription of any one component set.
 
 <p>
-  <img src="launcher-dark.png" alt="Workbench launcher in dark mode — app cards on a live seen 3D field" width="49%">
-  <img src="launcher-light.png" alt="Workbench launcher in light mode" width="49%">
+  <img src="workbench-dark.png" alt="The workbench in dark mode — app cards on a live seen 3D field" width="49%">
+  <img src="workbench-light.png" alt="The workbench in light mode" width="49%">
 </p>
 <p>
   <img src="mindchat-dark.png" alt="MindChat in dark mode — streaming chat client with providers, model picker, and markdown replies with highlighted code" width="49%">
@@ -28,7 +28,7 @@ underneath it. Every colour is the platform's own, read off the platform per app
   own. Seven larger references sit beside it in
   [workbench](https://github.com/vibrantgio/workbench): `sitedocs`, `feeds`,
   `vaultview`, `mindchat`, `iconbrowser`, `themer` and `marketing` — and the workbench
-  root itself is the launcher that runs them all.
+  root itself is the workbench that runs them all.
 - **[llms.txt](https://raw.githubusercontent.com/vibrantgio/workbench/master/llms.txt)** —
   the guide for writing an *application* with Vibrant Gio — modules and
   tags, the bootstrap skeleton, MVU and rx, typography. It is not how the
@@ -72,7 +72,7 @@ lists them all with current versions.
 
 Two repositories sit outside the table:
 [workbench](https://github.com/vibrantgio/workbench) — the eight example
-applications and the launcher, each its own untagged module installed from
+applications and the workbench, each its own untagged module installed from
 the branch tip rather than a version, plus the canonical guide — and
 [design](https://github.com/vibrantgio/design), the exported token bundle
 together with the architecture rationale. Every module in the organization

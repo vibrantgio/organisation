@@ -24822,7 +24822,7 @@ tasks here run when none is waiting.
 
 #### CK4.2: The retired word of CK4.1 leaves its last sites and their guard exclusions go
 
-- [ ] Found under CK4.1: three sites outside the workbench's code and
+- [x] Found under CK4.1: three sites outside the workbench's code and
   guide still carry the word under guard exclusions: the org
   profile's README with its two screenshots `launcher-dark.png`
   and `launcher-light.png`, their alt text and prose; `seen`'s
@@ -24835,7 +24835,7 @@ tasks here run when none is waiting.
   word leave the guard (the two scoped to CK4.1's own plan lines
   stay until that text is frozen below the first unchecked box,
   then go in a later pass; say which stayed). No pixel moves.
-- [ ] Exit: green in `seen` by name; guard OK with the exclusions
+- [x] Exit: green in `seen` by name; guard OK with the exclusions
   gone; `scripts/sync-agents.sh` clean; commit and push in `seen`
   and `.github`; no tag.
 
