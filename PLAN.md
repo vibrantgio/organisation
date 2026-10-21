@@ -24432,3 +24432,29 @@ listed for him.
   pushed, `GOWORK=off` verified, `workbench`'s pins bumped and
   `scripts/sync-versions.sh` run, `scripts/check-versions.sh` OK;
   vaultview reinstalled into `~/go/bin` by the orchestrator.
+
+#### CJ7.3: A link holding the keyboard says its address as a hovered one does
+
+- [ ] Ruled by the ontology session 2026-10-21 from the platform
+  (Safari's status bar says a focused link's address as a hovered
+  one's; the Link entry at 332b338). The paragraph's hover report
+  also fires for the focused link: when a link takes the keyboard
+  focus the callback carries its address and box, when it loses
+  them the empty string, with the pointer's report winning while
+  both stand; vaultview's status bar and tooltip then say a
+  keyboard-reached link's address as they say a hovered one's. Four
+  findings from CJ7.2 close with it: a tooltip dropped mid-show
+  (the per-address rebuild) releases its arbitration; an anchored
+  tooltip registers no focus tag of its own; a long address is
+  clamped inside the window's sides, eliding its middle as the
+  platform does where the window is narrower than the address (the
+  status bar's address the same); a wrapped link is annotated under
+  the run under the pointer, not the union of its runs. No
+  composition changes; goldens do not move.
+- [ ] Router-driven tests: Tab onto a link shows its address in the
+  bar and, after the delay, the tooltip; Tab off clears both; the
+  tooltip's left and right edges stay inside the window at a narrow
+  width; a wrapped link's tooltip stands under the pointed run.
+- [ ] Exit: green in `components`, `markdown` and `workbench/
+  vaultview` by name; guard OK; gofmt gate OK; commit and push per
+  repo; no tag.
