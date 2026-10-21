@@ -24335,3 +24335,62 @@ listed for him.
   (with `example/v1.1.3` mirrored), pushed, `GOWORK=off` verified,
   `scripts/check-versions.sh` OK, `scripts/sync-versions.sh` run,
   and the tag reported to the application's session.
+
+### G-CJ7: Vaultview shows where a hovered link goes
+
+#### CJ7.1: The paragraph reports the link under the pointer and vaultview's status bar says its address
+
+- [ ] Owner request 2026-10-21, his words: "I would like to see the
+  address of the link I'm hovering over in vaultview. Perhaps
+  immediately in the status bar and after hovering a while in a
+  tooltip near the link?" The library first. `components/paragraph`
+  knows the hovered link (`State.HoveredLink` is its index) and
+  tells a caller only about a click (`Style.OnLinkClick`); it gains
+  `Style.OnLinkHover(gtx, url string)`, called on the frame the
+  pointer enters a link with that link's URL and on the frame it
+  leaves with the empty string, once per change, never per frame;
+  `markdown` threads it through its style as it threads
+  `OnLinkClick` (the wikilink rewrite that `markdown/word.go` does
+  for a click is done for the hover too, so the address reported is
+  the resolved one). vaultview sets it to post a message carrying
+  the address into the model (`HoverLink{URL}`), and the status bar
+  says the address while one is hovered, in the place and strength
+  the platform's browsers show a hovered link's address at the
+  window's foot (Safari's status bar: the address at the leading
+  end in the secondary label strength, the line count it replaces
+  returning when the pointer leaves), measured off a stored capture
+  if one exists in `reference/macos/` and otherwise off the status
+  bar's own existing text treatment, the file saying which. A
+  wikilink shows the note's vault path; an external link shows its
+  URL. No tooltip in this task.
+- [ ] Router-driven tests: the paragraph calls the hover callback once
+  on entering a link with its URL and once on leaving with the
+  empty string, not per frame; vaultview's status bar shows the
+  address while the pointer is over a link and the line count when
+  it is not; goldens do not move (a hover is not in any golden).
+- [ ] Exit: green in `components`, `markdown` and `workbench/
+  vaultview` by name; guard OK; gofmt gate OK; one commit per repo
+  with the heading as subject; push every one; no tag (the next
+  round carries it, a minor on `components` and `markdown` for the
+  added field).
+
+#### CJ7.2: A link hovered a while shows its address in a tooltip beside it
+
+- [ ] After CJ7.1. The Tooltip entry: a small annotation at level 3
+  beside its trigger, appearing by itself after a short delay on
+  hover and leaving when the hover does, text only. vaultview
+  shows the hovered link's address in a `components/tooltip`
+  beside the link after the tooltip's own delay, placed as the
+  component places one for a trigger (below, flipping above when
+  there is no room), the trigger's box the link's own box as the
+  paragraph reports it (the paragraph gains a way to report the
+  hovered link's bounds if it has none; say so). The status bar
+  keeps the address as CJ7.1 left it; the tooltip adds to it, as
+  the owner asked. The tooltip arbiter the window already has (or
+  gains, as feeds has one) owns the one tooltip.
+- [ ] Router-driven tests: hovering a link for less than the delay
+  shows no tooltip; past it the tooltip shows the address beside
+  the link; leaving the link removes it; goldens do not move.
+- [ ] Exit: green in `components` (if the bounds reporting was added)
+  and `workbench/vaultview` by name; guard OK; gofmt gate OK;
+  commit and push per repo; no tag.
