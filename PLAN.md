@@ -24537,7 +24537,7 @@ tasks here run when none is waiting.
   to an image in both schemes with no display, lives in
   `components/golden` beside its single-component renderer (or `mvu/render`
   if the layer stack is mvu's, the worker saying which off the
-  layer gate); vaultview, mindchat and the launcher adopt it and
+  layer gate); vaultview, mindchat and the workbench adopt it and
   their local renderers go, goldens byte-identical.
 - [ ] Exit: green in the library module and the three apps by name;
   guard OK; commit and push per repo; no tag.
@@ -24592,3 +24592,22 @@ tasks here run when none is waiting.
 - [ ] Exit: green in `patterns`, `components/gallery`,
   `workbench/feeds` by name; guard OK; `scripts/check-layers.sh`
   OK; commit and push per repo; no tag.
+
+### G-CK4: The workbench is called by its name
+
+#### CK4.1: The word launcher leaves the workbench's code and guide
+
+- [ ] Owner-ruled 2026-10-21: "Instead of talking about launcher, why
+  not talk about workbench and also add that as an entry to the
+  DOMAIN.md language." The Language gains a Workbench entry (the
+  ontology session's); the window at the root of the `workbench`
+  repository is the workbench. Every "launcher" in the workbench's
+  code, comments, tests, `llms.txt`, READMEs and the gallery (one
+  site in `components`) says the workbench, identifiers included
+  where one carries the word; the frozen records keep theirs. The
+  guard gains `launcher` as a retired word with no kept sense if
+  the ontology session's table row says so, else nothing is added.
+  No pixel moves.
+- [ ] Exit: green in `workbench`, every app module and `components`
+  by name; guard OK; guides gate OK; commit and push per repo and
+  in `.github`; no tag.

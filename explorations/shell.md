@@ -96,7 +96,7 @@ Drawn from the draft's second goal and the exploration's sequence.
 
 These come first, because every later task's exit leans on them and because every review of these windows this round was rendered without a screen through vaultview's local renderer.
 
-**The whole-window renderer as a library.** A layer stack at a size, with a theme and a model, to an image, in both schemes, with no display. The reference implementations are `workbench/vaultview/golden_test.go`'s window render and the launcher's `window_render_test.go`. Vaultview, mindchat and the launcher adopt it and their local renderers go, goldens byte-identical. Where it lives is open: `components/golden`, or a new `mvu/render`.
+**The whole-window renderer as a library.** A layer stack at a size, with a theme and a model, to an image, in both schemes, with no display. The reference implementations are `workbench/vaultview/golden_test.go`'s window render and the workbench's `window_render_test.go`. Vaultview, mindchat and the workbench adopt it and their local renderers go, goldens byte-identical. Where it lives is open: `components/golden`, or a new `mvu/render`.
 
 **An mvu test driver.** Feed Init and Update a message list, run the commands to quiescence, return the model history, so an acceptance test asserts on the model with no window. The reference implementations are the sim tests in `workbench/feeds` (`g52c_sim_test.go`, `g52d_sim_test.go`), and feeds adopts it. It can follow at any time; the renderer cannot.
 
@@ -497,7 +497,7 @@ Drawn from the exploration's proposed goals and the specification's part order, 
 One task per run. Each task is green in the library and in every named application before it is committed, and the modules are named in the task rather than left to the worker to find.
 
 1. **The Language.** The arrangements named; the words of section 2 coined or ruled against; the Toggle Sidebar button's word; the footer's word. Entries in DOMAIN, rows in AGENTS.md's retired table where a word retires. One task, and it is first because every later task's identifiers come out of it.
-2. **Seeing without a screen.** The whole-window renderer in a library; vaultview, mindchat and the launcher adopt it and their local renderers go, goldens byte-identical. One task. The mvu driver can follow at any time.
+2. **Seeing without a screen.** The whole-window renderer in a library; vaultview, mindchat and the workbench adopt it and their local renderers go, goldens byte-identical. One task. The mvu driver can follow at any time.
 3. **The shell, extracted from vaultview** into the shell pattern as the aside variant with the aside optional; vaultview adopts in the same task, since it is the reference and this is a move, not a copy. One task, possibly two if the recall and Tab wiring outgrows it. The parts of section 6 it carries are the frame's op-order and `PaneLayout`, the fills, the pane's column helper, the two mark drawings, the toolbar value and its metrics, the toolbar's leading rule, the Toggle Sidebar button, the two footers, the remembered arrangement, the window treatment, and the shadow's counterpart.
 4. **Mindchat adopts** the pane-and-column arrangement; its frame goes. One task, fresh eyes on the window.
 5. **Feeds adopts**; the sidebar-header-main, split-pane and three-column layouts leave the library; the gallery's shell specimens become the named arrangements. One task.
@@ -520,7 +520,7 @@ Drawn from the specification's sixteen rulings, the exploration's four open ques
 3. `PaneFrame.BandFill`, a slot nobody fills. Recommended: drop it (three windows, zero consumers, and `Under` carries 12 lines of corner-splitting for it); it comes back when a window is its reason.
 4. Does the pane stand beside every view, or per view? Recommended: per view, as a predicate the window supplies — all three are that shape once stated so, and the frame already takes the answer as a width.
 5. Is feeds' reading layout the three-column arrangement, or two columns with the article in the content column? The answer decides whether the old split pane is missed; the recorder gave no view.
-6. The launcher's window: does it adopt an arrangement or stay bespoke? The recorder gave no view.
+6. The workbench's window: does it adopt an arrangement or stay bespoke? The recorder gave no view.
 7. Does `patterns/sidebar` stay as the pane's column, or is the source list a new pattern? The draft proposes a new one, `patterns/sourcelist` — sections with headings, rows with a mark, a label and a trailing count or badge, selection tint from the primary tint step with a neutral cursor, keyboard traversal, a footer slot — and calls the existing one flat, icon-and-label and fixed width; the specification's shape assumes it stays and grows a row recipe. No recommendation on record.
 8. Where does the whole-window renderer live — `components/golden`, or a new `mvu/render`?
 9. Where does the shortcuts helper live — `mvu/desktop`, or `components/keyed`?
