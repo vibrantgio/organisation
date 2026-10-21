@@ -24915,3 +24915,26 @@ run, and no capture runs while the owner is at the machine
   added for it, which it should be, in both schemes.
 - [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
+
+### G-CK9: The note's measure is a page's
+
+#### CK9.1: Vaultview's note measure is 90 characters
+
+- [ ] Owner-ruled 2026-10-22: the note column reads narrow beside an
+  A4 page, which at 15 mm margins carries 85 to 100 characters a
+  line at book sizes; he tries 90. `noteMeasureDp` becomes 90
+  characters at the body's measured average advance of 7.19 dp,
+  647 dp (it was 540, 75 characters, read off the reference
+  reading surface), and `noteMinMeasureDp` keeps its 60 characters
+  (431); the provenance comment states the new number as the
+  owner's choice against the page and keeps the reference's 540
+  reading as what the surface measures. The commit body records
+  the previous value, 540, so it can be put back. The goldens
+  whose note column is wider than 540 dp regenerate with the cause
+  named; the window goldens at 1100 px may not reach 647 beside
+  the pane and the inspector, in which case they do not move; say
+  which. No other composition change.
+- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
+  gate OK; commit and push in `workbench` and `.github`; no tag;
+  vaultview installed into `~/go/bin` with `vv` linked to it by
+  the orchestrator.
