@@ -24712,7 +24712,7 @@ tasks here run when none is waiting.
 
 #### CK7.5: The sidebar-header-main and three-column layouts leave the library
 
-- [ ] Feeds was read off its running window on 2026-10-21 and is the
+- [x] Feeds was read off its running window on 2026-10-21 and is the
   three-column arrangement (Mail's window): the pane, an article
   list on the control background with its own head and footer,
   and the article as the content column on the same background;
@@ -24727,7 +24727,7 @@ tasks here run when none is waiting.
   names the two-column arrangement and nothing removed. `SplitPane`
   stays until feeds moves. An exported contract move on
   `patterns`: the next round bumps the minor; no alias.
-- [ ] Exit: green in `patterns`, `components/gallery`,
+- [x] Exit: green in `patterns`, `components/gallery`,
   `workbench/sitedocs` (its gallery tab's golden regenerated with
   the cause named), `workbench/feeds` by name; guard OK; guides
   gate OK; `scripts/check-layers.sh` OK; one commit per repo with
