@@ -24648,7 +24648,7 @@ tasks here run when none is waiting.
 
 #### CK7.2: Vaultview's composition stands on the shell
 
-- [ ] The adoption half of the extraction, a move not a copy.
+- [x] The adoption half of the extraction, a move not a copy.
   `frame.go`'s geometry goes to the shell's: `frameGeom` and
   `frameGeometry` to `PaneLayout` and `Measure`; the frame's layout
   to `TwoColumn.Layout`; the columns' arithmetic, `toolbarHeight`
@@ -24673,7 +24673,7 @@ tasks here run when none is waiting.
   `PaneColumnLayout` field names. Every existing vaultview test
   keeps passing; goldens regenerate only where a pixel honestly
   moved, the cause named per golden.
-- [ ] Exit: green in `workbench/vaultview` and `workbench` by name;
+- [x] Exit: green in `workbench/vaultview` and `workbench` by name;
   guard OK; gofmt gate OK; commit and push in `workbench` and
   `.github`; no tag.
 
