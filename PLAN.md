@@ -24498,14 +24498,14 @@ tasks here run when none is waiting.
 
 #### CK1.1: Mindchat's footer settings control goes
 
-- [ ] The pane's footer in mindchat holds a settings control under a
+- [x] The pane's footer in mindchat holds a settings control under a
   hairline; it shows no affordance and the application menu already
   carries Settings… with its chord, which is where the platform
   keeps settings. The footer and its control go; the pane's rows
   run to the pane's foot as vaultview's do; the chord and the menu
   item stand. Goldens regenerate with the cause named; nothing else
   in mindchat moves.
-- [ ] Exit: green in `workbench/mindchat` by name; guard OK; gofmt
+- [x] Exit: green in `workbench/mindchat` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
 
 ### G-CK2: The launcher's backdrop carries more colour
