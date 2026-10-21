@@ -25025,3 +25025,24 @@ run, and no capture runs while the owner is at the machine
   cause named per golden; no other composition change.
 - [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
+
+#### CK8.2: The window names the note it is fetching while it waits
+
+- [ ] Found under CK8.1: while a placeholder note downloads, `Current`
+  stays on the note being left, so the toolbar's trail, the tree's
+  selection, the pinned properties block, and the inspector's
+  outline and backlinks all show the previous note around the
+  "Downloading…" text; the ruling that the wait's text needs no
+  name rested on the opening note's title standing in the toolbar
+  over the column, which it does not. After this task a Navigate to
+  a placeholder moves the window to the target at once: the trail
+  names the note being fetched, the tree selects its row, the
+  properties block and the inspector are empty for it (no outline,
+  no backlinks until the file lands), and the column says
+  "Downloading…"; the download's answer then loads the note as
+  today, and a failure returns the window to the previous note
+  with the toast. The downloading goldens regenerate with the cause
+  named. TextEdit's own wait draws nothing (CK8.1's reading), so
+  the text stands alone as it does.
+- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
+  gate OK; commit and push in `workbench` and `.github`; no tag.
