@@ -24820,6 +24820,25 @@ tasks here run when none is waiting.
   by name; guard OK; guides gate OK; commit and push per repo and
   in `.github`; no tag.
 
+#### CK4.2: The last launcher sites migrate and their guard exclusions go
+
+- [ ] Found under CK4.1: three sites outside the workbench's code and
+  guide still carry the word under guard exclusions: the org
+  profile's README with its two screenshots `launcher-dark.png`
+  and `launcher-light.png`, their alt text and prose; `seen`'s
+  benchmark comment and a test fixture's name. Exclusions that
+  keep a retired word alive are the compatibility reads of the
+  Language; the sites migrate instead: the two images renamed with
+  `git mv` to `workbench-{dark,light}.png` and the README's
+  references, alt text and prose saying the workbench; `seen`'s
+  comment and fixture name reworded; the five exclusions for the
+  word leave the guard (the two scoped to CK4.1's own plan lines
+  stay until that text is frozen below the first unchecked box,
+  then go in a later pass; say which stayed). No pixel moves.
+- [ ] Exit: green in `seen` by name; guard OK with the exclusions
+  gone; `scripts/sync-agents.sh` clean; commit and push in `seen`
+  and `.github`; no tag.
+
 ### G-CK5: The workbench's groups stand on a material over the painted backdrop
 
 #### CK5.1: The workbench's groups stand on a material over the painted backdrop
