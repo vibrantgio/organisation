@@ -24700,14 +24700,14 @@ tasks here run when none is waiting.
 
 #### CK7.4: Mindchat stands on the shell
 
-- [ ] Section 11 item 4. Mindchat adopts the two-column arrangement
+- [x] Section 11 item 4. Mindchat adopts the two-column arrangement
   without the inspector: its `frame.go` goes; the pane gains the
   shell's splitter (the owner's finding: no splitter today) and its
   remembered width; the chat title and its verdict, the picker's
   cap, the transcript and the input bar are what it hands the
   shell. Goldens regenerate with the cause named; a fresh-eyes
   review in both schemes.
-- [ ] Exit: green in `workbench/mindchat` by name; guard OK; commit
+- [x] Exit: green in `workbench/mindchat` by name; guard OK; commit
   and push in `workbench` and `.github`; no tag.
 
 #### CK7.5: Feeds stands on the shell and the old layouts leave the library
