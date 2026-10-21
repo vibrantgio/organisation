@@ -24476,3 +24476,119 @@ listed for him.
 - [ ] Exit: green in `components`, `markdown` and `workbench/
   vaultview` by name; guard OK; gofmt gate OK; commit and push per
   repo; no tag.
+
+## Phase CK: One shell, vaultview's, and the launcher's backdrop
+
+Owner-ruled 2026-10-21, his words: "whenever a sidebar is present, I
+expect there to be a splitter that I can drag to make the sidebar
+wider. That is currently not available in e.g. mindchat. Also in
+mindchat the settings button doesn't actually show any affordance. But
+I'd like it to go away anyway and have a settings menu entry in the
+mindchat menu bar (which it already has). So that leaves us with the
+shell that vaultview uses, let's standardize on that as the initial
+shell." The shell document (`explorations/shell.md`) is the
+specification; where its open rulings asked which window's reading to
+take, vaultview's is taken, and the two-column arrangement with the
+inspector as a slot is the first the library ships. The sidebar's
+splitter is part of the shell: a pane always has one on its trailing
+edge. Phase CJ's rule stands: the recorder's requests come first; the
+tasks here run when none is waiting.
+
+### G-CK1: Mindchat's settings act lives in the menu bar alone
+
+#### CK1.1: Mindchat's footer settings control goes
+
+- [ ] The pane's footer in mindchat holds a settings control under a
+  hairline; it shows no affordance and the application menu already
+  carries Settings… with its chord, which is where the platform
+  keeps settings. The footer and its control go; the pane's rows
+  run to the pane's foot as vaultview's do; the chord and the menu
+  item stand. Goldens regenerate with the cause named; nothing else
+  in mindchat moves.
+- [ ] Exit: green in `workbench/mindchat` by name; guard OK; gofmt
+  gate OK; commit and push in `workbench` and `.github`; no tag.
+
+### G-CK2: The launcher's backdrop carries more colour
+
+#### CK2.1: The launcher's triangular field is more saturated
+
+- [ ] Owner finding 2026-10-21: "the animated triangles are very
+  washed out, is there a way to get some more saturation into the
+  backdrop of the window." The field's palette is two fixed numbers
+  in `workbench/field.go`: saturation 0.45 and lightness 0.80 on a
+  light window background, 0.38 and 0.30 on a dark one, the hue the
+  platform's accent. The saturation rises to 0.70 light and 0.55
+  dark with the lightness unchanged, so the field reads as the
+  accent's own colour family at a pastel depth rather than as grey;
+  the numbers are stated in the file as the owner's choice with
+  the before values beside them in the commit body only. The
+  launcher's window goldens regenerate with the cause named.
+  Nothing else moves. If the owner wants it stronger or weaker, the
+  two numbers are the whole knob.
+- [ ] Exit: green in `workbench` by name; guard OK; gofmt gate OK;
+  commit and push in `workbench` and `.github`; no tag.
+
+### G-CK3: The library ships vaultview's shell and every window stands on it
+
+#### CK3.1: The whole-window renderer lives in the library
+
+- [ ] Section 5 of the shell document, the precondition. A renderer
+  that lays a layer stack out at a size, with a theme and a model,
+  to an image in both schemes with no display, lives in
+  `components/golden` beside its widget renderer (or `mvu/render`
+  if the layer stack is mvu's, the worker saying which off the
+  layer gate); vaultview, mindchat and the launcher adopt it and
+  their local renderers go, goldens byte-identical.
+- [ ] Exit: green in the library module and the three apps by name;
+  guard OK; commit and push per repo; no tag.
+
+#### CK3.2: The shell pattern is extracted from vaultview's frame and vaultview stands on it
+
+- [ ] Section 11 item 3 and section 6 of the shell document. The
+  shell pattern gains the two-column arrangement with the inspector
+  as an optional slot: the frame's op order and its measured
+  geometry value, the fills, the pane's column helper, the two mark
+  drawings (bare in the pane, bordered in the toolbar), the toolbar
+  value with its metrics (the leading gutter the content column's
+  own inset, stated by the window; trailing 8; control gap 16, pair
+  gap 14; title gap 14; depth the pane's measured 52), the toolbar's
+  leading rule while the pane is away, the Toggle Sidebar button in
+  both its places, the pane's splitter on its trailing edge with
+  the pane's width and shown state remembered by the shell, the
+  inspector's splitter and the two footers as slots (empty takes no
+  height), the window treatment, the shadow cast last. vaultview
+  adopts in the same task, a move not a copy: its `frame.go`
+  geometry goes, its columns' contents, its note measure and its
+  splitters' clamps stay as what it hands the shell. Goldens
+  regenerate with the cause named. A fresh-eyes review of the
+  window in both schemes, the reviewer's verbatim reply recorded.
+- [ ] Exit: green in `patterns`, `components/gallery` (a specimen),
+  `workbench/vaultview` by name; guard OK; `scripts/
+  check-layers.sh` OK; commit and push per repo; no tag.
+
+#### CK3.3: Mindchat stands on the shell
+
+- [ ] Section 11 item 4. Mindchat adopts the two-column arrangement
+  without the inspector: its `frame.go` goes; the pane gains the
+  shell's splitter (the owner's finding: no splitter today) and its
+  remembered width; the chat title and its verdict, the picker's
+  cap, the transcript and the input bar are what it hands the
+  shell. Goldens regenerate with the cause named; a fresh-eyes
+  review in both schemes.
+- [ ] Exit: green in `workbench/mindchat` by name; guard OK; commit
+  and push in `workbench` and `.github`; no tag.
+
+#### CK3.4: Feeds stands on the shell and the old layouts leave the library
+
+- [ ] Section 11 item 5. Feeds adopts the two-column arrangement with
+  the inspector slot holding the article (or the three-column
+  arrangement if its reading needs the list as its own column: the
+  worker reads feeds' window and says which, the shell document's
+  ruling 4); the shell's sidebar-header-main, split-pane and
+  three-column layouts leave the library since nothing consumes
+  them; the gallery's shell specimens become the named
+  arrangements. Goldens regenerate with the cause named; a
+  fresh-eyes review in both schemes.
+- [ ] Exit: green in `patterns`, `components/gallery`,
+  `workbench/feeds` by name; guard OK; `scripts/check-layers.sh`
+  OK; commit and push per repo; no tag.
