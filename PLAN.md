@@ -24666,12 +24666,25 @@ tasks here run when none is waiting.
   tiles draw that fill under the group's hairline, and every
   foreground on a tile is measured against the window background at
   that alpha over the field's mean colour (recorded in the commit
-  body with the contrast gate's reading). The workbench's goldens
-  regenerate with the cause named; the field stands in them as a
-  flat plane as today, so the material shows over the plane.
-- [ ] Exit: green in `theme` and `workbench` by name; guard OK; gofmt
-  gate OK; commit and push in `theme`, `workbench` and `.github`;
-  no tag.
+  body with the contrast gate's reading; the field's mean, read
+  off a headless render, is #ceeaff light and #29577f dark). The
+  measured value is a `tokens` constant beside `DisabledCoverage`,
+  not a `PlatformColors` field, so the catalogue copies, the
+  export's name table and the design bundle stay untouched. The
+  workbench's goldens do not move: they stand the field in as the
+  window's own plane, and the material is that plane at a
+  coverage, so over it the material is that plane byte for byte;
+  the exit says so, and `window_render_test.go`'s test claiming the
+  tiles take the page's own fill has its prose corrected to say
+  what it reads (the static stand-in, not the live window). A
+  first attempt on 2026-10-21 was blocked by the locked screen and
+  left its prepared diff at
+  `/private/tmp/claude-501/ck5.1-prepared/{theme,workbench,github}.patch`
+  with every part green but the one unmeasured number; the
+  completing run starts from it.
+- [ ] Exit: green in `theme` and `workbench` by name; no golden moves;
+  guard OK; gofmt gate OK; commit and push in `theme`, `workbench`
+  and `.github`; no tag.
 
 ### G-CK7: The library ships vaultview's shell and every window stands on it
 
