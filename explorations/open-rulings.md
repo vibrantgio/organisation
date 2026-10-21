@@ -3640,10 +3640,5 @@ harness never paints: those are misreads. Nothing in the reading
 concerned the measure itself. What looks real stands here for the
 owner.
 
-1024. **[note]** **The toolbar's bordered controls cast a shadow that reaches the window's top edge.** The reviewer reads the Toggle Sidebar button's and the navigation pair's shadows as a smear from y 0 to 74 at one to nine levels off white, thirty pixels below the control. Whether the platform's bordered toolbar control casts that far, and whether the golden's 1x render exaggerates it, is a measurement against the stored toolbar captures.
-1025. **[note]** **The content column's top rule stops six pixels short of the inspector's seam.** The rule under the properties block runs to x 773 and the vertical seam stands at x 780; the corner is open.
-1026. **[note]** **The note column's scrollbar thumb is drawn always, dark, flush to the edge.** A 6 px thumb at #6d6d6d from y 203 to 739 with no track, 8 px inside the seam, covering 93 percent of its run for 40 px of hidden content. The platform's overlay scrollbar is a light inset capsule that leaves when idle; a golden holds no time, so whether this is the at-rest state or the live one is to be read on the running window.
-1027. **[note]** **Three left edges in the content column.** The properties disclosure and the footer's line count start at x 24; the document's blocks at x 70; nothing explains the 46 px step.
-1028. **[note]** **An outline row's title moves when it is selected.** Section headings start at x 790, the selected row's title at 799, unselected rows' at 806: a 7 px shift on selection, and the empty-state line starts at a fourth edge.
 1029. **[note]** **The inspector's empty-state line is set at section-heading grey.** "No notes link here." at #b7b7b7 on #f7f7f7 is the faintest text in the window, the same strength as the "Outline" and "Backlinks" headings.
 1030. **[note]** **The heading levels are nearly flat.** H1's glyph band is 22 px tall, H2's 20, H3's about the same; the three are not separable at a glance.

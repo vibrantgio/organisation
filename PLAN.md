@@ -24938,3 +24938,60 @@ run, and no capture runs while the owner is at the machine
   gate OK; commit and push in `workbench` and `.github`; no tag;
   vaultview installed into `~/go/bin` with `vv` linked to it by
   the orchestrator.
+
+### G-CK10: Five defects the hidden-sidebar window showed, ruled from the entries
+
+#### CK10.1: The toolbar's shadow falls below it and the scrollbar shows as the platform's does
+
+- [ ] Ruled by the ontology session 2026-10-22 from the Language on
+  findings 1024 and 1026. The bordered toolbar control's shadow
+  falls below the strip onto the content, as the platform's does,
+  never upward past the toolbar: the reading of the regenerated
+  hidden-sidebar golden put it from y 0 to 74 at one to nine
+  levels off white; the shadow's extent is measured against the
+  stored toolbar captures and bounded to what they show, in the
+  control's drawing (`components` or `patterns/shell`, wherever
+  the bordered control's shadow is drawn; say which). The overlay
+  scrollbar follows the platform: it shows while the content
+  scrolls and under the pointer and fades otherwise, following the
+  user's Show scroll bars setting (read off the platform where the
+  bridge can; else the default of showing when scrolling), its
+  thumb colour and inset measured per scheme off the stored
+  captures (the catalogue's scrollbar readings, or a capture taken
+  in CK8.1's run); a thumb drawn always, dark, flush to the edge is
+  the defect. Goldens drawing a scrollbar hold the at-rest state
+  the entry gives (no thumb unless the pointer stands or the
+  content scrolls, so most lose the thumb) and regenerate with the
+  cause named; a test drives a scroll and asserts the thumb shows
+  then fades after the platform's delay.
+- [ ] Exit: green in `components`, `components/gallery`, `patterns`,
+  `markdown`, `workbench` and every app whose golden moved, by
+  name; guard OK; gofmt gate OK; `scripts/check-layers.sh` OK;
+  commit and push per repo; no tag (the next round carries it).
+
+#### CK10.2: Vaultview's content column aligns on one edge, its corner closes and its outline rows hold their titles
+
+- [ ] Ruled by the ontology session 2026-10-22 from the Language on
+  findings 1025, 1027 and 1028. The content column's top rule
+  stops 6 px short of the inspector's seam (x 773 against 780): a
+  seam is one continuous line by the Seam entry, so the rule runs
+  to the seam. Three left edges stand in the content column: the
+  properties disclosure and the footer's line count at x 24, the
+  document's blocks at x 70; content inside one region aligns on
+  one leading edge unless an entry indents it (a list's marker, a
+  quote), so the properties block, the document and the footer
+  share the column's leading inset, the document's blocks no
+  longer stepped in by 46 px (say what the 46 was: the measure's
+  centring in a column wider than it, or an inset of its own; if
+  it is the centring, the Measure entry's "content narrower than
+  its region is centred" stands and the properties block and the
+  footer centre on the same measure instead). An outline row's
+  title moves 7 px when selected (x 806 to 799) and the
+  empty-state line starts at a fourth edge: the pill is the fill
+  behind a selected row and moves nothing, by the Pill and
+  Selection entries, so every row's title stands at one edge
+  selected or not, the section headings at theirs, and the
+  empty-state line at the rows' edge. Goldens regenerate with the
+  cause named per golden; no other composition change.
+- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
+  gate OK; commit and push in `workbench` and `.github`; no tag.
