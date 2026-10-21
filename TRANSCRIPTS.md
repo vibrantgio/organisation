@@ -1165,3 +1165,20 @@ Rene (to the vibrantgio session, relayed in its words): a merge is
 the evaluation; shell.md stays as the one shell document and the
 three sources are deleted once the completeness check returns,
 without his review.
+
+Rene (to the vibrantgio session, relayed verbatim): whenever a
+sidebar is present, I expect there to be a splitter that I can drag
+to make the sidebar wider. That is currently not available in e.g.
+mindchat. Also in mindchat the settings button doesn't actually
+show any affordance. But I'd like it to go away anyway and have a
+settings menu entry in the mindchat menu bar (which it already
+has). So that leaves us with the shell that vaultview uses, let's
+standardize on that as the initial shell. ^0005-pane-splitter-settings-menu
+
+Rene (to the vibrantgio session, relayed verbatim, on the Backdrop
+entry): 'the backdrop is only ever what shows around' huh?
+^0005-backdrop-readability
+
+Rene (to the vibrantgio session, relayed in its words): the
+launcher's animated field is the backdrop of the window; it is not
+the Background entry's single colour. ^0005-launcher-backdrop

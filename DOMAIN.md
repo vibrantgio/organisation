@@ -92,10 +92,13 @@ restates.
 
 ### Backdrop
 
-The window's own surface, filled with the platform's window
-background. It shows wherever nothing stands — around an inset pane.
-Nothing is drawn at it and no foreground is ever measured against
-it: the backdrop is only ever what shows around.
+The window's own surface, the lowest level, filled with the
+platform's window background colour. It is visible only where
+nothing else is drawn, as around an inset pane. No text and no
+control stands directly on it, so no foreground is measured for
+contrast against it. An application may paint its backdrop, as the
+launcher does with its animated field; what stands over a painted
+backdrop stands on its own surface and is measured against that.
 
 ### Background
 
@@ -474,7 +477,9 @@ The row at the bottom of a component or pattern holding what
 belongs to the whole of it: a dialog's actions, a card's actions,
 a pane's control for its own collection, a column's status text. A
 footer is optional, and an empty footer takes no height. The status
-bar is the window's own strip, not a column's footer.
+bar is the window's own strip, not a column's footer. The
+application's settings are never a footer's control: Settings stands
+in the application menu, the platform's place.
 
 ### Foreground
 
@@ -758,7 +763,9 @@ the toolbar's leading end while it is collapsed. The pane's own
 marks stand bare before the toggle, at the measured gap, and go
 with the pane when it collapses: only the toggle travels, as the
 platform's sidebars show, and what acts on the pane's collection
-waits for the pane.
+waits for the pane. A pane has a splitter on its trailing edge
+wherever it is expanded: the user widens or narrows it by dragging,
+within the bounds the pane allows.
 
 ### Paragraph
 
