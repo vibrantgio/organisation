@@ -24546,7 +24546,7 @@ tasks here run when none is waiting.
 
 #### CK6.1: The vault scan lists first, reads in bounded parallel recent-first, and delivers in batches
 
-- [ ] Owner finding 2026-10-21, his words: "while starting the
+- [x] Owner finding 2026-10-21, his words: "while starting the
   vaultviewer in a proper huge Obsidian vault on iCloud, I noticed
   that the folder scanning was blocking the operation of the app
   for a LOOOONG time. Is it possible to do a breadth first search in
@@ -24575,14 +24575,14 @@ tasks here run when none is waiting.
   has reached while the contents phase runs and returns to the
   line count when it ends. The listing phase stays sequential. No
   composition changes; the tree and notes draw as today, earlier.
-- [ ] Tests: a vault fixture of several folders with set
+- [x] Tests: a vault fixture of several folders with set
   modification times asserts the listing message arrives before any
   contents message, that contents batches arrive newest folder
   first, that a vault switch mid-scan delivers nothing of the old
   vault after it, and that a placeholder file is listed and read
   last; a benchmark over a generated vault of ten thousand small
   notes reports the time to the listing message under 200 ms.
-- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
+- [x] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
 
 ### G-CK5: The workbench's groups stand on a material over the painted backdrop
