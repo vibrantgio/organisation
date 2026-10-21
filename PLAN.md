@@ -24738,21 +24738,28 @@ tasks here run when none is waiting.
 - [ ] Section 11 item 7 and section 4 item 3 of the shell document,
   brought ahead on the critical path by feeds' reading. The shell
   gains the three-column arrangement: the pane, then a list column
-  of absolute width on a splitter with its own head and footer
-  slots (the Pane entry's column has a head; the list column
-  mirrors it, since Mail's search field and feeds' filter field
-  stand above their lists), then the content column absorbing the
-  rest; one toolbar across list and content with one share per
-  column (the list's share holding its title, the content's the
-  acts), the list's width remembered with the arrangement. Three
-  inputs settled by the Language's own rule and listed for the
-  owner: the list's default width and clamp are the window's
-  statement (as the toolbar's lead is), the shell shipping no
-  default, with the recorder's 300 dp clamped 220 to 480 and
-  feeds' table's own minimum as the two windows' statements; the
-  width is absolute, keeping itself on a window resize as Mail's
-  does, so a window that kept a ratio states a width instead; the
-  head slot exists. A gallery specimen shows the arrangement; a
+  of absolute width on a splitter with its own header and footer
+  slots (the Header entry: the row at the top of a region holding
+  what names it; Mail's list column shows the mailbox name and its
+  filter there, feeds its filter field), then the content column
+  absorbing the rest; one toolbar across list and content with one
+  share per column (the list's share holding its title, the
+  content's the acts), the list's width remembered with the
+  arrangement. Three inputs ruled by the ontology session
+  2026-10-21: measured beats stated, so the shell ships the
+  platform's measured default for the list column, Mail's at its
+  default width and its clamp, read off a capture of Mail taken on
+  this machine in both appearances and stored under
+  `reference/macos/` with the reading in `controls.md` (the
+  recorder's 300 clamped 220 to 480 is a statement to check
+  against that capture, not a default to ship); a window states
+  its own width only when its content needs it; the width is
+  absolute, keeping itself on a window resize as Mail's does, so a
+  window that kept a ratio states a width instead; the slot above
+  the list is the header, never "head", and the two-column
+  arrangement's `PaneColumn.Head` shipped under the wrong word is
+  renamed `Header` with it (no tag carries it; vaultview and
+  mindchat follow in the same commit). A gallery specimen shows the arrangement; a
   fresh-eyes review of it in both schemes is recorded, the known
   misreads briefed.
 - [ ] Exit: green in `patterns` and `components/gallery` by name;
