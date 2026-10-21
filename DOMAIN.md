@@ -618,7 +618,9 @@ structure.
 
 The control following a reference: text that names its destination,
 showing its affordance in the text itself; under the pointer it
-shows the pointing hand, the cursor every link shares. Following it
+shows the pointing hand, the cursor every link shares, and its
+destination is said in the status bar while the pointer is over it
+and, after the tooltip's delay, in a tooltip beside it. Following it
 is its only action. A name standing in flowing text for the thing
 it names — a speaker in a transcript, a person mentioned in a chat
 — is a link, shown as the platform shows one: text set apart, never

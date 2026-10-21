@@ -1156,3 +1156,12 @@ facts panel" stays; "Conditions band" becomes "Conditions bar".
 Rene (to the earwitness session, relayed by vibrantgio): The drop
 worked when coming from a file in finder but not directly dropped
 from voice memos.
+
+Rene (to the vibrantgio session, relayed in its words): the address
+of a hovered link in vaultview, at once in the status bar and after
+a while in a tooltip beside the link. ^0005-hovered-link-address
+
+Rene (to the vibrantgio session, relayed in its words): a merge is
+the evaluation; shell.md stays as the one shell document and the
+three sources are deleted once the completeness check returns,
+without his review.
