@@ -24687,11 +24687,11 @@ tasks here run when none is waiting.
   chores from CK7.2 close here: vaultview opens on the pane's
   shown state it already writes (the Pane entry: the shown state
   is kept across launches), so a reader who collapsed the sidebar
-  finds it collapsed; the kept arrangement's old keys (`rail`,
-  `aside`) are read once into the new (`pane`, `inspector`,
-  `paneShown`) so a launch after the change keeps its widths, and
-  the file is written in the new shape, no further compatibility
-  kept; `noteName`, called from nowhere, goes.
+  finds it collapsed; the kept arrangement's file uses the new
+  keys only (`pane`, `inspector`, `paneShown`) and no code knows
+  the old (the ruling of 2026-10-10: no compatibility reads; the
+  owner's own file is migrated by hand at the landing);
+  `noteName`, called from nowhere, goes.
 - [ ] Exit: green in `workbench/vaultview` by name; no golden moves;
   guard OK; commit and push in `workbench` and `.github`; no tag.
 
