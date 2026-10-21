@@ -975,12 +975,13 @@ it.
 ### Seam
 
 The hairline where two flush regions meet — a list column against
-the content, the navbar's foot, the status bar's top. It is the
-platform's separator colour: black or white
-at a tenth, laid over whatever is beneath, so it reads on any fill;
-drawn once, by the region above or leading.
-An inset object needs no seam: the backdrop showing around it does
-that work. A seam the user can drag is a splitter.
+the content, the navbar's foot, the status bar's top. Its colour is
+measured per scheme into the reference from the platform's own
+windows, Mail's list seam among them, never derived; it is drawn
+once, by the region above or leading. A seam between two columns
+runs the window's full height, the toolbar included, as Mail's
+does. An inset object needs no seam: the backdrop showing around
+it does that work. A seam the user can drag is a splitter.
 
 ### Search field
 
