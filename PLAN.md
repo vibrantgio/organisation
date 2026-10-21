@@ -24376,7 +24376,7 @@ listed for him.
 
 #### CJ7.2: A link hovered a while shows its address in a tooltip beside it
 
-- [ ] After CJ7.1. The Tooltip entry: a small annotation at level 3
+- [x] After CJ7.1. The Tooltip entry: a small annotation at level 3
   beside its trigger, appearing by itself after a short delay on
   hover and leaving when the hover does, text only. vaultview
   shows the hovered link's address in a `components/tooltip`
@@ -24388,10 +24388,10 @@ listed for him.
   keeps the address as CJ7.1 left it; the tooltip adds to it, as
   the owner asked. The tooltip arbiter the window already has (or
   gains, as feeds has one) owns the one tooltip.
-- [ ] Router-driven tests: hovering a link for less than the delay
+- [x] Router-driven tests: hovering a link for less than the delay
   shows no tooltip; past it the tooltip shows the address beside
   the link; leaving the link removes it; goldens do not move.
-- [ ] Exit: green in `components` (if the bounds reporting was added)
+- [x] Exit: green in `components` (if the bounds reporting was added)
   and `workbench/vaultview` by name; guard OK; gofmt gate OK;
   commit and push per repo; no tag.
 
