@@ -24619,34 +24619,75 @@ tasks here run when none is waiting.
 
 ### G-CK7: The library ships vaultview's shell and every window stands on it
 
-#### CK7.1: The shell pattern is extracted from vaultview's frame and vaultview stands on it
+#### CK7.1: The shell pattern ships the two-column arrangement with the inspector slot
 
-- [ ] Section 11 item 3 and section 6 of the shell document. The
-  shell pattern gains the two-column arrangement with the inspector
-  as an optional slot: the frame's op order and its measured
-  geometry value, the fills, the pane's column helper, the two mark
-  drawings (bare in the pane, bordered in the toolbar), the toolbar
-  value with its metrics (the leading gutter the content column's
-  own inset, stated by the window; trailing 8; control gap 16, pair
-  gap 14; title gap 14; depth the pane's measured 52), the toolbar's
-  leading rule while the pane is away, the Toggle Sidebar button in
-  both its places, the pane's splitter on its trailing edge with
-  the pane's width and shown state remembered by the shell, the
-  inspector's splitter and the two footers as slots (empty takes no
-  height), the window treatment, the shadow cast last. vaultview
-  adopts in the same task, a move not a copy: its `frame.go`
-  geometry goes, its columns' contents, its note measure and its
-  splitters' clamps stay as what it hands the shell; its window
-  goldens then render its own layer stack through the library's
-  renderer, and the second static composition `renderWindow` built
-  from resolved tokens goes. Goldens regenerate with the cause
-  named. A fresh-eyes review of the
-  window in both schemes, the reviewer's verbatim reply recorded.
-- [ ] Exit: green in `patterns`, `components/gallery` (a specimen),
-  `workbench/vaultview` by name; guard OK; `scripts/
-  check-layers.sh` OK; commit and push per repo; no tag.
+- [x] Section 11 item 3 and section 6 of the shell document, the
+  library half. `patterns/shell` gained the two-column arrangement
+  with the inspector as an optional slot: `TwoColumn` with
+  `Measure` and `Layout`, `PaneLayout` (the arrangement in window
+  coordinates, with the two toolbar fills and which one a control
+  flattens onto), `PaneColumn` and `PaneColumnLayout` (strip, head,
+  rows, footer), `FooterSeam`; `Toolbar` with `ToolbarMetrics` and
+  `PlatformToolbar` (trailing 8, control gap 16, pair gap 14, title
+  gap 14, depth 52, the lead stated by the window), `ToolbarPair`,
+  `ToolbarLead` (the larger of the toolbar's own gutter and the
+  inset past the window buttons, in window columns); `PaneMark`,
+  `ToolbarControl`, `ToggleSidebar` (one button, one gesture
+  source, bare at the pane's corner, bordered at the toolbar's
+  leading end); `PaneResize`, `InspectorResize`; `Arrangement`,
+  `Limits`, `ArrangementMemory`, `RememberArrangement`,
+  `OpenArrangement`; `PaneWindow`, `StandWindowButtons`,
+  `PlaceWindowButtons`, `ChromeTop`, `CapChrome`. A gallery
+  specimen shows the arrangement; a fresh-eyes review of it in both
+  schemes is on record. Landed 2026-10-21 at patterns 8928f69,
+  components cc3598f, workbench 9aaccbc (sitedocs' goldens for the
+  taller sheet).
+- [x] Exit: green in `patterns`, `components/gallery`, `workbench` and
+  its apps by name; guard OK; `scripts/check-layers.sh` OK; commit
+  and push per repo; no tag.
 
-#### CK7.2: Mindchat stands on the shell
+#### CK7.2: Vaultview's composition stands on the shell
+
+- [ ] The adoption half of the extraction, a move not a copy.
+  `frame.go`'s geometry goes to the shell's: `frameGeom` and
+  `frameGeometry` to `PaneLayout` and `Measure`; the frame's layout
+  to `TwoColumn.Layout`; the columns' arithmetic, `toolbarHeight`
+  and `bandSurface` to the arrangement's own and
+  `ToolbarFillAt`; the two splitters' props and clamps to
+  `PaneResize` and `InspectorResize` with vaultview's `Limits`; the
+  toolbar's layout, its drag runs and its leading rule to `Toolbar`
+  and `ToolbarLead`; the toggle, the bare and bordered marks to
+  `ToggleSidebar`, `PaneMark`, `ToolbarControl`; the gap constants
+  to `PlatformToolbar`, the toggle-to-navigation gap taking the
+  measured 16 where vaultview spent a 12 dp spacing token (the
+  one pixel move, named per golden). `tree.go`'s strip, button
+  edge and hide control go; the sidebar stream becomes a
+  `PaneColumn`. `remember.go` goes to `ArrangementMemory` with
+  vaultview's limits. `main.go`'s button placement and chrome
+  height go to `PaneWindow` and kin. `note.go` hands the slots;
+  `find.go`'s children become the toolbar's trailing group;
+  `status.go`'s bar becomes the content column's footer. The
+  static `renderWindow` builders stay for this task as thin
+  builders over `TwoColumn` so no test loses its geometry handle;
+  the tests' reads of the frame's geometry become `PaneLayout` and
+  `PaneColumnLayout` field names. Every existing vaultview test
+  keeps passing; goldens regenerate only where a pixel honestly
+  moved, the cause named per golden.
+- [ ] Exit: green in `workbench/vaultview` and `workbench` by name;
+  guard OK; gofmt gate OK; commit and push in `workbench` and
+  `.github`; no tag.
+
+#### CK7.3: Vaultview's window goldens render its own layer stack
+
+- [ ] The second half of CK3.1's finding: `renderWindow` and
+  `renderWindowFinding` go; every window golden builds vaultview's
+  own layer stack through `components/golden`'s `Layers`, `Window`
+  and `WindowGolden` and reads the arrangement through
+  `TwoColumn.Report`. Goldens byte-identical to CK7.2's.
+- [ ] Exit: green in `workbench/vaultview` by name; no golden moves;
+  guard OK; commit and push in `workbench` and `.github`; no tag.
+
+#### CK7.4: Mindchat stands on the shell
 
 - [ ] Section 11 item 4. Mindchat adopts the two-column arrangement
   without the inspector: its `frame.go` goes; the pane gains the
@@ -24658,7 +24699,7 @@ tasks here run when none is waiting.
 - [ ] Exit: green in `workbench/mindchat` by name; guard OK; commit
   and push in `workbench` and `.github`; no tag.
 
-#### CK7.3: Feeds stands on the shell and the old layouts leave the library
+#### CK7.5: Feeds stands on the shell and the old layouts leave the library
 
 - [ ] Section 11 item 5. Feeds adopts the two-column arrangement with
   the inspector slot holding the article (or the three-column
