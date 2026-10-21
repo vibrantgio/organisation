@@ -24492,7 +24492,13 @@ take, vaultview's is taken, and the two-column arrangement with the
 inspector as a slot is the first the library ships. The sidebar's
 splitter is part of the shell: a pane always has one on its trailing
 edge. Phase CJ's rule stands: the recorder's requests come first; the
-tasks here run when none is waiting.
+tasks here run when none is waiting. A task that takes a capture
+runs only on an open desktop the owner has left: the moment it is
+queued with the desktop open, the orchestrator starts
+`caffeinate -d -i -u` for the expected span so the display's idle
+lock never closes it, the worker's packet does the same for its
+run, and no capture runs while the owner is at the machine
+(ruled 2026-10-21).
 
 ### G-CK1: Mindchat's settings act lives in the menu bar alone
 
