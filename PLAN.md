@@ -24777,7 +24777,32 @@ run, and no capture runs while the owner is at the machine
   guard OK; `scripts/check-layers.sh` OK; commit and push per
   repo; no tag.
 
-#### CK7.7: Feeds stands on the three-column arrangement and the split pane leaves
+#### CK7.7: The seams are measured per scheme, run the window's height, and the list column has no header
+
+- [ ] Ruled by the ontology session 2026-10-22 from measured beats
+  stated, on findings 1036 to 1038 off the Mail capture. The Seam
+  entry now says a seam's colour is measured per scheme into the
+  reference from the platform's own windows, never derived: the
+  dark seam between columns is Mail's #000000 and the light one
+  stays at #e6e6e6, which already matches to the byte; the
+  measured pair becomes the library's seam value per scheme
+  (`theme/tokens` beside the measured materials, or
+  `patterns/splitter`'s seam colour reading it; say which) and
+  every seam the library draws reads it. One seam rule: a seam
+  between two columns runs the window's full height, the toolbar
+  included, as Mail's does; the inspector's seam, which stopped at
+  the toolbar's foot on an unmeasured rule, follows, and
+  vaultview's goldens move with the cause named. `ListColumn`
+  ships no `Header` slot: Mail's list column has no header row,
+  what names it standing in the toolbar's share over it; the slot,
+  its layout field and the specimen's use of it go (no tag carries
+  them). Goldens regenerate with the cause named per golden.
+- [ ] Exit: green in `theme` (if the token lands there), `patterns`,
+  `components/gallery`, `workbench/vaultview`, `workbench/mindchat`
+  by name; guard OK; gofmt gate OK; `scripts/check-layers.sh` OK;
+  commit and push per repo; no tag.
+
+#### CK7.8: Feeds stands on the three-column arrangement and the split pane leaves
 
 - [ ] Feeds adopts the three-column arrangement: the pane a
   `PaneColumn` (no marks, no head, the rail as rows, no footer),
