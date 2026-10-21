@@ -24784,9 +24784,12 @@ tasks here run when none is waiting.
   three goldens, and `shell.Shell`, `Props` and `Render` trim to
   what `StackedPage`, the marketing shell, reads (`Navbar`,
   `Sections`, `Footer`, `ContentMaxWidth`), `Render` folding into
-  `RenderStackedPage`; `StackedPage` itself has no consumer in the
-  org and stands for the marketing shell by the shell document's
-  inventory. Goldens regenerate with the cause named per golden; a
+  `RenderStackedPage`, so `Props` no longer carries two slot sets
+  under one switch and `Render` takes only what the stacked page
+  spends; `StackedPage` itself has no consumer in the org and
+  stands for the marketing shell by the shell document's
+  inventory; the patterns sheet gains a stacked-page specimen so
+  the one layout left has a picture. Goldens regenerate with the cause named per golden; a
   fresh-eyes review of feeds' window in both schemes, by the
   worker and by a fresh reader with no checklist, recorded
   verbatim with the known misreads briefed.
