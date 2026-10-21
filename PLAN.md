@@ -24628,9 +24628,9 @@ tasks here run when none is waiting.
   no Control Center capture: the worker takes one on this machine
   in both appearances with wallpaper tinting off (the capture
   mechanics: appearance through System Events, tinting off, Control
-  Center opened from the menu bar, the panel cropped), stores it
+  Center opened from the menu bar, its pane cropped), stores it
   under `reference/macos/` with its reading in `controls.md`, and
-  reads the alpha off the panel's fill against the desktop behind
+  reads the alpha off that fill against the desktop behind
   it. `theme/tokens` gains the measured alpha as the material's
   translucent value beside the measured materials; the workbench's
   tiles draw that fill under the group's hairline, and every
