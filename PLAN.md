@@ -24528,92 +24528,6 @@ tasks here run when none is waiting.
 - [x] Exit: green in `workbench` by name; guard OK; gofmt gate OK;
   commit and push in `workbench` and `.github`; no tag.
 
-### G-CK3: The library ships vaultview's shell and every window stands on it
-
-#### CK3.1: The whole-window renderer lives in the library
-
-- [x] Section 5 of the shell document, the precondition. A renderer
-  that lays a layer stack out at a size, with a theme and a model,
-  to an image in both schemes with no display, lives in
-  `components/golden` beside its single-component renderer (or `mvu/render`
-  if the layer stack is mvu's, the worker saying which off the
-  layer gate); vaultview, mindchat and the workbench adopt it and
-  their local renderers go, goldens byte-identical.
-- [x] Exit: green in the library module and the three apps by name;
-  guard OK; commit and push per repo; no tag.
-
-#### CK3.2: The shell pattern is extracted from vaultview's frame and vaultview stands on it
-
-- [ ] Section 11 item 3 and section 6 of the shell document. The
-  shell pattern gains the two-column arrangement with the inspector
-  as an optional slot: the frame's op order and its measured
-  geometry value, the fills, the pane's column helper, the two mark
-  drawings (bare in the pane, bordered in the toolbar), the toolbar
-  value with its metrics (the leading gutter the content column's
-  own inset, stated by the window; trailing 8; control gap 16, pair
-  gap 14; title gap 14; depth the pane's measured 52), the toolbar's
-  leading rule while the pane is away, the Toggle Sidebar button in
-  both its places, the pane's splitter on its trailing edge with
-  the pane's width and shown state remembered by the shell, the
-  inspector's splitter and the two footers as slots (empty takes no
-  height), the window treatment, the shadow cast last. vaultview
-  adopts in the same task, a move not a copy: its `frame.go`
-  geometry goes, its columns' contents, its note measure and its
-  splitters' clamps stay as what it hands the shell. Goldens
-  regenerate with the cause named. A fresh-eyes review of the
-  window in both schemes, the reviewer's verbatim reply recorded.
-- [ ] Exit: green in `patterns`, `components/gallery` (a specimen),
-  `workbench/vaultview` by name; guard OK; `scripts/
-  check-layers.sh` OK; commit and push per repo; no tag.
-
-#### CK3.3: Mindchat stands on the shell
-
-- [ ] Section 11 item 4. Mindchat adopts the two-column arrangement
-  without the inspector: its `frame.go` goes; the pane gains the
-  shell's splitter (the owner's finding: no splitter today) and its
-  remembered width; the chat title and its verdict, the picker's
-  cap, the transcript and the input bar are what it hands the
-  shell. Goldens regenerate with the cause named; a fresh-eyes
-  review in both schemes.
-- [ ] Exit: green in `workbench/mindchat` by name; guard OK; commit
-  and push in `workbench` and `.github`; no tag.
-
-#### CK3.4: Feeds stands on the shell and the old layouts leave the library
-
-- [ ] Section 11 item 5. Feeds adopts the two-column arrangement with
-  the inspector slot holding the article (or the three-column
-  arrangement if its reading needs the list as its own column: the
-  worker reads feeds' window and says which, the shell document's
-  ruling 4); the shell's sidebar-header-main, split-pane and
-  three-column layouts leave the library since nothing consumes
-  them; the gallery's shell specimens become the named
-  arrangements. Goldens regenerate with the cause named; a
-  fresh-eyes review in both schemes.
-- [ ] Exit: green in `patterns`, `components/gallery`,
-  `workbench/feeds` by name; guard OK; `scripts/check-layers.sh`
-  OK; commit and push per repo; no tag.
-
-### G-CK4: The workbench is called by its name
-
-#### CK4.1: The word launcher leaves the workbench's code and guide
-
-- [ ] Owner-ruled 2026-10-21: "Instead of talking about launcher, why
-  not talk about workbench and also add that as an entry to the
-  DOMAIN.md language." The Language gains a Workbench entry (the
-  ontology session's); the window at the root of the `workbench`
-  repository is the workbench. Every "launcher" in the workbench's
-  code, comments, tests, `llms.txt`, READMEs and the gallery (one
-  site in `components`) says the workbench, identifiers included
-  where one carries the word; the frozen records keep theirs. The
-  Retired words table in `AGENTS.md` gains the row (launcher, the
-  window at the workbench's root, workbench) and the guard gains
-  `launcher` with no kept sense, in the same commit as the
-  migration so the gate goes red and green in one step;
-  `scripts/sync-agents.sh` runs clean. No pixel moves.
-- [ ] Exit: green in `workbench`, every app module and `components`
-  by name; guard OK; guides gate OK; commit and push per repo and
-  in `.github`; no tag.
-
 #### CK2.2: The workbench's groups stand on a material over the painted backdrop
 
 - [ ] Owner question 2026-10-21: "is it possible to have a slightly
@@ -24685,3 +24599,92 @@ tasks here run when none is waiting.
   notes reports the time to the listing message under 200 ms.
 - [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
+
+### G-CK3: The library ships vaultview's shell and every window stands on it
+
+#### CK3.1: The whole-window renderer lives in the library
+
+- [x] Section 5 of the shell document, the precondition. A renderer
+  that lays a layer stack out at a size, with a theme and a model,
+  to an image in both schemes with no display, lives in
+  `components/golden` beside its single-component renderer (or `mvu/render`
+  if the layer stack is mvu's, the worker saying which off the
+  layer gate); vaultview, mindchat and the workbench adopt it and
+  their local renderers go, goldens byte-identical.
+- [x] Exit: green in the library module and the three apps by name;
+  guard OK; commit and push per repo; no tag.
+
+#### CK3.2: The shell pattern is extracted from vaultview's frame and vaultview stands on it
+
+- [ ] Section 11 item 3 and section 6 of the shell document. The
+  shell pattern gains the two-column arrangement with the inspector
+  as an optional slot: the frame's op order and its measured
+  geometry value, the fills, the pane's column helper, the two mark
+  drawings (bare in the pane, bordered in the toolbar), the toolbar
+  value with its metrics (the leading gutter the content column's
+  own inset, stated by the window; trailing 8; control gap 16, pair
+  gap 14; title gap 14; depth the pane's measured 52), the toolbar's
+  leading rule while the pane is away, the Toggle Sidebar button in
+  both its places, the pane's splitter on its trailing edge with
+  the pane's width and shown state remembered by the shell, the
+  inspector's splitter and the two footers as slots (empty takes no
+  height), the window treatment, the shadow cast last. vaultview
+  adopts in the same task, a move not a copy: its `frame.go`
+  geometry goes, its columns' contents, its note measure and its
+  splitters' clamps stay as what it hands the shell; its window
+  goldens then render its own layer stack through the library's
+  renderer, and the second static composition `renderWindow` built
+  from resolved tokens goes. Goldens regenerate with the cause
+  named. A fresh-eyes review of the
+  window in both schemes, the reviewer's verbatim reply recorded.
+- [ ] Exit: green in `patterns`, `components/gallery` (a specimen),
+  `workbench/vaultview` by name; guard OK; `scripts/
+  check-layers.sh` OK; commit and push per repo; no tag.
+
+#### CK3.3: Mindchat stands on the shell
+
+- [ ] Section 11 item 4. Mindchat adopts the two-column arrangement
+  without the inspector: its `frame.go` goes; the pane gains the
+  shell's splitter (the owner's finding: no splitter today) and its
+  remembered width; the chat title and its verdict, the picker's
+  cap, the transcript and the input bar are what it hands the
+  shell. Goldens regenerate with the cause named; a fresh-eyes
+  review in both schemes.
+- [ ] Exit: green in `workbench/mindchat` by name; guard OK; commit
+  and push in `workbench` and `.github`; no tag.
+
+#### CK3.4: Feeds stands on the shell and the old layouts leave the library
+
+- [ ] Section 11 item 5. Feeds adopts the two-column arrangement with
+  the inspector slot holding the article (or the three-column
+  arrangement if its reading needs the list as its own column: the
+  worker reads feeds' window and says which, the shell document's
+  ruling 4); the shell's sidebar-header-main, split-pane and
+  three-column layouts leave the library since nothing consumes
+  them; the gallery's shell specimens become the named
+  arrangements. Goldens regenerate with the cause named; a
+  fresh-eyes review in both schemes.
+- [ ] Exit: green in `patterns`, `components/gallery`,
+  `workbench/feeds` by name; guard OK; `scripts/check-layers.sh`
+  OK; commit and push per repo; no tag.
+
+### G-CK4: The workbench is called by its name
+
+#### CK4.1: The word launcher leaves the workbench's code and guide
+
+- [ ] Owner-ruled 2026-10-21: "Instead of talking about launcher, why
+  not talk about workbench and also add that as an entry to the
+  DOMAIN.md language." The Language gains a Workbench entry (the
+  ontology session's); the window at the root of the `workbench`
+  repository is the workbench. Every "launcher" in the workbench's
+  code, comments, tests, `llms.txt`, READMEs and the gallery (one
+  site in `components`) says the workbench, identifiers included
+  where one carries the word; the frozen records keep theirs. The
+  Retired words table in `AGENTS.md` gains the row (launcher, the
+  window at the workbench's root, workbench) and the guard gains
+  `launcher` with no kept sense, in the same commit as the
+  migration so the gate goes red and green in one step;
+  `scripts/sync-agents.sh` runs clean. No pixel moves.
+- [ ] Exit: green in `workbench`, every app module and `components`
+  by name; guard OK; guides gate OK; commit and push per repo and
+  in `.github`; no tag.
