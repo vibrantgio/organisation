@@ -25562,7 +25562,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.28: Vaultview's rail rows and iconbrowser's grid draw the window's scrollbar
 
-- [ ] Under [[DOMAIN#Scrollbar]], ruled on finding 1120: every
+- [x] Under [[DOMAIN#Scrollbar]], ruled on finding 1120: every
   region that scrolls has a scrollbar. Vaultview's rail rows
   (`list.LayoutSelectable` with no bar) and iconbrowser's grid (a
   `layout.List` with no bar) scroll without one. Each draws the
@@ -25572,7 +25572,7 @@ run, and no capture runs while the owner is at the machine
   seam); their empty states pass their frame through
   `EmptyStateFrame`. Goldens regenerate only where a bar is drawn
   at rest, with the cause named; none should at WhenScrolling.
-- [ ] Exit: a test per region that a bar is drawn at Always; green
+- [x] Exit: a test per region that a bar is drawn at Always; green
   in `workbench/vaultview` and `workbench/iconbrowser` by name and
   workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.

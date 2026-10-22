@@ -3823,3 +3823,14 @@ vaultview's note column calls. What the work left open, and what it
 found beside its own subject, stands here.
 
 1127. **[note]** **A document with no measure keeps its padding on the trailing side only.** `Style.Gutter` with a zero `Measure` still gives the blocks the width less the trailing padding, as before, because the Measure entry speaks of a region narrower than the measure and a document with no measure has none. A document laid out with a padding and no measure therefore runs its text against the leading edge. Whether the padding should be kept on both sides with no measure too is unasked; no caller in the tree sets a padding without a measure.
+
+## GU. From CK10.28, the rail's and the grid's bars
+
+Filed 2026-10-22 from the work itself: vaultview's rail rows are drawn
+with `asideIndicator` and iconbrowser's grid with a bar of its own built
+from the window's setting, each taking a lane at Always and lying over
+the rows otherwise. What the work left open stands here.
+
+1128. **[question]** **Iconbrowser's bar is drawn 12 dp in from the window's trailing edge.** The grid is laid inside the page's `Padding` on both sides, and the bar is drawn on the grid's own trailing edge, so between the bar and the window's edge there is 12 dp of the window's plane. Whether the grid's bar should be drawn against the window's trailing edge, with the padding taken inside the scrolling region, is unasked; moving it changes the grid's width and so every iconbrowser golden.
+
+1129. **[question]** **The rail's find field does not take the bar's lane at Always.** The trailing column insets its headings, its count and its hairline by the bar's lane through `asideTrailing`, so one trailing edge runs down that column at Always. The rail's rows now stop short of the lane, but the find field above them still runs to the rail's own trailing inset. Whether the rail's header takes the lane as the trailing column's does is unasked.
