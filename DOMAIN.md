@@ -1197,7 +1197,13 @@ what each is about and how long it stays:
 
 The tooltip is not of the family: it names a control on demand and
 indicates no status. None of the three changes behaviour when
-dismissed.
+dismissed. The text of any of the three is the application's own
+sentence, in plain words about what happened or what holds; the
+system's text never stands in it and goes to the log. A failed
+attempt that leaves the content as it was is an event, a toast; a
+failure that leaves the content unusable until it is resolved is a
+situation, an alert, or an empty state where there is no content
+to show.
 
 ### Status bar
 
