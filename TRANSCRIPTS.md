@@ -1305,3 +1305,6 @@ Rene: How does 11.3 work what is the mechanism and on what data does it depend a
 Rene: Agreed
 
 Rene: Agreed
+
+Rene: The current configuration for vibrantgio where the github organization contains the crunchgate method in the .github repo.
+Is there a better way to set this up?
