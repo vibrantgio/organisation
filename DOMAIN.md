@@ -24,7 +24,10 @@ that only records a choice, like a checkbox taking a yes, has not
 performed an action. Every action a window offers through a control
 also stands in the menu bar with its key equivalent, as the platform
 requires, so an action is never offered nowhere: a control that
-goes with its pane removes nothing from the menu bar.
+goes with its pane removes nothing from the menu bar. A control
+inside a row is drawn when the platform's lists draw theirs, read
+from the reference: at rest, under the pointer or on the selected
+row, never assumed.
 
 ### Active
 
@@ -1406,7 +1409,10 @@ are in the chrome variant; it holds controls, never content. It has
 no fill of its own; each share stands on its column's fill, as the
 Chrome entry says. A toolbar action is a button, bordered, titled
 with a symbol or text in the label colour, never a word in the
-accent and never a link. In its
+accent and never a link. An action on the collection a window
+shows, adding to it first of all, is a toolbar action, as Notes' and
+Reminders' new-item marks are measured; no action floats over the
+content. In its
 centre stands the window's title or, where the platform shows the
 document's place, a breadcrumb as the platform's path bar: a
 control standing where the title stands, not content. The picker's
