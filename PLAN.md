@@ -24549,6 +24549,90 @@ run, and no capture runs while the owner is at the machine
 - [x] Exit: green in the library module and the three apps by name;
   guard OK; commit and push per repo; no tag.
 
+### G-CK4: The workbench is called by its name
+
+#### CK4.1: The word launcher leaves the workbench's code and guide
+
+- [x] Owner-ruled 2026-10-21: "Instead of talking about launcher, why
+  not talk about workbench and also add that as an entry to the
+  DOMAIN.md language." The Language gains a Workbench entry (the
+  ontology session's); the window at the root of the `workbench`
+  repository is the workbench. Every "launcher" in the workbench's
+  code, comments, tests, `llms.txt`, READMEs and the gallery (one
+  site in `components`) says the workbench, identifiers included
+  where one carries the word; the frozen records keep theirs. The
+  Retired words table in `AGENTS.md` gains the row (launcher, the
+  window at the workbench's root, workbench) and the guard gains
+  `launcher` with no kept sense, in the same commit as the
+  migration so the gate goes red and green in one step;
+  `scripts/sync-agents.sh` runs clean. No pixel moves.
+- [x] Exit: green in `workbench`, every app module and `components`
+  by name; guard OK; guides gate OK; commit and push per repo and
+  in `.github`; no tag.
+
+#### CK4.2: The retired word of CK4.1 leaves its last sites and their guard exclusions go
+
+- [x] Found under CK4.1: three sites outside the workbench's code and
+  guide still carry the word under guard exclusions: the org
+  profile's README with its two screenshots `launcher-dark.png`
+  and `launcher-light.png`, their alt text and prose; `seen`'s
+  benchmark comment and a test fixture's name. Exclusions that
+  keep a retired word alive are the compatibility reads of the
+  Language; the sites migrate instead: the two images renamed with
+  `git mv` to `workbench-{dark,light}.png` and the README's
+  references, alt text and prose saying the workbench; `seen`'s
+  comment and fixture name reworded; the five exclusions for the
+  word leave the guard (the two scoped to CK4.1's own plan lines
+  stay until that text is frozen below the first unchecked box,
+  then go in a later pass; say which stayed). No pixel moves.
+- [x] Exit: green in `seen` by name; guard OK with the exclusions
+  gone; `scripts/sync-agents.sh` clean; commit and push in `seen`
+  and `.github`; no tag.
+
+### G-CK5: The workbench's groups stand on a material over the painted backdrop
+
+#### CK5.1: The workbench's groups stand on a material over the painted backdrop
+
+- [x] Owner question 2026-10-21: "is it possible to have a slightly
+  translucent group background that lightens (adds white) in light
+  mode and darkens it in dark mode?" Ruled by the ontology session
+  from the platform (the Material entry at 84e697a): over a painted
+  backdrop a material is the one case painted translucent, the
+  window background colour at the platform's alpha so the field
+  shows through, lighter in light and darker in dark, measured from
+  Control Center over the desktop; the workbench's groups stand on
+  such a material, each keeping its hairline. The reference holds
+  no Control Center capture: the worker takes one on this machine
+  in both appearances with wallpaper tinting off (the capture
+  mechanics: appearance through System Events, tinting off, Control
+  Center opened from the menu bar, its pane cropped), stores it
+  under `reference/macos/` with its reading in `controls.md`, and
+  reads the alpha off that fill against the desktop behind
+  it. `theme/tokens` gains the measured alpha as the material's
+  translucent value beside the measured materials; the workbench's
+  tiles draw that fill under the group's hairline, and every
+  foreground on a tile is measured against the window background at
+  that alpha over the field's mean colour (recorded in the commit
+  body with the contrast gate's reading; the field's mean, read
+  off a headless render, is #ceeaff light and #29577f dark). The
+  measured value is a `tokens` constant beside `DisabledCoverage`,
+  not a `PlatformColors` field, so the catalogue copies, the
+  export's name table and the design bundle stay untouched. The
+  workbench's goldens do not move: they stand the field in as the
+  window's own plane, and the material is that plane at a
+  coverage, so over it the material is that plane byte for byte;
+  the exit says so, and `window_render_test.go`'s test claiming the
+  tiles take the page's own fill has its prose corrected to say
+  what it reads (the static stand-in, not the live window). A
+  first attempt on 2026-10-21 was blocked by the locked screen and
+  left its prepared diff at
+  `/private/tmp/claude-501/ck5.1-prepared/{theme,workbench,github}.patch`
+  with every part green but the one unmeasured number; the
+  completing run starts from it.
+- [x] Exit: green in `theme` and `workbench` by name; no golden moves;
+  guard OK; gofmt gate OK; commit and push in `theme`, `workbench`
+  and `.github`; no tag.
+
 ### G-CK6: A huge vault opens at once and fills in as it is read
 
 #### CK6.1: The vault scan lists first, reads in bounded parallel recent-first, and delivers in batches
@@ -24855,90 +24939,6 @@ run, and no capture runs while the owner is at the machine
   regenerate with the cause named.
 - [x] Exit: green in `workbench/feeds` by name; guard OK; gofmt gate
   OK; commit and push in `workbench` and `.github`; no tag.
-
-### G-CK4: The workbench is called by its name
-
-#### CK4.1: The word launcher leaves the workbench's code and guide
-
-- [x] Owner-ruled 2026-10-21: "Instead of talking about launcher, why
-  not talk about workbench and also add that as an entry to the
-  DOMAIN.md language." The Language gains a Workbench entry (the
-  ontology session's); the window at the root of the `workbench`
-  repository is the workbench. Every "launcher" in the workbench's
-  code, comments, tests, `llms.txt`, READMEs and the gallery (one
-  site in `components`) says the workbench, identifiers included
-  where one carries the word; the frozen records keep theirs. The
-  Retired words table in `AGENTS.md` gains the row (launcher, the
-  window at the workbench's root, workbench) and the guard gains
-  `launcher` with no kept sense, in the same commit as the
-  migration so the gate goes red and green in one step;
-  `scripts/sync-agents.sh` runs clean. No pixel moves.
-- [x] Exit: green in `workbench`, every app module and `components`
-  by name; guard OK; guides gate OK; commit and push per repo and
-  in `.github`; no tag.
-
-#### CK4.2: The retired word of CK4.1 leaves its last sites and their guard exclusions go
-
-- [x] Found under CK4.1: three sites outside the workbench's code and
-  guide still carry the word under guard exclusions: the org
-  profile's README with its two screenshots `launcher-dark.png`
-  and `launcher-light.png`, their alt text and prose; `seen`'s
-  benchmark comment and a test fixture's name. Exclusions that
-  keep a retired word alive are the compatibility reads of the
-  Language; the sites migrate instead: the two images renamed with
-  `git mv` to `workbench-{dark,light}.png` and the README's
-  references, alt text and prose saying the workbench; `seen`'s
-  comment and fixture name reworded; the five exclusions for the
-  word leave the guard (the two scoped to CK4.1's own plan lines
-  stay until that text is frozen below the first unchecked box,
-  then go in a later pass; say which stayed). No pixel moves.
-- [x] Exit: green in `seen` by name; guard OK with the exclusions
-  gone; `scripts/sync-agents.sh` clean; commit and push in `seen`
-  and `.github`; no tag.
-
-### G-CK5: The workbench's groups stand on a material over the painted backdrop
-
-#### CK5.1: The workbench's groups stand on a material over the painted backdrop
-
-- [x] Owner question 2026-10-21: "is it possible to have a slightly
-  translucent group background that lightens (adds white) in light
-  mode and darkens it in dark mode?" Ruled by the ontology session
-  from the platform (the Material entry at 84e697a): over a painted
-  backdrop a material is the one case painted translucent, the
-  window background colour at the platform's alpha so the field
-  shows through, lighter in light and darker in dark, measured from
-  Control Center over the desktop; the workbench's groups stand on
-  such a material, each keeping its hairline. The reference holds
-  no Control Center capture: the worker takes one on this machine
-  in both appearances with wallpaper tinting off (the capture
-  mechanics: appearance through System Events, tinting off, Control
-  Center opened from the menu bar, its pane cropped), stores it
-  under `reference/macos/` with its reading in `controls.md`, and
-  reads the alpha off that fill against the desktop behind
-  it. `theme/tokens` gains the measured alpha as the material's
-  translucent value beside the measured materials; the workbench's
-  tiles draw that fill under the group's hairline, and every
-  foreground on a tile is measured against the window background at
-  that alpha over the field's mean colour (recorded in the commit
-  body with the contrast gate's reading; the field's mean, read
-  off a headless render, is #ceeaff light and #29577f dark). The
-  measured value is a `tokens` constant beside `DisabledCoverage`,
-  not a `PlatformColors` field, so the catalogue copies, the
-  export's name table and the design bundle stay untouched. The
-  workbench's goldens do not move: they stand the field in as the
-  window's own plane, and the material is that plane at a
-  coverage, so over it the material is that plane byte for byte;
-  the exit says so, and `window_render_test.go`'s test claiming the
-  tiles take the page's own fill has its prose corrected to say
-  what it reads (the static stand-in, not the live window). A
-  first attempt on 2026-10-21 was blocked by the locked screen and
-  left its prepared diff at
-  `/private/tmp/claude-501/ck5.1-prepared/{theme,workbench,github}.patch`
-  with every part green but the one unmeasured number; the
-  completing run starts from it.
-- [x] Exit: green in `theme` and `workbench` by name; no golden moves;
-  guard OK; gofmt gate OK; commit and push in `theme`, `workbench`
-  and `.github`; no tag.
 
 ### G-CK8: The download wait shows what the platform shows
 
