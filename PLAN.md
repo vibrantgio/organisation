@@ -25831,7 +25831,9 @@ run, and no capture runs while the owner is at the machine
   Iconbrowser's field is then drawn from those rows through
   `input.SearchField` (a region or variant for a field on content,
   say which and why), and the six window goldens regenerate with
-  the cause named. This task takes a capture: it runs only on an
+  the cause named. In the same commit `TurnedMark` and its test
+  are renamed by what the mark depicts, chevron-down, since
+  "turned" is no Language word. This task takes a capture: it runs only on an
   open desktop the owner has left, under the phase's caffeinate
   rule.
 - [ ] Exit: the two captures and the MEASURED rows are in the

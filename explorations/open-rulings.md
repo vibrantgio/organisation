@@ -3831,7 +3831,3 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 ## HC. From CK10.36, the lists that had no bar
 
 Filed 2026-10-22 from the fresh-eyes review of CK10.36. Every finding is ruled and planned, CK10.46 to CK10.53. Nothing stays open.
-
-## HF. From CK10.40, iconbrowser's symbols
-
-Filed 2026-10-22 from the fresh-eyes review of CK10.40. Findings 1160 to 1163 are ruled under the Icon entry and planned as CK10.58 to CK10.60, with 944 and 1033. Nothing stays open.
