@@ -25285,6 +25285,90 @@ its control posts.
   root; guard OK; gofmt gate OK; one commit in workbench, push;
   no tag.
 
+#### CK10.12: The empty state stands a description and actions under its line and takes a pane's size
+
+- [ ] Ruled by the ontology session 2026-10-22 (the Empty state
+  entry at a36541d): an empty state covers any region with
+  nothing to show; its line centres in that region's frame, at
+  the measured size in a column and at the size of the rows it
+  stands for in a pane's section or a sheet's field; as the
+  platform's content unavailable view does, it may stand a
+  description under the line and the actions that fill the region
+  under that, centred as one group, and the line itself names no
+  control. `patterns/shell`'s `EmptyState` grows to that shape: a
+  props value with the line, an optional description (the
+  secondary label at the body size, say the reading or the
+  nearest role), optional actions (widgets the caller hands in,
+  laid in a row under the description at the platform's control
+  gap), and the size the line is set at (the measured 28 sp for a
+  column, the rows' own text style for a pane's section or a
+  sheet's field; two constructors or one field, say which); the
+  group centres as one block in the frame given. The existing
+  callers (vaultview's column, feeds' column) move to the props
+  shape with no pixel moving.
+- [ ] Exit: tests in `patterns/shell` that a line with a
+  description and one action centres as one group both ways and
+  that the pane size sets the line in the rows' style; vaultview's
+  and feeds' goldens byte-identical; green in `patterns`,
+  `workbench/vaultview`, `workbench/feeds` by name and workbench
+  root; guard OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.13: Vaultview's pane sections and iconbrowser's grid draw the empty state
+
+- [ ] Ruled 2026-10-22 on findings 1087 and 1091. Vaultview's three
+  lines outside the content column ("No note by that name." when
+  the tree's filter matches nothing, "No notes link here." in the
+  backlinks pane, "This note has no headings." in the outline
+  pane) centre in their section's frame at the rows' own size in
+  the tertiary label, drawn by CK10.12's value; the hand-placed
+  line on the rows' leading edge goes with each. Iconbrowser's
+  "No icons match …" is the empty state of the page's grid, the
+  content region: it centres in the grid's frame at the measured
+  size, drawn by the same value; iconbrowser's `go.mod` gains
+  `patterns` at its latest tag (the generated workspace resolves
+  the sibling until the next tagging round, as the other apps'
+  pins do), the one `go.mod` edit this task makes. Goldens
+  regenerate with the cause named per golden.
+- [ ] Exit: a test per window that each line centres in its
+  region's frame at the stated size; green in
+  `workbench/vaultview` and `workbench/iconbrowser` by name and
+  workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
+
+#### CK10.14: Mindchat's provider field and sitedocs' guide say what is missing in the empty state's words
+
+- [ ] Ruled 2026-10-22 on findings 1088 and 1089. Mindchat's
+  settings sheet shows "No providers" centred in the provider
+  field's frame at its rows' size, naming no control; the add
+  button beside the field is the action and the "+" leaves the
+  sentence. Sitedocs' Docs tab, when neither the checkout file nor
+  the network answers, draws the empty state "This guide can't be
+  loaded." with the path as its description, the cause going to
+  the log; `guideUnavailable`'s document and its "Where it lives"
+  text go. Both through CK10.12's value. Goldens regenerate with
+  the cause named per golden; a test holds each line's text.
+- [ ] Exit: green in `workbench/mindchat` and `workbench/sitedocs`
+  by name and workbench root; guard OK; gofmt gate OK; one commit
+  in workbench, push; no tag.
+
+#### CK10.15: Sk150's Monitor tab offers the demo from its empty state
+
+- [ ] Ruled 2026-10-22 on finding 1090. Before the first reading
+  the Monitor tab stands "No SK150 connected" in the Title role,
+  the connection status, a Demo button and a sentence explaining
+  the demo, anchored at the tab's top. It becomes one empty state
+  through CK10.12's value: the line "No SK150 connected", the
+  status as its description (the demo's sentence joins it or goes,
+  say which and why), the Demo button as its action, centred as
+  one group in the tab's frame at the measured size; the
+  "waiting for the first reading…" line is the same empty state
+  with its own sentence. `monitorFallback`'s top-anchored block
+  goes. Goldens regenerate with the cause named.
+- [ ] Exit: a test that the group centres in the tab's frame and
+  the button still posts the demo's message; green in
+  `workbench/sk150` by name and workbench root; guard OK; gofmt
+  gate OK; one commit in workbench, push; no tag.
+
 #### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
 
 - [ ] The three windows gain their menu bars: vaultview (File: Open
