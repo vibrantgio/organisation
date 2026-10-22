@@ -3830,3 +3830,9 @@ Filed 2026-10-22 from CK10.72's captures, read in `reference/macos/controls.md` 
 ## HS. From CK10.73, the control inside a row
 
 Filed 2026-10-22 from CK10.73. Findings 1193 to 1196 are ruled: 1193 is in CM1.30, 1194 in CM1.31, 1195 in CM1.32, 1196 in CM1.15. Nothing stays open.
+
+## HT. From CK10.74, the indeterminate indicator
+
+Filed 2026-10-22 from CK10.74's captures, read in `reference/macos/controls.md` under "What the indeterminate indicator measures".
+
+1197. **[decide]** **No capture reads the gap between the indicator and its text when the two are drawn together as one centred group.** The Progress entry draws the indicator and the application's text centred in the region's frame as an empty state is, but the platform window captured here draws them at the two ends of a row, the indicator trailing and 285 px from the text, so the reference holds no gap and no order for the centred group; a ruling names the window to capture for it, or names the group's order and gap in the entry.

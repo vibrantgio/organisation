@@ -26097,7 +26097,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.74: The platform's indeterminate indicator is measured into the reference
 
-- [ ] Under [[DOMAIN#Progress]]: the indicator for a task whose end
+- [x] Under [[DOMAIN#Progress]]: the indicator for a task whose end
   is not known is the platform's indeterminate indicator, and no
   capture of it is in the reference. A capture of a platform
   window showing it (Mail checking for mail, or System Settings
@@ -26110,7 +26110,7 @@ run, and no capture runs while the owner is at the machine
   MEASURED rows.
   This task takes a capture: it runs only on an open desktop the
   owner has left, under the phase's caffeinate rule.
-- [ ] Exit: the captures and the MEASURED rows are in the reference;
+- [x] Exit: the captures and the MEASURED rows are in the reference;
   one commit in `.github`, push; no tag.
 
 

@@ -1380,6 +1380,68 @@ keyboard elsewhere. The mark's peak pixel is 21 and 28 levels off
 `controlAccentColor` on the red channel, so the mark's colour is not one
 name in the catalogue to the byte.
 
+## What the indeterminate indicator measures
+
+Added 2026-10-22 by CK10.74, from captures of System Settings → General →
+Software Update taken on the 2560×1440 display at 1x where one pixel is one
+point, macOS 26.5.2, while the pane checked for updates. The window's bounds
+as System Events reports them are x 1837–2559, y 193–1276 (723×1084), the
+same on every opening. Each capture is the screen region x 2076–2543,
+y 241–284 (468×44), which is window x 239–706, y 48–91: the first row of the
+pane's content with 4 px of the pane around it. The pane was opened by its
+URL and the region was captured as often as `screencapture` returns, about
+every 70–450 ms, from the open until the check ended; the appearance was set
+through System Events before each opening and set back to light afterwards.
+The check showed the row for about 6 s on the first opening and for under
+1 s on the later ones, so the light pane gave eight frames with the
+indicator and the dark pane three.
+
+- `systemsettings-software-update-checking-light.png`: light, the darkest
+  stroke at the lower leading diagonal.
+- `systemsettings-software-update-checking-light-2.png`: light, launched
+  235 ms after the first; the darkest stroke at the upper leading diagonal.
+- `systemsettings-software-update-checking-light-3.png`: light, launched
+  224 ms after the second; the darkest stroke at the upper trailing
+  diagonal.
+- `systemsettings-software-update-checking-dark.png`: dark.
+
+Coordinates are capture coordinates, (0,0) at the capture's top-leading
+corner. Read with PIL over the stored PNGs. The row is y 4–39 and x 4–463;
+under x 14 its fill is darkened by the sidebar's shadow.
+
+| what | measured | where | method |
+| --- | --- | --- | --- |
+| the row | **36 px** tall, y 4–39; fill `#f7f7f7` light, `#252525` dark | `systemsettings-software-update-checking-{light,dark}.png` | a run down x 224 steps from the pane's fill to the row's at y 4 and back at y 40; flat samples at (300, 21). The light fill is `cardFill`'s light value in `nscolors.tsv` to the byte; the dark pane is drawn untinted, every channel equal |
+| the indicator's extent | **16 × 16 px**, x 438–453, y 14–29, in light; x 438–454, y 14–29 in dark, where every stroke is antialiased over one more column | all four captures | the bounding box of the pixels more than 8 levels off the row's fill inside x 432–459, y 10–33 |
+| the stroke count | **8** strokes, one every 45° | all four captures | the eight runs read off the extent: a run across y 21 reads x 438–442 and x 449–453, a run down x 445 reads y 14–18 and y 25–29, and the four diagonals lie between them |
+| the strokes' shape | each stroke **5 px long and 2 px wide**, from 3 px to 8 px off the centre; the centre is the pixel corner at (446, 22) in light | `systemsettings-software-update-checking-light.png` | the horizontal strokes are rows 21–22, x 438–442 and x 449–453; the vertical strokes are columns 445–446, y 14–18 and y 25–29. In the dark capture the vertical strokes spread over columns 445–447 and the horizontal ones over x 438–443 and x 449–454, so its centre lies about half a pixel to the trailing side |
+| the strokes' colour, light | grey, every channel equal; the darkest stroke reads **`#424242`** (66) and the lightest **`#e3e3e3`** (227) | `systemsettings-software-update-checking-light{,-2,-3}.png` and the five other light frames of the run | the extreme pixel inside each stroke's box, per frame. The darkest stroke reads 66–71 in the three stored frames. Flattened over `#f7f7f7`, `labelColor` (black at 216/255) gives `#262626`, `secondaryLabelColor` (127/255) `#7c7c7c` and `quaternaryLabelColor` (25/255) `#dfdfdf`: the darkest stroke lies between the first two, black at about 187/255, and the lightest is 4 levels above `quaternaryLabelColor` |
+| the strokes' colour, dark | grey, every channel equal; the lightest stroke reads **`#9e9e9e`** (158) and the darkest **`#353535`** (53) | `systemsettings-software-update-checking-dark.png` and the two other dark frames of the runs | the extreme pixel inside each stroke's box, per frame. Flattened over `#252525`, `secondaryLabelColor` (white at 140/255) gives `#9d9d9d`, 1 level under the lightest stroke, and `quaternaryLabelColor` (25/255) gives `#3a3a3a`, 5 levels over the darkest |
+| the strokes' order | the darkest stroke moves **clockwise**, the strokes behind it lighter | `systemsettings-software-update-checking-light{,-2,-3}.png` | the darkest stroke is at the lower leading diagonal, then the upper leading diagonal, then the upper trailing diagonal; in each frame between them the next stroke clockwise is the second darkest |
+| the rotation step | about **115 ms** per stroke, a turn in about **0.9 s**; DERIVED | `systemsettings-software-update-checking-light{,-2,-3}.png` | two steps of the darkest stroke in 235 ms and two more in 224 ms. The times are the launch times of `screencapture`, not the frames' own, so each is good to some tens of milliseconds |
+| the indicator's place | **trailing**: it is drawn at the row's trailing end and the text at its leading end | `systemsettings-software-update-checking-{light,dark}.png` | the text is x 14–152 and the indicator x 438–453 |
+| the padding at both ends | **10 px** at each end: the text's first column is x 14 against the row's x 4, the indicator's last column is x 453 against the row's x 463 | `systemsettings-software-update-checking-{light,dark}.png` | runs across y 21. The text rendered by AppKit at its draw point holds its first column at that point, so the 10 px is the text's own origin |
+| the gap between text and indicator | **285 px**, x 153–437: no fixed gap; the two are drawn at the two ends of the row | `systemsettings-software-update-checking-light.png` | the text's last column is x 152 and the indicator's first x 438 |
+| the vertical alignment | the indicator's centre, the text's cap band's middle and the row's middle lie on **one line, y 22**, within a fifth of a pixel | `systemsettings-software-update-checking-{light,dark}.png` | the indicator's centre is the pixel corner at y 22; the row is y 4–39, middle y 22; a run down x 19 crosses the "C" at y 17–18 above and y 25–27 below, a cap band from about y 17.3 to y 27, middle about y 22.1 |
+| the text | **"Checking for updates…"**: sentence case, the first word alone capitalised, ending with the ellipsis character U+2026 | `systemsettings-software-update-checking-{light,dark}.png` against AppKit renders of the two strings | the phrase is read off the pixels. Rendered in `NSFont.systemFont(ofSize: 13)` over `#f7f7f7`, U+2026 draws its three dots at a 3.3 px pitch in columns 0–1, 3–4 and 6–7 after the "s", and three periods at a 4 px pitch in columns 0–1, 4–5 and 8–9. The capture's dots are columns 144–146, 148–149 and 151–152, the ellipsis's pattern column for column, in both schemes |
+| the text's size | **13 pt**, the system font's regular weight | `systemsettings-software-update-checking-light.png` against an AppKit render | the 13 pt render of "Checking for updates…" is 139 px wide, x 14–152 in the capture's position, and, scaled by `labelColor`'s 216/255, matches the capture within 5 levels on every one of the 1960 pixels of x 14–153, y 16–29, 0.8 levels on average; the 12 pt render is 130 px and the 14 pt render 149 px |
+| the text's colour | **`labelColor`**: `#262626` light, `#dedede` dark | `systemsettings-software-update-checking-{light,dark}.png` | the darkest text pixel reads 38 light over 60 pixels and the lightest 222 dark over 26 pixels. `labelColor` flattened over `#f7f7f7` gives 37.8 and over `#252525` gives 221.7 |
+
+**The platform's indeterminate indicator is a 16 px wheel of eight grey
+strokes, the darkest stroke moving clockwise about once a second.** In a row
+it is drawn at the row's trailing end with the row's own 10 px padding, its
+centre on the row's middle and on the middle of the text's cap band. The text
+beside it is a short phrase in sentence case ending with U+2026, at 13 pt in
+`labelColor`, drawn at the row's leading end.
+
+**What is open here.** The strokes' colour is no single name in the
+catalogue: the light darkest stroke lies between `labelColor` and
+`secondaryLabelColor`, while the dark lightest stroke is
+`secondaryLabelColor` within one level. Three dark frames are not enough to
+read the dark strokes' full range. The pane draws the indicator and the text
+at the two ends of a row, so these captures read no gap for the two drawn
+together as a group.
+
 ## What the band's segmented control measures
 
 Read 2026-09-18 by CG5.3o at 1x from `finder-window-light.png` and
