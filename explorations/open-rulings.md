@@ -3829,6 +3829,4 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 ## HN. From CK10.53, the Device grid's foot
 
-Filed 2026-10-22 from the fresh-eyes review of CK10.53.
-
-1177. **[note]** **Sk150's Device footer text begins two pixels under the seam.** With the seam at the grid's foot, the footer's text begins two rows under the hairline and ends 21 rows above the window's bottom edge (rows 265–278 in a 300 px frame, seam at 262), so the text is drawn close under the line and far from the edge below it; the Footer entry states no padding for a column's status text, and whether the footer's text is centred in its band or keeps the measured padding of a platform status bar is unasked.
+Filed 2026-10-22 from the fresh-eyes review of CK10.53. Finding 1177 is ruled under the Footer entry and planned as CK10.76. Nothing stays open.
