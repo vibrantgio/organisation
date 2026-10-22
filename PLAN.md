@@ -25929,21 +25929,20 @@ run, and no capture runs while the owner is at the machine
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
 #### CK10.51: Sk150's tabs show content arriving as a task in progress
-
 - [ ] Under [[DOMAIN#Progress]] and [[DOMAIN#Empty state]], ruled on
   finding 1150: content still arriving is a task in progress, not
   an empty state. Sk150's Presets and Device tabs draw "reading
   memory slots…" and "reading the device settings…" as the list's
-  first row. Each tab draws the platform's indeterminate indicator
-  and the application's own sentence centred in the tab's frame,
-  as an empty state is placed, never as a row of the list, and
-  they are removed when the content arrives. A test per tab that
-  while the content is arriving the indicator and the sentence
-  are centred in the frame and no list row is drawn, and that
-  after it arrives neither is drawn.
+  first row. Each tab draws the application's own sentence centred
+  in the tab's frame, as an empty state is placed, never as a row
+  of the list, and it is removed when the content arrives. The
+  platform's indeterminate indicator is not in the library and
+  not in the reference, so it comes with CK10.74 and CK10.75 and
+  stands above the sentence then. A test per tab that while the
+  content is arriving the sentence is centred in the frame and no
+  list row is drawn, and that after it arrives it is not drawn.
 - [ ] Exit: green in `workbench/sk150` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
-
 #### CK10.52: The list's focus ring is drawn outside the list's box
 
 - [ ] Under [[DOMAIN#Focused]], ruled on finding 1152: the ring is
@@ -26362,6 +26361,41 @@ run, and no capture runs while the owner is at the machine
   not in the others; green in `workbench/todos` by name and
   workbench root; guard OK; gofmt gate OK; commit and push per
   repo; no tag.
+
+
+#### CK10.74: The platform's indeterminate indicator is measured into the reference
+
+- [ ] Under [[DOMAIN#Progress]]: the indicator for a task whose end
+  is not known is the platform's indeterminate indicator, and no
+  capture of it is in the reference. A capture of a platform
+  window showing it (Mail checking for mail, or System Settings
+  checking for updates) is taken in both schemes, stored under
+  `reference/macos`, and its size, its stroke count and colour, its
+  place against the sentence beside it and the gap between them
+  are read into `reference/macos/controls.md` as MEASURED rows.
+  This task takes a capture: it runs only on an open desktop the
+  owner has left, under the phase's caffeinate rule.
+- [ ] Exit: the captures and the MEASURED rows are in the reference;
+  one commit in `.github`, push; no tag.
+
+
+#### CK10.75: The progress signal draws the platform's indeterminate indicator
+
+- [ ] Under [[DOMAIN#Progress]]: the signal showing how far a task
+  has come, the platform's indeterminate indicator when the end is
+  not known, read and never operated. `components/progress` is
+  added (name its props, say why) drawing the indeterminate
+  indicator from CK10.74's MEASURED rows, turning on the
+  platform's cadence; the gallery shows it. Sk150's Presets and
+  Device tabs draw it above their content-arriving sentence
+  (CK10.51), centred as one group, and remove both when the
+  content arrives. A test that the indicator is drawn at the
+  measured size and a test per tab that it stands above the
+  sentence while the content is arriving.
+- [ ] Exit: green in `components` (progress, gallery and inventory
+  by name), `workbench/sk150` by name and workbench root; guard
+  OK; gofmt gate OK; layers gate OK; commit and push per repo; no
+  tag.
 
 
 ### G-CK11: Every window offers its actions through the menu bar
