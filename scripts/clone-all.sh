@@ -68,7 +68,9 @@ done
 # is what CI and every consumer see. It is read from the members and the
 # script refuses to guess if they disagree. The organisation repository's
 # tool module is not a workspace member: the gates run it with go run.
-modules=$(find . -mindepth 2 -name go.mod -not -path '*/.git/*' -not -path './organisation/*' |
+# A session's .claude worktree is a second checkout of the same modules, and
+# a module path may appear in a workspace only once.
+modules=$(find . -mindepth 2 -name go.mod -not -path '*/.git/*' -not -path '*/.claude/*' -not -path './organisation/*' |
 	sed 's|/go.mod$||; s|^\./||' | sort)
 
 govers=$(for m in $modules; do sed -n 's/^go //p' "$m/go.mod"; done | sort -u)

@@ -26150,7 +26150,7 @@ session when the move lands.
 
 #### CL1.1: The trunk moves to the organisation repository
 
-- [ ] Under [[DOMAIN#0011 — organisation-repository]]: the `.github`
+- [x] Under [[DOMAIN#0011 — organisation-repository]]: the `.github`
   repository is renamed on GitHub to `organisation` (`gh repo
   rename`, after the owner's go); the flat checkout is moved
   (`mv .github organisation`, then `git remote set-url`); a new
@@ -26168,7 +26168,7 @@ session when the move lands.
   Every path in PLAN.md, DOMAIN.md, the reviews, the reference and
   the pool that names `.github/` as the trunk's checkout names
   `organisation/`; checked tasks keep their text.
-- [ ] Exit: `scripts/sync-agents.sh check` OK across every module;
+- [x] Exit: `scripts/sync-agents.sh check` OK across every module;
   `scripts/clone-all.sh` run in a fresh parent directory clones the
   organisation repository as `organisation` and generates go.work;
   guard OK; gofmt gate OK; `go build ./...` in the organisation
