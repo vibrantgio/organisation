@@ -25726,23 +25726,26 @@ run, and no capture runs while the owner is at the machine
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
-#### CK10.37: A tooltip is placed inside the window's room
-
+#### CK10.37: The shell passes the window's available room to every tooltip its arrangements place
 - [ ] Under [[DOMAIN#Tooltip]], found under CK10.31: no caller
   passes the tooltip's `AvailableRoom`, so an unanchored tooltip
   on a control near the window's edge is drawn partly outside the
-  window. The room is the window's content area, which
-  `patterns/shell`'s arrangements know: the shell passes it once
-  (a value the window's layout exposes, say the seam, as
-  `components/picker`'s field takes its room) and every tooltip
-  caller in the workbench and the gallery passes that value;
-  sk150's demo button, feeds' "Unread" and vaultview's link tip
-  included. A test per app that a tooltip on a control at the
-  window's trailing edge is drawn whole inside the window.
-- [ ] Exit: green in `patterns`, `components` (gallery and inventory
-  by name), every workbench app by name and workbench root; guard
-  OK; gofmt gate OK; commit and push per repo; no tag.
-
+  window. The available room is the window's content area, and the
+  tooltip takes it in its own coordinates, so no single value fits
+  every caller: `patterns/shell` passes the area on the context
+  (`shell.WithAvailableRoom(gtx, r)` set by a window's root,
+  `shell.AvailableRoomAt(gtx, off)` moving it into a child's
+  coordinates, `shell.AvailableRoom(gtx)` read by a caller;
+  unset, an unbounded rectangle). `TwoColumn`, `ThreeColumn`,
+  `ListColumn`, `PaneColumn`, the toolbar, `shell.EmptyState` and
+  `patterns/tabs` set or move the area for every child they place.
+  The gallery's inventory specimen is a static picture, not a live
+  tooltip, and is out of scope. A test per arrangement that a
+  tooltip in a trailing-edge slot, and one in an empty state's
+  action, is drawn whole inside the window.
+- [ ] Exit: green in `patterns` by name and workbench root; guard
+  OK; gofmt gate OK; layers gate OK; one commit in patterns, push;
+  no tag.
 #### CK10.38: A tooltip adds no Tab stop of its own
 
 - [ ] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Focused]], found under
@@ -26025,6 +26028,20 @@ run, and no capture runs while the owner is at the machine
 - [ ] Exit: a test that the row below the grid's foot is clipped and
   the seam hairline is drawn at the foot in the measured colour;
   green in `workbench/sk150` by name and workbench root; guard OK;
+  gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CK10.54: Feeds, sk150 and vaultview pass the window's available room to their tooltips
+
+- [ ] Under [[DOMAIN#Tooltip]], the workbench half of CK10.37: feeds'
+  "Unread" tip, sk150's demo button tip and vaultview's link tip
+  pass `shell.AvailableRoom(gtx)` as `AvailableRoom`, and each
+  layer of their own that places a child at an offset calls
+  `shell.AvailableRoomAt`; sk150, which uses no arrangement, sets
+  the area at its root with `shell.WithAvailableRoom`. A test per
+  app that a tooltip on a control at the window's trailing edge is
+  drawn whole inside the window.
+- [ ] Exit: green in `workbench/feeds`, `workbench/sk150`,
+  `workbench/vaultview` by name and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
 
 ### G-CK11: Every window offers its actions through the menu bar
