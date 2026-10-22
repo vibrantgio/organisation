@@ -3733,3 +3733,17 @@ spends it on its bars, and vaultview's inspector gives its bar a lane
 only while the bar stands. What that work left open stands here.
 
 1073. **[note]** **A window keeps the setting it opened on.** `desktop.ScrollBars()` is read once at each composition root, which is what keeps a frame off the platform and a still render off the machine it runs on; nothing re-reads it. A reader who changes Show scroll bars in the Appearance pane with a window open sees the old answer until the next launch. macOS posts a notification when the scroller style changes, and the bridge offers no stream for it — the live theme is polled on a timer for the same kind of question. Whether the setting should reach a window as a stream beside the theme's, and whether a snapshot read once is the right shape for anything the reader can change while looking at it, is unasked.
+
+## FV. From CK10.2, vaultview's edges
+
+Filed 2026-10-22 from the work itself: the rule under the content
+column's pinned head now runs to the inspector's seam, the properties
+pane and the count in the foot stand on the measure the document's
+blocks stand on, and the outline's 7 px was read and found to be the
+outline's own level step. What the work left open stands here.
+
+1076. **[note]** **A standing message stands at the page's inset while everything else in the column stands on the measure.** "Downloading…", "Scanning vault…", a scan's error and "No notes in this vault." are laid out at the page's own 24 dp inset, where the properties pane, the document's blocks and the count in the foot all stand at the measure's leading edge once the column is wider than the measure — 70 against 24 in a 774 dp column. A message stands in place of the document rather than being it, so whether it belongs on the document's edge, on the column's inset, or centred in the column the way the platform centres an empty view's own line, is unasked.
+
+1077. **[note]** **The content column itself still ends a lane short of the inspector's seam.** `shell.TwoColumn`'s `InspectorGap` holds 6 dp between the content column's trailing edge and the seam, so the column's rows — the document's scroll bar above all, which the platform stands hard against the edge it follows — stop at x 774 in a window whose seam is at 780, with the content fill showing in between. Only the pinned head's rule was carried across it here. Whether the gap is a lane with a reason or the empty lane the Show-scroll-bars ruling closed elsewhere, and whether the content column should simply run to the seam, is unasked.
+
+1078. **[note]** **The rule that seats a document's measure is restated outside `markdown`.** `markdown`'s `blockInsets` decides where a document's blocks sit — the bar's lane off the viewport, the gutter off what is left, the measure centred in the viewport — and it is unexported, so vaultview's `noteTextBox` restates the same arithmetic to put the properties pane and the status bar on that edge. A test holds the two together against the rendered column, which is a test and not a seam. Whether `markdown.Style` should answer where its blocks lead, so a caller composing rows around a document asks rather than repeats, is unasked.

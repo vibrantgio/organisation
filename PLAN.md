@@ -25058,7 +25058,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.2: Vaultview's content column aligns on one edge, its corner closes and its outline rows hold their titles
 
-- [ ] Ruled by the ontology session 2026-10-22 from the Language on
+- [x] Ruled by the ontology session 2026-10-22 from the Language on
   findings 1025, 1027 and 1028. The content column's top rule
   stops 6 px short of the inspector's seam (x 773 against 780): a
   seam is one continuous line by the Seam entry, so the rule runs
@@ -25089,7 +25089,7 @@ run, and no capture runs while the owner is at the machine
   defect or the rule: the platform's find acts on a document, and
   there is none; if so, record and close). Goldens regenerate with
   the cause named per golden; no other composition change.
-- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
+- [x] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
 
 #### CK8.2: The window names the note it is fetching while it waits
