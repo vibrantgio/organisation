@@ -502,6 +502,9 @@ closed, a menu let go — gives it back to where it came from, as the
 platform does. Its accent is the ring around the control, and the ring is all it may draw: a checked
 control that is focused gets the ring and keeps its mark — redrawing
 a checked box as unchecked would let one state overwrite another.
+The ring is drawn around the control's outer edge, outside its
+content: around a list's box, never over a row. Its width is
+measured into the reference.
 
 ### Footer
 
@@ -915,7 +918,11 @@ them may be singled out as the recommended tier.
 The signal showing how far a task the system is doing has come: a bar
 filling from the leading end when the end is known, and the
 platform's indeterminate indicator when it is not. It is read, never
-operated, and leaves when the task ends.
+operated, and leaves when the task ends. Content still arriving is a
+task in progress, not an empty state: the indicator and the
+application's own sentence stand centred in the region's frame, as
+an empty state does, never as a row of the content, and leave when
+the content arrives.
 
 ### Purpose
 
@@ -1044,7 +1051,8 @@ it.
 ### Seam
 
 The hairline where two flush regions meet — a list column against
-the content, the navbar's foot, the status bar's top. Its colour is
+the content, the navbar's foot, the status bar's top, a scrolling
+region's foot against a fixed band below it. Its colour is
 measured per scheme into the reference from the platform's own
 windows, Mail's list seam among them, never derived; it is drawn
 once, by the region above or leading. A seam between two columns
