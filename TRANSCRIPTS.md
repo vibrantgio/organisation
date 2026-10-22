@@ -1270,3 +1270,13 @@ Rene: If we agree, then the first thing we now need to take care of
 is making this discoverable for a newly created or compacted
 context. How do we make this something you can discover?
 ^0005-ste-discoverable
+
+Rene: I think it needs to be in the method's canon. So I'd like you
+to edit /Users/rene/code/w/trinova-ai/claude-plugins and add that
+into the crunchgate method. Do it in a subtask if you want. And
+commit it to git and push to github. Make sure you update the
+marketplace.json version field so I can update the plugin in claude
+here. Once we have this ruling in the crunchgate plugin, we can
+insert references to that entry. A teacher once told me that if
+you want to solve a problem create indirections.
+^0005-ste-in-the-canon
