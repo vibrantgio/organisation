@@ -435,7 +435,11 @@ and the actions that fill the region under that, centred as one
 group; the line itself names no control. The frame it centres in
 is the one the content would occupy: a standing scroll bar's lane
 lies outside it, as the platform's clip view excludes its scroller.
-It is not content and does not stand on the measure.
+Each region that has nothing to show says so for itself: a column
+keeps its place and its empty state when its content fails to
+arrive, and a form with no entries has one empty state in the
+field that would list them, never one per blank field. It is not
+content and does not stand on the measure.
 
 ### Eyebrow
 

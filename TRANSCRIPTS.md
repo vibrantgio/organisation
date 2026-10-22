@@ -1214,3 +1214,5 @@ Rene (to the vibrantgio session, relayed in its words): he is
 worried the vibrantgio session does not adhere to the crunchgate
 method; from now on tasks cite a ruling as a wikilink to the
 DOMAIN entry. ^0005-tasks-cite-entries
+
+Rene: Which DOMAIN.md do you rule on?
