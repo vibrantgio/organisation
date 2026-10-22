@@ -1014,13 +1014,19 @@ The control for one piece of content that keeps its own size — a
 code block, a preformatted table, a wide diagram: it shows the part
 that fits and lets the user move the visible part to the rest, sideways or
 down. Nothing in it is chosen; the content is never reflowed or cut.
+Its padding is inside it and moves with the content, as a platform
+text view's inset moves with the text, so the content reaches the
+rim once scrolled. What is past its edge is clipped at the edge,
+never faded.
 
 ### Scrollbar
 
 The control moving the visible part through content larger than its
 surface: a thumb on a track whose size mirrors how much of the
 content is visible. Operating it moves what is visible, never the content.
-Every region that scrolls has one. The region that scrolls is the
+Every region that scrolls has one. What is past a scrolling region's
+edge is clipped at the edge, never faded, as the platform's scroll
+views clip. The region that scrolls is the
 column, and the column's padding is inside it: the bar is at the
 column's trailing edge, never inset by the padding. At Always the bar
 has a lane of its own and the rows stop short of the lane. A column
