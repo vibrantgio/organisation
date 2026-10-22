@@ -26228,7 +26228,7 @@ order.
 
 #### CM1.2: The search field's clear mark posts the empty change once
 
-- [ ] Under [[DOMAIN#Search field]], found under CK10.39 (findings
+- [x] Under [[DOMAIN#Search field]], found under CK10.39 (findings
   1158 and 1159): the clear mark posts the empty change twice on
   one frame, once from the field after `SetText("")` and once from
   the editor's update, where Escape posts it once. The clear mark
@@ -26238,7 +26238,7 @@ order.
   that takes Escape when the field is empty asks for the key after
   the field has laid out. A test that the clear mark posts the
   empty change exactly once.
-- [ ] Exit: green in `components` (input by name), `workbench/feeds`
+- [x] Exit: green in `components` (input by name), `workbench/feeds`
   and `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; one commit in components, push; no tag.
 
