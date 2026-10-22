@@ -25500,6 +25500,27 @@ run, and no capture runs while the owner is at the machine
 - [ ] Exit: green in `workbench/sk150` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
+#### CK10.25: A faded scroll bar's thumb paints nothing either
+
+- [ ] Found under CK10.19: a scroll bar whose thumb has faded to
+  alpha 0 still paints the thumb's rounded rectangle, and that
+  paint shifts antialiased glyph edges in prose nowhere near it;
+  it, not the track, moved sitedocs' Docs goldens by 31 and 145
+  pixels of at most 3 in 255 under CK10.11. `Style.Layout` paints
+  the thumb only when its colour has alpha, as CK10.19 made the
+  track; the pointer areas are registered as before. Every golden
+  set that draws a bar is run (components, markdown, patterns,
+  every workbench app, the gallery); goldens regenerate only where
+  a faded thumb's paint had moved pixels, each named with the
+  cause; the bar's own pixels move nowhere.
+- [ ] Exit: the op-stream test of CK10.19 extended to the thumb;
+  sitedocs' Docs goldens byte-identical to their pre-CK10.11 bytes
+  (`git show c090fd4^:sitedocs/testdata/golden/docs-tab-light.png`
+  and dark); green in `components` (gallery and inventory by
+  name), `markdown`, `patterns`, every workbench app by name and
+  workbench root; guard OK; gofmt gate OK; commit and push per
+  repo; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
