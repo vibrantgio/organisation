@@ -25314,7 +25314,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.14: Mindchat's provider field and sitedocs' guide say what is missing in the empty state's words
 
-- [ ] Under [[DOMAIN#Empty state]], ruled on findings 1088 and
+- [x] Under [[DOMAIN#Empty state]], ruled on findings 1088 and
   1089. Mindchat's
   settings sheet shows "No providers" centred in the provider
   field's frame at its rows' size, naming no control; the add
@@ -25325,7 +25325,7 @@ run, and no capture runs while the owner is at the machine
   the log; `guideUnavailable`'s document and its "Where it lives"
   text go. Both through CK10.12's value. Goldens regenerate with
   the cause named per golden; a test holds each line's text.
-- [ ] Exit: green in `workbench/mindchat` and `workbench/sitedocs`
+- [x] Exit: green in `workbench/mindchat` and `workbench/sitedocs`
   by name and workbench root; guard OK; gofmt gate OK; one commit
   in workbench, push; no tag.
 
