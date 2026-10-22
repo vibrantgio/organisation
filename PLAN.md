@@ -26797,6 +26797,19 @@ order.
   `workbench/sk150` by name and workbench root; guard OK; gofmt
   gate OK; one commit in workbench, push; no tag.
 
+#### CM1.35: Feeds' Unread tooltip hover test reads the window's own props
+
+- [ ] Found under CM1.1 (finding 1206): feeds'
+  `TestUnreadTooltipHoverHeadless` builds its own copy of the
+  Unread tooltip's props instead of reading the window's, so a
+  change to the window's tip is not under that test. The test
+  reads the props the window passes, as vaultview's `linkTipProps`
+  is read by its tests.
+- [ ] Exit: the test fails when the window's tip text is changed
+  and passes as it is; green in `workbench/feeds` by name and
+  workbench root; guard OK; gofmt gate OK; one commit in workbench,
+  push; no tag.
+
 ### G-CM2: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
