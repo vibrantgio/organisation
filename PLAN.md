@@ -25247,6 +25247,27 @@ its control posts.
   and workbench root; guard OK; gofmt gate OK; commit and push per
   repo; no tag.
 
+#### CK10.10: A vault that cannot be read says so in vaultview's own words
+
+- [ ] Ruled by the ontology session 2026-10-22 on finding 1082: an
+  empty state's line is the application's own sentence in plain
+  words, and the system's text never stands in it; where the cause
+  matters to the user it is a situation and so an alert's body or
+  a dialog's informative text, otherwise the raw text goes to the
+  log. vaultview's column shows `filepath.WalkDir`'s own sentence
+  ("lstat …: no such file or directory") as its empty state at
+  28 sp. The empty state says "This vault can't be read." and the
+  system's sentence goes to the log with the vault's path; no
+  alert, since the column already says what the reader can act on
+  (open another vault) and the path is the one they chose. The
+  scan error golden regenerates if one exists, with the cause
+  named; otherwise a test holds the line's text.
+- [ ] Exit: a test that a vault that cannot be read draws the
+  sentence and not the system's text, and that the log carries
+  the system's text; green in `workbench/vaultview` by name and
+  workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
+
 #### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
 
 - [ ] The three windows gain their menu bars: vaultview (File: Open
