@@ -25596,7 +25596,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.30: Feeds' article column scrolls when the article is taller than it
 
-- [ ] Under [[DOMAIN#Column]] and [[DOMAIN#Scrollbar]], ruled on
+- [x] Under [[DOMAIN#Column]] and [[DOMAIN#Scrollbar]], ruled on
   finding 1122: a column whose content is taller than it scrolls,
   with its scrollbar at its trailing edge, and content is never
   cut off. Feeds' content column does not scroll, so a long
@@ -25607,7 +25607,7 @@ run, and no capture runs while the owner is at the machine
   and why from the entries; the empty state passes its frame
   through `EmptyStateFrame`. Goldens regenerate with the cause
   named if a bar is drawn at rest; none should at WhenScrolling.
-- [ ] Exit: a test that an article taller than the column scrolls
+- [x] Exit: a test that an article taller than the column scrolls
   to its end and a bar is drawn at Always; green in
   `workbench/feeds` by name and workbench root; guard OK; gofmt
   gate OK; one commit in workbench, push; no tag.
