@@ -3752,7 +3752,6 @@ the four applications that render markdown now spend theirs on the code
 block's bar. What the work left open, and what it found beside its own
 subject, stands here.
 
-1085. **[note]** **The gallery's documents keep a bar that can never stand.** `components/gallery/inventory` builds two `markdown.Style`s of its own, and neither spends a setting on `CodeScrollbar`, because the gallery reads none: it is a module inside `components` that has no composition root of the kind the workbench apps have, and `mvu/desktop` stands in its `go.mod` only as an indirect requirement. `sitedocs` renders that inventory in a tab, so inside those tiles an overflowing fence fades its bar whatever the reader asked for, while the fences in the Docs tab beside it stand. Whether a demo module should read the platform at all, or take the setting from whatever embeds it, is unasked.
 
 ## GB. From CK10.9, feeds' Share button
 
@@ -3830,7 +3829,4 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 ## HH. From CK10.45, the code block's sideways bar
 
-Filed 2026-10-22 while moving a code block's sideways bar to the block's own bottom edge.
-
-1167. **[note]** **A code block's side padding does not scroll with the code.** The fence's horizontal padding is outside its scroll area, so the code is clipped twelve pixels short of the block's rim on both sides at every scroll position and the visible part is the padded box, while the bar is now drawn across the whole block. The Scrollbar entry puts the padding of a region that scrolls inside the region, and the CK10.45 reviewer read the fixed padding as unlike a platform text view, whose inset scrolls with the text. Whether the fence's side padding moves inside the area, as the column's padding is inside the column, is unasked.
-1168. **[note]** **The cut edge of a code block dissolves into the fill where the platform clips hard.** While code is hidden past an edge, the block draws a dissolve over that edge, so the last glyphs before the side padding fade out; the CK10.45 reviewer measured glyphs at about a fifth of their contrast at the trailing edge at rest and at the leading edge once scrolled, and named the platform's scroll views and code views as clipping without a fade. The dissolve was the only sign of more content while the bar fades; with the bar drawn at the block's edge, whether the dissolve stays is unasked.
+Filed 2026-10-22 from the fresh-eyes review of CK10.45. Every finding is ruled and planned, CK10.62 to CK10.66; 1085 retires with 1168. Nothing stays open.

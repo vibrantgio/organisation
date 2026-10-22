@@ -26234,6 +26234,38 @@ run, and no capture runs while the owner is at the machine
   name and workbench root; guard OK; gofmt gate OK; commit and
   push per repo; no tag.
 
+#### CK10.65: A code block's side padding scrolls with the code
+
+- [ ] Under [[DOMAIN#Scroll area]] and [[DOMAIN#Scrollbar]], ruled
+  on finding 1167: a scroll area's padding is inside it and moves
+  with the content, as a platform text view's inset moves with the
+  text. The fence's side padding is outside its scroll area, so
+  the code is clipped 12 px short of the rim on both sides at
+  every scroll position. The padding is inside the area: the first
+  glyph reaches the rim once scrolled and the code is clipped at
+  the rim. The goldens that hold a wide code block regenerate with
+  the cause named (the clip at the rim). A test that a scrolled
+  block draws glyph pixels up to the rim.
+- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
+  name and workbench root; guard OK; gofmt gate OK; commit and
+  push per repo; no tag.
+
+#### CK10.66: What is past a scrolling region's edge is clipped, never faded
+
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], ruled
+  on findings 1168 and 1085: what is past a scrolling region's
+  edge is clipped at the edge, never faded, as the platform's
+  scroll views clip; the bar says there is more. The code block
+  draws a dissolve over an edge with hidden code, and the gallery's
+  fences fade the same way. The dissolve is removed from `markdown`
+  and from every fence in the gallery; the goldens that showed it
+  regenerate with the cause named (the clip in place of the
+  dissolve). A test that the glyphs at a cut edge keep their full
+  contrast.
+- [ ] Exit: green in `markdown` by name, `components` (gallery and
+  inventory by name), `workbench/vaultview` by name and workbench
+  root; guard OK; gofmt gate OK; commit and push per repo; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
