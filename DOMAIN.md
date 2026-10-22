@@ -713,7 +713,10 @@ on such a material, each keeping its hairline.
 The width a run of text is allowed to reach, from typography: long
 lines tire the reader, so a paragraph stops at its measure however
 wide the region is. Content narrower than its region is centred
-within the region; nothing widens to fill. Wide content that keeps
+within the region; nothing widens to fill. A region narrower than
+the measure keeps the padding on both sides of the text, and the
+measure shrinks to the width that remains; a window needs no minimum
+width for this. Wide content that keeps
 its own size — a code block, a table — sits in a scroll area no
 wider than the measure. A measure is stated as a count of
 characters of the body text, the typographer's unit, never in
