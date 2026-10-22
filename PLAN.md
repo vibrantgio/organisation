@@ -25365,7 +25365,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.17: A tab's content stands on the fill its strip stands on
 
-- [ ] Under [[DOMAIN#Tabs]] (the active tab's content stands on the
+- [x] Under [[DOMAIN#Tabs]] (the active tab's content stands on the
   fill the strip stands on; the tab's content is content, never a
   pane): `patterns/tabs` paints its whole frame in the content fill
   before the strip is painted in the fill the caller passes, so a caller passing
@@ -25377,7 +25377,7 @@ run, and no capture runs while the owner is at the machine
   plane's values, so no golden moves; a test holds the content's
   fill equal to the strip's in both schemes for a handed fill that
   differs from the content plane.
-- [ ] Exit: green in `patterns` by name and in every caller
+- [x] Exit: green in `patterns` by name and in every caller
   (components/gallery and its inventory, workbench/feeds,
   sitedocs, sk150) and workbench root; guard OK; gofmt gate OK;
   commit and push per repo; no tag.
