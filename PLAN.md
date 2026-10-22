@@ -25833,27 +25833,36 @@ run, and no capture runs while the owner is at the machine
   gofmt gate OK; commit and push per repo; no tag.
 
 #### CK10.43: The standing scrollbar is drawn from the platform's measured lane, track and thumb
-
-- [ ] Under [[DOMAIN#Scrollbar]], ruled on finding 1137: the standing
-  bar's lane width, its track and its thumb are measured into the
-  reference per scheme, never recalled. The bar at Always is drawn
-  today with no track and a 10 dp lane. A capture of Finder or Mail
-  under Show scroll bars: Always is taken in both schemes, stored
-  under `reference/macos`, and the lane's width, the track's fill,
-  the thumb's fill and the thumb's inset are read into
+- [ ] Under [[DOMAIN#Scrollbar]], ruled on findings 1137, 1144, 1145
+  and 1147: the standing bar's lane width, its track and its thumb
+  are measured into the reference per scheme, never recalled; a
+  lane exists only for a bar that is drawn; a region that scrolls
+  sideways has its bar at its bottom edge the same way. The bar at
+  Always is drawn today with no track and a 10 dp lane, and
+  vaultview's rails keep a 22 dp lane because `asideIndicator`
+  passes the rail's margin as the track's padding. Captures are
+  taken in both schemes under Show scroll bars: Always and stored
+  under `reference/macos`: Finder or Mail with rows that overflow;
+  one window whose content fits; Finder's column view with a
+  sideways bar. The lane's width, the track's fill, the thumb's
+  fill and inset, what the platform draws when the content fits (a
+  track with no thumb is a bar; no track is no lane), and the
+  sideways lane's height, track and thumb are read into
   `reference/macos/controls.md` as MEASURED rows.
-  `components/scrollbar` then draws the standing bar from those
-  rows, and every golden that shows a standing bar regenerates
-  with the cause named. This task takes a capture: it runs only on
-  an open desktop the owner has left, under the phase's caffeinate
-  rule.
-- [ ] Exit: the two captures and the MEASURED rows are in the
-  reference; a test that the bar at Always is drawn at the measured
-  lane width with the measured track; green in `components`
-  (scrollbar, list, gallery and inventory by name), `patterns` and
-  every scrollbar caller by name and workbench root; guard OK;
-  gofmt gate OK; commit and push per repo; no tag.
-
+  `components/scrollbar` then draws the standing bar, upright and
+  sideways, from those rows; a column whose content fits draws what
+  the reference shows; vaultview's rails pass no padding of their
+  own and keep the one measured lane; every golden that shows a
+  standing bar regenerates with the cause named. This task takes
+  captures: it runs only on an open desktop the owner has left,
+  under the phase's caffeinate rule.
+- [ ] Exit: the captures and the MEASURED rows are in the reference;
+  a test that the bar at Always is drawn at the measured lane width
+  with the measured track, upright and sideways, and a test that
+  vaultview's rails keep the same lane as every other column; green
+  in `components` (scrollbar, list, gallery and inventory by name),
+  `patterns` and every scrollbar caller by name and workbench root;
+  guard OK; gofmt gate OK; commit and push per repo; no tag.
 #### CK10.44: Themer's style column scrolls as the box's column with its padding inside
 
 - [ ] Under [[DOMAIN#Scrollbar]], found under CK10.35 (finding
@@ -25871,6 +25880,24 @@ run, and no capture runs while the owner is at the machine
   box's trailing edge; green in `workbench/themer` by name and
   workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
+
+#### CK10.45: A code block's sideways scrollbar is at the block's own bottom edge with its own lane
+
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], ruled on
+  finding 1147: a scroll area inside a document is a region that
+  scrolls, so its bar is at the area's own edge, inside the area,
+  with a lane of its own at Always, never over the block's padding.
+  In vaultview's note a code block's standing sideways thumb is
+  drawn over the block's padding and takes no lane. `markdown`'s
+  code block draws its sideways bar at the block's bottom edge
+  inside the block, the code stopping short of the lane at Always
+  and reaching the edge at WhenScrolling; the goldens that hold a
+  wide code block regenerate with the cause named.
+- [ ] Exit: a test that the block's sideways bar at Always is drawn
+  against the block's bottom edge inside it and the code stops
+  short of the lane; green in `markdown` by name,
+  `workbench/vaultview` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
 
 ### G-CK11: Every window offers its actions through the menu bar
 
