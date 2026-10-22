@@ -3830,3 +3830,7 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 ## HJ. From CK10.48, todos' add button
 
 Filed 2026-10-22 from the fresh-eyes review of CK10.48. Findings 1172 and 1173 are ruled and planned as CK10.70 and CK10.73. Nothing stays open.
+
+## HK. From CK10.49, sk150's column heads
+
+1174. **[note]** **The standing thumb on sk150's Presets tab moves 13 px for a 50 px scroll where its length implies about 16 px.** The fresh-eyes review of CK10.49 measured a 34 px thumb in a lane of about 96 px on ten slots of which about 3.7 show, and the thumb's top at y 188 at rest and y 201 after a 50 px scroll; the travel is to be checked against the bar's measured track in the reference before anything is changed.

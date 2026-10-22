@@ -25897,7 +25897,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.49: Sk150's Presets heading and column heads stay above the rows
 
-- [ ] Under [[DOMAIN#Scrollbar]], found under CK10.36 (finding
+- [x] Under [[DOMAIN#Scrollbar]], found under CK10.36 (finding
   1154): sk150's Presets tab draws the "Memory slots" heading, its
   line and the M V A LVP… column heads as the list's first rows, so
   the bar's lane starts under the tab strip and a scroll takes the
@@ -25907,7 +25907,7 @@ run, and no capture runs while the owner is at the machine
   scrolls, at full width, and only the slots scroll under them.
   A test that after scrolling the column heads are drawn at the
   same place and the lane starts under them.
-- [ ] Exit: green in `workbench/sk150` by name and workbench root;
+- [x] Exit: green in `workbench/sk150` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
 #### CK10.50: Sk150's list tabs scroll as the page's column with the padding inside
