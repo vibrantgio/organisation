@@ -26850,6 +26850,21 @@ order.
   `workbench/sk150` by name and workbench root; layers gate OK;
   guard OK; gofmt gate OK; commit and push per repo; no tag.
 
+#### CM1.38: The workbench shows a running application with a Neutral badge
+
+- [ ] Under [[DOMAIN#Badge]] and [[DOMAIN#Accent]], ruled on finding
+  1207: "running" is the system's word about the application's
+  state while it is true, a badge with no status, coloured Neutral,
+  the system grey with white text as the platform's count badge,
+  never the accent. The workbench's status line is removed; a
+  `badge` component with the text "Running" is drawn inline beside
+  a running application's name and is removed when the application
+  quits. The two workbench goldens regenerate with the cause named.
+- [ ] Exit: a test that a running application's row draws the
+  Neutral badge and no accent pixel, and that a stopped one draws
+  no badge; green in `workbench` root by name; guard OK; gofmt gate
+  OK; one commit in workbench, push; no tag.
+
 ### G-CM2: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window

@@ -3845,4 +3845,4 @@ Filed 2026-10-22 from CM1.1. Findings 1204 and 1205 are ruled: 1204 is in CM1.36
 
 ## HX. From CM1.3, the workbench's icons and launch button
 
-1207. **[decide]** **The workbench's status line draws "running" in the accent.** `workbench/view.go`'s `statusLine` draws the caption beside a running application's launch button in `ControlAccent`. By the Accent entry the accent shows a persistent state as the selection colour's fill with white text, or as the focus ring; a caption drawn in the accent is neither, and nothing on the cell is selected. Which colour a running application's caption is drawn in, the secondary text colour that "compiling…" is drawn in or another colour the Language names, is unruled.
+Filed 2026-10-22 from CM1.3. Finding 1207 is ruled and in CM1.38. Nothing stays open.
