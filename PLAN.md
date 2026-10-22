@@ -25485,7 +25485,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.24: Sk150's empty state loses the repeated status and the demo button names its duration
 
-- [ ] Under [[DOMAIN#Empty state]], [[DOMAIN#Status]] and
+- [x] Under [[DOMAIN#Empty state]], [[DOMAIN#Status]] and
   [[DOMAIN#Tooltip]], ruled on findings 1114 and 1115. While no
   SK150 is connected the connection status stands twice: in the
   header's status line, which is the status signal for the
@@ -25497,7 +25497,7 @@ run, and no capture runs while the owner is at the machine
   as the other workbench buttons have theirs. Goldens regenerate
   only if one holds the empty state, with the cause named; a test
   holds the description empty and the tooltip's text.
-- [ ] Exit: green in `workbench/sk150` by name and workbench root;
+- [x] Exit: green in `workbench/sk150` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
 #### CK10.25: A faded scroll bar's thumb paints nothing either

@@ -3813,3 +3813,14 @@ sitedocs' Docs column now draw `patterns/shell`'s `EmptyState`. What the
 work left open, and what it found beside its own subject, stands here.
 
 1112. **[note]** **The location the failed guide names is the checkout's, whichever source actually failed.** The description under "This guide can't be loaded." is the first candidate path resolved against the process's own directory, so in a checkout it names the file that is missing. A `go run …@latest` install has no checkout at all: the leg that really failed is the fetch of the canonical URL, and the path the reader is shown is one that was never going to exist. Whether the description should name the source whose failure was last, rather than the location the guide belongs at, is unasked.
+
+## GQ. From CK10.24, sk150's status and tooltip
+
+Filed 2026-10-22 from the work itself: sk150's empty state has no
+description while no device is connected, and its demo button has a
+tooltip through `components/tooltip`. What the work found beside its own
+subject stands here.
+
+1123. **[defect]** **A tooltip that wraps a clickable control never shows.** With a nil `Props.Anchor` the tooltip registers its hover area over the trigger's box and then draws the trigger above it, so a trigger with a pointer area of its own, such as a button's, takes every pointer event and the hover area under it receives none: the dwell never starts. No test in `components/tooltip` uses a clickable trigger, and the one workbench trigger built this way before draws nothing that is hit-tested. sk150 replays its demo button pass-through as the trigger to get the hover; the component could register its hover area pass-through over the trigger instead, so every caller that wraps a control gets it.
+
+1124. **[note]** **The tooltip sizes and places its surface inside the frame it is given.** A caller that wraps a control in a tooltip gives it the control's own size, and the text room is then three quarters of the control's width and a quarter of its height, which elides a sentence to nothing. sk150 gives the tooltip a larger frame centred on the button and returns the button's size; whether the component should take the room for its surface from somewhere other than its own constraints is unasked.
