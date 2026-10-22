@@ -521,7 +521,9 @@ The row at the bottom of a component or pattern holding what
 belongs to the whole of it: a dialog's actions, a card's actions,
 a pane's control for its own collection, a column's status text. A
 footer is optional, and an empty footer takes no height. The status
-bar is the window's own strip, not a column's footer. The
+bar is the window's own strip, not a column's footer. A footer of
+status text has the height and the text's place the platform's
+status bar is measured with, from Finder's, never recalled. The
 application's settings are never a footer's control: Settings stands
 in the application menu, the platform's place.
 
@@ -1085,7 +1087,9 @@ measured per scheme into the reference from the platform's own
 windows, Mail's list seam among them, never derived; it is drawn
 once, by the region above or leading. A seam between two columns
 runs the window's full height, the toolbar included, as Mail's
-does. An inset object needs no seam: the backdrop showing around
+does. A seam across a column runs the column's full width, a
+standing scrollbar's lane included, as Mail's do. An inset object
+needs no seam: the backdrop showing around
 it does that work. A seam the user can drag is a splitter.
 
 ### Search field
