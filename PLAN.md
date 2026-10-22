@@ -25232,12 +25232,8 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.10: A vault that cannot be read says so in vaultview's own words
 
-- [ ] Ruled by the ontology session 2026-10-22 on finding 1082: an
-  empty state's line is the application's own sentence in plain
-  words, and the system's text never stands in it; where the cause
-  matters to the user it is a situation and so an alert's body or
-  a dialog's informative text, otherwise the raw text goes to the
-  log. vaultview's column shows `filepath.WalkDir`'s own sentence
+- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1082:
+  vaultview's column shows `filepath.WalkDir`'s own sentence
   ("lstat …: no such file or directory") as its empty state at
   28 sp. The empty state says "This vault can't be read." and the
   system's sentence goes to the log with the vault's path; no
@@ -25270,15 +25266,11 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.12: The empty state stands a description and actions under its line and takes a pane's size
 
-- [ ] Ruled by the ontology session 2026-10-22 (the Empty state
-  entry at a36541d): an empty state covers any region with
-  nothing to show; its line centres in that region's frame, at
-  the measured size in a column and at the size of the rows it
-  stands for in a pane's section or a sheet's field; as the
-  platform's content unavailable view does, it may stand a
-  description under the line and the actions that fill the region
-  under that, centred as one group, and the line itself names no
-  control. `patterns/shell`'s `EmptyState` grows to that shape: a
+- [ ] Under [[DOMAIN#Empty state]] (the entry's shape: a line, a
+  description and actions under it, centred as one group; the
+  measured size in a column, the rows' size in a pane's section
+  or a sheet's field): `patterns/shell`'s `EmptyState` grows to
+  that shape: a
   props value with the line, an optional description (the
   secondary label at the body size, say the reading or the
   nearest role), optional actions (controls the caller hands in,
@@ -25298,7 +25290,8 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.13: Vaultview's pane sections and iconbrowser's grid draw the empty state
 
-- [ ] Ruled 2026-10-22 on findings 1087 and 1091. Vaultview's three
+- [ ] Under [[DOMAIN#Empty state]], ruled on findings 1087 and
+  1091. Vaultview's three
   lines outside the content column ("No note by that name." when
   the tree's filter matches nothing, "No notes link here." in the
   backlinks pane, "This note has no headings." in the outline
@@ -25320,7 +25313,8 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.14: Mindchat's provider field and sitedocs' guide say what is missing in the empty state's words
 
-- [ ] Ruled 2026-10-22 on findings 1088 and 1089. Mindchat's
+- [ ] Under [[DOMAIN#Empty state]], ruled on findings 1088 and
+  1089. Mindchat's
   settings sheet shows "No providers" centred in the provider
   field's frame at its rows' size, naming no control; the add
   button beside the field is the action and the "+" leaves the
@@ -25336,7 +25330,8 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.15: Sk150's Monitor tab offers the demo from its empty state
 
-- [ ] Ruled 2026-10-22 on finding 1090. Before the first reading
+- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1090. Before
+  the first reading
   the Monitor tab stands "No SK150 connected" in the Title role,
   the connection status, a Demo button and a sentence explaining
   the demo, anchored at the tab's top. It becomes one empty state
@@ -25369,11 +25364,9 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.17: A tab's content stands on the fill its strip stands on
 
-- [ ] Ruled by the ontology session 2026-10-22 (the Tabs entry at
-  a2ec3eb): the strip has no fill of its own, it stands on the fill
-  of the region it is in, and the active tab's content stands on
-  the same fill; the tab's content is content, never a pane.
-  `patterns/tabs` paints its whole frame in the content fill
+- [ ] Under [[DOMAIN#Tabs]] (the active tab's content stands on the
+  fill the strip stands on; the tab's content is content, never a
+  pane): `patterns/tabs` paints its whole frame in the content fill
   before the strip takes the handed one, so a caller handing
   another fill gets a strip on one fill over content on another.
   The pattern paints the handed fill under the tab's content as
@@ -25390,7 +25383,7 @@ run, and no capture runs while the owner is at the machine
 
 ### G-CK11: Every window offers its actions through the menu bar
 
-Ruled 2026-10-22 (the Action entry at 3724a9f): every action a window
+Under [[DOMAIN#Action]]: every action a window
 offers through a control also stands in the menu bar with its key
 equivalent, as the platform requires, so an action is never offered
 nowhere; a control that goes with its pane removes nothing from the
@@ -25404,7 +25397,6 @@ standard items where a field exists, View with the pane's toggle
 where a pane exists; the chords the window already binds move into
 the table so one place states them. Each menu item posts the message
 its control posts.
-
 #### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
 
 - [ ] The three windows gain their menu bars: vaultview (File: Open
