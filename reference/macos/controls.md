@@ -1326,6 +1326,60 @@ track with no thumb. The light standing thumb reads 133/255 where the light
 `scrollbarThumb` row carries the dark appearance's 146/255; the dark readings
 agree to the 255th.
 
+## What a control inside a row measures
+
+Added 2026-10-22 by CK10.73, from captures of Reminders taken on the
+2560×1440 display at 1x where one pixel is one point, one capture per state
+and appearance. The window's bounds as System Events reports them are
+x 200–1199, y 80–779 (1000×700); each capture is the window's trailing 630
+columns, x 570–1199, so the sidebar is cut away and the content column is
+what is stored. The list shown is one made for the capture, holding four
+reminders named "First row" to "Fourth row", and was deleted afterwards.
+The pointer was moved off the window for the rest and selected captures and
+over the second row for the pointer capture, by a posted mouse-moved event.
+The row was selected through the accessibility interface and the selection
+then moved by the Up arrow key, so the list held the keyboard when the
+selected capture was taken.
+
+- `reminders-row-rest-{light,dark}.png`: no row selected, the pointer off
+  the window.
+- `reminders-row-hover-{light,dark}.png`: no row selected, the pointer over
+  the second row.
+- `reminders-row-selected-{light,dark}.png`: the second row selected, the
+  pointer off the window.
+
+Coordinates are capture coordinates, (0,0) at the capture's top-leading
+corner; the window's last column is x 629. The second row is y 169–200 in
+every capture. Read with PIL over the stored PNGs. In the light captures
+the first 14 columns hold the sidebar's shadow, `#e2e2e2`–`#e7e7e7` on the
+selected fill and `#f4f4f4`–`#fbfbfb` on the content.
+
+| what | measured | where | method |
+| --- | --- | --- | --- |
+| the row's height | **32 px**: the second row is y 169–200 | `reminders-row-selected-{light,dark}.png` | a run down x 300 steps from the content's fill to the selected fill at y 169 and back at y 201, in both schemes; the rows' text and circles repeat every 32 rows in every capture |
+| the trailing control at rest | **not drawn** on any row | `reminders-row-rest-{light,dark}.png` | no pixel in x 560–625 differs from the content's fill by more than 20 levels summed over the channels on any of the four rows, in both schemes |
+| the trailing control under the pointer | **drawn on the row under the pointer only**; the row draws no fill of its own | `reminders-row-hover-{light,dark}.png` against `reminders-row-rest-{light,dark}.png` | the pointer and rest captures differ in 154 pixels, all inside x 596–613, y 175–192, in both schemes; every other pixel, the row's fill included, is the same byte |
+| the trailing control on the selected row | **drawn** on the selected row with the pointer off the window; not drawn on the other rows | `reminders-row-selected-{light,dark}.png` | the same box x 596–613, y 175–192 holds the mark on the second row; x 560–625 on the first, third and fourth rows reads only the content's fill |
+| the trailing control's extent | **18 × 18 px**, x 596–613, y 175–192: 6 rows clear above it and 8 below it in the 32 px row | `reminders-row-hover-{light,dark}.png`, `reminders-row-selected-{light,dark}.png` | the bounding box of the pixels more than 20 levels off the fill under them; a run across y 184 reads the ring at x 596–597 and x 612–613 and a run down x 604 reads it at y 175–176 and y 191–192 with the "i" between, in both schemes |
+| the trailing control's inset | **16 px** from the window's outer trailing edge: x 614–628 read the row's fill and x 629 is the window's rim | `reminders-row-hover-{light,dark}.png`, `reminders-row-selected-{light,dark}.png` | the mark's last column is x 613. The selected fill reads `#ebebeb` light and `#404040` dark through x 628, so the row reaches the rim and the row's trailing edge is the window's edge; x 629 reads `#ededed` light and `#666666` dark on the selected row, `#4b4b4b` dark on the content |
+| the trailing control's colour | the accent blue: the peak pixel reads **`#157efb`** light and **`#1c87fb`** dark, the same on the content's fill and on the selected fill | `reminders-row-hover-{light,dark}.png`, `reminders-row-selected-{light,dark}.png` | the pixel furthest from the fill inside the mark's box. `controlAccentColor` in `nscolors.tsv` reads `#007aff` in both appearances, 21 levels under the light peak and 28 under the dark one on the red channel |
+| the completion circle | **18 px** across, a 1 px ring, x 15–32 and y 176–193 on the second row; drawn on every row in every state | all six captures | a run across y 185 reads the ring at x 15–16 and x 31–32 and a run down x 23 at y 176–177 and y 192–193. Its darkest pixel reads `#bebebe` light and `#535353` dark over the content's fill, `#afafaf` light and `#6b6b6b` dark over the selected fill |
+| the selected row's fill | `#ebebeb` light, black at **20/255** over `#ffffff`; `#404040` dark, white at **39/255** over `#1e1e1e`; 32 px tall, the content column's full width, square ends | `reminders-row-selected-{light,dark}.png` | flat-region samples along y 185 and down x 300. 255 − 20 = 235, `#eb`; 30 + 225 × 39/255 = 64.4, `#40`. The corners at x 620–628 on y 169 and y 200 read the fill, so the ends are square. It is not `unemphasizedSelectedContentBackgroundColor`, which reads `#dcdcdc` and `#464646` in `nscolors.tsv` |
+
+**A control inside a row is drawn on the row under the pointer and on the
+selected row, and on no row at rest.** It is an 18 px mark drawn 16 px
+inside the row's trailing edge, centred within a pixel on the row's middle,
+in the accent blue in both schemes and on both fills. The row under the
+pointer draws no fill; only the mark is added. The completion circle at the
+row's leading end is the row's own control and is drawn in every state.
+
+**What is open here.** The selected fill is grey while the list holds the
+keyboard, where a selected sidebar row with the keyboard is drawn in the
+accent; these captures do not read the selected row's fill with the
+keyboard elsewhere. The mark's peak pixel is 21 and 28 levels off
+`controlAccentColor` on the red channel, so the mark's colour is not one
+name in the catalogue to the byte.
+
 ## What the band's segmented control measures
 
 Read 2026-09-18 by CG5.3o at 1x from `finder-window-light.png` and
