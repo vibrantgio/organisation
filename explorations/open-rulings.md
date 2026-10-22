@@ -3713,12 +3713,3 @@ that is the platform's own measured behaviour, is in
 1064. **[note]** **Dates are formatted without the reader's locale.** The articles table and the article's own byline both spend `Jan 2 2006`, so a date reads "May 13 2026" wherever the window is opened, with no comma and in one order. Whether the library carries a date format at all, and where a window asks for the reader's, is unasked.
 1065. **[note]** **The tab strip over a document is an underlined bar.** `patterns/tabs` draws a band behind its titles with a two-pixel accent underline under the selected one and a hairline along its foot. The platform puts a segmented control there. Whether the tab strip takes the segmented control's drawing, and whether a document's tabs are a toolbar control rather than a band of their own, is unasked.
 1067. **[note]** **A sidebar heading's name aligns with neither the rows' symbols nor their labels.** In the rendered window the heading's name begins at x=25, the rows' symbols at x=30 and the rows' labels at x=57, so the one row that names a group stands in a column of its own. The heading's own metrics are measured off the stored capture; what is unmeasured is which of the two columns under it the name is supposed to stand in. Unasked.
-
-## FS. From CK7.9, the pane's act
-
-Filed 2026-10-22 from the work itself: Add feed left the content
-toolbar and became the pane's own mark, which is what the Pane entry
-asks for and what the window now draws. What that move turned up
-stands here.
-
-1068. **[note]** **With the pane away, feeds offers Add feed nowhere.** The mark goes with the pane, as the Pane entry and the platform's own sidebars have it, and this window has no second way in: it binds one accelerator, the settings comma, and carries no menu at all. Mindchat is the other half of the precedent — its new-chat mark goes with the pane too, but a File menu entry and a chord reach it in either pane state, so the act stays reachable. Whether feeds should carry a menu of its own with Add feed in it, whether a chord alone is enough, and whether every window whose pane holds a mark owes that mark a menu entry, is unasked.

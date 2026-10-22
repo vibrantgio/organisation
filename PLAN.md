@@ -25098,7 +25098,13 @@ run, and no capture runs while the owner is at the machine
   for one kind; chrome of one kind wears one measured material,
   so the pane and the list toolbar's share (or whichever two
   disagree: read the dark golden and say) take the one material.
-  Goldens regenerate with the cause named per golden; nothing else
-  moves.
+  One more from CK7.9: with the pane collapsed feeds offers Add
+  feed nowhere, since it has no menu bar of its own; the platform
+  keeps every act reachable through the menu bar, so feeds gains a
+  menu as mindchat has (`mvu/desktop`'s menu bar: File with Add
+  Feed… and its chord Command-N, and the application menu's
+  Preferences… carrying the chord `shortcut.go` already binds),
+  the dialog opening from either. Goldens regenerate with the
+  cause named per golden; nothing else moves.
 - [ ] Exit: green in `workbench/feeds` by name; guard OK; gofmt gate
   OK; commit and push in `workbench` and `.github`; no tag.
