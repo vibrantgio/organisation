@@ -25298,7 +25298,7 @@ its control posts.
   control. `patterns/shell`'s `EmptyState` grows to that shape: a
   props value with the line, an optional description (the
   secondary label at the body size, say the reading or the
-  nearest role), optional actions (widgets the caller hands in,
+  nearest role), optional actions (controls the caller hands in,
   laid in a row under the description at the platform's control
   gap), and the size the line is set at (the measured 28 sp for a
   column, the rows' own text style for a pane's section or a
