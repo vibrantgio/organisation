@@ -25831,9 +25831,12 @@ run, and no capture runs while the owner is at the machine
   Iconbrowser's field is then drawn from those rows through
   `input.SearchField` (a region or variant for a field on content,
   say which and why), and the six window goldens regenerate with
-  the cause named. In the same commit `TurnedMark` and its test
-  are renamed by what the mark depicts, chevron-down, since
-  "turned" is no Language word. This task takes a capture: it runs only on an
+  the cause named. In the same commit, under [[DOMAIN#Icon]] and
+  [[DOMAIN#Disclosure]], iconbrowser draws the set's chevron-down
+  for a row whose disclosure is open instead of a turned
+  chevron-right, the note says "chevron-down, for a row whose
+  disclosure is open", and `TurnedMark` and its test are renamed
+  as the chevron-down mark's. This task takes a capture: it runs only on an
   open desktop the owner has left, under the phase's caffeinate
   rule.
 - [ ] Exit: the two captures and the MEASURED rows are in the
