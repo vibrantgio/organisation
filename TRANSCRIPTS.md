@@ -1280,3 +1280,7 @@ here. Once we have this ruling in the crunchgate plugin, we can
 insert references to that entry. A teacher once told me that if
 you want to solve a problem create indirections.
 ^0005-ste-in-the-canon
+
+Rene: Now you have knowledge of the crunchgate method is there
+something in your set of responsibilies that is not mentioned in
+the crunchgate method?
