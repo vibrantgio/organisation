@@ -3813,3 +3813,14 @@ sitedocs' Docs column now draw `patterns/shell`'s `EmptyState`. What the
 work left open, and what it found beside its own subject, stands here.
 
 1112. **[note]** **The location the failed guide names is the checkout's, whichever source actually failed.** The description under "This guide can't be loaded." is the first candidate path resolved against the process's own directory, so in a checkout it names the file that is missing. A `go run …@latest` install has no checkout at all: the leg that really failed is the fetch of the canonical URL, and the path the reader is shown is one that was never going to exist. Whether the description should name the source whose failure was last, rather than the location the guide belongs at, is unasked.
+
+## GT. From CK10.27, the padding below the measure
+
+Filed 2026-10-22 from the work itself: `markdown` now keeps the padding
+on both sides of a measured block at every width and caps the measure at
+the width less both paddings, through `Style.BlockInsets`, which
+vaultview's note column calls. What the work left open, and what it
+found beside its own subject, stands here.
+
+1126. **[ruling]** **vaultview's wide note column moved 7 dp toward the leading side.** The column's padding was the page's reading inset (24 dp) on the leading side and the bar's lane (10 dp) plus the document's padding (14 dp) on the trailing side. Kept as it was, the new rule would add the document's 14 dp padding inside the page's inset below the measure, leaving 38 dp before the text and 24 dp after it. The document's viewport now begins 14 dp before the page's inset instead, so the text has 24 dp on both sides at every width and no narrow golden moves its text (`note-tasks` gains a checkbox edge the old viewport clipped); the cost is that a column wider than the measure centres the measure between the column's edges rather than in the column less the page's leading inset, which moves the prose 7 dp in `window-hidden-light/dark`. Whether that centring is accepted, or the wide case must keep its old position at the price of unequal padding below the measure, is asked.
+1127. **[note]** **A document with no measure keeps its padding on the trailing side only.** `Style.Gutter` with a zero `Measure` still gives the blocks the width less the trailing padding, as before, because the Measure entry speaks of a region narrower than the measure and a document with no measure has none. A document laid out with a padding and no measure therefore runs its text against the leading edge. Whether the padding should be kept on both sides with no measure too is unasked; no caller in the tree sets a padding without a measure.

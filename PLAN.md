@@ -25540,7 +25540,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.27: A region narrower than the measure keeps its padding on both sides
 
-- [ ] Under [[DOMAIN#Measure]], ruled on finding 1117: a region
+- [x] Under [[DOMAIN#Measure]], ruled on finding 1117: a region
   narrower than the measure keeps the padding on both sides of the
   text, and the measure shrinks to the width that remains; no
   window needs a minimum width for this. `markdown`'s block
@@ -25553,7 +25553,7 @@ run, and no capture runs while the owner is at the machine
   no pixel (the measure centred as before). The field that carries
   the padding keeps its name in code; comments and the report say
   padding.
-- [ ] Exit: a test in `markdown` that at a viewport narrower than
+- [x] Exit: a test in `markdown` that at a viewport narrower than
   the measure the first block's lead equals the padding and its
   width equals the viewport less twice the padding, and that a wide
   viewport renders byte-identical to before; green in `markdown`,
