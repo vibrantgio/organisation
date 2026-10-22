@@ -1337,3 +1337,5 @@ Note diarizer DOMAIN.md has no entry for Centroid (go figure that)
 Rene: So for vibrantgio/organisation, I haven't seen it yet
 
 Rene: So what are all those capture tasks, making goldens?
+
+Rene: split the CK list in 2 CK and CM insert CL ^0005-split-ck-insert-cl
