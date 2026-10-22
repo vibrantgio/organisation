@@ -493,6 +493,27 @@ every row above and below its sidebar recess reads the sidebar's own 249-250,
 with no darkening at any distance. So the shadow belongs to the toolbar BAND's
 controls and not to a recess as such.
 
+**How far the shadow reaches ABOVE the control, re-read 2026-10-22 by
+CK10.1.** `mail-three-column-light.png` holds three bordered controls in a
+light band flat at `#ffffff` — a compose capsule and two of the reply and
+archive clusters, each spanning y 8-43 — and all three read the same run above
+their own top edge as `finder-window-light.png`'s view pop-up does, 255ths of
+the band by distance: **5, 5, 4, 4, 4, 3, 3, 2**. The eighth row is the
+window's own top row in every one of them, which is where the reading stops:
+each control stands 8 px below its band's top, and the band has the window's
+edge above it. Below those same controls both captures read 11, 11, 10, 10,
+10, 9, 9, 8, 8, 8, 7, 7, 6, 6, 6, 5, 5, 5, 4, 4, 4, 3, 3, 3, 3, 2 to the byte
+and recover 39 rows down, past the band's own foot and onto what lies under
+it.
+
+So the captures close **8 rows above the control and nothing beyond them**,
+where the fitted rectangle (reach 23 sunk 9) would carry its ramp 14. The
+library bounds the drawing to the 8 — `components/internal/control`'s
+`ToolbarShadowRiseDp`, applied in `DrawToolbarShadowAround` — so the shadow
+reaches the toolbar's top edge and never past it, and the cut leaves the step
+of two 255ths the eighth row measures. Below, the drawing is bounded by the
+reach alone, as the platform's is bounded by nothing inside the window.
+
 **The shadow falls outside the control's own box.** `gioui.org/widget`'s
 Clickable clips whatever it wraps to the box its layout.Widget reports, so a shadow
 painted inside a control's own `layout.Widget` is cut off at the control's

@@ -971,6 +971,13 @@ down. Nothing in it is chosen; the content is never reflowed or cut.
 The control moving the visible part through content larger than its
 surface: a thumb on a track whose size mirrors how much of the
 content is visible. Operating it moves what is visible, never the content.
+It shows while the content scrolls and under the pointer, and fades
+otherwise: at rest there is no thumb, and a still picture of a
+resting window holds none. A bar given a lane of its own, which the
+rows stop short of, stands instead — an empty reserved lane is a
+margin with no reason. The user's platform setting for when scroll
+bars show is what decides, read off the platform where the bridge
+can and otherwise taken as showing while scrolling.
 While a search is on, the track shows where the matches lie in the
 content, the current one stronger, beside the thumb and never under
 it.
