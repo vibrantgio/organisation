@@ -1012,8 +1012,10 @@ column's trailing edge, never inset by the padding. At Always the bar
 has a lane of its own and the rows stop short of the lane. The lane
 runs only beside what scrolls: a field or a header above the rows
 spans the column's full width, as the platform's search field above
-a list does. At When scrolling and at Automatic the bar lies over
-the rows' trailing edge and takes no lane.
+a list does. The standing bar's lane width, its track and its thumb
+are measured into the reference per scheme, never recalled. At When
+scrolling and at Automatic the bar lies over the rows' trailing edge
+and takes no lane.
 It stands at the trailing edge of the region that scrolls, whatever
 the measure of the content inside: the region scrolls as a whole
 and the measure caps the text within it, as the platform's reading
