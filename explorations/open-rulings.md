@@ -3831,6 +3831,4 @@ Filed 2026-10-22 from the work itself: iconbrowser's field is now an
 mark and Escape emptying it. What the work left open, and what it found
 beside its own subject, stands here.
 
-1135. **[note]** **Escape on a chrome search field is written in each application.** The Search field entry says Escape does what the clear mark does on a field on chrome, but `input.SearchField` does not take the key: feeds and iconbrowser each carry the same `clearOnEscape`, built from the field's `FocusTag` and `Clear`. Whether the component should take Escape itself, so an application states nothing, is unasked.
-
 1136. **[note]** **A search field on a window's own plane has no region of its own.** The Search field entry and `input.Region` name two places for the chrome variant, a sidebar and a toolbar. Iconbrowser's field is at the top of a page on the window's own fill, in neither. It takes `Sidebar`, the flat recess with no edge and no shadow, because `Toolbar` draws the rim and the drop shadow of a control in a toolbar band, and there is no band. Whether the entry should say which recess a field on a window's plane is drawn as, and whether that plane counts as chrome at all, is unasked.

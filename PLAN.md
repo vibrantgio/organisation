@@ -25761,6 +25761,24 @@ run, and no capture runs while the owner is at the machine
   name) and every tooltip caller by name and workbench root; guard
   OK; gofmt gate OK; commit and push per repo; no tag.
 
+#### CK10.39: The search field takes Escape itself
+
+- [ ] Under [[DOMAIN#Search field]], found under CK10.32 (finding
+  1135): Escape empties the field as the clear mark does, but
+  `input.SearchField` does not take the key; feeds and iconbrowser
+  each carry the same `clearOnEscape` built from the field's
+  `FocusTag` and `Clear`. The component takes Escape itself: with
+  text in the field, Escape empties it and posts the empty change,
+  the keyboard staying in the field; with nothing typed, Escape is
+  passed on untaken. Feeds' and iconbrowser's `clearOnEscape` are
+  deleted; their Escape tests stay and pass against the component.
+  A test in `components` that Escape on a field with text empties
+  it and posts the empty change once, and that Escape on an empty
+  field posts nothing.
+- [ ] Exit: green in `components` (input by name), `workbench/feeds`
+  and `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
@@ -25804,3 +25822,45 @@ its control posts.
   do not move.
 - [ ] Exit: green in each app by name; guard OK; gofmt gate OK; commit
   and push in `workbench` and `.github`; no tag.
+
+## Phase CL: The trunk is in the organisation repository
+
+Under [[DOMAIN#0011 — organisation-repository]]: the trunk is a
+repository of its own, github.com/vibrantgio/organisation, checked
+out as `organisation` beside the modules; the `.github` repository
+keeps `profile/` and nothing else. Until the move lands every path
+stays `.github`.
+
+### G-CL1: The trunk is in the organisation repository
+
+The one task is mechanical and runs on the owner's dispatch go. The
+GitHub rename is outward-facing and is his act. The application
+sessions that name `.github/DOMAIN.md` are told by the ontology
+session when the move lands.
+
+#### CL1.1: The trunk moves to the organisation repository
+
+- [ ] Under [[DOMAIN#0011 — organisation-repository]]: the `.github`
+  repository is renamed on GitHub to `organisation` (`gh repo
+  rename`, after the owner's go); the flat checkout is moved
+  (`mv .github organisation`, then `git remote set-url`); a new
+  `.github` repository is created holding `profile/` and nothing
+  else, and `profile/` is deleted from the organisation repository
+  in the same move; `scripts/sync-agents.sh`, `scripts/clone-all.sh`,
+  `scripts/inventory.sh`, `scripts/push-design.sh` and every guard's
+  usage text and comments name `organisation` where they named
+  `.github`; every module's AGENTS.md managed block names
+  `organisation/AGENTS.md` and is rewritten by `sync-agents.sh`; the
+  Go module path `github.com/vibrantgio/.github/scripts/retiredwords`
+  becomes `github.com/vibrantgio/organisation/scripts/retiredwords`
+  and `clone-all.sh`'s go.work generation still excludes it; the
+  landing notes' shorthand is `organisation <hash>` from then on.
+  Every path in PLAN.md, DOMAIN.md, the reviews, the reference and
+  the pool that names `.github/` as the trunk's checkout names
+  `organisation/`; checked tasks keep their text.
+- [ ] Exit: `scripts/sync-agents.sh check` OK across every module;
+  `scripts/clone-all.sh` run in a fresh parent directory clones the
+  organisation repository as `organisation` and generates go.work;
+  guard OK; gofmt gate OK; `go build ./...` in the organisation
+  repository's `scripts/retiredwords`; commit and push per repo; no
+  tag.
