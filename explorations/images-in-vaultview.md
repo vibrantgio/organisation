@@ -12,7 +12,7 @@ entry for it. Read off the code on 2026-10-22.
   sentence becomes its alt text at parse time.
 - `markdown` fetches nothing. `markdown.ImageProvider` returns the
   decoded pixels for a destination, and `markdown.WidgetImageProvider`
-  returns a live widget instead, for vector formats. With no
+  returns a live `layout.Widget` instead, for vector formats. With no
   provider, or when the provider returns an error, the block is drawn
   as its alt text.
 - `markdown/svgimage` is a provider for SVG over an `fs.FS`, with a
