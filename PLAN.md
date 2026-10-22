@@ -26371,8 +26371,11 @@ run, and no capture runs while the owner is at the machine
   window showing it (Mail checking for mail, or System Settings
   checking for updates) is taken in both schemes, stored under
   `reference/macos`, and its size, its stroke count and colour, its
-  place against the sentence beside it and the gap between them
-  are read into `reference/macos/controls.md` as MEASURED rows.
+  place against the text beside it, the gap between them, and the
+  text's own shape (a short phrase naming the task and ending with
+  an ellipsis; its capitalisation as the platform writes it,
+  finding 1175) are read into `reference/macos/controls.md` as
+  MEASURED rows.
   This task takes a capture: it runs only on an open desktop the
   owner has left, under the phase's caffeinate rule.
 - [ ] Exit: the captures and the MEASURED rows are in the reference;
@@ -26387,9 +26390,10 @@ run, and no capture runs while the owner is at the machine
   added (name its props, say why) drawing the indeterminate
   indicator from CK10.74's MEASURED rows, turning on the
   platform's cadence; the gallery shows it. Sk150's Presets and
-  Device tabs draw it above their content-arriving sentence
+  Device tabs draw it above their content-arriving phrase
   (CK10.51), centred as one group, and remove both when the
-  content arrives. A test that the indicator is drawn at the
+  content arrives; sk150's three phrases, the Monitor tab's
+  included, take the shape CK10.74 read. A test that the indicator is drawn at the
   measured size and a test per tab that it stands above the
   sentence while the content is arriving.
 - [ ] Exit: green in `components` (progress, gallery and inventory
