@@ -991,7 +991,10 @@ down. Nothing in it is chosen; the content is never reflowed or cut.
 The control moving the visible part through content larger than its
 surface: a thumb on a track whose size mirrors how much of the
 content is visible. Operating it moves what is visible, never the content.
-It follows the platform's Show scroll bars setting: Always is the
+It stands at the trailing edge of the region that scrolls, whatever
+the measure of the content inside: the region scrolls as a whole
+and the measure caps the text within it, as the platform's reading
+windows show. It follows the platform's Show scroll bars setting: Always is the
 standing bar in a lane of its own; When scrolling is the overlay
 bar, showing while the content scrolls and under the pointer and
 fading after; Automatic, which on the platform means standing with
