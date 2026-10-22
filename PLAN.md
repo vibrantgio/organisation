@@ -25521,6 +25521,23 @@ run, and no capture runs while the owner is at the machine
   workbench root; guard OK; gofmt gate OK; commit and push per
   repo; no tag.
 
+#### CK10.26: Iconbrowser's filtered goldens show the query in the search field
+
+- [ ] Found under CK10.21: the static render behind iconbrowser's
+  window goldens passes the query to the model and not to the
+  search field, so the "folder" and "zzzz" goldens show the field
+  empty with its placeholder, which the running window never
+  shows. The render sets the field's text to the query as the
+  window does; the four filtered goldens regenerate with the cause
+  named (the query in the field). The render test's `windowQueries`
+  comment says "history" keeps some marks, which it does not: the
+  test takes the goldens' queries and the comment says what each
+  matches.
+- [ ] Exit: a test that the field's text in the filtered render
+  equals the query; green in `workbench/iconbrowser` by name and
+  workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window

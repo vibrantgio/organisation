@@ -3821,13 +3821,3 @@ full-width scrolling viewport with the document's blocks capped at the
 measure and centred in it. What the work left open is listed here.
 
 1117. **[note]** **A Docs column narrower than the measure loses its leading blank.** The column now passes the 24 dp blank as markdown's `Gutter` on the trailing side only. While the column is wider than 744 dp the measure is centred and both sides have blank; below that, markdown's seating rule gives the blocks the width that is left with a lead of zero, so the prose runs against the outline column's edge. The window has no minimum width, so a reader who narrows it reaches this state. Whether markdown should keep a leading margin as well when the measure no longer fits, or the Docs column should state a minimum width, is unasked.
-
-## GN. From CK10.21, iconbrowser's goldens
-
-Filed 2026-10-22 from the work itself: the icon browser now stores a
-window golden per query state in both schemes. What the work left open is
-listed here.
-
-1118. **[defect]** **The stored filtered states show the search field empty.** The static render the window goldens are taken from passes the query to the model and builds the search field with no text, so the goldens for the query "folder" and the query "zzzz" show the placeholder "Search icons…" over a grid filtered by a query the field does not show. The running window never draws that pair. Whether the static render should pass the query to the field as well, so the stored states are the ones a reader sees, is unasked.
-
-1119. **[note]** **The comment on the whole-window render's query states names the wrong state.** `windowQueries` in `iconbrowser/window_render_test.go` says its filtered state "keeps some of each set", but its query "history" matches no mark, so the marks section is dropped from that frame. The window goldens take "folder", which keeps two marks and five Material Design icons. Whether the render test should take the same query or the comment should say what "history" draws is unasked.
