@@ -1323,3 +1323,5 @@ Rene: organisation it is. I seem to be using full words anyway like workbench an
 Rene: You mention where the rulings come from in the method documents. This is canon, why would we need to explain ourselves here.
 
 Rene: This holds, go ahead
+
+Rene: where are we now
