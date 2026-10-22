@@ -3813,3 +3813,16 @@ sitedocs' Docs column now draw `patterns/shell`'s `EmptyState`. What the
 work left open, and what it found beside its own subject, stands here.
 
 1112. **[note]** **The location the failed guide names is the checkout's, whichever source actually failed.** The description under "This guide can't be loaded." is the first candidate path resolved against the process's own directory, so in a checkout it names the file that is missing. A `go run …@latest` install has no checkout at all: the leg that really failed is the fetch of the canonical URL, and the path the reader is shown is one that was never going to exist. Whether the description should name the source whose failure was last, rather than the location the guide belongs at, is unasked.
+
+## GO. From CK10.22, the empty state and the bar's lane
+
+Filed 2026-10-22 from the work itself: every region that draws
+`patterns/shell`'s `EmptyState` over rows that scroll under a bar now
+passes it the frame less the bar's lane where the bar stands. What the
+work found beside its own subject stands here.
+
+1120. **[decide]** **Two regions scroll with no bar at all.** vaultview's rail rows are laid out by `list.LayoutSelectable`, which draws no bar, and iconbrowser's grid is a `layout.List` with no bar. Both scroll when their content is longer than the frame, and the Scrollbar entry puts a bar at the trailing edge of every region that scrolls. Because neither draws a bar, neither has a lane for its empty state to stand outside, and both were left unchanged. Whether each region gets the window's bar, spent against the reader's setting as the other columns' bars are, is unasked.
+
+1121. **[decide]** **Two regions lay their rows under a bar that stands.** sitedocs' Docs column and mindchat's provider field draw their rows with `list.Overlay` whatever the setting, so at Always the standing bar covers the rows' trailing end instead of standing in a lane the rows stop short of, as the Scrollbar entry describes. Their empty states now centre outside that lane, which is the frame the rows would occupy if they stopped short of it as vaultview's sections do with `list.Occupy`. Whether those two regions take `list.Occupy` at Always, so their rows and their empty states agree, is unasked.
+
+1122. **[note]** **Feeds' content column does not scroll.** The Reader and Raw tabs draw the article body as wrapped text in a fixed frame with no list and no bar, so a body longer than the column is cut at its foot. The column was left unchanged here because it has no bar whose lane the empty state could stand outside.

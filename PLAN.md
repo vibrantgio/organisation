@@ -25451,7 +25451,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.22: An empty state centres in the frame its rows would occupy, outside a standing scroll bar's lane
 
-- [ ] Under [[DOMAIN#Empty state]] and [[DOMAIN#Scrollbar]], ruled
+- [x] Under [[DOMAIN#Empty state]] and [[DOMAIN#Scrollbar]], ruled
   on finding 1106: the frame an empty state centres in is the one
   the content would occupy, and a standing scroll bar's lane lies
   outside it. Every region that draws the empty state and can
@@ -25464,7 +25464,7 @@ run, and no capture runs while the owner is at the machine
   `scrollbar.Style`'s width) so the subtraction is one helper, not
   a number per app. No golden moves at WhenScrolling; a test per
   region asserts the line's centre moves half a lane in at Always.
-- [ ] Exit: green in every app named and workbench root; guard OK;
+- [x] Exit: green in every app named and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
 
 #### CK10.23: Sitedocs' outline column keeps its place when the guide fails to load
