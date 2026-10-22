@@ -448,7 +448,10 @@ lies outside it, as the platform's clip view excludes its scroller.
 Each region that has nothing to show says so for itself: a column
 keeps its place and its empty state when its content fails to
 arrive, and a form with no entries has one empty state in the
-field that would list them, never one per blank field. It is not
+field that would list them, never one per blank field. A section
+of a filtered collection with no match is removed with its heading
+and its count; when no section matches, the region shows one empty
+state. It is not
 content and does not stand on the measure.
 
 ### Eyebrow
@@ -469,7 +472,12 @@ grid, so many features read as one set.
 
 One value's place in a form: a control — a text field, a picker, a
 checkbox, a switch — with its label beside or above it. A field is
-raised on the surface it stands in. In a table each column holds one
+raised on the surface it stands in. Its fill, its edge and its
+height are measured per scheme with wallpaper tinting off, as every
+platform value is; a reading taken with tinting on is re-read. Its
+text is set in the Label role at the platform's measured size for a
+control, never in a Body role; every text field alike. In a table
+each column holds one
 field of every row.
 
 ### Fill
@@ -628,7 +636,10 @@ control's structure an icon is a part, not a signal of its own.
 A mark is named by what it depicts, never by what it does: one
 mark serves several actions, and the same picture has one name. A
 magnifying glass is magnifying-glass, a disc with a cross knocked
-out is xmark-circle, a clockwise arrow is arrow-clockwise.
+out is xmark-circle, a clockwise arrow is arrow-clockwise. A mark
+that is another mark's figure turned, chevron-down of chevron-right,
+keeps that figure's stroke and extent, as the platform's symbols do;
+a stacked pair of chevrons is one mark of its own.
 
 ### Image
 
@@ -1095,7 +1106,9 @@ it does that work. A seam the user can drag is a splitter.
 ### Search field
 
 The control for finding content: a text field that looks as you
-type and marks what it finds with the search highlight. Structure:
+type and marks what it finds with the search highlight. A field that
+filters a collection shows only what matches and marks nothing; the
+highlight is for finding within content that stays whole. Structure:
 looking glass, text, [x]. The looking glass names the control at a
 glance; the clear mark empties it and dismisses the highlight with
 it. Finding within the content, it also says how many matches there are
@@ -1118,7 +1131,10 @@ On the content — a page on the window's own fill, a sheet, a form —
 it is the platform's text field with the search field's structure:
 raised, as every field is, never the flat recess of chrome. Its
 fill, edge and rounding there are measured into the reference from a
-platform window that has one. The window's own fill with content on
+platform window that has one. On the content it keeps the width the
+reference measures for the platform's field there, leading in its
+region, and never runs the region's full width. The window's own
+fill with content on
 it is content, not chrome.
 
 ### Section
