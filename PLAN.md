@@ -25400,7 +25400,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.19: A scroll bar with a transparent track paints nothing for it
 
-- [ ] Found under CK10.11: `components/scrollbar`'s `Style.Layout`
+- [x] Found under CK10.11: `components/scrollbar`'s `Style.Layout`
   fills the track rectangle with `TrackColor` even when its alpha
   is zero, so a fully transparent 10 dp path enters the frame and
   shifts antialiased glyph edges in prose nowhere near it (sitedocs'
@@ -25409,7 +25409,7 @@ run, and no capture runs while the owner is at the machine
   colour has alpha; the thumb is unaffected. Goldens across the
   windows regenerate only where the drift reverses, each named
   with the cause; the bar's own pixels move nowhere.
-- [ ] Exit: a test in `components/scrollbar` that a transparent
+- [x] Exit: a test in `components/scrollbar` that a transparent
   track leaves the op stream byte-identical to no bar at all;
   sitedocs' Docs goldens return to their pre-CK10.11 bytes or the
   difference is named; green in `components` and every app by

@@ -3813,3 +3813,11 @@ sitedocs' Docs column now draw `patterns/shell`'s `EmptyState`. What the
 work left open, and what it found beside its own subject, stands here.
 
 1112. **[note]** **The location the failed guide names is the checkout's, whichever source actually failed.** The description under "This guide can't be loaded." is the first candidate path resolved against the process's own directory, so in a checkout it names the file that is missing. A `go run …@latest` install has no checkout at all: the leg that really failed is the fetch of the canonical URL, and the path the reader is shown is one that was never going to exist. Whether the description should name the source whose failure was last, rather than the location the guide belongs at, is unasked.
+
+## GL. From CK10.19, the transparent track
+
+Filed 2026-10-22 from the work itself: `components/scrollbar`'s
+`Style.Layout` now paints the track only when its colour has alpha. What
+the work left open, and what it found beside its own subject, stands here.
+
+1116. **[finding]** **The resting bar's thumb, not its track, moved sitedocs' Docs goldens.** With the track skipped at alpha 0, the Docs goldens still differ from the bytes they had before the column gained a bar by the same 31 light and 145 dark pixels. Skipping the thumb when the fade has brought its alpha to 0 restores the earlier bytes exactly, with or without the track change. A bar at rest therefore still adds a paint operation that changes no pixel of its own and moves antialiased glyph edges elsewhere in the frame. Whether `Style.Layout` should skip the thumb's paint at alpha 0, as it now does the track's, is unasked; the change would regenerate every golden that holds a resting bar beside text.
