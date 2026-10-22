@@ -25232,7 +25232,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.10: A vault that cannot be read says so in vaultview's own words
 
-- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1082:
+- [x] Under [[DOMAIN#Empty state]], ruled on finding 1082:
   vaultview's column shows `filepath.WalkDir`'s own sentence
   ("lstat …: no such file or directory") as its empty state at
   28 sp. The empty state says "This vault can't be read." and the
@@ -25241,7 +25241,7 @@ run, and no capture runs while the owner is at the machine
   (open another vault) and the path is the one they chose. The
   scan error golden regenerates if one exists, with the cause
   named; otherwise a test holds the line's text.
-- [ ] Exit: a test that a vault that cannot be read draws the
+- [x] Exit: a test that a vault that cannot be read draws the
   sentence and not the system's text, and that the log carries
   the system's text; green in `workbench/vaultview` by name and
   workbench root; guard OK; gofmt gate OK; one commit in
