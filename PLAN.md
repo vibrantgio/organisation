@@ -26677,6 +26677,22 @@ order.
   every workbench app by name and workbench root; guard OK; gofmt
   gate OK; commit and push per repo; no tag.
 
+#### CM1.29: A table header's hairline ends at the lane
+
+- [ ] Under [[DOMAIN#Seam]], ruled on finding 1191, after CM1.27: a
+  table header's hairline is the header's own edge, part of the
+  table's structure, not a seam; it ends where the header's rows
+  end, at the lane, while the header's fill spans the lane.
+  `patterns/table` draws the header's hairline from the table's
+  leading edge to the standing bar's lane and the header's fill
+  across the lane; the comments that call the hairline a seam are
+  rewritten to the entry's words. Every golden that shows a table
+  header beside a standing bar regenerates with the cause named.
+- [ ] Exit: a test that the header's hairline ends at the lane and
+  the header's fill spans it; green in `patterns` (table by name)
+  and every table caller by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
 ### G-CM2: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
