@@ -3780,3 +3780,15 @@ with the vault's path. What the work left open, and what it found
 beside its own subject, stands here.
 
 1100. **[note]** **The workbench has no convention for where an application writes a diagnostic.** vaultview writes its two — the store it could not save, and now the vault it could not read — with `fmt.Fprintln(os.Stderr, "vaultview: …")`, hand-prefixed. No application in `workbench` imports `log` or `log/slog`, so there is no shared destination, no shared prefix and no level. The new ruling sends a cause "to the log" in every case where it does not reach the reader, which makes the destination load-bearing across the applications rather than private to one. Whether that is the standard `log` package, a `slog` handler the composition root installs, or the stderr line each application already writes, is unasked.
+
+## GD. From CK10.11, sitedocs' Docs tab
+
+Filed 2026-10-22 from the work itself: the Docs tab's guide now draws
+through `markdown.Document.LayoutScrollbar` with the window's own bar,
+so the longest content in the window scrolls with a bar like every
+other tab. What the work left open, and what it found beside its own
+subject, stands here.
+
+1101. **[note]** **A fully transparent scroll bar track still paints, and the paint moves antialiased text that is nowhere near it.** `scrollbar.Style.Layout` fills the track rectangle with `TrackColor` unconditionally, and the overlay style's `TrackColor` is `{0 0 0 0}`. Putting a bar on sitedocs' Docs column therefore added a 10 dp wide fully transparent rectangle to the frame, and the two Docs goldens moved — 31 pixels light and 145 dark, each by at most 3 of 255, every one of them in the prose and none in the bar's gutter. The same code path with a zero-width style renders byte-identical pixels, which places the cause on the painted rectangle and not on the layout: Gio rasterises the glyph edges one step differently once that path is in the frame. Skipping the fill when `TrackColor.A == 0` would cost nothing and would stop a bar that draws nothing from being able to move a golden, but it is a change in `components` that would move op streams under every window at once. Unasked.
+
+1102. **[note]** **The Docs column's bar stands at the reading measure's edge while every other tab's stands at the pane's.** The Docs column caps its measure at 720 dp and keeps its left edge, so its viewport — and therefore its bar — ends where the prose does. At the goldens' 1180 dp window the bar's gutter closes at x=1044 while the pane's content runs to x=1156, leaving the bar about 110 dp inboard of where a reader coming from the Colours, Typography or the three group tabs just saw one, because those columns are the full pane wide. Moving it to the pane's edge means scrolling a full-width viewport and capping the measure inside the rows instead, which is a different composition for the column and not something a bar can be told. Whether a reading column's bar belongs to its measure or to its pane is unasked.
