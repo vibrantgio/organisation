@@ -1288,3 +1288,5 @@ the crunchgate method?
 Rene: Draft all five, one at a time
 
 Rene: You don't mention where the evidence is placed relative to the method document files
+
+Rene: I agree, draft the next one.
