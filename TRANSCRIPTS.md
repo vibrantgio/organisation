@@ -1301,3 +1301,5 @@ Rene: I agree, draft the next one.
 Rene: This holds, next draft please
 
 Rene: How does 11.3 work what is the mechanism and on what data does it depend and where does that data live and where do checks live?
+
+Rene: Agreed
