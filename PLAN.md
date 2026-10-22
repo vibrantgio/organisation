@@ -26451,7 +26451,9 @@ order.
   action is a bordered toolbar button with `icons.Plus` in the
   label colour and its key equivalent; the menu-bar item comes
   with CM2.1. The bottom inset CK10.48 kept under the last row
-  for the button is removed with it. A test that the toolbar
+  for the button is removed with it; finding 1196, the round
+  button's dark plus drawn in the window fill, closes with the
+  removal. A test that the toolbar
   draws the add button and the page draws no floating button.
 - [ ] Exit: green in `workbench/todos` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
@@ -26692,6 +26694,53 @@ order.
   the header's fill spans it; green in `patterns` (table by name)
   and every table caller by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
+
+#### CM1.30: Todos' rows are the platform's measured row height
+
+- [ ] Under [[DOMAIN#Row]], ruled on finding 1193: a list's row
+  height is the platform's measured row for the list's kind, never
+  the text and paddings stacked; a content list of one-line rows
+  takes Reminders' row, read in "What a control inside a row
+  measures" in `reference/macos/controls.md`. Todos draws every
+  row at that height with the text and the controls centred in
+  it; the rows' goldens regenerate with the cause named.
+- [ ] Exit: a test that todos' rows are the MEASURED height apart;
+  green in `workbench/todos` by name and workbench root; guard OK;
+  gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CM1.31: Todos' list selects a row
+
+- [ ] Under [[DOMAIN#List]] and [[DOMAIN#Selection]], ruled on
+  finding 1194: a content list selects as the platform's does: a
+  click selects the row, and the row's control is drawn on the
+  hovered and the selected row as the reference shows. Todos'
+  list selects a row on click, draws the selected row with the
+  fill measured from Reminders in "What a control inside a row
+  measures" and the row's own text colour, draws the delete mark
+  on the selected row as on the hovered one, and opens the edit
+  dialog from the selected row's text, not from the click that
+  selects; Delete in CM2.1 acts on the selection. Goldens
+  regenerate with the cause named.
+- [ ] Exit: a test that a click selects the row and draws the
+  MEASURED fill and the mark, and that no row is selected at
+  start; green in `workbench/todos` by name and workbench root;
+  guard OK; gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CM1.32: Todos' unchecked checkbox is drawn at the measured contrast
+
+- [ ] Under [[DOMAIN#Checkbox]], found under CK10.73 (finding
+  1195): todos' unchecked checkbox reads (243,243,243) on white
+  and (44,51,56) on (30,30,30), where the platform's enabled
+  unchecked checkbox is measured in `reference/macos/controls.md`
+  from the Save panel. The cause is found (the checkbox's own
+  drawing, a token, or todos' use of it) and the box is drawn at
+  the MEASURED edge and fill per scheme; goldens regenerate with
+  the cause named.
+- [ ] Exit: a test that an unchecked checkbox's edge reads the
+  MEASURED value on the content fill in both schemes; green in
+  `components` (checkbox by name) if it changes, `workbench/todos`
+  by name and workbench root; guard OK; gofmt gate OK; commit and
+  push per repo; no tag.
 
 ### G-CM2: Every window offers its actions through the menu bar
 
