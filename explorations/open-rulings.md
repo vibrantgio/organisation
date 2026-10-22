@@ -3827,10 +3827,6 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 1140. **[note]** **Iconbrowser's marks section reads at sizes apart from the catalogue under it.** The marks are drawn at 16, 20 and 24 dp above Material icons at 40 dp, the 16 dp chevron-down about 6 px wide at 1x. No Language entry governs a catalogue's sizes; the ontology session ruled it the application's own composition, planned only on the owner's go. The note's wording is planned as CK10.41.
 
-## HI. From CK10.47, the empty states of todos and the folder browser
-
-Filed 2026-10-22 from the fresh-eyes review of CK10.47. Findings 1170 and 1171 are ruled and planned as CK10.68 and CK10.69. Nothing stays open.
-
 ## HJ. From CK10.48, todos' add button
 
 Filed 2026-10-22 from the fresh-eyes review of CK10.48. The reviewer's first complaint, the unchecked checkbox's faint edge on white, is already on the capture list (an enabled unchecked checkbox beside a switched-off one), and the delete mark's accent colour is CK10.59's.
