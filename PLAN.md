@@ -26546,7 +26546,7 @@ run, and no capture runs while the owner is at the machine
   same stroke and the same extent at every size; the stacked pair
   stays one mark of its own under its own name. Iconbrowser's
   goldens regenerate with the cause named.
-- [ ] Exit: a test that chevron-down's ink bounds equal
+- [ ] Exit: a test that chevron-down's drawn extent equals
   chevron-right's turned a quarter at 16, 20 and 24 dp; green in
   `components` (icons by name), `workbench/iconbrowser` by name
   and workbench root; guard OK; gofmt gate OK; commit and push per
