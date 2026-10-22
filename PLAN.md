@@ -25021,7 +25021,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.4: Every window spends the platform's Show scroll bars setting
 
-- [ ] The application half of CK10.1. Six sites build their scrollbar
+- [x] The application half of CK10.1. Six sites build their scrollbar
   style from the colours alone and never read the setting:
   vaultview's note column and inspector, mindchat's view and
   settings, feeds' rail, marketing's page, sitedocs' columns,
@@ -25037,7 +25037,7 @@ run, and no capture runs while the owner is at the machine
   pane's edge as they do beside the note (ruled 2026-10-22: a lane
   is the standing scroller's and nothing else's; an empty lane
   standing by itself is a defect). Goldens regenerate with the cause named.
-- [ ] Exit: green in every app by name; guard OK; gofmt gate OK;
+- [x] Exit: green in every app by name; guard OK; gofmt gate OK;
   commit and push in `workbench` and `.github`; no tag.
 
 #### CK10.2: Vaultview's content column aligns on one edge, its corner closes and its outline rows hold their titles
