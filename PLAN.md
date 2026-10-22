@@ -26498,6 +26498,108 @@ run, and no capture runs while the owner is at the machine
   OK; commit and push per repo; no tag.
 
 
+#### CK10.81: The dark field edge is re-read from the untinted capture
+
+- [ ] Under [[DOMAIN#Field]], ruled on finding 1184: every platform
+  value is measured with wallpaper tinting off, and a reading
+  taken with tinting on is re-read. `fieldEdge` dark was read off
+  the Save panel with tinting on. The token takes the edge colour
+  the untinted search field on content measures in
+  `reference/macos/controls.md` (the section "What the search
+  field on content measures"); the controls.md row for the Save
+  panel's edge is marked as a tinted reading superseded by that
+  row. A token change: `effects/transition` and `workbench/themer`
+  run by name; every dark golden that shows a field regenerates
+  with the cause named.
+- [ ] Exit: a test that the dark field edge equals the MEASURED
+  untinted value; green in `theme`, `components` (input by name),
+  `effects/transition`, `workbench/themer` by name and workbench
+  root; guard OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.82: A field's text is set in the Label role and the field is the measured height
+
+- [ ] Under [[DOMAIN#Field]] and [[DOMAIN#Typography role]], ruled
+  on finding 1185: a field's text is set in the Label role at the
+  platform's measured size for a control, never in a Body role,
+  every text field alike; the field's height is the measured
+  control height for its density. `components/input` sets every
+  text field's text, placeholder included, in the Label role at
+  the size the reference measures (the search field on content's
+  10 px cap band, the Save panel field's 27 px height and the
+  field on content's 26 px are the rows to read), and draws the
+  field at the measured height per density instead of a Body line
+  box plus padding. Every golden that shows a text field
+  regenerates with the cause named.
+- [ ] Exit: a test that a text field's text is set in the Label
+  role and that the field's height per density equals the MEASURED
+  row; green in `components` (input by name and the whole module),
+  `patterns` and every text field caller by name and workbench
+  root; guard OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.83: Chevron-down is redrawn at chevron-right's extent
+
+- [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Disclosure]], ruled on
+  finding 1186: chevron-down is chevron-right's figure turned a
+  quarter and keeps that figure's stroke and extent, as the
+  platform's chevron.down does. `components/icons` redraws the
+  chevron-down mark as chevron-right turned a quarter, with the
+  same stroke and the same extent at every size; the stacked pair
+  stays one mark of its own under its own name. Iconbrowser's
+  goldens regenerate with the cause named.
+- [ ] Exit: a test that chevron-down's ink bounds equal
+  chevron-right's turned a quarter at 16, 20 and 24 dp; green in
+  `components` (icons by name), `workbench/iconbrowser` by name
+  and workbench root; guard OK; gofmt gate OK; commit and push per
+  repo; no tag.
+
+#### CK10.84: An open disclosure draws chevron-down
+
+- [ ] Under [[DOMAIN#Disclosure]], ruled on finding 1186, after
+  CK10.83: `patterns/sidebar`'s `PaintDisclosure`,
+  `workbench/sitedocs`' `drawOutlineDisclosure` and
+  `workbench/vaultview`'s `drawDisclosure` draw the set's
+  chevron-down for an open row instead of turning chevron-right,
+  and `components/icons`' doc for `ChevronRight` no longer says a
+  disclosure turns it. Every golden that shows an open disclosure
+  regenerates with the cause named.
+- [ ] Exit: a test per drawer that an open row's mark equals the
+  set's chevron-down; green in `components` (icons by name),
+  `patterns` (sidebar by name), `workbench/sitedocs`,
+  `workbench/vaultview` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.85: Iconbrowser's search field keeps the measured width
+
+- [ ] Under [[DOMAIN#Search field]], ruled on finding 1189: on the
+  content the field keeps the width the reference measures for
+  the platform's field there, leading in its region, never the
+  region's full width. Iconbrowser draws its field at the width
+  the section "What the search field on content measures" in
+  `reference/macos/controls.md` gives, at the page's leading edge.
+  The six iconbrowser window goldens regenerate with the cause
+  named.
+- [ ] Exit: a test that the field's extent equals the MEASURED
+  width and starts at the page's leading padding; green in
+  `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.86: Iconbrowser's page with no match shows one empty state
+
+- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1188: a
+  section of a filtered collection with no match is removed with
+  its heading and its count, and when no section matches the page
+  shows one empty state in the platform's shape with the query.
+  Iconbrowser removes the marks section and the Material section
+  alike when a query matches nothing in them, and draws one empty
+  state line in the platform's shape with the query when neither
+  matches. The no-match goldens regenerate with the cause named.
+- [ ] Exit: a test that a query matching only marks removes the
+  Material heading and its count, and a test that a query matching
+  nothing draws one empty state line; green in
+  `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
