@@ -26023,272 +26023,6 @@ run, and no capture runs while the owner is at the machine
   OK; gofmt gate OK; layers gate OK; one commit in patterns, push;
   no tag.
 
-#### CK10.56: Feeds, sk150 and vaultview pass the window's available room to their tooltips
-
-- [ ] Under [[DOMAIN#Tooltip]], the applications' half of CK10.37
-  and finding 1157: feeds' "Unread" tip, sk150's demo button tip
-  and vaultview's link tip pass `shell.AvailableRoom` as
-  `AvailableRoom`; each layer of their own that places a child at
-  a known offset calls `shell.AvailableRoomAt`, and each that
-  places a child only after measuring it sets the tooltip
-  collector (CK10.54); sk150, which uses no arrangement, sets the
-  area at its root with `shell.WithAvailableRoom`. Found under
-  CK10.55 (finding 1180): an offset pushed between a placing
-  layout and a tooltip that does not move the collector draws the
-  surface away from its trigger, so the docs of
-  `components/tooltip` and `patterns/shell` state the rule: a
-  layout that pushes an offset moves the collector and the area
-  with `shell.AvailableRoomAt` (or `tooltip.SurfacesAt` below the
-  shell). A test per app that a tooltip on a control at the
-  window's trailing edge is drawn whole inside the window.
-- [ ] Exit: green in `workbench/feeds`, `workbench/sk150`,
-  `workbench/vaultview` by name and workbench root; guard OK;
-  gofmt gate OK; one commit in workbench, push; no tag.
-
-#### CK10.57: The search field's clear mark posts the empty change once
-
-- [ ] Under [[DOMAIN#Search field]], found under CK10.39 (findings
-  1158 and 1159): the clear mark posts the empty change twice on
-  one frame, once from the field after `SetText("")` and once from
-  the editor's update, where Escape posts it once. The clear mark
-  posts it once, the same way Escape does. The field's doc states
-  the constraint a handler around it is under: Gio gives a key
-  event to the first matching request in the frame, so a handler
-  that takes Escape when the field is empty asks for the key after
-  the field has laid out. A test that the clear mark posts the
-  empty change exactly once.
-- [ ] Exit: green in `components` (input by name), `workbench/feeds`
-  and `workbench/iconbrowser` by name and workbench root; guard OK;
-  gofmt gate OK; one commit in components, push; no tag.
-
-#### CK10.58: The workbench draws each application's icon in the text colour and its launch button in the default button fill
-
-- [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Fill]], ruled on findings
-  1160 and 1033: an application's icon on the workbench is an icon
-  on the content, in the text colour, never the accent; the launch
-  button's fill is the platform's default button fill, the theme
-  colour for the one action. The workbench draws every icon with
-  the accent and the launch button's fill at the accent, which
-  read under the graphic floor in the dark appearance. The icons
-  are drawn in the text colour and the launch button takes the
-  default button fill; the workbench goldens regenerate with the
-  cause named (the icons' colour, the button's fill). A test that
-  an icon's pixels are the text colour and none the accent, in
-  both schemes.
-- [ ] Exit: green in `workbench` root by name; guard OK; gofmt gate
-  OK; one commit in workbench, push; no tag.
-
-#### CK10.59: Todos' and mindchat's symbols are drawn in their foreground, not the accent
-
-- [ ] Under [[DOMAIN#Icon]], ruled on findings 1161 and 1162: an
-  icon in a control is in that control's foreground, never the
-  accent, and a symbol on the content is in the text colour.
-  Todos draws its add and delete symbols in the accent and
-  mindchat draws the assistant's avatar symbol in the accent. The
-  add symbol is drawn in the button's foreground, the label colour;
-  the row's delete mark in the row's text colour; the avatar in the
-  transcript's text colour. `Icon: p.ControlAccent` is removed
-  from both palettes. Goldens regenerate with the cause named (the
-  symbols' colour). A test per app that a symbol's pixels are its
-  foreground and none the accent, in both schemes.
-- [ ] Exit: green in `workbench/todos`, `workbench/mindchat` by
-  name and workbench root; guard OK; gofmt gate OK; one commit in
-  workbench, push; no tag.
-
-#### CK10.60: Every mark in the icon set is named by what it depicts
-
-- [ ] Under [[DOMAIN#Icon]], ruled on findings 944 and 1163: a mark
-  is named by what it depicts, never by the control that uses it.
-  In `components/icons` `Search` becomes `MagnifyingGlass`
-  ("magnifying-glass"), `Clear` becomes `XmarkCircle`
-  ("xmark-circle"), `Refresh` becomes `ArrowClockwise`
-  ("arrow-clockwise"), `Sidebar` becomes `SidebarLeft`
-  ("sidebar-left", the platform's name for that picture); `Plus`
-  and `Minus` stay; the functions and files named after `Search`
-  (`SearchDrawingOriginPx`, `SearchDrawingSizePx`, the svg) are
-  renamed with it; every doc comment in the set says what the mark
-  depicts and never "is the control that"; every caller in
-  `components`, `patterns`, `markdown` and `workbench` is renamed.
-  No alias is kept. No pixel moves.
-- [ ] Exit: `grep -rn 'icons\.\(Search\|Clear\|Refresh\|Sidebar\)\b'`
-  over the org finds nothing; green in `components` (icons, gallery
-  and inventory by name), `patterns`, `markdown` and every caller
-  by name and workbench root; guard OK; gofmt gate OK; layers gate
-  OK; commit and push per repo; no tag.
-
-#### CK10.61: Themer's style rows run to the lane
-
-- [ ] Under [[DOMAIN#Scrollbar]], ruled on finding 1164: a column of
-  rows has no padding of its own; the rows run to the lane and each
-  row's own inset keeps its content and its pill from the end, as
-  the platform's lists do; a page's padding stays between its
-  content and the lane. Themer's style column, a column of rows,
-  keeps a 10 dp trailing padding between its rows and the lane, so
-  at Always the marked row ends 12 px from the thumb. The column's
-  trailing padding is removed: the rows run to the lane at Always
-  and to the box's edge at WhenScrolling, each row's inset keeping
-  its name and its pill from the end. Iconbrowser's grid is a page
-  and keeps its padding. The themer goldens regenerate with the
-  cause named (the rows' extent).
-- [ ] Exit: a test that at Always the marked row's fill ends at the
-  lane and at WhenScrolling at the box's edge; green in
-  `workbench/themer` by name and workbench root; guard OK; gofmt
-  gate OK; one commit in workbench, push; no tag.
-
-#### CK10.62: The scroll area draws its bar at its owner's edge with a lane at Always
-
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
-  under CK10.45 (finding 1166): `components/scrollarea`'s
-  `Style.LayoutScrollbar` draws the bar over the area's bottom
-  rows whatever the bar's fade, and its doc tells callers to place
-  the area so the bar is drawn over their padding. The area draws
-  its bar at its own bottom edge, inside the area, with a lane at
-  Always (`list.AnchorFor`) and none when the bar fades, as the
-  code block draws its own since CK10.45; the doc says so and
-  names no padding; the code block calls the area's bar again if
-  that removes its own copy. A test that the area at Always is
-  taller by the lane and the thumb is drawn inside its bottom edge.
-- [ ] Exit: green in `components` (scrollarea, gallery and inventory
-  by name), `markdown` by name and workbench root; guard OK;
-  gofmt gate OK; layers gate OK; commit and push per repo; no tag.
-
-#### CK10.63: A table too wide for the column draws its sideways scrollbar
-
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
-  under CK10.45 (finding 1165): a table whose min-content widths
-  overflow the column is laid out in a sideways `layout.List` that
-  the wheel scrolls, and no bar is drawn at either setting. A
-  preformatted table is a scroll area and every region that
-  scrolls has a bar: the table draws its sideways bar at its own
-  bottom edge with a lane at Always, through `components/scrollarea`
-  (CK10.62) or the list's own bar, say which and why. The goldens
-  that hold a wide table regenerate with the cause named. A test
-  that a wide table at Always is taller by the lane and the thumb
-  is drawn inside its bottom edge, and that a table that fits
-  draws none.
-- [ ] Exit: green in `markdown` by name and workbench root; guard
-  OK; gofmt gate OK; commit and push per repo; no tag.
-
-#### CK10.64: A code block's thumb is flattened onto the fill the block is drawn in
-
-- [ ] Found under CK10.45 (finding 1169): `markdown.FromTokens`
-  builds `CodeScrollbar` on the theme's code fill, and a document
-  drawn in a syntax highlighter style draws the block in that
-  style's background, so the thumb is a neutral grey on a tinted
-  fill. The bar is flattened onto the fill the block is drawn in:
-  the highlighter's background where a style is set, the theme's
-  code fill otherwise. The goldens that show the bar regenerate
-  with the cause named (the thumb's colour). A test that the thumb
-  over a highlighter-styled block is a step from that block's
-  background.
-- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
-  name and workbench root; guard OK; gofmt gate OK; commit and
-  push per repo; no tag.
-
-#### CK10.65: A code block's side padding scrolls with the code
-
-- [ ] Under [[DOMAIN#Scroll area]] and [[DOMAIN#Scrollbar]], ruled
-  on finding 1167: a scroll area's padding is inside it and moves
-  with the content, as a platform text view's inset moves with the
-  text. The fence's side padding is outside its scroll area, so
-  the code is clipped 12 px short of the rim on both sides at
-  every scroll position. The padding is inside the area: the first
-  glyph reaches the rim once scrolled and the code is clipped at
-  the rim. The goldens that hold a wide code block regenerate with
-  the cause named (the clip at the rim). A test that a scrolled
-  block draws glyph pixels up to the rim.
-- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
-  name and workbench root; guard OK; gofmt gate OK; commit and
-  push per repo; no tag.
-
-#### CK10.66: What is past a scrolling region's edge is clipped, never faded
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], ruled
-  on finding 1168: what is past a scrolling region's edge is
-  clipped at the edge, never faded, as the platform's scroll views
-  clip; the bar says there is more. The code block draws a
-  dissolve over an edge with hidden code. The dissolve is removed
-  from `markdown`; the goldens that showed it regenerate with the
-  cause named (the clip in place of the dissolve). A test that the
-  glyphs at a cut edge keep their full contrast.
-- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
-  name and workbench root; guard OK; gofmt gate OK; commit and
-  push per repo; no tag.
-
-#### CK10.67: The gallery's documents draw the bar with the setting of the window that shows them
-
-- [ ] Under [[DOMAIN#Scrollbar]], found as finding 1085: every
-  region that scrolls draws the window's bar with the setting the
-  window reads. `components/gallery/inventory` builds two
-  `markdown.Style`s of its own with no setting on `CodeScrollbar`,
-  since the gallery is a module inside `components` with no
-  composition root, so in sitedocs' inventory tab an overflowing
-  fence fades its bar whatever the reader asked for while the
-  fences in the Docs tab beside it stand. The gallery takes the
-  setting from whatever shows it: the inventory's styles are built
-  from a `scrollbar.Style` passed in by the embedding window
-  (sitedocs passes the one it reads through CK10.4's seam), and
-  the gallery's own window passes what it reads. A test that the
-  inventory's fence at Always draws a standing bar.
-- [ ] Exit: green in `components` (gallery and inventory by name),
-  `workbench/sitedocs` by name and workbench root; guard OK; gofmt
-  gate OK; layers gate OK; commit and push per repo; no tag.
-
-#### CK10.68: The folder browser tells a folder it cannot read from one that holds no folders
-
-- [ ] Under [[DOMAIN#Empty state]], found under CK10.47 (finding
-  1170): the browser says an unreadable folder holds no folders,
-  because `ListDir` returns no rows both when a folder has no
-  child folders and when its read fails, where the entry treats
-  content that fails to arrive as its own case with the
-  application's own sentence and the cause to a log. `ListDir`
-  returns the read's error; the model keeps it; the region draws
-  its own empty state for a failed read, the application's own
-  sentence that the folder could not be read, and the error is
-  logged. A test that an unreadable folder draws the failed-read
-  line and an empty folder the holds-no-folders line.
-- [ ] Exit: green in `workbench/vaultview` by name and workbench
-  root; guard OK; gofmt gate OK; one commit in workbench, push; no
-  tag.
-
-#### CK10.69: Every empty state line has the platform's shape
-
-- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1171: the line
-  is a few words in title case stating the condition, with no
-  period and no instruction, as Mail's "No Message Selected" is
-  measured; a description under it is a sentence and ends with a
-  period. Todos' "No todos." becomes "No Todos"; the folder
-  browser's "This folder holds no folders." becomes "No Folders"
-  with no description, since the sentence repeats the line; feeds'
-  "Select an article" becomes "No Article Selected"; sitedocs'
-  "No headings." becomes "No Headings"; iconbrowser's line keeps
-  the query and takes the shape (say the text). Vaultview's find
-  count "No matches" is the find field's text, not an empty state,
-  and stays. Every test that names a line is updated; the goldens
-  that show a line regenerate with the cause named (the line's
-  text).
-- [ ] Exit: `grep -rn` over the workbench finds no empty state line
-  ending in a period; green in `workbench/todos`, `workbench/feeds`,
-  `workbench/vaultview`, `workbench/sitedocs`, `workbench/iconbrowser`
-  by name and workbench root; guard OK; gofmt gate OK; one commit
-  in workbench, push; no tag.
-
-#### CK10.70: Todos' add action is a toolbar action
-
-- [ ] Under [[DOMAIN#Toolbar]] and [[DOMAIN#Action]], ruled on
-  finding 1172: an action on the collection a window shows, adding
-  first of all, is a toolbar action, a bordered button with the
-  plus symbol in the label colour, as Notes' and Reminders'
-  new-item marks are measured in the reference; no action floats
-  over the content. Todos draws a round floating "+" at the page's
-  trailing bottom corner. The round button is removed; the add
-  action is a bordered toolbar button with `icons.Plus` in the
-  label colour and its key equivalent; the menu-bar item comes
-  with CK11.1. The bottom inset CK10.48 kept under the last row
-  for the button is removed with it. A test that the toolbar
-  draws the add button and the page draws no floating button.
-- [ ] Exit: green in `workbench/todos` by name and workbench root;
-  guard OK; gofmt gate OK; one commit in workbench, push; no tag.
-
 #### CK10.71: Iconbrowser's search field is drawn from the platform's field on content
 
 - [x] Under [[DOMAIN#Search field]] and [[DOMAIN#Chrome]], ruled on
@@ -26395,26 +26129,6 @@ run, and no capture runs while the owner is at the machine
   one commit in `.github`, push; no tag.
 
 
-#### CK10.75: The progress signal draws the platform's indeterminate indicator
-
-- [ ] Under [[DOMAIN#Progress]]: the signal showing how far a task
-  has come, the platform's indeterminate indicator when the end is
-  not known, read and never operated. `components/progress` is
-  added (name its props, say why) drawing the indeterminate
-  indicator from CK10.74's MEASURED rows, turning on the
-  platform's cadence; the gallery shows it. Sk150's Presets and
-  Device tabs draw it above their content-arriving phrase
-  (CK10.51), centred as one group, and remove both when the
-  content arrives; sk150's three phrases, the Monitor tab's
-  included, take the shape CK10.74 read. A test that the indicator is drawn at the
-  measured size and a test per tab that it stands above the
-  sentence while the content is arriving.
-- [ ] Exit: green in `components` (progress, gallery and inventory
-  by name), `workbench/sk150` by name and workbench root; guard
-  OK; gofmt gate OK; layers gate OK; commit and push per repo; no
-  tag.
-
-
 #### CK10.76: Sk150's Device footer is drawn from the platform's measured status bar
 
 - [ ] Under [[DOMAIN#Footer]], ruled on finding 1177: a footer of
@@ -26433,216 +26147,6 @@ run, and no capture runs while the owner is at the machine
   in `workbench/sk150` by name and workbench root; guard OK; gofmt
   gate OK; commit and push per repo; no tag.
 
-
-#### CK10.77: Iconbrowser's marks section renders each mark once at the catalogue's size
-
-- [ ] Under [[DOMAIN#Icon]], ruled on finding 1140 by the owner:
-  the marks section renders each mark once at the catalogue's
-  size, and its note names the three sizes the set ships, 16, 20
-  and 24 dp; there is no second rendering. The section draws each
-  mark at 16, 20 and 24 dp today, the 16 dp chevron-down about
-  6 px wide at 1x, under a catalogue at 40 dp. The three cells per
-  mark become one at the catalogue's size; the note's words follow
-  the Icon entry; the window goldens regenerate with the cause
-  named (the marks' cells). A test that each mark is drawn once at
-  the catalogue's cell size.
-- [ ] Exit: green in `workbench/iconbrowser` by name and workbench
-  root; guard OK; gofmt gate OK; one commit in workbench, push; no
-  tag.
-
-
-#### CK10.78: `pane.Strip` is deleted
-
-- [ ] Found under CK10.55 (finding 1181): the pane column's strip
-  is laid out by the shell's placing row, and `pane.Strip` has no
-  caller left in the organisation while it repeats that row. The
-  function and its tests are deleted; no alias is kept; the pane
-  guide names the shell's strip.
-- [ ] Exit: `grep -rn 'pane\.Strip\b'` over the org finds nothing;
-  green in `patterns` by name and workbench root; guard OK; gofmt
-  gate OK; guides gate OK; one commit in patterns, push; no tag.
-
-
-#### CK10.79: The stacked page's navbar places its tooltips inside the window
-
-- [ ] Under [[DOMAIN#Tooltip]], found under CK10.55 (finding 1182):
-  `patterns/navbar` lays its brand, links and actions out in rows
-  that place their children after measuring them and set no
-  collector, and the stacked page gives the navbar no available
-  room, so a tooltip in a navbar action is placed as one given
-  none. The navbar's rows set a collector per child and add each
-  child's surfaces at its offset with `tooltip.SurfacesAt`; the
-  stacked page sets a collector on the navbar and places its
-  surfaces in the window's area. A test that a tooltip in the
-  navbar's trailing action is drawn whole inside the window.
-- [ ] Exit: green in `patterns` by name and workbench root; guard
-  OK; gofmt gate OK; layers gate OK; one commit in patterns, push;
-  no tag.
-
-
-#### CK10.80: A toolbar control is laid out at its own width
-
-- [ ] Under [[DOMAIN#Toolbar]], found under CK10.55 (finding 1183):
-  the toolbar lays every control out as a rigid child with the
-  rest of the row as its maximum, and `button.Button` fills the
-  maximum it is given, so a bare button takes the whole rest of
-  the row. The toolbar passes each control a maximum of its own
-  content width (the measured toolbar control height, the text or
-  symbol's width plus the measured insets), so a bare button in
-  any slot is drawn at its own width; the workbench's fixed-width
-  reservations stay as they are where they match. A test that a
-  bare button in a toolbar's leading slot is drawn at its content
-  width and the trailing group keeps its place.
-- [ ] Exit: green in `patterns` by name and every workbench app
-  with a toolbar by name and workbench root; guard OK; gofmt gate
-  OK; commit and push per repo; no tag.
-
-
-#### CK10.81: The dark field edge is re-read from the untinted capture
-
-- [ ] Under [[DOMAIN#Field]], ruled on finding 1184: every platform
-  value is measured with wallpaper tinting off, and a reading
-  taken with tinting on is re-read. `fieldEdge` dark was read off
-  the Save panel with tinting on. The token takes the edge colour
-  the untinted search field on content measures in
-  `reference/macos/controls.md` (the section "What the search
-  field on content measures"); the controls.md row for the Save
-  panel's edge is marked as a tinted reading superseded by that
-  row. A token change: `effects/transition` and `workbench/themer`
-  run by name; every dark golden that shows a field regenerates
-  with the cause named.
-- [ ] Exit: a test that the dark field edge equals the MEASURED
-  untinted value; green in `theme`, `components` (input by name),
-  `effects/transition`, `workbench/themer` by name and workbench
-  root; guard OK; gofmt gate OK; commit and push per repo; no tag.
-
-#### CK10.82: A field's text is set in the Label role and the field is the measured height
-
-- [ ] Under [[DOMAIN#Field]] and [[DOMAIN#Typography role]], ruled
-  on finding 1185: a field's text is set in the Label role at the
-  platform's measured size for a control, never in a Body role,
-  every text field alike; the field's height is the measured
-  control height for its density. `components/input` sets every
-  text field's text, placeholder included, in the Label role at
-  the size the reference measures (the search field on content's
-  10 px cap band, the Save panel field's 27 px height and the
-  field on content's 26 px are the rows to read), and draws the
-  field at the measured height per density instead of a Body line
-  box plus padding. Every golden that shows a text field
-  regenerates with the cause named.
-- [ ] Exit: a test that a text field's text is set in the Label
-  role and that the field's height per density equals the MEASURED
-  row; green in `components` (input by name and the whole module),
-  `patterns` and every text field caller by name and workbench
-  root; guard OK; gofmt gate OK; commit and push per repo; no tag.
-
-#### CK10.83: Chevron-down is redrawn at chevron-right's extent
-
-- [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Disclosure]], ruled on
-  finding 1186: chevron-down is chevron-right's figure turned a
-  quarter and keeps that figure's stroke and extent, as the
-  platform's chevron.down does. `components/icons` redraws the
-  chevron-down mark as chevron-right turned a quarter, with the
-  same stroke and the same extent at every size; the stacked pair
-  stays one mark of its own under its own name. Iconbrowser's
-  goldens regenerate with the cause named.
-- [ ] Exit: a test that chevron-down's drawn extent equals
-  chevron-right's turned a quarter at 16, 20 and 24 dp; green in
-  `components` (icons by name), `workbench/iconbrowser` by name
-  and workbench root; guard OK; gofmt gate OK; commit and push per
-  repo; no tag.
-
-#### CK10.84: An open disclosure draws chevron-down
-
-- [ ] Under [[DOMAIN#Disclosure]], ruled on finding 1186, after
-  CK10.83: `patterns/sidebar`'s `PaintDisclosure`,
-  `workbench/sitedocs`' `drawOutlineDisclosure` and
-  `workbench/vaultview`'s `drawDisclosure` draw the set's
-  chevron-down for an open row instead of turning chevron-right,
-  and `components/icons`' doc for `ChevronRight` no longer says a
-  disclosure turns it. Every golden that shows an open disclosure
-  regenerates with the cause named.
-- [ ] Exit: a test per drawer that an open row's mark equals the
-  set's chevron-down; green in `components` (icons by name),
-  `patterns` (sidebar by name), `workbench/sitedocs`,
-  `workbench/vaultview` by name and workbench root; guard OK;
-  gofmt gate OK; commit and push per repo; no tag.
-
-#### CK10.85: Iconbrowser's search field keeps the measured width
-
-- [ ] Under [[DOMAIN#Search field]], ruled on finding 1189: on the
-  content the field keeps the width the reference measures for
-  the platform's field there, leading in its region, never the
-  region's full width. Iconbrowser draws its field at the width
-  the section "What the search field on content measures" in
-  `reference/macos/controls.md` gives, at the page's leading edge.
-  The six iconbrowser window goldens regenerate with the cause
-  named.
-- [ ] Exit: a test that the field's extent equals the MEASURED
-  width and starts at the page's leading padding; green in
-  `workbench/iconbrowser` by name and workbench root; guard OK;
-  gofmt gate OK; commit and push per repo; no tag.
-
-#### CK10.86: Iconbrowser's page with no match shows one empty state
-
-- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1188: a
-  section of a filtered collection with no match is removed with
-  its heading and its count, and when no section matches the page
-  shows one empty state in the platform's shape with the query.
-  Iconbrowser removes the marks section and the Material section
-  alike when a query matches nothing in them, and draws one empty
-  state line in the platform's shape with the query when neither
-  matches. The no-match goldens regenerate with the cause named.
-- [ ] Exit: a test that a query matching only marks removes the
-  Material heading and its count, and a test that a query matching
-  nothing draws one empty state line; green in
-  `workbench/iconbrowser` by name and workbench root; guard OK;
-  gofmt gate OK; commit and push per repo; no tag.
-
-
-### G-CK11: Every window offers its actions through the menu bar
-
-Under [[DOMAIN#Action]]: every action a window
-offers through a control also stands in the menu bar with its key
-equivalent, as the platform requires, so an action is never offered
-nowhere; a control that is hidden with its pane removes nothing from the
-menu bar. Mindchat has a menu bar; feeds gains one in CK10.3; the
-other eight workbench windows have none and are defects under the
-entry. Each gains the platform's menu bar through `mvu/desktop`'s
-menu bar: the application menu with Settings… or Preferences… where
-the window has one, File with the window's own acts (open, new,
-reload, switch) and their key equivalents, Edit with the platform's
-standard items where a field exists, View with the pane's toggle
-where a pane exists; the chords the window already binds move into
-the table so one place states them. Each menu item posts the message
-its control posts.
-#### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
-
-- [ ] The three windows gain their menu bars: vaultview (File: Open
-  Vault… and Switch Vault… on the chords it binds, Rescan, Find on
-  the platform's find chord and Find in Rail on its shifted one,
-  Back and Forward; View: Toggle Sidebar, Toggle Inspector), todos
-  (File: New Todo; Edit: Delete), themer (File: Open Picture…, Keep;
-  View: the scheme toggle); the worker reads each window's
-  controls and chords and lists the table in the commit body. No
-  composition change; goldens do not move (the menu bar is the
-  platform's, outside the window).
-- [ ] Exit: green in each app by name; guard OK; gofmt gate OK; commit
-  and push in `workbench` and `.github`; no tag.
-
-#### CK11.2: The workbench, sitedocs, iconbrowser, marketing and sk150 offer their actions through the menu bar
-
-- [ ] The five windows gain their menu bars the same way: the
-  workbench (File: Launch for the selected application if one is
-  selectable, else none beyond the platform's; the application
-  menu's standard items), sitedocs (View: the five tabs on their
-  chords), iconbrowser (Edit: Find), marketing (none beyond the
-  platform's standard items, which the bar still holds), sk150
-  (File: Connect, Save; Edit: the presets' acts); the worker reads
-  each window and lists the table. No composition change; goldens
-  do not move.
-- [ ] Exit: green in each app by name; guard OK; gofmt gate OK; commit
-  and push in `workbench` and `.github`; no tag.
 
 ## Phase CL: The trunk is in the organisation repository
 
@@ -26685,3 +26189,509 @@ session when the move lands.
   guard OK; gofmt gate OK; `go build ./...` in the organisation
   repository's `scripts/retiredwords`; commit and push per repo; no
   tag.
+
+## Phase CM: The rulings of the hidden-sidebar round are built
+
+Owner-ruled 2026-10-22 ([[TRANSCRIPTS#^0005-split-ck-insert-cl]]):
+Phase CK ends with its capture tasks, Phase CL moves the trunk, and
+every task of Phase CK unchecked at that ruling runs here in its
+order. Phase CK's capture rule and Phase CJ's rule stand: the
+recorder's requests come first, and the tasks here run when none is
+waiting.
+
+### G-CM1: Every ruling of the hidden-sidebar round that takes no capture is built
+
+The tasks are G-CK10's tasks unchecked at the ruling, in their
+order.
+
+#### CM1.1: Feeds, sk150 and vaultview pass the window's available room to their tooltips
+
+- [ ] Under [[DOMAIN#Tooltip]], the applications' half of CK10.37
+  and finding 1157: feeds' "Unread" tip, sk150's demo button tip
+  and vaultview's link tip pass `shell.AvailableRoom` as
+  `AvailableRoom`; each layer of their own that places a child at
+  a known offset calls `shell.AvailableRoomAt`, and each that
+  places a child only after measuring it sets the tooltip
+  collector (CK10.54); sk150, which uses no arrangement, sets the
+  area at its root with `shell.WithAvailableRoom`. Found under
+  CK10.55 (finding 1180): an offset pushed between a placing
+  layout and a tooltip that does not move the collector draws the
+  surface away from its trigger, so the docs of
+  `components/tooltip` and `patterns/shell` state the rule: a
+  layout that pushes an offset moves the collector and the area
+  with `shell.AvailableRoomAt` (or `tooltip.SurfacesAt` below the
+  shell). A test per app that a tooltip on a control at the
+  window's trailing edge is drawn whole inside the window.
+- [ ] Exit: green in `workbench/feeds`, `workbench/sk150`,
+  `workbench/vaultview` by name and workbench root; guard OK;
+  gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CM1.2: The search field's clear mark posts the empty change once
+
+- [ ] Under [[DOMAIN#Search field]], found under CK10.39 (findings
+  1158 and 1159): the clear mark posts the empty change twice on
+  one frame, once from the field after `SetText("")` and once from
+  the editor's update, where Escape posts it once. The clear mark
+  posts it once, the same way Escape does. The field's doc states
+  the constraint a handler around it is under: Gio gives a key
+  event to the first matching request in the frame, so a handler
+  that takes Escape when the field is empty asks for the key after
+  the field has laid out. A test that the clear mark posts the
+  empty change exactly once.
+- [ ] Exit: green in `components` (input by name), `workbench/feeds`
+  and `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; one commit in components, push; no tag.
+
+#### CM1.3: The workbench draws each application's icon in the text colour and its launch button in the default button fill
+
+- [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Fill]], ruled on findings
+  1160 and 1033: an application's icon on the workbench is an icon
+  on the content, in the text colour, never the accent; the launch
+  button's fill is the platform's default button fill, the theme
+  colour for the one action. The workbench draws every icon with
+  the accent and the launch button's fill at the accent, which
+  read under the graphic floor in the dark appearance. The icons
+  are drawn in the text colour and the launch button takes the
+  default button fill; the workbench goldens regenerate with the
+  cause named (the icons' colour, the button's fill). A test that
+  an icon's pixels are the text colour and none the accent, in
+  both schemes.
+- [ ] Exit: green in `workbench` root by name; guard OK; gofmt gate
+  OK; one commit in workbench, push; no tag.
+
+#### CM1.4: Todos' and mindchat's symbols are drawn in their foreground, not the accent
+
+- [ ] Under [[DOMAIN#Icon]], ruled on findings 1161 and 1162: an
+  icon in a control is in that control's foreground, never the
+  accent, and a symbol on the content is in the text colour.
+  Todos draws its add and delete symbols in the accent and
+  mindchat draws the assistant's avatar symbol in the accent. The
+  add symbol is drawn in the button's foreground, the label colour;
+  the row's delete mark in the row's text colour; the avatar in the
+  transcript's text colour. `Icon: p.ControlAccent` is removed
+  from both palettes. Goldens regenerate with the cause named (the
+  symbols' colour). A test per app that a symbol's pixels are its
+  foreground and none the accent, in both schemes.
+- [ ] Exit: green in `workbench/todos`, `workbench/mindchat` by
+  name and workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
+
+#### CM1.5: Every mark in the icon set is named by what it depicts
+
+- [ ] Under [[DOMAIN#Icon]], ruled on findings 944 and 1163: a mark
+  is named by what it depicts, never by the control that uses it.
+  In `components/icons` `Search` becomes `MagnifyingGlass`
+  ("magnifying-glass"), `Clear` becomes `XmarkCircle`
+  ("xmark-circle"), `Refresh` becomes `ArrowClockwise`
+  ("arrow-clockwise"), `Sidebar` becomes `SidebarLeft`
+  ("sidebar-left", the platform's name for that picture); `Plus`
+  and `Minus` stay; the functions and files named after `Search`
+  (`SearchDrawingOriginPx`, `SearchDrawingSizePx`, the svg) are
+  renamed with it; every doc comment in the set says what the mark
+  depicts and never "is the control that"; every caller in
+  `components`, `patterns`, `markdown` and `workbench` is renamed.
+  No alias is kept. No pixel moves.
+- [ ] Exit: `grep -rn 'icons\.\(Search\|Clear\|Refresh\|Sidebar\)\b'`
+  over the org finds nothing; green in `components` (icons, gallery
+  and inventory by name), `patterns`, `markdown` and every caller
+  by name and workbench root; guard OK; gofmt gate OK; layers gate
+  OK; commit and push per repo; no tag.
+
+#### CM1.6: Themer's style rows run to the lane
+
+- [ ] Under [[DOMAIN#Scrollbar]], ruled on finding 1164: a column of
+  rows has no padding of its own; the rows run to the lane and each
+  row's own inset keeps its content and its pill from the end, as
+  the platform's lists do; a page's padding stays between its
+  content and the lane. Themer's style column, a column of rows,
+  keeps a 10 dp trailing padding between its rows and the lane, so
+  at Always the marked row ends 12 px from the thumb. The column's
+  trailing padding is removed: the rows run to the lane at Always
+  and to the box's edge at WhenScrolling, each row's inset keeping
+  its name and its pill from the end. Iconbrowser's grid is a page
+  and keeps its padding. The themer goldens regenerate with the
+  cause named (the rows' extent).
+- [ ] Exit: a test that at Always the marked row's fill ends at the
+  lane and at WhenScrolling at the box's edge; green in
+  `workbench/themer` by name and workbench root; guard OK; gofmt
+  gate OK; one commit in workbench, push; no tag.
+
+#### CM1.7: The scroll area draws its bar at its owner's edge with a lane at Always
+
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
+  under CK10.45 (finding 1166): `components/scrollarea`'s
+  `Style.LayoutScrollbar` draws the bar over the area's bottom
+  rows whatever the bar's fade, and its doc tells callers to place
+  the area so the bar is drawn over their padding. The area draws
+  its bar at its own bottom edge, inside the area, with a lane at
+  Always (`list.AnchorFor`) and none when the bar fades, as the
+  code block draws its own since CK10.45; the doc says so and
+  names no padding; the code block calls the area's bar again if
+  that removes its own copy. A test that the area at Always is
+  taller by the lane and the thumb is drawn inside its bottom edge.
+- [ ] Exit: green in `components` (scrollarea, gallery and inventory
+  by name), `markdown` by name and workbench root; guard OK;
+  gofmt gate OK; layers gate OK; commit and push per repo; no tag.
+
+#### CM1.8: A table too wide for the column draws its sideways scrollbar
+
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
+  under CK10.45 (finding 1165): a table whose min-content widths
+  overflow the column is laid out in a sideways `layout.List` that
+  the wheel scrolls, and no bar is drawn at either setting. A
+  preformatted table is a scroll area and every region that
+  scrolls has a bar: the table draws its sideways bar at its own
+  bottom edge with a lane at Always, through `components/scrollarea`
+  (CM1.7) or the list's own bar, say which and why. The goldens
+  that hold a wide table regenerate with the cause named. A test
+  that a wide table at Always is taller by the lane and the thumb
+  is drawn inside its bottom edge, and that a table that fits
+  draws none.
+- [ ] Exit: green in `markdown` by name and workbench root; guard
+  OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CM1.9: A code block's thumb is flattened onto the fill the block is drawn in
+
+- [ ] Found under CK10.45 (finding 1169): `markdown.FromTokens`
+  builds `CodeScrollbar` on the theme's code fill, and a document
+  drawn in a syntax highlighter style draws the block in that
+  style's background, so the thumb is a neutral grey on a tinted
+  fill. The bar is flattened onto the fill the block is drawn in:
+  the highlighter's background where a style is set, the theme's
+  code fill otherwise. The goldens that show the bar regenerate
+  with the cause named (the thumb's colour). A test that the thumb
+  over a highlighter-styled block is a step from that block's
+  background.
+- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
+  name and workbench root; guard OK; gofmt gate OK; commit and
+  push per repo; no tag.
+
+#### CM1.10: A code block's side padding scrolls with the code
+
+- [ ] Under [[DOMAIN#Scroll area]] and [[DOMAIN#Scrollbar]], ruled
+  on finding 1167: a scroll area's padding is inside it and moves
+  with the content, as a platform text view's inset moves with the
+  text. The fence's side padding is outside its scroll area, so
+  the code is clipped 12 px short of the rim on both sides at
+  every scroll position. The padding is inside the area: the first
+  glyph reaches the rim once scrolled and the code is clipped at
+  the rim. The goldens that hold a wide code block regenerate with
+  the cause named (the clip at the rim). A test that a scrolled
+  block draws glyph pixels up to the rim.
+- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
+  name and workbench root; guard OK; gofmt gate OK; commit and
+  push per repo; no tag.
+
+#### CM1.11: What is past a scrolling region's edge is clipped, never faded
+
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], ruled
+  on finding 1168: what is past a scrolling region's edge is
+  clipped at the edge, never faded, as the platform's scroll views
+  clip; the bar says there is more. The code block draws a
+  dissolve over an edge with hidden code. The dissolve is removed
+  from `markdown`; the goldens that showed it regenerate with the
+  cause named (the clip in place of the dissolve). A test that the
+  glyphs at a cut edge keep their full contrast.
+- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
+  name and workbench root; guard OK; gofmt gate OK; commit and
+  push per repo; no tag.
+
+#### CM1.12: The gallery's documents draw the bar with the setting of the window that shows them
+
+- [ ] Under [[DOMAIN#Scrollbar]], found as finding 1085: every
+  region that scrolls draws the window's bar with the setting the
+  window reads. `components/gallery/inventory` builds two
+  `markdown.Style`s of its own with no setting on `CodeScrollbar`,
+  since the gallery is a module inside `components` with no
+  composition root, so in sitedocs' inventory tab an overflowing
+  fence fades its bar whatever the reader asked for while the
+  fences in the Docs tab beside it stand. The gallery takes the
+  setting from whatever shows it: the inventory's styles are built
+  from a `scrollbar.Style` passed in by the embedding window
+  (sitedocs passes the one it reads through CK10.4's seam), and
+  the gallery's own window passes what it reads. A test that the
+  inventory's fence at Always draws a standing bar.
+- [ ] Exit: green in `components` (gallery and inventory by name),
+  `workbench/sitedocs` by name and workbench root; guard OK; gofmt
+  gate OK; layers gate OK; commit and push per repo; no tag.
+
+#### CM1.13: The folder browser tells a folder it cannot read from one that holds no folders
+
+- [ ] Under [[DOMAIN#Empty state]], found under CK10.47 (finding
+  1170): the browser says an unreadable folder holds no folders,
+  because `ListDir` returns no rows both when a folder has no
+  child folders and when its read fails, where the entry treats
+  content that fails to arrive as its own case with the
+  application's own sentence and the cause to a log. `ListDir`
+  returns the read's error; the model keeps it; the region draws
+  its own empty state for a failed read, the application's own
+  sentence that the folder could not be read, and the error is
+  logged. A test that an unreadable folder draws the failed-read
+  line and an empty folder the holds-no-folders line.
+- [ ] Exit: green in `workbench/vaultview` by name and workbench
+  root; guard OK; gofmt gate OK; one commit in workbench, push; no
+  tag.
+
+#### CM1.14: Every empty state line has the platform's shape
+
+- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1171: the line
+  is a few words in title case stating the condition, with no
+  period and no instruction, as Mail's "No Message Selected" is
+  measured; a description under it is a sentence and ends with a
+  period. Todos' "No todos." becomes "No Todos"; the folder
+  browser's "This folder holds no folders." becomes "No Folders"
+  with no description, since the sentence repeats the line; feeds'
+  "Select an article" becomes "No Article Selected"; sitedocs'
+  "No headings." becomes "No Headings"; iconbrowser's line keeps
+  the query and takes the shape (say the text). Vaultview's find
+  count "No matches" is the find field's text, not an empty state,
+  and stays. Every test that names a line is updated; the goldens
+  that show a line regenerate with the cause named (the line's
+  text).
+- [ ] Exit: `grep -rn` over the workbench finds no empty state line
+  ending in a period; green in `workbench/todos`, `workbench/feeds`,
+  `workbench/vaultview`, `workbench/sitedocs`, `workbench/iconbrowser`
+  by name and workbench root; guard OK; gofmt gate OK; one commit
+  in workbench, push; no tag.
+
+#### CM1.15: Todos' add action is a toolbar action
+
+- [ ] Under [[DOMAIN#Toolbar]] and [[DOMAIN#Action]], ruled on
+  finding 1172: an action on the collection a window shows, adding
+  first of all, is a toolbar action, a bordered button with the
+  plus symbol in the label colour, as Notes' and Reminders'
+  new-item marks are measured in the reference; no action floats
+  over the content. Todos draws a round floating "+" at the page's
+  trailing bottom corner. The round button is removed; the add
+  action is a bordered toolbar button with `icons.Plus` in the
+  label colour and its key equivalent; the menu-bar item comes
+  with CM2.1. The bottom inset CK10.48 kept under the last row
+  for the button is removed with it. A test that the toolbar
+  draws the add button and the page draws no floating button.
+- [ ] Exit: green in `workbench/todos` by name and workbench root;
+  guard OK; gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CM1.16: The progress signal draws the platform's indeterminate indicator
+
+- [ ] Under [[DOMAIN#Progress]]: the signal showing how far a task
+  has come, the platform's indeterminate indicator when the end is
+  not known, read and never operated. `components/progress` is
+  added (name its props, say why) drawing the indeterminate
+  indicator from CK10.74's MEASURED rows, turning on the
+  platform's cadence; the gallery shows it. Sk150's Presets and
+  Device tabs draw it above their content-arriving phrase
+  (CK10.51), centred as one group, and remove both when the
+  content arrives; sk150's three phrases, the Monitor tab's
+  included, take the shape CK10.74 read. A test that the indicator is drawn at the
+  measured size and a test per tab that it stands above the
+  sentence while the content is arriving.
+- [ ] Exit: green in `components` (progress, gallery and inventory
+  by name), `workbench/sk150` by name and workbench root; guard
+  OK; gofmt gate OK; layers gate OK; commit and push per repo; no
+  tag.
+
+#### CM1.17: Iconbrowser's marks section renders each mark once at the catalogue's size
+
+- [ ] Under [[DOMAIN#Icon]], ruled on finding 1140 by the owner:
+  the marks section renders each mark once at the catalogue's
+  size, and its note names the three sizes the set ships, 16, 20
+  and 24 dp; there is no second rendering. The section draws each
+  mark at 16, 20 and 24 dp today, the 16 dp chevron-down about
+  6 px wide at 1x, under a catalogue at 40 dp. The three cells per
+  mark become one at the catalogue's size; the note's words follow
+  the Icon entry; the window goldens regenerate with the cause
+  named (the marks' cells). A test that each mark is drawn once at
+  the catalogue's cell size.
+- [ ] Exit: green in `workbench/iconbrowser` by name and workbench
+  root; guard OK; gofmt gate OK; one commit in workbench, push; no
+  tag.
+
+#### CM1.18: `pane.Strip` is deleted
+
+- [ ] Found under CK10.55 (finding 1181): the pane column's strip
+  is laid out by the shell's placing row, and `pane.Strip` has no
+  caller left in the organisation while it repeats that row. The
+  function and its tests are deleted; no alias is kept; the pane
+  guide names the shell's strip.
+- [ ] Exit: `grep -rn 'pane\.Strip\b'` over the org finds nothing;
+  green in `patterns` by name and workbench root; guard OK; gofmt
+  gate OK; guides gate OK; one commit in patterns, push; no tag.
+
+#### CM1.19: The stacked page's navbar places its tooltips inside the window
+
+- [ ] Under [[DOMAIN#Tooltip]], found under CK10.55 (finding 1182):
+  `patterns/navbar` lays its brand, links and actions out in rows
+  that place their children after measuring them and set no
+  collector, and the stacked page gives the navbar no available
+  room, so a tooltip in a navbar action is placed as one given
+  none. The navbar's rows set a collector per child and add each
+  child's surfaces at its offset with `tooltip.SurfacesAt`; the
+  stacked page sets a collector on the navbar and places its
+  surfaces in the window's area. A test that a tooltip in the
+  navbar's trailing action is drawn whole inside the window.
+- [ ] Exit: green in `patterns` by name and workbench root; guard
+  OK; gofmt gate OK; layers gate OK; one commit in patterns, push;
+  no tag.
+
+#### CM1.20: A toolbar control is laid out at its own width
+
+- [ ] Under [[DOMAIN#Toolbar]], found under CK10.55 (finding 1183):
+  the toolbar lays every control out as a rigid child with the
+  rest of the row as its maximum, and `button.Button` fills the
+  maximum it is given, so a bare button takes the whole rest of
+  the row. The toolbar passes each control a maximum of its own
+  content width (the measured toolbar control height, the text or
+  symbol's width plus the measured insets), so a bare button in
+  any slot is drawn at its own width; the workbench's fixed-width
+  reservations stay as they are where they match. A test that a
+  bare button in a toolbar's leading slot is drawn at its content
+  width and the trailing group keeps its place.
+- [ ] Exit: green in `patterns` by name and every workbench app
+  with a toolbar by name and workbench root; guard OK; gofmt gate
+  OK; commit and push per repo; no tag.
+
+#### CM1.21: The dark field edge is re-read from the untinted capture
+
+- [ ] Under [[DOMAIN#Field]], ruled on finding 1184: every platform
+  value is measured with wallpaper tinting off, and a reading
+  taken with tinting on is re-read. `fieldEdge` dark was read off
+  the Save panel with tinting on. The token takes the edge colour
+  the untinted search field on content measures in
+  `reference/macos/controls.md` (the section "What the search
+  field on content measures"); the controls.md row for the Save
+  panel's edge is marked as a tinted reading superseded by that
+  row. A token change: `effects/transition` and `workbench/themer`
+  run by name; every dark golden that shows a field regenerates
+  with the cause named.
+- [ ] Exit: a test that the dark field edge equals the MEASURED
+  untinted value; green in `theme`, `components` (input by name),
+  `effects/transition`, `workbench/themer` by name and workbench
+  root; guard OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CM1.22: A field's text is set in the Label role and the field is the measured height
+
+- [ ] Under [[DOMAIN#Field]] and [[DOMAIN#Typography role]], ruled
+  on finding 1185: a field's text is set in the Label role at the
+  platform's measured size for a control, never in a Body role,
+  every text field alike; the field's height is the measured
+  control height for its density. `components/input` sets every
+  text field's text, placeholder included, in the Label role at
+  the size the reference measures (the search field on content's
+  10 px cap band, the Save panel field's 27 px height and the
+  field on content's 26 px are the rows to read), and draws the
+  field at the measured height per density instead of a Body line
+  box plus padding. Every golden that shows a text field
+  regenerates with the cause named.
+- [ ] Exit: a test that a text field's text is set in the Label
+  role and that the field's height per density equals the MEASURED
+  row; green in `components` (input by name and the whole module),
+  `patterns` and every text field caller by name and workbench
+  root; guard OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CM1.23: Chevron-down is redrawn at chevron-right's extent
+
+- [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Disclosure]], ruled on
+  finding 1186: chevron-down is chevron-right's figure turned a
+  quarter and keeps that figure's stroke and extent, as the
+  platform's chevron.down does. `components/icons` redraws the
+  chevron-down mark as chevron-right turned a quarter, with the
+  same stroke and the same extent at every size; the stacked pair
+  stays one mark of its own under its own name. Iconbrowser's
+  goldens regenerate with the cause named.
+- [ ] Exit: a test that chevron-down's drawn extent equals
+  chevron-right's turned a quarter at 16, 20 and 24 dp; green in
+  `components` (icons by name), `workbench/iconbrowser` by name
+  and workbench root; guard OK; gofmt gate OK; commit and push per
+  repo; no tag.
+
+#### CM1.24: An open disclosure draws chevron-down
+
+- [ ] Under [[DOMAIN#Disclosure]], ruled on finding 1186, after
+  CM1.23: `patterns/sidebar`'s `PaintDisclosure`,
+  `workbench/sitedocs`' `drawOutlineDisclosure` and
+  `workbench/vaultview`'s `drawDisclosure` draw the set's
+  chevron-down for an open row instead of turning chevron-right,
+  and `components/icons`' doc for `ChevronRight` no longer says a
+  disclosure turns it. Every golden that shows an open disclosure
+  regenerates with the cause named.
+- [ ] Exit: a test per drawer that an open row's mark equals the
+  set's chevron-down; green in `components` (icons by name),
+  `patterns` (sidebar by name), `workbench/sitedocs`,
+  `workbench/vaultview` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
+#### CM1.25: Iconbrowser's search field keeps the measured width
+
+- [ ] Under [[DOMAIN#Search field]], ruled on finding 1189: on the
+  content the field keeps the width the reference measures for
+  the platform's field there, leading in its region, never the
+  region's full width. Iconbrowser draws its field at the width
+  the section "What the search field on content measures" in
+  `reference/macos/controls.md` gives, at the page's leading edge.
+  The six iconbrowser window goldens regenerate with the cause
+  named.
+- [ ] Exit: a test that the field's extent equals the MEASURED
+  width and starts at the page's leading padding; green in
+  `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
+#### CM1.26: Iconbrowser's page with no match shows one empty state
+
+- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1188: a
+  section of a filtered collection with no match is removed with
+  its heading and its count, and when no section matches the page
+  shows one empty state in the platform's shape with the query.
+  Iconbrowser removes the marks section and the Material section
+  alike when a query matches nothing in them, and draws one empty
+  state line in the platform's shape with the query when neither
+  matches. The no-match goldens regenerate with the cause named.
+- [ ] Exit: a test that a query matching only marks removes the
+  Material heading and its count, and a test that a query matching
+  nothing draws one empty state line; green in
+  `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
+### G-CM2: Every window offers its actions through the menu bar
+
+Under [[DOMAIN#Action]]: every action a window
+offers through a control also stands in the menu bar with its key
+equivalent, as the platform requires, so an action is never offered
+nowhere; a control that is hidden with its pane removes nothing from the
+menu bar. Mindchat has a menu bar; feeds gains one in CK10.3; the
+other eight workbench windows have none and are defects under the
+entry. Each gains the platform's menu bar through `mvu/desktop`'s
+menu bar: the application menu with Settings… or Preferences… where
+the window has one, File with the window's own acts (open, new,
+reload, switch) and their key equivalents, Edit with the platform's
+standard items where a field exists, View with the pane's toggle
+where a pane exists; the chords the window already binds move into
+the table so one place states them. Each menu item posts the message
+its control posts.
+#### CM2.1: Vaultview, todos and themer offer their actions through the menu bar
+
+- [ ] The three windows gain their menu bars: vaultview (File: Open
+  Vault… and Switch Vault… on the chords it binds, Rescan, Find on
+  the platform's find chord and Find in Rail on its shifted one,
+  Back and Forward; View: Toggle Sidebar, Toggle Inspector), todos
+  (File: New Todo; Edit: Delete), themer (File: Open Picture…, Keep;
+  View: the scheme toggle); the worker reads each window's
+  controls and chords and lists the table in the commit body. No
+  composition change; goldens do not move (the menu bar is the
+  platform's, outside the window).
+- [ ] Exit: green in each app by name; guard OK; gofmt gate OK; commit
+  and push in `workbench` and `.github`; no tag.
+
+#### CM2.2: The workbench, sitedocs, iconbrowser, marketing and sk150 offer their actions through the menu bar
+
+- [ ] The five windows gain their menu bars the same way: the
+  workbench (File: Launch for the selected application if one is
+  selectable, else none beyond the platform's; the application
+  menu's standard items), sitedocs (View: the five tabs on their
+  chords), iconbrowser (Edit: Find), marketing (none beyond the
+  platform's standard items, which the bar still holds), sk150
+  (File: Connect, Save; Edit: the presets' acts); the worker reads
+  each window and lists the table. No composition change; goldens
+  do not move.
+- [ ] Exit: green in each app by name; guard OK; gofmt gate OK; commit
+  and push in `workbench` and `.github`; no tag.
+
