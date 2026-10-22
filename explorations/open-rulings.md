@@ -3826,3 +3826,11 @@ found beside its own subject, stands here.
 Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 and the wording half of 1140 are ruled and planned as CK10.40, CK10.41 and CK10.43; the non-defect 1138 is recorded in the misreads briefing. What stays open is for the owner.
 
 1140. **[note]** **Iconbrowser's marks section reads at sizes apart from the catalogue under it.** The marks are drawn at 16, 20 and 24 dp above Material icons at 40 dp, the 16 dp chevron-down about 6 px wide at 1x. No Language entry governs a catalogue's sizes; the ontology session ruled it the application's own composition, planned only on the owner's go. The note's wording is planned as CK10.41.
+
+## HI. From CK10.47, the empty states of todos and the folder browser
+
+Filed 2026-10-22 from CK10.47. What stays open is for the owner.
+
+1170. **[note]** **The folder browser says a folder it could not read holds no folders.** `ListDir` returns no rows both for a folder with no child folders and for a folder whose read failed, so the browser draws "This folder holds no folders." for an unreadable folder too. The Empty state entry names a read that failed as its own case, with its own line; telling the two apart needs the listing to report its error to the model.
+
+1171. **[note]** **Empty-state lines in the workbench differ on a closing period.** Todos' "No todos." and the folder browser's "This folder holds no folders." end with a period, as vaultview's other lines do, and feeds' "Select an article" does not; the fresh-eyes review of CK10.47 notes that the platform's own line has none. The Empty state entry says nothing about punctuation, so each application chooses for itself.

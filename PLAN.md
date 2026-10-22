@@ -25927,7 +25927,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.47: Todos' empty list and vaultview's folder with no subfolders have an empty state
 
-- [ ] Under [[DOMAIN#Empty state]], found under CK10.36 (findings
+- [x] Under [[DOMAIN#Empty state]], found under CK10.36 (findings
   1149 and 1151): todos with no todo draws the window's plane and
   the add button only, and vaultview's picker and switch dialog
   draw an empty list under the trail for a folder with no
@@ -25937,7 +25937,7 @@ run, and no capture runs while the owner is at the machine
   nothing in it; the folder browser's line says the folder holds
   no folders. Goldens that show these states regenerate with the
   cause named.
-- [ ] Exit: a test per region that the empty state's line is drawn
+- [x] Exit: a test per region that the empty state's line is drawn
   centred in the region's frame; green in `workbench/todos`,
   `workbench/vaultview` by name and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
