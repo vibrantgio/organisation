@@ -25858,8 +25858,9 @@ run, and no capture runs while the owner is at the machine
   one window whose content fits; Finder's column view with a
   sideways bar. The lane's width, the track's fill, the thumb's
   fill and inset, what the platform draws when the content fits (a
-  track with no thumb is a bar; no track is no lane), and the
-  sideways lane's height, track and thumb are read into
+  track with no thumb is a bar; no track is no lane), a list
+  row's end against the lane (finding 1164), and the sideways
+  lane's height, track and thumb are read into
   `reference/macos/controls.md` as MEASURED rows.
   `components/scrollbar` then draws the standing bar, upright and
   sideways, from those rows; a column whose content fits draws what
@@ -26163,6 +26164,25 @@ run, and no capture runs while the owner is at the machine
   and inventory by name), `patterns`, `markdown` and every caller
   by name and workbench root; guard OK; gofmt gate OK; layers gate
   OK; commit and push per repo; no tag.
+
+#### CK10.61: Themer's style rows run to the lane
+
+- [ ] Under [[DOMAIN#Scrollbar]], ruled on finding 1164: a column of
+  rows has no padding of its own; the rows run to the lane and each
+  row's own inset keeps its content and its pill from the end, as
+  the platform's lists do; a page's padding stays between its
+  content and the lane. Themer's style column, a column of rows,
+  keeps a 10 dp trailing padding between its rows and the lane, so
+  at Always the marked row ends 12 px from the thumb. The column's
+  trailing padding is removed: the rows run to the lane at Always
+  and to the box's edge at WhenScrolling, each row's inset keeping
+  its name and its pill from the end. Iconbrowser's grid is a page
+  and keeps its padding. The themer goldens regenerate with the
+  cause named (the rows' extent).
+- [ ] Exit: a test that at Always the marked row's fill ends at the
+  lane and at WhenScrolling at the box's edge; green in
+  `workbench/themer` by name and workbench root; guard OK; gofmt
+  gate OK; one commit in workbench, push; no tag.
 
 ### G-CK11: Every window offers its actions through the menu bar
 
