@@ -25674,7 +25674,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.34: The anchor choice is stated once in the list component
 
-- [ ] Found under CK10.29: `components/picker`'s menu passes
+- [x] Found under CK10.29: `components/picker`'s menu passes
   `list.Overlay` whatever the setting and cannot call
   `shell.BarAnchor`, since components is below patterns. The
   choice moves down: `components/list` gains the function (say
@@ -25686,7 +25686,7 @@ run, and no capture runs while the owner is at the machine
   the style its Scrollbar prop resolves. No pixel moves at
   WhenScrolling; the picker's test from CK10.5 gains the Occupy
   case at Always.
-- [ ] Exit: green in `components` (picker, list, gallery and
+- [x] Exit: green in `components` (picker, list, gallery and
   inventory by name), `patterns` and every app that called
   `shell.BarAnchor` by name and workbench root; guard OK; gofmt
   gate OK; layers gate OK; commit and push per repo; no tag.
