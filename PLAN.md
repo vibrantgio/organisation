@@ -25727,7 +25727,7 @@ run, and no capture runs while the owner is at the machine
   tag.
 
 #### CK10.37: The shell passes the window's available room to every tooltip its arrangements place
-- [ ] Under [[DOMAIN#Tooltip]], found under CK10.31: no caller
+- [x] Under [[DOMAIN#Tooltip]], found under CK10.31: no caller
   passes the tooltip's `AvailableRoom`, so an unanchored tooltip
   on a control near the window's edge is drawn partly outside the
   window. The available room is the window's content area, and the
@@ -25736,14 +25736,18 @@ run, and no capture runs while the owner is at the machine
   (`shell.WithAvailableRoom(gtx, r)` set by a window's root,
   `shell.AvailableRoomAt(gtx, off)` moving it into a child's
   coordinates, `shell.AvailableRoom(gtx)` read by a caller;
-  unset, an unbounded rectangle). `TwoColumn`, `ThreeColumn`,
-  `ListColumn`, `PaneColumn`, the toolbar, `shell.EmptyState` and
-  `patterns/tabs` set or move the area for every child they place.
+  unset, an unbounded rectangle). Every slot whose offset is known
+  before it is laid out moves the area: `TwoColumn`, `ThreeColumn`,
+  `ListColumn`, `PaneColumn` and `PaneFrame` slots, a footer with
+  a stated depth, and `patterns/tabs`' content. A layout that
+  places a child only after measuring it (the toolbar's controls,
+  the pane's strip marks, `EmptyState`'s group, a footer with no
+  stated depth, the stacked page) removes the area, so its
+  tooltips are placed as before; CK10.54 and CK10.55 place those.
   The gallery's inventory specimen is a static picture, not a live
-  tooltip, and is out of scope. A test per arrangement that a
-  tooltip in a trailing-edge slot, and one in an empty state's
-  action, is drawn whole inside the window.
-- [ ] Exit: green in `patterns` by name and workbench root; guard
+  tooltip, and is out of scope. A test per arrangement slot that a
+  tooltip in a trailing-edge slot is drawn whole inside the window.
+- [x] Exit: green in `patterns` by name and workbench root; guard
   OK; gofmt gate OK; layers gate OK; one commit in patterns, push;
   no tag.
 #### CK10.38: A tooltip adds no Tab stop of its own
@@ -26030,15 +26034,55 @@ run, and no capture runs while the owner is at the machine
   green in `workbench/sk150` by name and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
 
-#### CK10.54: Feeds, sk150 and vaultview pass the window's available room to their tooltips
+#### CK10.54: A tooltip's surface is placed once its layout knows the trigger's offset
 
-- [ ] Under [[DOMAIN#Tooltip]], the workbench half of CK10.37: feeds'
-  "Unread" tip, sk150's demo button tip and vaultview's link tip
-  pass `shell.AvailableRoom(gtx)` as `AvailableRoom`, and each
-  layer of their own that places a child at an offset calls
-  `shell.AvailableRoomAt`; sk150, which uses no arrangement, sets
-  the area at its root with `shell.WithAvailableRoom`. A test per
-  app that a tooltip on a control at the window's trailing edge is
+- [ ] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Placement]], found under
+  CK10.37 (finding 1157): a layout that places a child only after
+  measuring it (a `layout.Flex` centring its controls, a centred
+  box, a list row) cannot pass the available room before the
+  child's layout, and Gio exposes no transform to read back.
+  `components/tooltip` reads a collector from the context when one
+  is set: instead of placing its surface at once it records a
+  callback that draws the surface for a given available room, and
+  the layout that set the collector calls every callback inside
+  the child's transform once the child is placed and its offset is
+  known, passing the area moved by that offset. With no collector
+  set the tooltip is placed as it is today. The collector's type
+  and the two functions (set, call) are in `components/tooltip`
+  (name them, say why); `patterns/shell` passes the area through
+  them. A test that a tooltip inside a Flex-centred row at the
+  window's trailing edge is drawn whole inside the window, and one
+  that a tooltip shown by focus is placed the same way.
+- [ ] Exit: green in `components` (tooltip, gallery and inventory
+  by name), `patterns` and workbench root; guard OK; gofmt gate
+  OK; layers gate OK; commit and push per repo; no tag.
+
+#### CK10.55: The toolbar, the empty state, the pane strip, the footer and the stacked page place their tooltips inside the window
+
+- [ ] Under [[DOMAIN#Tooltip]], the rest of CK10.37: the toolbar's
+  controls, the pane's strip marks, `EmptyState`'s group and its
+  actions, a footer with no stated depth and the stacked page
+  remove the available room today. Each sets the tooltip
+  collector (CK10.54) and calls its callbacks once the child is
+  placed, passing the area moved by the child's offset, so every
+  tooltip they place is drawn whole inside the window. A test that
+  a tooltip in a toolbar control at the trailing edge and one in
+  an empty state's action are drawn whole inside the window.
+- [ ] Exit: green in `patterns` by name and workbench root; guard
+  OK; gofmt gate OK; layers gate OK; one commit in patterns, push;
+  no tag.
+
+#### CK10.56: Feeds, sk150 and vaultview pass the window's available room to their tooltips
+
+- [ ] Under [[DOMAIN#Tooltip]], the applications' half of CK10.37
+  and finding 1157: feeds' "Unread" tip, sk150's demo button tip
+  and vaultview's link tip pass `shell.AvailableRoom` as
+  `AvailableRoom`; each layer of their own that places a child at
+  a known offset calls `shell.AvailableRoomAt`, and each that
+  places a child only after measuring it sets the tooltip
+  collector (CK10.54); sk150, which uses no arrangement, sets the
+  area at its root with `shell.WithAvailableRoom`. A test per app
+  that a tooltip on a control at the window's trailing edge is
   drawn whole inside the window.
 - [ ] Exit: green in `workbench/feeds`, `workbench/sk150`,
   `workbench/vaultview` by name and workbench root; guard OK;

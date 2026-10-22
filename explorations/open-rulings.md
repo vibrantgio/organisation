@@ -3833,9 +3833,3 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 ## HC. From CK10.36, the lists that had no bar
 
 Filed 2026-10-22 from the fresh-eyes review of CK10.36. Every finding is ruled and planned, CK10.46 to CK10.53. Nothing stays open.
-
-## HD. From CK10.37, the available room on the context
-
-Filed 2026-10-22 by the CK10.37 worker.
-
-1157. **[note]** **An available room passed unmoved through a caller's own row places a tooltip against edges that are not the window's.** The shell moves the area only at the offsets it places its own slots at; a caller that lays a tooltip out inside its own `layout.Flex`, `layout.List`, inset or centred box passes the slot's area on unmoved, and the tooltip then flips or keeps inside a rectangle shifted by the row's offset, which can place it past the window's edge where no available room would not. Every layout between a slot and a tooltip has to move the area with `shell.AvailableRoomAt` or remove it, and a layout that places a child only after it is laid out cannot move it at all; CK10.54's callers meet this at once.
