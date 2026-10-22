@@ -25770,7 +25770,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.39: The search field takes Escape itself
 
-- [ ] Under [[DOMAIN#Search field]], found under CK10.32 (finding
+- [x] Under [[DOMAIN#Search field]], found under CK10.32 (finding
   1135): Escape empties the field as the clear mark does, but
   `input.SearchField` does not take the key; feeds and iconbrowser
   each carry the same `clearOnEscape` built from the field's
@@ -25782,7 +25782,7 @@ run, and no capture runs while the owner is at the machine
   A test in `components` that Escape on a field with text empties
   it and posts the empty change once, and that Escape on an empty
   field posts nothing.
-- [ ] Exit: green in `components` (input by name), `workbench/feeds`
+- [x] Exit: green in `components` (input by name), `workbench/feeds`
   and `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
