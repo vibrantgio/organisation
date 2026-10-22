@@ -3821,10 +3821,6 @@ found beside its own subject, stands here.
 
 1127. **[note]** **A document with no measure keeps its padding on the trailing side only.** `Style.Gutter` with a zero `Measure` still gives the blocks the width less the trailing padding, as before, because the Measure entry speaks of a region narrower than the measure and a document with no measure has none. A document laid out with a padding and no measure therefore runs its text against the leading edge. Whether the padding should be kept on both sides with no measure too is unasked; no caller in the tree sets a padding without a measure.
 
-## HP. From CK10.55, the layouts that place after measuring
-
-Filed 2026-10-22 from CK10.55. Findings 1180 to 1183 are in CK10.56, CK10.78, CK10.79 and CK10.80. Nothing stays open.
-
 ## HQ. From CK10.71, the search field on content
 
 Filed 2026-10-22 from CK10.71.
