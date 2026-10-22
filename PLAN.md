@@ -24842,6 +24842,20 @@ run, and no capture runs while the owner is at the machine
   OK; one commit per repo with the heading as subject; push every
   one; no tag.
 
+#### CK7.9: Feeds' Add feed stands in the pane as the collection's own act
+
+- [ ] Found under CK7.8 and ruled by the Pane entry as written: what
+  acts on the pane's collection waits for the pane, and Add feed
+  acts on the feeds the pane lists, as mindchat's New chat does.
+  It leaves the content toolbar's trailing group and stands bare
+  in the pane's strip as a `PaneColumn` mark (`icons.Plus`, title
+  "Add feed") before the Toggle Sidebar button at the pattern's
+  gap, going with the pane when it collapses; the share anchor
+  stays in the content toolbar's trailing group. Goldens
+  regenerate with the cause named.
+- [ ] Exit: green in `workbench/feeds` by name; guard OK; gofmt gate
+  OK; commit and push in `workbench` and `.github`; no tag.
+
 ### G-CK4: The workbench is called by its name
 
 #### CK4.1: The word launcher leaves the workbench's code and guide
