@@ -25436,6 +25436,19 @@ run, and no capture runs while the owner is at the machine
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
+#### CK10.21: Iconbrowser stores a golden per query state
+
+- [ ] Found under CK10.13: iconbrowser draws three query states
+  every test run and compares them with nothing; it stores no
+  golden at all. It gains `testdata/golden/` with a window golden
+  per state (no query, a matching query, a query matching nothing)
+  in both schemes, taken through `components/golden` as the other
+  apps take theirs, each named for its state, and a test that
+  compares them; the empty state's line is in the third.
+- [ ] Exit: six goldens committed with their causes named; green in
+  `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; one commit in workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
