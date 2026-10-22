@@ -3825,6 +3825,7 @@ found beside its own subject, stands here.
 1127. **[note]** **A document with no measure keeps its padding on the trailing side only.** `Style.Gutter` with a zero `Measure` still gives the blocks the width less the trailing padding, as before, because the Measure entry speaks of a region narrower than the measure and a document with no measure has none. A document laid out with a padding and no measure therefore runs its text against the leading edge. Whether the padding should be kept on both sides with no measure too is unasked; no caller in the tree sets a padding without a measure.
 
 ## GZ. From CK10.33, iconbrowser's scrolling column
+
 Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 and the wording half of 1140 are ruled and planned as CK10.40, CK10.41 and CK10.43; the non-defect 1138 is recorded in the misreads briefing. What stays open is for the owner.
 
 1140. **[note]** **Iconbrowser's marks section reads at sizes apart from the catalogue under it.** The marks are drawn at 16, 20 and 24 dp above Material icons at 40 dp, the 16 dp chevron-down about 6 px wide at 1x. No Language entry governs a catalogue's sizes; the ontology session ruled it the application's own composition, planned only on the owner's go. The note's wording is planned as CK10.41.
