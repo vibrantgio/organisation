@@ -1315,3 +1315,5 @@ github.com/vibrantgio/trunk, nah don't like it. Any more ideas?
 Rene: what it contains is the all the crunchgate method artifcats right?
 
 Rene: Give all the pros and cons for org and advise what to choose
+
+Rene: If we'd choose organisation it could also read as a verb
