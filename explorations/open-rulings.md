@@ -3829,11 +3829,3 @@ found beside its own subject, stands here.
 Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 and the wording half of 1140 are ruled and planned as CK10.40, CK10.41 and CK10.43; the non-defect 1138 is recorded in the misreads briefing. What stays open is for the owner.
 
 1140. **[note]** **Iconbrowser's marks section reads at sizes apart from the catalogue under it.** The marks are drawn at 16, 20 and 24 dp above Material icons at 40 dp, the 16 dp chevron-down about 6 px wide at 1x. No Language entry governs a catalogue's sizes; the ontology session ruled it the application's own composition, planned only on the owner's go. The note's wording is planned as CK10.41.
-
-## HA. From CK10.34, the list's anchor choice
-
-Filed 2026-10-22 while CK10.34 put the anchor choice in `components/list` as `list.AnchorFor`. Three columns outside the task's caller list pass `list.Occupy` whatever the setting, so at When scrolling and Automatic they keep an empty lane, which `[[DOMAIN#Scrollbar]]` calls a margin with no reason. `components/gallery/inventory`'s list block also passes `list.Occupy`, but its bar is built with `Always()` on purpose, so it is not filed.
-
-1141. **[note]** **Mindchat's transcript keeps a lane at every setting.** `workbench/mindchat/view.go` passes `list.Occupy` to the transcript's `list.LayoutScrollbar` instead of `list.AnchorFor(t.bar)`, so with a fading bar the messages stop short of a lane the bar does not occupy at rest; the switch moves pixels at When scrolling and needs goldens regenerated.
-1142. **[note]** **Vaultview's note column keeps a lane at every setting.** `workbench/vaultview/note.go` passes `list.Occupy` to `doc.LayoutScrollbar` for the note body instead of the anchor `list.AnchorFor` returns for its bar, so the text stops short of an empty lane at When scrolling and Automatic.
-1143. **[note]** **Themer's style list keeps a lane at every setting.** `workbench/themer/styles.go` passes `list.Occupy` for its narrow style list, and its comment gives a reason (the marked row ends where the row ends instead of running under the track) that the Scrollbar entry does not hold; the owner rules whether that list keeps the exception or calls `list.AnchorFor`.
