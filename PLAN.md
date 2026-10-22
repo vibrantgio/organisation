@@ -25614,7 +25614,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.31: A tooltip on a clickable control shows, and its surface is not cut to the control
 
-- [ ] Found under CK10.24: `components/tooltip` with no Anchor draws
+- [x] Found under CK10.24: `components/tooltip` with no Anchor draws
   its trigger on top of its hover area, so a trigger with a pointer
   area of its own takes every event and the tooltip never shows;
   and it sizes and places its surface inside the frame it is
@@ -25629,7 +25629,7 @@ run, and no capture runs while the owner is at the machine
   caller in the workbench and the gallery is run; goldens
   regenerate only where a tooltip is drawn at rest, with the cause
   named.
-- [ ] Exit: tests in `components/tooltip` that a trigger with a
+- [x] Exit: tests in `components/tooltip` that a trigger with a
   click area shows the tooltip on hover and that a one-line
   sentence is not cut when the trigger is smaller than it; sk150's
   hover test passes without the workaround; green in `components`
