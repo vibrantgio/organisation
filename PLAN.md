@@ -25162,6 +25162,47 @@ where a pane exists; the chords the window already binds move into
 the table so one place states them. Each menu item posts the message
 its control posts.
 
+#### CK10.6: A column with nothing to show says so in the platform's empty-column text
+
+- [ ] Ruled by the ontology session 2026-10-22 on finding 1076: a
+  message that stands in for a column's content when there is none
+  to show ("No notes in this vault.", "Scanning vault…",
+  "Downloading…", a scan's error) is the platform's empty-column
+  text, centred in the column both ways in the secondary label
+  colour, as Mail's "No Message Selected" and its loading text
+  stand; it is not content and does not stand on the measure. Text
+  that is part of the content stands on the measure's lead with
+  everything else. The reference lacks Mail's empty content
+  column: capture it in both appearances with nothing selected
+  (Mail's viewer window at 1400×875 as the three-column captures
+  were taken; crop to the content column so no message content is
+  stored), file the captures as `mail-empty-column-{light,dark}.png`
+  and read the text's colour, size and both centrings into
+  controls.md. `patterns/shell` gains one value for the empty
+  column's text (name it from the entry the ontology session
+  writes, or "EmptyColumn" until it does) that paints the
+  platform's reading; vaultview's four messages are drawn by it
+  and `messageChild` goes. The goldens that hold a message
+  regenerate, each with its cause named.
+- [ ] Exit: the capture files and readings in the reference; a test
+  in `patterns` that the text centres both ways and spends
+  `SecondaryLabel`; a vaultview test that the scanning and empty
+  states draw the pattern's value and no measure; green in
+  `patterns` and `workbench/vaultview` by name and workbench root;
+  guard OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.7: Every workbench window's standing-in message is the empty-column text
+
+- [ ] Feeds' "Select an article" in the content column and every
+  other message a workbench window draws in place of a column's
+  content (enumerate them by reading each window's content and
+  list columns: mindchat, todos, themer, sitedocs, iconbrowser,
+  marketing, sk150, the workbench) take CK10.6's pattern value; a
+  hand-rolled centred line goes with each. Goldens regenerate with
+  the cause named per window.
+- [ ] Exit: green in every app by name and workbench root; guard
+  OK; gofmt gate OK; one commit in workbench, push; no tag.
+
 #### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
 
 - [ ] The three windows gain their menu bars: vaultview (File: Open
