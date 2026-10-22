@@ -25803,7 +25803,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.41: Iconbrowser's marks note uses the Language's words
 
-- [ ] Under [[DOMAIN#Disclosure]] and [[DOMAIN#Icon]], ruled on
+- [x] Under [[DOMAIN#Disclosure]] and [[DOMAIN#Icon]], ruled on
   finding 1140: the marks section's note says "turned" and "open
   row". A disclosure is closed (chevron pointing right) or open
   (pointing down); a mark is named by what it depicts, chevron-right
@@ -25811,7 +25811,7 @@ run, and no capture runs while the owner is at the machine
   note's text is rewritten in those words and "dp" stays, as the
   library's unit in a developer catalogue. The goldens that show
   the note regenerate with the cause named (the note's text).
-- [ ] Exit: green in `workbench/iconbrowser` by name and workbench
+- [x] Exit: green in `workbench/iconbrowser` by name and workbench
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
