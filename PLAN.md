@@ -26184,6 +26184,56 @@ run, and no capture runs while the owner is at the machine
   `workbench/themer` by name and workbench root; guard OK; gofmt
   gate OK; one commit in workbench, push; no tag.
 
+#### CK10.62: The scroll area draws its bar at its owner's edge with a lane at Always
+
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
+  under CK10.45 (finding 1166): `components/scrollarea`'s
+  `Style.LayoutScrollbar` draws the bar over the area's bottom
+  rows whatever the bar's fade, and its doc tells callers to place
+  the area so the bar is drawn over their padding. The area draws
+  its bar at its own bottom edge, inside the area, with a lane at
+  Always (`list.AnchorFor`) and none when the bar fades, as the
+  code block draws its own since CK10.45; the doc says so and
+  names no padding; the code block calls the area's bar again if
+  that removes its own copy. A test that the area at Always is
+  taller by the lane and the thumb is drawn inside its bottom edge.
+- [ ] Exit: green in `components` (scrollarea, gallery and inventory
+  by name), `markdown` by name and workbench root; guard OK;
+  gofmt gate OK; layers gate OK; commit and push per repo; no tag.
+
+#### CK10.63: A table too wide for the column draws its sideways scrollbar
+
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
+  under CK10.45 (finding 1165): a table whose min-content widths
+  overflow the column is laid out in a sideways `layout.List` that
+  the wheel scrolls, and no bar is drawn at either setting. A
+  preformatted table is a scroll area and every region that
+  scrolls has a bar: the table draws its sideways bar at its own
+  bottom edge with a lane at Always, through `components/scrollarea`
+  (CK10.62) or the list's own bar, say which and why. The goldens
+  that hold a wide table regenerate with the cause named. A test
+  that a wide table at Always is taller by the lane and the thumb
+  is drawn inside its bottom edge, and that a table that fits
+  draws none.
+- [ ] Exit: green in `markdown` by name and workbench root; guard
+  OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.64: A code block's thumb is flattened onto the fill the block is drawn in
+
+- [ ] Found under CK10.45 (finding 1169): `markdown.FromTokens`
+  builds `CodeScrollbar` on the theme's code fill, and a document
+  drawn in a syntax highlighter style draws the block in that
+  style's background, so the thumb is a neutral grey on a tinted
+  fill. The bar is flattened onto the fill the block is drawn in:
+  the highlighter's background where a style is set, the theme's
+  code fill otherwise. The goldens that show the bar regenerate
+  with the cause named (the thumb's colour). A test that the thumb
+  over a highlighter-styled block is a step from that block's
+  background.
+- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
+  name and workbench root; guard OK; gofmt gate OK; commit and
+  push per repo; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
