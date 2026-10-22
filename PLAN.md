@@ -25945,7 +25945,7 @@ run, and no capture runs while the owner is at the machine
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 #### CK10.52: The list's focus ring is drawn outside the list's box
 
-- [ ] Under [[DOMAIN#Focused]], ruled on finding 1152: the ring is
+- [x] Under [[DOMAIN#Focused]], ruled on finding 1152: the ring is
   drawn around the control's outer edge, outside its content,
   around the list's box and never over a row; its width is the
   measured 4 px in the reference. `list.FocusRing` draws the band
@@ -25955,7 +25955,7 @@ run, and no capture runs while the owner is at the machine
   keeps the ring's width around the box so it is not clipped;
   goldens that show a focused list regenerate with the cause named
   (the ring's place).
-- [ ] Exit: a test that the ring's inner edge is the box's outer
+- [x] Exit: a test that the ring's inner edge is the box's outer
   edge and no ring pixel lies over a row; green in `components`
   (list, gallery and inventory by name), `patterns` and every
   `list.FocusRing` caller by name and workbench root; guard OK;
