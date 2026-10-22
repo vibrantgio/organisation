@@ -427,7 +427,7 @@ signals have none.
 
 The platform's term for a region with no content to show, and
 the text that says why: nothing selected, nothing in the
-collection, content still arriving, a read that failed. Its line is
+collection, a read that failed. Its line is
 the application's own text, never the system's. The line has the
 platform's shape, measured from Mail's "No Message Selected": a few
 words in title case, stating the condition, with no period and no
@@ -934,9 +934,11 @@ filling from the leading end when the end is known, and the
 platform's indeterminate indicator when it is not. It is read, never
 operated, and leaves when the task ends. Content still arriving is a
 task in progress, not an empty state: the indicator and the
-application's own sentence stand centred in the region's frame, as
-an empty state does, never as a row of the content, and leave when
-the content arrives.
+application's own text stand centred in the region's frame, as an
+empty state does, never as a row of the content, and leave when the
+content arrives. That text is a short phrase naming the task and
+ending with an ellipsis, its capitalisation read from the reference
+with the indicator.
 
 ### Purpose
 
