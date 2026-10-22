@@ -3841,7 +3841,4 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 ## HW. From CM1.1, the applications' tooltips
 
-1204. **[decide]** **A tooltip whose text is wider than the available room is elided in its middle.** The fresh-eyes review of sk150's demo button tooltip in a 180 px window (reviews/CM1.1-application-tooltips-fresh-eyes.md) read "Shows demo re…til you quit" as text cut off, against the Tooltip entry's "never cut off" and the Attachment entry's "Content is never cut off", and asked for the text on a second line, since the window has height to spare. `components/tooltip` elides one line in its middle by design, for vaultview's addresses, and the Language has no entry for elision at all. The same review saw the empty state's line elided at its end ("No SK150…"). Whether a tooltip's text that does not fit is elided or set on further lines, and the entry that says so, is unasked.
-
-1205. **[decide]** **`desktop.CapTop` pushes the top inset as an offset without moving the available room or the tooltip collector.** sk150 sets the window's area above the cap and moves it by `desktop.TopInset` inside the page it passes to the cap by hand; every other window that lays its page under `CapTop` or `InsetTop` and sets the area at its root has to do the same, or its tooltips are placed against an area the strip's depth too low. `mvu/desktop` is built below `patterns/shell` and cannot call `AvailableRoomAt`. Whether the cap takes the move as a hook, the apps keep it, or the area is set below the cap, is unasked.
-
+Filed 2026-10-22 from CM1.1. Findings 1204 and 1205 are ruled: 1204 is in CM1.36 and CM3.1, 1205 in CM1.37; 1206 is in CM1.35. Nothing stays open.

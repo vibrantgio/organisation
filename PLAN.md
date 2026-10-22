@@ -26810,6 +26810,44 @@ order.
   workbench root; guard OK; gofmt gate OK; one commit in workbench,
   push; no tag.
 
+#### CM1.36: A tooltip's text and an empty state's line are set on more lines, never truncated
+
+- [ ] Under [[DOMAIN#Truncation]], [[DOMAIN#Tooltip]] and
+  [[DOMAIN#Empty state]], ruled on finding 1204: prose, a tooltip's
+  text, an empty state's line, a description and a label beside a
+  field are never truncated; they are set on more lines up to their
+  measure. `components/tooltip` sets its text on more lines up to
+  the tooltip's width, a DERIVED row in `reference/macos/controls.md`
+  with its arithmetic stated until CM3.1 measures it; the empty
+  state's line is set on more lines in its frame; the
+  middle-ellipsis code is removed from both. Goldens that show a
+  tooltip or an empty state with long text regenerate with the cause
+  named.
+- [ ] Exit: a test that a tooltip with text wider than its width is
+  drawn on more lines with no ellipsis, and the same for an empty
+  state's line; green in `components` (tooltip and emptystate by
+  name and the whole module), `patterns` and every tooltip caller by
+  name and workbench root; guard OK; gofmt gate OK; commit and push
+  per repo; no tag.
+
+#### CM1.37: The available room is a value of mvu's context and the cap moves it
+
+- [ ] Under [[DOMAIN#Tooltip]], ruled on finding 1205 by the
+  orchestrator: the value both layers need is defined in the lowest
+  layer that pushes offsets. `mvu/desktop` defines the available
+  room as a context value and `CapTop` and `InsetTop` move it by the
+  offset they push; `patterns/shell`'s `WithAvailableRoom`,
+  `AvailableRoomAt` and `AvailableRoom` read and write that value,
+  their signatures unchanged; sk150's correction by hand for the
+  cap is removed; the docs of both packages state where the value
+  is defined. Layers point upstream: patterns reads mvu, mvu names
+  nothing above it.
+- [ ] Exit: a test in mvu that the cap moves the value by its inset
+  and a test in sk150 that the demo tooltip is drawn whole with no
+  correction of its own; green in `mvu`, `patterns` (shell by name),
+  `workbench/sk150` by name and workbench root; layers gate OK;
+  guard OK; gofmt gate OK; commit and push per repo; no tag.
+
 ### G-CM2: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
@@ -26853,4 +26891,27 @@ its control posts.
   do not move.
 - [ ] Exit: green in each app by name; guard OK; gofmt gate OK; commit
   and push in `workbench` and `organisation`; no tag.
+
+
+### G-CM3: The reference gaps Phase CM finds are captured
+
+The tasks take captures: each runs only on an open desktop the owner
+has left, under Phase CK's caffeinate rule, after the tasks above it.
+
+#### CM3.1: The platform's help tag with long text is measured into the reference
+
+- [ ] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Truncation]], ruled on
+  finding 1204: a tooltip's text is set on more lines up to the
+  tooltip's measured width. One capture of a platform help tag with
+  long text (a Finder toolbar item's help) in both schemes is taken
+  and stored under `reference/macos`, and the tag's width, the
+  lines' count and pitch and the text's padding are read into
+  `reference/macos/controls.md` as MEASURED rows; the DERIVED row
+  CM1.36 wrote is replaced by them, and `components/tooltip` takes
+  the MEASURED width. This task takes a capture: it runs only on an
+  open desktop the owner has left.
+- [ ] Exit: the captures and the MEASURED rows are in the reference;
+  the tooltip's width test reads the MEASURED value; green in
+  `components` (tooltip by name) and workbench root; guard OK; gofmt
+  gate OK; commit and push per repo; no tag.
 
