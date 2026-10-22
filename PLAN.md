@@ -25726,6 +25726,41 @@ run, and no capture runs while the owner is at the machine
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
+#### CK10.37: A tooltip is placed inside the window's room
+
+- [ ] Under [[DOMAIN#Tooltip]], found under CK10.31: no caller
+  passes the tooltip's `AvailableRoom`, so an unanchored tooltip
+  on a control near the window's edge is drawn partly outside the
+  window. The room is the window's content area, which
+  `patterns/shell`'s arrangements know: the shell passes it once
+  (a value the window's layout exposes, say the seam, as
+  `components/picker`'s field takes its room) and every tooltip
+  caller in the workbench and the gallery passes that value;
+  sk150's demo button, feeds' "Unread" and vaultview's link tip
+  included. A test per app that a tooltip on a control at the
+  window's trailing edge is drawn whole inside the window.
+- [ ] Exit: green in `patterns`, `components` (gallery and inventory
+  by name), every workbench app by name and workbench root; guard
+  OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.38: A tooltip adds no Tab stop of its own
+
+- [ ] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Focused]], found under
+  CK10.31: an unanchored tooltip registers a focus tag of its own
+  over the trigger so focus shows it, and a control inside it has
+  its own tag, so Tab stops on the same control twice. The tooltip
+  registers no focus tag of its own when its trigger is a control;
+  it shows while the control is focused by reading the control's
+  focus (the trigger's tag passed through a prop, or the focus
+  event observed on the area it already registers; say which and
+  why); a trigger that is not a control keeps the tooltip's own
+  tag so the keyboard can reach it. A test that Tab through a
+  tooltipped button stops once and the tooltip shows while the
+  button is focused.
+- [ ] Exit: green in `components` (tooltip, gallery and inventory by
+  name) and every tooltip caller by name and workbench root; guard
+  OK; gofmt gate OK; commit and push per repo; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window

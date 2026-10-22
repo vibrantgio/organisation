@@ -3823,16 +3823,3 @@ vaultview's note column calls. What the work left open, and what it
 found beside its own subject, stands here.
 
 1127. **[note]** **A document with no measure keeps its padding on the trailing side only.** `Style.Gutter` with a zero `Measure` still gives the blocks the width less the trailing padding, as before, because the Measure entry speaks of a region narrower than the measure and a document with no measure has none. A document laid out with a padding and no measure therefore runs its text against the leading edge. Whether the padding should be kept on both sides with no measure too is unasked; no caller in the tree sets a padding without a measure.
-
-## GX. From CK10.31, the tooltip's hover and room
-
-Filed 2026-10-22 from the work itself: `components/tooltip` now registers
-its hover area over the trigger as a pass-through area, lays an
-unanchored trigger out by layout.Center's rule, and places its surface in
-the room the caller passes through `Props.AvailableRoom`; sk150's demo
-button attaches its tooltip with the button as the trigger. What the work
-left open, and what it found beside its own subject, stands here.
-
-1133. **[note]** **No caller passes the available room, so an unanchored tooltip is not kept inside the window.** With no room passed, an unanchored surface keeps the side asked for and its text whole, and the window alone clips it: a tooltip on a control near the window's foot or side is drawn partly outside the window, which the Placement contract in the Attachment entry forbids. Only the container that laid the window out knows where the control stands in it. Whether the window's arrangement (`patterns/shell`) should measure and pass that room to every tooltip in its tree, and how, is unasked.
-
-1134. **[note]** **An unanchored tooltip around a focusable control is a second Tab stop.** The tooltip registers a focus tag of its own over the trigger so focus shows it, and a button wrapped in it has its own focus tag as well, so Tab stops on the same control twice: once for the button, once for the tooltip. The anchored form registers no focus tag for this reason. Whether a wrapped control's own focus should show the tooltip, with the tooltip's tag removed, is unasked.
