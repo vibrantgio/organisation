@@ -25963,7 +25963,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.53: Sk150's Device grid is clipped at its foot with a seam against the footer
 
-- [ ] Under [[DOMAIN#Seam]] and [[DOMAIN#Footer]], ruled on finding
+- [x] Under [[DOMAIN#Seam]] and [[DOMAIN#Footer]], ruled on finding
   1155: a scrolling region's foot against a fixed band below it is
   where two flush regions meet, a hairline in the measured seam
   colour drawn once by the region above, and the rows are clipped
@@ -25973,7 +25973,7 @@ run, and no capture runs while the owner is at the machine
   clipped at its foot and draws the seam hairline there; the
   footer draws none. The goldens that show the Device tab
   regenerate with the cause named (the seam and the clip).
-- [ ] Exit: a test that the row below the grid's foot is clipped and
+- [x] Exit: a test that the row below the grid's foot is clipped and
   the seam hairline is drawn at the foot in the measured colour;
   green in `workbench/sk150` by name and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
