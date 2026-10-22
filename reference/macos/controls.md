@@ -1485,6 +1485,27 @@ the stated 220, and the measured maximum does not exist. The measurement is
 what the shell ships: `shell.PlatformList` carries 447, 200 and the content
 column's floor of 360.
 
+### The empty content column
+
+Read off `mail-empty-column-light.png` and `mail-empty-column-dark.png`,
+taken 2026-10-22 on the same display at 1x with the same 1400×875 viewer
+window, no message selected (set through Mail's own scripting). The
+capture is the content column's accessibility frame — 620×875 at window
+x 780, y 30 — and nothing else, so the column's toolbar share is in it
+and no message content is.
+
+| what | reads | capture | how it was read |
+|---|---|---|---|
+| the text | "No Message Selected", one line, one static text in the column's group | both | the accessibility tree's only static text in the column |
+| its colour | `#bdbdbd` light on `#ffffff`, `#595f62` dark on `#232a2e` | both | the plateau of the glyphs' fully covered pixels; `tertiaryLabelColor` exactly — black at 66/255 light and white at 63/255 dark, the readings this file records for the sheet's switched-off labels — and NOT `secondaryLabelColor`, whose `#808080` and `#9c9fa1` stand nowhere in the glyphs |
+| its size | cap height 20 px, the glyph box 267×26 | both | rows of the first N above a 60/255 difference; 20 px of cap is SF Pro Display at 28 pt (cap 0.709 em), larger than the platform's `largeTitle` text style (26 pt) |
+| horizontal centring | the glyph box spans x 176–442, centre 309; the column's centre is 309.5 | both | centred in the column |
+| vertical centring | the static text's accessibility frame is 35 px tall at window y 450, centre 467.5; the column's frame spans window y 30–905, centre 467.5 | both | centred in the FULL column, toolbar share included — the frame under a full-size content view — not in the region below the toolbar, whose centre would be 26 px lower |
+
+So the platform's text for a column with nothing to show stands centred
+both ways in the column's own frame, in `TertiaryLabel`, at a size above
+every text style in the type set.
+
 ## Where the measured heights supersede the published ones
 
 MEASURED, from the captures above, against the PUBLISHED rows below. Where

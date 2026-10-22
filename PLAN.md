@@ -25168,25 +25168,23 @@ its control posts.
   message that stands in for a column's content when there is none
   to show ("No notes in this vault.", "Scanning vault…",
   "Downloading…", a scan's error) is the platform's empty-column
-  text, centred in the column both ways in the secondary label
-  colour, as Mail's "No Message Selected" and its loading text
-  stand; it is not content and does not stand on the measure. Text
-  that is part of the content stands on the measure's lead with
-  everything else. The reference lacks Mail's empty content
-  column: capture it in both appearances with nothing selected
-  (Mail's viewer window at 1400×875 as the three-column captures
-  were taken; crop to the content column so no message content is
-  stored), file the captures as `mail-empty-column-{light,dark}.png`
-  and read the text's colour, size and both centrings into
-  controls.md. `patterns/shell` gains one value for the empty
-  column's text (name it from the entry the ontology session
-  writes, or "EmptyColumn" until it does) that paints the
-  platform's reading; vaultview's four messages are drawn by it
-  and `messageChild` goes. The goldens that hold a message
-  regenerate, each with its cause named.
-- [ ] Exit: the capture files and readings in the reference; a test
-  in `patterns` that the text centres both ways and spends
-  `SecondaryLabel`; a vaultview test that the scanning and empty
+  text, centred in the column both ways, as Mail's "No Message
+  Selected" and its loading text stand; it is not content and does
+  not stand on the measure. Text that is part of the content
+  stands on the measure's lead with everything else. Mail's empty
+  content column is in the reference as
+  `mail-empty-column-{light,dark}.png`, read under "The empty
+  content column" in controls.md: the text is `TertiaryLabel` (the
+  ruling said secondary; the platform reads tertiary, and the
+  reading wins), cap height 20 px at 1x, centred in the column's
+  full frame with the toolbar share included. `patterns/shell`
+  gains one value for the empty column's text (name it from the
+  entry the ontology session writes, or "EmptyColumn" until it
+  does) that paints the reading; vaultview's four messages are
+  drawn by it and `messageChild` goes. The goldens that hold a
+  message regenerate, each with its cause named.
+- [ ] Exit: a test in `patterns` that the text centres both ways in
+  the column's frame and spends `TertiaryLabel`; a vaultview test that the scanning and empty
   states draw the pattern's value and no measure; green in
   `patterns` and `workbench/vaultview` by name and workbench root;
   guard OK; gofmt gate OK; commit and push per repo; no tag.
