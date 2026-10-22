@@ -3829,4 +3829,4 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 ## HH. From CK10.45, the code block's sideways bar
 
-Filed 2026-10-22 from the fresh-eyes review of CK10.45. Every finding is ruled and planned, CK10.62 to CK10.66; 1085 retires with 1168. Nothing stays open.
+Filed 2026-10-22 from the fresh-eyes review of CK10.45. Every finding is ruled and planned, CK10.62 to CK10.66. Nothing stays open.

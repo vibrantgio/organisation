@@ -26251,20 +26251,36 @@ run, and no capture runs while the owner is at the machine
   push per repo; no tag.
 
 #### CK10.66: What is past a scrolling region's edge is clipped, never faded
-
 - [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], ruled
-  on findings 1168 and 1085: what is past a scrolling region's
-  edge is clipped at the edge, never faded, as the platform's
-  scroll views clip; the bar says there is more. The code block
-  draws a dissolve over an edge with hidden code, and the gallery's
-  fences fade the same way. The dissolve is removed from `markdown`
-  and from every fence in the gallery; the goldens that showed it
-  regenerate with the cause named (the clip in place of the
-  dissolve). A test that the glyphs at a cut edge keep their full
-  contrast.
-- [ ] Exit: green in `markdown` by name, `components` (gallery and
-  inventory by name), `workbench/vaultview` by name and workbench
-  root; guard OK; gofmt gate OK; commit and push per repo; no tag.
+  on finding 1168: what is past a scrolling region's edge is
+  clipped at the edge, never faded, as the platform's scroll views
+  clip; the bar says there is more. The code block draws a
+  dissolve over an edge with hidden code. The dissolve is removed
+  from `markdown`; the goldens that showed it regenerate with the
+  cause named (the clip in place of the dissolve). A test that the
+  glyphs at a cut edge keep their full contrast.
+- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
+  name and workbench root; guard OK; gofmt gate OK; commit and
+  push per repo; no tag.
+
+#### CK10.67: The gallery's documents draw the bar with the setting of the window that shows them
+
+- [ ] Under [[DOMAIN#Scrollbar]], found as finding 1085: every
+  region that scrolls draws the window's bar with the setting the
+  window reads. `components/gallery/inventory` builds two
+  `markdown.Style`s of its own with no setting on `CodeScrollbar`,
+  since the gallery is a module inside `components` with no
+  composition root, so in sitedocs' inventory tab an overflowing
+  fence fades its bar whatever the reader asked for while the
+  fences in the Docs tab beside it stand. The gallery takes the
+  setting from whatever shows it: the inventory's styles are built
+  from a `scrollbar.Style` passed in by the embedding window
+  (sitedocs passes the one it reads through CK10.4's seam), and
+  the gallery's own window passes what it reads. A test that the
+  inventory's fence at Always draws a standing bar.
+- [ ] Exit: green in `components` (gallery and inventory by name),
+  `workbench/sitedocs` by name and workbench root; guard OK; gofmt
+  gate OK; layers gate OK; commit and push per repo; no tag.
 
 ### G-CK11: Every window offers its actions through the menu bar
 
