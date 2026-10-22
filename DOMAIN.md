@@ -706,7 +706,10 @@ at rest it is prose, and operating it goes to that heading.
 
 The control for a sequence of rows: the user moves through them
 and may choose one, by pointer or keyboard. A chosen row is in the
-selection state. A menu is a list that floats; a table is a list
+selection state. A content list selects as the platform's does: a
+click selects the row, Delete acts on the selection, and a control
+inside the row is drawn on the hovered and the selected row, as the
+reference shows. A menu is a list that floats; a table is a list
 whose rows have columns. A list is a focusable wherever it stands,
 and shows the focus as the platform does for its place: in the
 content or a dialog, the focus ring around the list; in a sidebar,
@@ -1014,7 +1017,9 @@ regions.
 
 One entry of a list: as tall as the list's row height, holding the
 entry's parts across the list's width. The row is what the keyboard
-moves through and what the selection marks.
+moves through and what the selection marks. A list's row height is
+the platform's measured row for the list's kind, Reminders' for a
+content list of one-line rows, never the text and paddings stacked.
 
 ### Scheme
 
@@ -1161,6 +1166,9 @@ The persistent state marking the thing you chose: the picked menu
 row, the marked Filter chip, the sidebar's active entry. It is
 painted in the platform's selection colour with white text; the hover
 and press overlays are for transient states and paint no selection.
+A content list's selected row has the fill the reference measures
+for its platform counterpart, Reminders' grey for a list of todos,
+with the row's own text colour.
 A selected run of text in a field has the platform's selected
 text colour over its selected text background, both measured,
 whatever colour the field's other text has.
