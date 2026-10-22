@@ -25168,7 +25168,7 @@ its control posts.
 
 #### CK10.6: A column with nothing to show draws the platform's empty state
 
-- [ ] Ruled by the ontology session 2026-10-22 on finding 1076: a
+- [x] Ruled by the ontology session 2026-10-22 on finding 1076: a
   message that stands in for a column's content when there is none
   to show ("No notes in this vault.", "Scanning vault…",
   "Downloading…", a scan's error) is the platform's empty state
@@ -25185,7 +25185,7 @@ its control posts.
   gains one value, `EmptyState`, that paints the reading; vaultview's four messages are
   drawn by it and `messageChild` goes. The goldens that hold a
   message regenerate, each with its cause named.
-- [ ] Exit: a test in `patterns` that the text centres both ways in
+- [x] Exit: a test in `patterns` that the text centres both ways in
   the column's frame and spends `TertiaryLabel`; a vaultview test that the scanning and empty
   states draw the pattern's value and no measure; green in
   `patterns` and `workbench/vaultview` by name and workbench root;

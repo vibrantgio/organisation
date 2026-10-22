@@ -3746,3 +3746,17 @@ outline's own level step. What the work left open stands here.
 
 1078. **[note]** **The rule that seats a document's measure is restated outside `markdown`.** `markdown`'s `blockInsets` decides where a document's blocks sit — the bar's lane off the viewport, the gutter off what is left, the measure centred in the viewport — and it is unexported, so vaultview's `noteTextBox` restates the same arithmetic to put the properties pane and the status bar on that edge. A test holds the two together against the rendered column, which is a test and not a seam. Whether `markdown.Style` should answer where its blocks lead, so a caller composing rows around a document asks rather than repeats, is unasked.
 
+
+## FX. From CK10.6, the empty state
+
+Filed 2026-10-22 from the work itself: `patterns/shell` now carries
+`EmptyState` and vaultview's four messages are drawn by it, centred in
+the content column's full frame at the platform's own size and colour.
+What the work left open, and what it found beside its own subject,
+stands here for the owner.
+
+1082. **[note]** **A failed reading of a vault reaches the reader as the file system's own sentence, now set at the empty state's size.** `ScanErr` is whatever `filepath.WalkDir` handed back — "lstat /vaults/Second Brain: no such file or directory" — and the column stands that string where it stands "No notes in this vault.", at 28 sp in the platform's tertiary label. One line is all the empty state draws, so a longer path is truncated at the column's edge. The platform says what failed in a sentence it wrote and keeps the system's own words out of the window. Whether a reading that failed should be worded by the application, and whether an error the reader can act on belongs in an empty state at all, is unasked.
+
+1083. **[note]** **What a column's full frame is where the column carries a footer is unmeasured.** The stored reading is of Mail, whose content column has nothing under it, so it settles only that the toolbar's share is inside the frame the line centres in. vaultview's column carries a status bar, and the line is centred on the frame above that bar — it stands 13 px higher than it would if the bar's band were inside the frame. Neither placement was read off anything: no stored capture holds an empty column with a strip under it. Whether a footer's band is part of the column's frame, as the toolbar's share is, is unasked.
+
+1084. **[note]** **The empty state's size is a number the pattern carries, because the type set states nothing at it.** The reading is a cap band of 20 px at 1x, which is 28 sp, above every role in `tokens.Typography` and above the platform's own `largeTitle` at 26 pt. `EmptyStateSizeSp` is therefore a constant in `patterns/shell` and the line is set in the body role's typeface at that size, so an application that restyles its type set does not restyle this line. Whether the type set should carry the role the platform puts above its titles, and whether an empty state is the only thing that would spend it, is unasked.
