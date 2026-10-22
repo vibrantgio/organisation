@@ -415,6 +415,16 @@ signals have none.
 | **Tonal** | button | a secondary action |
 | **Ghost** | button | an incidental action; claims no colour of its own |
 
+### Empty state
+
+The platform's term for a column with no content to show, and the
+one line of text that says why: nothing selected, nothing in the
+collection, content still arriving, a read that failed. It is a
+signal, read and never operated, centred both ways in the column's
+full frame, the toolbar's share included, in the platform's
+tertiary label colour at its measured size, as Mail's empty content
+column shows. It is not content and does not stand on the measure.
+
 ### Eyebrow
 
 The hero's kicker: a short overline in the type stack
