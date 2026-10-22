@@ -1442,6 +1442,59 @@ read the dark strokes' full range. The pane draws the indicator and the text
 at the two ends of a row, so these captures read no gap for the two drawn
 together as a group.
 
+## What the status bar measures
+
+Added 2026-10-22 by CK10.76, from captures of Finder taken with the status bar
+shown, one per appearance and content, on the 2560×1440 display at 1x where
+one pixel is one point, macOS 26.5.2. Each capture is the window's own bounds
+as System Events reports them, x 200–999, y 200–699 (800×500), with nothing
+else cropped away. Finder was chosen because AppleScript sets its folder, its
+view and its bounds, and because the folders shown hold the system's own
+files and nothing personal; the sidebar is set to no width, the list view is
+shown, and nothing is selected. The status bar was shown through View → Show
+Status Bar, which adds 28 px to the window's height; the bounds were then set
+back to 800×500. The appearance was set through System Events before each
+dark capture and set back to light afterwards.
+
+- `finder-status-bar-{light,dark}.png`: list view of
+  `/System/Library/CoreServices`, 208 rows, scrolled to the top, so rows are
+  drawn under the bar. The bar's text is "208 items, 411,13 GB available".
+- `finder-status-bar-fits-{light,dark}.png`: list view of
+  `/System/Library/CoreServices/Finder.app/Contents`, nine rows that fit, so
+  only the empty rows' stripes are drawn under the bar. The bar's text is
+  "9 items, 411,13 GB available".
+
+Coordinates are capture coordinates, (0,0) at the window's top-leading outer
+corner; the window's last column is x 799 and its last row y 499. Read with
+PIL over the stored PNGs, as runs of equal pixels down a column or across a
+row; the text's size is read against AppKit renders of the two strings.
+
+| what | measured | where | method |
+| --- | --- | --- | --- |
+| the bar's height | **28 px**, y 472–499: the seam's 1 px row and **27 px** of fill under it, to the window's bottom edge | all four captures | runs down x 200, 600 and 780 read the row stripe `#f4f5f5` light, `#292929` dark at y 465–471, the seam at y 472 and the bar's fill at y 473–499 in both schemes; in dark y 499 is the window's edge, `#4b4b4b`. Showing the bar set the window's bounds from y 200–700 to y 200–728, the same 28 px |
+| the seam | **1 px** at y 472, x 1–798, the window's full width; **`#d9d9d9`** light, **`#000000`** dark | all four captures | a run across y 472 in the fits captures reads `#d9d9d9` light over x 2–797 with `#dadada` at x 1 and x 798, and `#000000` dark over x 2–797 with `#0e0e0e` at x 1 and x 798; x 0 and x 799 are outside the window's fill. With rows drawn under the bar, `finder-status-bar-light.png`, the light seam reads from `#d0d0d0` to `#d9d9d9` along its length, so what is drawn under the seam shows through it in light; the dark seam reads `#000000` over every column in both dark captures. `#d9d9d9` is black at 38/255 over `#ffffff`; `separatorColor` flattened over `#ffffff` gives `#e6e6e6`, 13 levels lighter. The dark seam is Mail's list seam, `#000000`, to the byte |
+| the bar's fill | the content's own fill: **`#ffffff`** light, **`#1e1e1e`** dark, every channel equal, so untinted; the bar is opaque | `finder-status-bar-fits-{light,dark}.png` | the stripe under the last row, y 465–484 by the list's 20 px pitch, reads `#f4f5f5` to y 471 and the bar's fill from y 473, so the stripe is not drawn through the bar. Flat samples at (600, 490) read `#ffffff` and `#1e1e1e`, the content's fill beside the rows. With rows under the bar, `finder-status-bar-{light,dark}.png`, y 473–483 read `#fefefe` light and `#1f1f1f` dark, one level off the fill, and y 484–498 read the fill. `finder-window-untinted-light.png` shows no status bar to compare against |
+| the text's size | **11 pt**, the system font's regular weight with **monospaced digits** | `finder-status-bar-fits-light.png`, `finder-status-bar-light.png` against AppKit renders | the text's drawn extent is 151 px wide in the fits capture, x 319–469, and 164 px in the other, x 313–476. `NSFont.monospacedDigitSystemFont(ofSize: 11, weight: .regular)` renders the two strings 151 and 164 px wide; `NSFont.systemFont(ofSize: 11)` renders them 145 and 158, and at 12 pt 156 and 171. The 11 pt monospaced-digit render, drawn in black at 127/255 over `#ffffff` and placed at the capture's extent, differs from the capture by 6.4 levels on average over x 316–472, y 478–493, the best of the sizes, tracking and digit forms tried |
+| the text's colour | **`secondaryLabelColor`**: `#808080` light, `#9a9a9a` dark | all four captures | the darkest text pixel reads 128 light over 23 pixels in the fits capture, and the lightest reads 154 dark over 69 pixels. `secondaryLabelColor` in `nscolors.tsv` is black at 127/255 and white at 140/255; flattened over `#ffffff` it gives 128, over `#1e1e1e` 30 + 225 × 140/255 = 153.5 |
+| the text's baseline | **y 490**, the row edge under the digits' last row, y 489; the digits' cap band is y 482–489 | all four captures | a run down the first digit's columns, x 319–325 in the fits captures and x 313–319 in the others, reads the digit's top at y 482, with a trace at y 481, and its last row at y 489; no text pixel lies under y 489 except the commas' tails at y 490–491 |
+| the text's padding | **9 px** clear under the seam, y 473–481, above the digits' top; **10 px** from the baseline to the window's bottom edge, y 490–499 | all four captures | the rows of text pixels across the text's extent: none at y 473–480, a trace at y 481, the cap band at y 482–489. The cap band's middle, y 485.5, is within half a pixel of the fill's middle, y 486 |
+| the text's horizontal place | **centred**: the text's middle is at x 394–394.5, **5 px** to the leading side of the window's middle, x 399.5, for both strings | `finder-status-bar-fits-{light,dark}.png`, `finder-status-bar-{light,dark}.png` | the text's drawn extent is x 319–469, middle 394, and x 313–476, middle 394.5, in both schemes. The two strings differ by 13 px in width and their middles by half a pixel, so the text is centred and not placed at an inset from the leading or trailing edge |
+| the bar's bottom corners | the window's own rounded corners: the bar's fill follows them with no inset of its own, and they are the same curve as the window's top corners | all four captures | a run across y 499 reads the window's edge from the wallpaper over x 16–21 and across y 0 over the same x 16–21; across y 498 the light fill begins at x 21. The seam at y 472 lies above the curve and runs to x 1 and x 798 |
+| the leading mark | a grey **×**, 10 × 10 px at x 9–18, y 481–490, its middle on the text's cap band; darkest `#888888` light, lightest `#919191` dark | all four captures | the pixels more than 15 levels off the fill inside x 9–21, y 478–492, clear of the window's corner. The captures do not show what it does |
+
+**The platform's status bar is a 28 px strip at the window's bottom: a 1 px
+seam and 27 px of the content's own fill.** Its text is 11 pt in the system
+font with monospaced digits, in `secondaryLabelColor`, centred across the
+window, its baseline 10 px above the window's bottom edge and its cap band
+9 px under the seam, on the fill's middle. The bar's fill follows the
+window's rounded corners.
+
+**What is open here.** The light seam reads `#d9d9d9`, 13 levels darker than
+Mail's list seam and `separatorColor` over white, while the dark seam is
+Mail's `#000000` to the byte. The text's middle is 5 px to the leading side
+of the window's middle for both strings. The leading × is drawn in both
+schemes and both contents, and these captures do not show its purpose.
+
 ## What the band's segmented control measures
 
 Read 2026-09-18 by CG5.3o at 1x from `finder-window-light.png` and
