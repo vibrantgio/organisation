@@ -1228,3 +1228,40 @@ PLAN.md sometimes. An example "CK7.4: Mindchat stands on the shell"
 ^0005-ontology-judgement-followed
 
 Rene: Take a break please, I'd like to discuss something with you.
+
+Rene: 1. You can use subagents using e.g. Opus or Sonnet to do your
+tasks. That way your context doesn't fill up as fast.
+2. I'd like you to consider the following:
+
+Andrej Karpathy recommends prompting large language models using
+ASD-STE100 (Simplified Technical English)—an aerospace standard
+originally built for aircraft maintenance manuals—to force direct,
+low-ambiguity technical explanations.
+
+Core Principles of Karpathy's Technical Style
+
+• Constrained Vocabulary: Limit language to a tightly curated set
+of approved terms so each word carries exactly one meaning.
+• Strict Sentence Rules: Keep procedural instructions under 20
+words and descriptive sentences under 25 words.
+• Active Voice Mandate: Write exclusively in the active voice to
+eliminate hidden actors or ambiguous responsibility.
+• Single Action per Line: State only one discrete command or
+proposition per sentence.
+• The 80% Rule: Soften the full specification to "80% of the way
+to ASD-STE100" to prevent the text from becoming overly robotic or
+losing necessary nuance.
+
+The Four-Level Output Hierarchy
+
+Karpathy ranks modes of interpreting complex AI output from lowest
+to highest fidelity:
+1. Controlled Writing (STE): Text stripped of conversational
+filler, hedging, and synonyms.
+2. Diagrams & Images: Visual schematics generated directly by the
+model instead of long prose.
+3. Interactive Web Pages: Raw HTML/JS applications built on the fly
+for dynamic exploration.
+4. Bespoke Explainer Videos: Custom animated walkthroughs (such as
+3Blue1Brown-style generation paired with voice synthesis).
+^0005-simplified-technical-english
