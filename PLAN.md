@@ -25034,8 +25034,9 @@ run, and no capture runs while the owner is at the machine
   rows stop short of (an empty lane is a margin with no reason): it
   follows the setting as the note's does, and the lane it was
   given collapses when the bar is away, so the rows run to the
-  pane's edge as they do beside the note (the ruling on 1071 if it
-  comes first, else this). Goldens regenerate with the cause named.
+  pane's edge as they do beside the note (ruled 2026-10-22: a lane
+  is the standing scroller's and nothing else's; an empty lane
+  standing by itself is a defect). Goldens regenerate with the cause named.
 - [ ] Exit: green in every app by name; guard OK; gofmt gate OK;
   commit and push in `workbench` and `.github`; no tag.
 
