@@ -25115,7 +25115,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.3: Feeds answers four defects the review read against the entries
 
-- [ ] Ruled by the ontology session 2026-10-22 on findings 1056,
+- [x] Ruled by the ontology session 2026-10-22 on findings 1056,
   1059, 1061 and 1066. The field the reader types into to narrow
   the article list is the platform's search field (the Search
   field entry), never a "filter field": feeds' field becomes a
@@ -25131,10 +25131,14 @@ run, and no capture runs while the owner is at the machine
   region aligns on one leading edge unless an entry indents it,
   so the article's headline, byline, tab strip and prose share
   the column's leading inset. In dark the chrome shows two fills
-  for one kind; chrome of one kind wears one measured material,
-  so the pane and the list toolbar's share (or whichever two
-  disagree: read the dark golden and say) take the one material.
-  One more from CK7.9: with the pane collapsed feeds offers Add
+  for one kind: the pane's strip wears the sidebar material and
+  the two toolbar shares beside it wear the column fill they stand
+  on, which the shell's three-column contract states from Mail's
+  measurement while the Chrome entry says every chrome region
+  wears the sidebar material; feeds cannot settle it since the
+  arrangement paints the band, so that item leaves this task for
+  the ruling on finding 1079 and the task it brings into
+  `patterns/shell`. One more from CK7.9: with the pane collapsed feeds offers Add
   feed nowhere, since it has no menu bar of its own; the platform
   offers every act through the menu bar as well, so feeds gains a
   menu as mindchat has (`mvu/desktop`'s menu bar: File with Add
@@ -25142,7 +25146,7 @@ run, and no capture runs while the owner is at the machine
   Preferences… carrying the chord `shortcut.go` already binds),
   the dialog opening from either. Goldens regenerate with the
   cause named per golden; nothing else moves.
-- [ ] Exit: green in `workbench/feeds` by name; guard OK; gofmt gate
+- [x] Exit: green in `workbench/feeds` by name; guard OK; gofmt gate
   OK; commit and push in `workbench` and `.github`; no tag.
 
 ### G-CK11: Every window offers its actions through the menu bar
