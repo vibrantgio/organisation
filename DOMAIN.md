@@ -432,7 +432,8 @@ the application's own text, never the system's. The line has the
 platform's shape, measured from Mail's "No Message Selected": a few
 words in title case, stating the condition, with no period and no
 instruction. A description under it, when there is one, is a
-sentence and ends with a period. It is
+sentence and ends with a period. A line or a description wider than
+the frame is set on more lines, never shortened. It is
 centred both ways in the frame of the region that has nothing: a
 column's full frame, the toolbar's share included, as Mail's empty
 content column shows, at the measured size in the platform's
@@ -1474,11 +1475,23 @@ do. It holds text only, never a control; anything the user must
 operate is the job for a popover. It is a signal: it takes no focus
 and adds no Tab stop. Its attachment places it in the available room
 beside the trigger, inside the window, never cut off, as it places
-every floating surface. It is filled with the window's
+every floating surface. Text wider than its surface is set on more
+lines, up to the tooltip's measured width, never shortened with an
+ellipsis, as the platform's help tag wraps. It is filled with the window's
 own background inside a separator hairline, its text in the text
 colour, the same in both schemes, and it has no status. The
 tooltip and the toast are the two floating signals that tell about a
 thing.
+
+### Truncation
+
+The platform's shortening of one line of text with an ellipsis
+where the line cannot wrap: a row's title, a tab's title, a file
+name in a column. The ellipsis is in the middle of a name and at the
+end of a sentence, as the platform sets them, and a tooltip shows
+the whole text on hover. Prose, a tooltip's text, an empty state's
+line, a description and a label beside a field are never truncated:
+they are set on more lines up to their measure.
 
 ### Typography role
 
