@@ -25896,7 +25896,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.45: A code block's sideways scrollbar is at the block's own bottom edge with its own lane
 
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], ruled on
+- [x] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], ruled on
   finding 1147: a scroll area inside a document is a region that
   scrolls, so its bar is at the area's own edge, inside the area,
   with a lane of its own at Always, never over the block's padding.
@@ -25906,7 +25906,7 @@ run, and no capture runs while the owner is at the machine
   inside the block, the code stopping short of the lane at Always
   and reaching the edge at WhenScrolling; the goldens that hold a
   wide code block regenerate with the cause named.
-- [ ] Exit: a test that the block's sideways bar at Always is drawn
+- [x] Exit: a test that the block's sideways bar at Always is drawn
   against the block's bottom edge inside it and the code stops
   short of the lane; green in `markdown` by name,
   `workbench/vaultview` by name and workbench root; guard OK;
