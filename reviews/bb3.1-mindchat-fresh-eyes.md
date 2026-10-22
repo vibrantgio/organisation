@@ -44,7 +44,7 @@ The reply is below verbatim. The triage follows it.
 
 ## What a macOS developer would complain about
 
-Everything below is sampled from the two PNGs; the macOS comparisons are measured against the stored reference in `/Users/rene/code/w/vibrantgio/.github/reference/macos/`, not from memory.
+Everything below is sampled from the two PNGs; the macOS comparisons are measured against the stored reference in `/Users/rene/code/w/vibrantgio/organisation/reference/macos/`, not from memory.
 
 ---
 

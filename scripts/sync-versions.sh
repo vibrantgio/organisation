@@ -94,11 +94,11 @@ while [ "$#" -gt 0 ]; do
 done
 
 [ -f "$GUIDE" ] || {
-	echo "error: no $GUIDE — clone workbench beside .github first" >&2
+	echo "error: no $GUIDE — clone workbench beside organisation first" >&2
 	exit 2
 }
 [ -d "$WS/mvu" ] || {
-	echo "error: no clones beside .github — run scripts/clone-all.sh first" >&2
+	echo "error: no clones beside organisation — run scripts/clone-all.sh first" >&2
 	exit 2
 }
 
@@ -111,7 +111,7 @@ untagged=""
 
 for dir in "$WS"/*/; do
 	repo=$(basename "$dir")
-	[ "$repo" = .github ] && continue # the plan root is a sibling, not a surveyed repo
+	[ "$repo" = organisation ] && continue # the plan root is a sibling, not a surveyed repo
 	[ -d "$dir/.git" ] || continue
 	# eliasfonts is a local checkout of eliasnaur.com/font, not an org
 	# module — its tags and go directive must not enter the guide.

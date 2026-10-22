@@ -31,8 +31,9 @@
 # name it would fall through to the table and be reported as untabled.
 #
 # Usage:
-#   scripts/check-layers.sh              # from the .github plan root: checks
-#                                        # all 19 root modules beside .github
+#   scripts/check-layers.sh              # from the organisation repository:
+#                                        # checks all 19 root modules beside
+#                                        # organisation
 #                                        # (requires clone-all.sh + go.work)
 #   scripts/check-layers.sh DIR [DIR..]  # check specific module directories
 #   scripts/check-layers.sh --edges      # emit the measured graph as TSV on
@@ -44,8 +45,8 @@
 # extend this one.
 #
 # In --edges mode the judgment is unchanged, but the *scope* widens: the
-# default target becomes every module beside .github, all 39, because a guide
-# has to describe the exempt ones too — an application repository is mostly
+# default target becomes every module beside organisation, all 39, because a
+# guide has to describe the exempt ones too — an application repository is mostly
 # its applications, and a demo's edges are the ones most easily mistaken for
 # its parent's, `components/gallery`'s to effects being the cycle the whole of
 # phase B went after. They are measured and emitted, still never judged.
@@ -149,15 +150,16 @@ say() {
   if [ "$EDGES" = 1 ]; then printf '%s\n' "$*" >&2; else printf '%s\n' "$*"; fi
 }
 
-# Default target: every root module beside .github next to this script's repo —
-# or, when the graph is being read rather than judged, every module there.
+# Default target: every root module beside organisation, this script's
+# repository — or, when the graph is being read rather than judged, every
+# module there.
 if [ -n "$ARGS" ]; then
   DIRS=$ARGS
 else
   root=$(cd "$(dirname "$0")/../.." && pwd) # workspace root: the siblings' parent
   DIRS=""
   if [ "$EDGES" = 1 ]; then
-    DIRS=$(find "$root" -mindepth 2 -not -path "$root/.github/*" -name go.mod -not -path '*/.git/*' -not -path '*/.claude/*' 2>/dev/null |
+    DIRS=$(find "$root" -mindepth 2 -not -path "$root/organisation/*" -name go.mod -not -path '*/.git/*' -not -path '*/.claude/*' 2>/dev/null |
       sed 's|/go\.mod$||' | sort)
     if [ -z "$DIRS" ]; then
       echo "error: no modules under $root — run scripts/clone-all.sh first" >&2

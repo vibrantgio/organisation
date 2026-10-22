@@ -12,8 +12,8 @@
 # It reports; it does not fix. `gofmt -w` on the listed files is the fix, in
 # the commit of the repository each file belongs to.
 #
-# Usage (run from the plan root, i.e. from .github, or anywhere):
-#   .github/scripts/check-gofmt.sh    exit non-zero on any file gofmt rewrites
+# Usage (run from the organisation repository, or anywhere):
+#   organisation/scripts/check-gofmt.sh    exit non-zero on any file gofmt rewrites
 #
 # Exit status: 0 when gofmt would change nothing, 1 otherwise.
 

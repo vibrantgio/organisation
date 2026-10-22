@@ -49,8 +49,8 @@
 # comment carries the constraint its code cannot show, and the guides are
 # what a reader is pointed at.
 #
-# Usage (run from the plan root, i.e. from .github, or anywhere):
-#   .github/scripts/check-guides.sh    exit non-zero on any hit
+# Usage (run from the organisation repository, or anywhere):
+#   organisation/scripts/check-guides.sh    exit non-zero on any hit
 #
 # Exit status: 0 when every guide is clean, 1 on any hit, 2 when the tree
 # cannot answer the question.

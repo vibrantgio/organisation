@@ -11,7 +11,7 @@
 # prints the exact DesignSync sequence for the Claude agent running it to execute.
 # Later plan phases invoke this script from Claude sessions, which carry the tool.
 #
-# Usage: scripts/push-design.sh   (from the .github plan root)
+# Usage: scripts/push-design.sh   (from the organisation repository)
 set -euo pipefail
 
 PLAN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"

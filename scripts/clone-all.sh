@@ -4,11 +4,9 @@
 # go.work from what is actually present.
 #
 # The working tree mirrors the organization: one directory per repository,
-# all siblings, .github among them rather than above them. The parent
+# all siblings, organisation among them rather than above them. The parent
 # directory — the workspace root — is not a repository at all; it is just
-# the folder the org is checked out into. G0E.1 is where this shape landed;
-# before that .github was simultaneously the root and the parent, with the
-# twenty siblings hidden under a gitignored .repos/.
+# the folder the org is checked out into.
 #
 # go.work is generated, never committed. A workspace describes one
 # developer's checkout, so it is derived from the go.mod files actually on
@@ -20,12 +18,24 @@
 # the module graph, and no task can see an edge whose other end is missing.
 #
 # Plain git over https: gh is not assumed to be installed.
+#
+# Usage:
+#   organisation/scripts/clone-all.sh        # the workspace root is the parent
+#                                            # of this organisation checkout
+#   organisation/scripts/clone-all.sh DIR    # clone or pull into DIR instead
 
 set -euo pipefail
 
-# Workspace root: the parent of the .github checkout this script lives in.
-ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+if [ $# -gt 0 ]; then
+	mkdir -p "$1"
+	ROOT="$(cd "$1" && pwd)"
+else
+	ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+fi
 cd "$ROOT"
+
+# The trunk: the plan, the Language, the reference, the reviews and the gates.
+TRUNK=(organisation)
 
 # The stack, bottom to top.
 STACK=(mvu theme components effects patterns markdown)
@@ -40,7 +50,7 @@ SUPPORT=(ivg svg seen csg kiwi noise traer)
 # sits at the top of the stack, imported by nothing.
 APPS=(workbench design)
 
-REPOS=("${STACK[@]}" "${LEAVES[@]}" "${SUPPORT[@]}" "${APPS[@]}")
+REPOS=("${TRUNK[@]}" "${STACK[@]}" "${LEAVES[@]}" "${SUPPORT[@]}" "${APPS[@]}")
 
 for name in "${REPOS[@]}"; do
 	if [ -d "$name/.git" ]; then
@@ -56,8 +66,9 @@ done
 # must match the members' language version exactly — not the toolchain's —
 # or the workspace builds under different semantics than GOWORK=off, which
 # is what CI and every consumer see. It is read from the members and the
-# script refuses to guess if they disagree.
-modules=$(find . -mindepth 2 -name go.mod -not -path '*/.git/*' -not -path './.github/*' |
+# script refuses to guess if they disagree. The organisation repository's
+# tool module is not a workspace member: the gates run it with go run.
+modules=$(find . -mindepth 2 -name go.mod -not -path '*/.git/*' -not -path './organisation/*' |
 	sed 's|/go.mod$||; s|^\./||' | sort)
 
 govers=$(for m in $modules; do sed -n 's/^go //p' "$m/go.mod"; done | sort -u)

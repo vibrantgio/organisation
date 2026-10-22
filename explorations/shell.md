@@ -507,7 +507,7 @@ One task per run. Each task is green in the library and in every named applicati
 9. **The desktop's tenants** (section 9), one task per tenant; the application's life may come earlier.
 10. **The controls queue** (section 10), one slice at a time as it is asked for.
 
-**The exit discipline**, per task: green in the library and in every named module, nested ones by name; a gallery specimen where a control or a pattern is added; a fresh-eyes review in both schemes where anything is drawn; goldens regenerated once per application with the cause named; `scripts/check-retired-words.sh check` reporting OK; commit and push in every touched repository and in `.github`. No tagging task.
+**The exit discipline**, per task: green in the library and in every named module, nested ones by name; a gallery specimen where a control or a pattern is added; a fresh-eyes review in both schemes where anything is drawn; goldens regenerated once per application with the cause named; `scripts/check-retired-words.sh check` reporting OK; commit and push in every touched repository and in `organisation`. No tagging task.
 
 ## 12. Open rulings for the owner
 

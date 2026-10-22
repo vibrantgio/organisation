@@ -36,7 +36,7 @@ Rene's rulings into tasks. It writes no code before he rules.
   application, and which look wrong for the platform? Each reply
   recorded verbatim in `reviews/cf1.1-<group>-fresh-eyes.md` with
   frontmatter; the recorded misreads briefed.
-- [ ] Exit: four records committed and pushed in `.github`.
+- [ ] Exit: four records committed and pushed in `organisation`.
 
 #### CF1.2: One reviewer reads the entries against the renders
 
@@ -45,7 +45,7 @@ Rene's rulings into tasks. It writes no code before he rules.
   what is drawn, and does what is drawn need the entry's
   distinctions? Recorded verbatim in
   `reviews/cf1.2-entries-fresh-eyes.md`.
-- [ ] Exit: the record committed and pushed in `.github`.
+- [ ] Exit: the record committed and pushed in `organisation`.
 
 #### CF1.3: The ruling sheet
 

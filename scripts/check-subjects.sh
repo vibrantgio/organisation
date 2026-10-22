@@ -115,8 +115,8 @@
 #
 # ---------------------------------------------------------------------------
 # Usage:
-#   scripts/check-subjects.sh            # from the .github plan root: every
-#                                        # module beside .github
+#   scripts/check-subjects.sh            # from the organisation repository:
+#                                        # every module beside organisation
 #   scripts/check-subjects.sh DIR [DIR..]  # check specific trees
 #   scripts/check-subjects.sh --tests    # also list the _test.go occurrences
 #

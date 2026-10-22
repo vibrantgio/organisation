@@ -23,7 +23,7 @@
 # judges its report. One renderer, one place for it to be wrong.
 #
 # Usage:
-#   scripts/check-versions.sh      # from the .github plan root; no arguments
+#   scripts/check-versions.sh      # from the organisation repository; no arguments
 #
 # Exit status: 0 when llms.txt matches the tags; 1 when it has drifted; 2 when
 # the tree cannot answer the question.

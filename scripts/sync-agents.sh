@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # sync-agents.sh — write the managed AGENTS.md block into every repo but
-# .github's own copy.
+# the organisation repository's own copy.
 #
 # CG4.15's ruling: no support library names a consumer, AGENTS.md included.
-# Every repo's AGENTS.md but .github's carries a managed block, delimited by
-# BEGIN/END markers below, holding exactly two things:
+# Every repo's AGENTS.md but the organisation repository's has a managed
+# block, delimited by BEGIN/END markers below, holding exactly two things:
 #
 #   - a pointer to the plan root's Retired words table
-#     (.github/AGENTS.md, "Retired words"), never a copy of the table
+#     (organisation/AGENTS.md, "Retired words"), never a copy of the table
 #   - a canonical-guide line pointing at the plan root's AGENTS.md
 #
 # workbench's block additionally points at its own llms.txt, because that
@@ -35,12 +35,12 @@
 # `testdata/consumer-name-fail.md` fix that pair of cases; `selftest` proves
 # them, and `check` runs `selftest` too.
 #
-# Usage (run from the plan root, i.e. from .github, or anywhere):
-#   .github/scripts/sync-agents.sh          write every repo's AGENTS.md
-#   .github/scripts/sync-agents.sh check    exit non-zero on any drift
-#   .github/scripts/sync-agents.sh selftest prove the consumer-name assertion
-#                                            against testdata/, whole-word
-#                                            and case-sensitive
+# Usage (run from the organisation repository, or anywhere):
+#   organisation/scripts/sync-agents.sh          write every repo's AGENTS.md
+#   organisation/scripts/sync-agents.sh check    exit non-zero on any drift
+#   organisation/scripts/sync-agents.sh selftest prove the consumer-name
+#                                                assertion against testdata/,
+#                                                whole-word and case-sensitive
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -67,7 +67,7 @@ $BEGIN_MARK
 Read the org guide before you write code against these apps: the plan
 root's \`AGENTS.md\`.
 
-Its Retired words table (\`.github/AGENTS.md\`, "Retired words") is the
+Its Retired words table (\`organisation/AGENTS.md\`, "Retired words") is the
 list; say the right-hand column, not the retired word.
 
 This repository's own \`llms.txt\` is the guide for writing an
@@ -80,7 +80,7 @@ $BEGIN_MARK
 Read the org guide before you write code against this module: the
 plan root's \`AGENTS.md\`.
 
-Its Retired words table (\`.github/AGENTS.md\`, "Retired words") is the
+Its Retired words table (\`organisation/AGENTS.md\`, "Retired words") is the
 list; say the right-hand column, not the retired word.
 $END_MARK
 BLOCK
@@ -141,7 +141,7 @@ sync_one() {
 
 check_no_open_rulings() {
   local status=0
-  for repo in $ALL_REPOS .github; do
+  for repo in $ALL_REPOS organisation; do
     for name in AGENTS.md README.md; do
       local file="$repo/$name"
       [ -f "$file" ] || continue

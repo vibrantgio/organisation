@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Survey the repositories beside .github and print a Markdown table.
+# Survey the repositories beside organisation and print a Markdown table.
 #
 # This is the check that every count in PLAN.md is measured against, not
 # remembered from. Phase A's tasks were cut from a survey taken before the
@@ -25,7 +25,7 @@ cd "$(dirname "$0")/.."
 WS=$(cd .. && pwd) # workspace root: the siblings' parent
 
 if [ ! -d "$WS/mvu" ]; then
-	printf 'no clones beside .github — run scripts/clone-all.sh first\n' >&2
+	printf 'no clones beside organisation — run scripts/clone-all.sh first\n' >&2
 	exit 1
 fi
 
@@ -51,7 +51,7 @@ printf '| --- | --- | --- | --- | --- | --- | --- | --- |\n'
 
 for path in "$WS"/*/; do
 	repo=$(basename "$path")
-	[ "$repo" = .github ] && continue # the plan root is a sibling, not a surveyed repo
+	[ "$repo" = organisation ] && continue # the plan root is a sibling, not a surveyed repo
 	total=$((total + 1))
 
 	if [ -f "$path/README.md" ]; then readme=y; else readme=n; no_readme=$((no_readme + 1)); fi

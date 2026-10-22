@@ -1,4 +1,4 @@
-# AGENTS.md — vibrantgio/.github
+# AGENTS.md — vibrantgio/organisation
 
 This repository is the plan root. No library code lives here.
 

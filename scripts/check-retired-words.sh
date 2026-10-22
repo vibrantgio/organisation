@@ -52,10 +52,10 @@
 # that reason and say so in `excluded` output. The two boundaries inside a
 # file are measured, not written down — the first unchecked box, the
 # Decisions heading, the Decision records heading, the provenance heading —
-# so they move as the documents are worked. Everything else
-# in .github is judged: AGENTS.md, DOMAIN's Language, the READMEs, the live
-# pool items and the plan from the task in hand downward are the texts a
-# packet is written from, and a retired word in one of them is a carrier.
+# so they move as the documents are worked. Everything else in organisation
+# is judged: AGENTS.md, DOMAIN's Language, the READMEs, the live pool items
+# and the plan from the task in hand downward are the texts a packet is
+# written from, and a retired word in one of them is a carrier.
 #
 # Usage:
 #   scripts/check-retired-words.sh inventory [MODULE...]  # the work list
@@ -65,9 +65,9 @@
 #   --kind=K[,K]   restrict to identifier, comment, doc, string
 #   --word=W[,W]   restrict to some of the retired words
 #
-# Run it from the .github plan root: like check-layers.sh it judges the whole
-# working tree, which a single repository's CI cannot see. With no MODULE it
-# walks every sibling of .github and .github itself.
+# Run it from the organisation repository: like check-layers.sh it judges the
+# whole working tree, which a single repository's CI cannot see. With no
+# MODULE it walks every sibling of organisation and organisation itself.
 #
 # Exit status: 0, or 1 in `check` mode when any hit survives the exclusions.
 
@@ -80,7 +80,7 @@ set -u
 # prepositions the tokenizer hands them.
 WORDS="label,glyph,halo,panel,modal,wash,ink,shout,ground,floor,storey,ladder,rung,register,intent,anatomy,voice,volume,loud,quiet,widget,mark,elevated,reach,canvas,author,container,outlined,filled,highlighted,featured,emphasised,emphasized,paper,furniture,divider,primary,secondary,tertiary,seed,ramp,step,tone,tint,elevation,level,material,md3,m3,on,wcag,launcher"
 
-MODULES="backdrop circle components csg design effects font gradient ivg kiwi markdown mvu noise patterns seen style svg textdraw theme traer workbench .github"
+MODULES="backdrop circle components csg design effects font gradient ivg kiwi markdown mvu noise patterns seen style svg textdraw theme traer workbench organisation"
 
 # ---------------------------------------------------------------------------
 # The exclusions. One rule per line:
@@ -110,12 +110,12 @@ MODULES="backdrop circle components csg design effects font gradient ivg kiwi ma
 # inside a command substitution, and these reasons are full of them.
 EXCLUSIONS=""
 read -r -d '' EXCLUSIONS <<'RULES' || true
-*::*::path::^\.github/scripts/::The guard names every retired word in order to find it.
-*::*::path::^\.github/reviews/::A fresh-eyes review records what a reviewer said on a date; rewriting it falsifies the record.
-*::*::path::^\.github/transcripts\.md$::The owner's own words, kept verbatim.
+*::*::path::^organisation/scripts/::The guard names every retired word in order to find it.
+*::*::path::^organisation/reviews/::A fresh-eyes review records what a reviewer said on a date; rewriting it falsifies the record.
+*::*::path::^organisation/transcripts\.md$::The owner's own words, kept verbatim.
 *::comment,doc::quoted::^yes$::In prose, a word inside quotes or backticks is named, or quoted from what says it, rather than used. A Go string literal is not: those quotes are the literal's own.
 voice::*::ctx::voice memos::Voice Memos is a macOS application, measured in the platform reference.
-*::doc::ctx::^\.github/agents\.md \|::AGENTS.md's Retired words table is the list itself: the rows name the words, they do not use them.
+*::doc::ctx::^organisation/agents\.md \|::AGENTS.md's Retired words table is the list itself: the rows name the words, they do not use them.
 *::comment,doc,string::line::gioui\.org::A line naming Gio's own import path names a third party's API, not ours.
 *::identifier::rawtoken::^(Action|Alert|AV|Communication|Content|Device|Editor|File|Hardware|Image|Maps|Navigation|Notification|Places|Social|Toggle)[A-Z]::Material Symbols icon names — AVVolumeUp, MapsLocalCarWash, ContentMarkUnread — are a third party's identifiers, mirrored here.
 widget::identifier::token::widget(s)?$::A value or the type of Gio's layout.Widget, which the row keeps as Gio's.
@@ -126,7 +126,7 @@ widget::doc,comment::line::[a-z]+\.widget\(::A call to a real exported function 
 widget::doc::line::ui-widget::jQuery UI's own CSS class name in a third-party example page.
 *::doc::path::^seen/plan\.md$::A repo-local plan awaiting the owner's ruling on its future.
 *::doc::path::^design/design-v1\.md$::A superseded document kept for history, frozen like the other records.
-furniture::doc::ctx::^\.github/domain\.md .*the window's furniture: every region::DOMAIN's Chrome entry keeps the phrase as its own definition; nowhere else.
+furniture::doc::ctx::^organisation/domain\.md .*the window's furniture: every region::DOMAIN's Chrome entry keeps the phrase as its own definition; nowhere else.
 paper::comment,doc::line::(cassowary paper|rock-paper-scissors|the paper by|this paper|in the paper|academic paper|white ?paper)::A published paper, or the game; not the content level.
 
 label::*::!ctx::(^|[^a-z])(button|chip|checkbox|radio|tab|row|segment|trigger|menu item)s?([^a-z]|$)::"label" is retired for a control's own text alone, so a hit is a defect only where the three-line window names the control the text belongs to: a button, chip, checkbox, radio, tab, row, segment, trigger or menu item.
@@ -139,8 +139,8 @@ label::*::ctx::label the[^a-z]*platform pairs::The foreground the platform pairs
 label::*::ctx::(settingsrowlabel|form.s labels|form label|labels? (is |are )?right-aligned|label column|field column|labels? in (one|their) column|label beside|labels against one column|an empty label|row labels|plain labels?|text label|section labels?|a field.s label|current (segment|crumb|location|page)|last segment|single segment)::The Label signal, text standing by itself on the surface: a form's labels in their own column before the fields they name, a section label, a plain run of text, and what a breadcrumb's current segment and a page cell take instead of a link.
 label::*::path::^components/([a-z]+/)?gallery/::A gallery's specimen captions and section labels stand by themselves beside the specimens; a specimen's own text says title.
 label::*::path::^workbench/sk150/::In sk150 a label is the caption at the leading edge of an instrument row, or a chart's scale, never a control's own text.
-label::*::path::^\.github/reference/::The stored platform reference records the platform's own words and measurements and is not rewritten to follow a later Language.
-label::doc::path::^\.github/explorations/::A pool item records what a review found on a date, in the language of that day.
+label::*::path::^organisation/reference/::The stored platform reference records the platform's own words and measurements and is not rewritten to follow a later Language.
+label::doc::path::^organisation/explorations/::A pool item records what a review found on a date, in the language of that day.
 
 glyph::*::path::^(textdraw|font)/::The glyph of typesetting — one positioned outline a font yields for a rune — is the shaper's own term, kept in the two modules that shape text.
 glyph::*::ctx::(shaping|shaper|rune|cluster|advance|font|typeface|outline of)::A glyph of a shaped run, named beside the font, typeface, rune, cluster, advance or outline it belongs to; the retired sense is the small picture a control draws.
@@ -149,7 +149,7 @@ glyph::*::!ctx::(icon|symbol|chevron|magnifier|keyline|catalogue|disclosure|chec
 panel::*::path::^theme/system/openpanel/::The platform's own Open panel is all this package presents, and the package is named after it.
 panel::*::ctx::(open|save)[-*/ ]*panel::The platform's Open panel and Save panel — NSOpenPanel and NSSavePanel, the choosers macOS presents for a file or a folder — named as the platform names them. The spacing is loose because the three-line window joins a wrapped phrase with the comment marker still between its halves.
 modal::*::ctx::(modal (state|editing|scrim|dialog)|is modal|modal is (a|the) (mode|state)|the mode a dialog puts the window in|mak(es|ing) the window modal|never a pattern|### modal)::Modal names a mode and keeps that sense: the state a dialog puts the window in, the scrim that dims under it, a dialog called modal, the Language entry that says so, and an editor's modal editing.
-modal::doc::path::^\.github/explorations/::A pool item records what a review or a ruling said on a date, in the language of that day.
+modal::doc::path::^organisation/explorations/::A pool item records what a review or a ruling said on a date, in the language of that day.
 mark::*::!ctx::(mark component|component mark|/mark/|mark package)::The symbol a control draws and the verb are kept; only the former component's name was retired, and a line that means the component says so.
 floor::identifier::!token::(floor(level|storey|surface|tint)|(level|storey|chrome|backdrop|surface)floor)::A floor in an identifier is a lower bound — a contrast floor, a perceptibility floor, math.Floor; the retired sense would join it to an elevation word.
 floor::comment,doc,string::!line::(elevation|storey|ladder|ground floor|floor level|floor of the)::A contrast floor or another lower bound; the retired sense is an elevation level and says so with the elevation words.
@@ -173,8 +173,8 @@ volume::*::ctx::(startup volume|/volumes|volumename|the filesystem)::A storage v
 
 # The Material colour names, retired by CE3.1: each is retired in the sense of
 # a colour and keeps every other sense, one rule per sense.
-primary,secondary,tertiary,container,seed,ramp,step,tone,tint,elevation,level,material,md3,m3,on::doc::path::^\.github/plan\.md$::Phase CE names the Material colour words in order to delete them, and the tasks below the plan's moving frozen boundary are executed history like the tasks above it.
-primary,secondary,tertiary,container,seed,ramp,step,tone,tint,elevation,level,material,md3,m3,on::doc::path::^\.github/explorations/::A pool item records what a review or a spike proposed on a date, in the language of that day; the derivation the colour items describe was deleted in Phase CE.
+primary,secondary,tertiary,container,seed,ramp,step,tone,tint,elevation,level,material,md3,m3,on::doc::path::^organisation/plan\.md$::Phase CE names the Material colour words in order to delete them, and the tasks below the plan's moving frozen boundary are executed history like the tasks above it.
+primary,secondary,tertiary,container,seed,ramp,step,tone,tint,elevation,level,material,md3,m3,on::doc::path::^organisation/explorations/::A pool item records what a review or a spike proposed on a date, in the language of that day; the derivation the colour items describe was deleted in Phase CE.
 on::identifier::!rawtoken::^On(Primary|Secondary|Tertiary|Accent|Surface|Background|Container|Inverse|Success|Warning|Error|Info|Status|Colou?r|Tint|Tone|Fill|Foreground)::"on" is retired as the prefix of a colour's on-colour — OnPrimary, OnSurface, OnAccent. OnClick, OnChange and OnDismiss are event handlers, and every other "on" is the preposition.
 on::identifier::ctx::^(components/paragraph|markdown)/[a-z_]*\.go .*onfill::[paragraph.Style].OnFill is the callback the layout calls for each fill it places — an event handler like OnClick; markdown/find sets it.
 on::comment,doc,string::!line::on-colou?r::In prose the retired sense is the hyphenated on-colour; every other "on" is the preposition.
@@ -188,8 +188,8 @@ material::*::path::^(seen|svg|csg|ivg|kiwi|style|textdraw|backdrop|gradient|circ
 material::*::ctx::(sidebar[- ]?material|chrome[- ]?material|window material|material(s)? (fill|section|table|match|instead)|measured.?material|material, which black|visual ?effect|nsvisualeffect|material the (platform|reference)|the platform.s .*material|material with wallpaper|material is the untinted)::A macOS material — the surface the platform names, measured in reference/macos and carried by the token SidebarMaterial.
 material::*::ctx::(backdropmaterialcoverage|tilematerial|tile.s material|painted backdrop|translucent material|material.s coverage|standing on a material)::A macOS material over a painted backdrop — the window background colour at the platform's measured coverage, carried by the token BackdropMaterialCoverage and painted under each of the workbench's groups so the field shows through.
 material::*::line::(material\.[a-za-z]|material.s (`|unexported|scrollbarstyle|anchorstrategy|fromlistposition|rangeisscrollable|list|theme|layout)|port of material|material layout recipe|the material theme|material theme\)|reference material|material named)::Gio's own widget/material package, whose names this text cites.
-material::doc::ctx::^\.github/domain\.md .*(platform and material|material.s$|material.s is dropped|### material|menu material)::The Language names Material in order to say the platform's value replaces it and Material's is dropped, and its Material entry names the platform's own material.
-ramp::doc::ctx::^\.github/domain\.md .*no (ramp|palette)::The Language names the ramp in order to say the theme colour has none.
+material::doc::ctx::^organisation/domain\.md .*(platform and material|material.s$|material.s is dropped|### material|menu material)::The Language names Material in order to say the platform's value replaces it and Material's is dropped, and its Material entry names the platform's own material.
+ramp::doc::ctx::^organisation/domain\.md .*no (ramp|palette)::The Language names the ramp in order to say the theme colour has none.
 material::*::ctx::(material symbols|material design icons?|material icons|mdicons|material (grid|catalogue|cell|symbol|set))::Third-party icon sets, mirrored here by their own names.
 md3,m3::string::line::(^|[^a-z])m3[." ]::A path's moveto with a relative coordinate, or a labelled point in an example — the letter and the digit, not Material's abbreviation.
 m3::comment,identifier::ctx::(sk150|quadrilateral|0x50)::The instrument's own stored group M3 and an example's point M3.
@@ -204,8 +204,8 @@ tint::*::!line::(^|[^a-z])(tonal|elevation|ramp|seed|palette|colou?r role|surfac
 elevation::*::!ctx::(elevation (tint|overlay|fill|colou?r)|tonal elevation|elevation as a (fill|colou?r)|--color-elevation)::Elevation is the dimension a floating surface stands in, spoken in levels and drawn as a shadow; the retired sense is a fill derived from it.
 level::*::!ctx::(surfaceat|levelchrome|levelbackdrop|--color-level|--elevation-|level tint|tint.{0,12}level|level overlay|overlay.{0,12}level|tonal elevation|elevation (tint|overlay)|neutral step)::A heading level, Gio's layout level, a log level, an outline level, an APCA level and the Language's five levels, each with the platform fill it is given; the retired sense derives a fill from the level.
 wcag::*::ctx::wcag 3::APCA's own provenance: the formula this system measures contrast with is the one the WCAG 3 drafts carry.
-wcag::doc::path::^\.github/explorations/::A pool item records what a review measured on a date, in the measure of that day; the ratio it quotes was deleted by the APCA decision.
-launcher::doc::path::^\.github/explorations/::A pool item records what a review found on a date, in the language of that day.
+wcag::doc::path::^organisation/explorations/::A pool item records what a review measured on a date, in the measure of that day; the ratio it quotes was deleted by the APCA decision.
+launcher::doc::path::^organisation/explorations/::A pool item records what a review found on a date, in the language of that day.
 launcher::doc::line::^#### ck4\.1: the word launcher leaves::CK4.1's own heading names the word it retires; the heading does not use it.
 launcher::doc::line::retired words table in .agents\.md. gains the row \(launcher,::CK4.1 names the row it adds to AGENTS.md's Retired words table; it does not use the word.
 RULES
@@ -241,7 +241,7 @@ if [ -z "$MODE" ]; then
 fi
 
 root=$(cd "$(dirname "$0")/../.." && pwd) # workspace root: the siblings' parent
-here=$(cd "$(dirname "$0")/.." && pwd)    # the .github plan root
+here=$(cd "$(dirname "$0")/.." && pwd)    # the organisation repository
 [ -n "$ARGS" ] && MODULES="$ARGS"
 
 # The file set: every Go file and every prose file of each module, minus the
@@ -347,11 +347,11 @@ function inlist(what, list,   m, a, i) {
 
   # The three measured frozen regions, excluded with their reason.
   why = ""
-  if (path == ".github/PLAN.md" && line+0 < planfrozen+0)
+  if (path == "organisation/PLAN.md" && line+0 < planfrozen+0)
     why = "The plan above the task in hand is executed history, immutable by the standing rule."
-  else if (path == ".github/DOMAIN.md" && domainfrozen+0 > 0 && line+0 >= domainfrozen+0)
+  else if (path == "organisation/DOMAIN.md" && domainfrozen+0 > 0 && line+0 >= domainfrozen+0)
     why = "The Language is present tense; the decisions and the recorded dialogue below it are dated records."
-  else if (path == ".github/explorations/open-rulings.md" && poolfrozen+0 > 0 && line+0 >= poolfrozen+0)
+  else if (path == "organisation/explorations/open-rulings.md" && poolfrozen+0 > 0 && line+0 >= poolfrozen+0)
     why = "Review provenance keeps each section preamble verbatim, as a record of what a reviewer was handed."
   else if (path == "design/DESIGN.md" && designfrozen+0 > 0 && line+0 >= designfrozen+0)
     why = "A decision record states what was decided on a date and in the language of that day; the copies of these ADRs in the plan are frozen for the same reason."

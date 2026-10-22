@@ -1,15 +1,17 @@
-# vibrantgio/.github
+# vibrantgio/organisation
 
-The organization's front door and the root of its plan. No library code lives
+The root of the organization's plan. No library code is
 here — that is in the twenty-one sibling repositories listed on the
 [organization page](https://github.com/vibrantgio).
 
-**[`profile/README.md`](profile/README.md) — the organization page.** GitHub
-renders it at [github.com/vibrantgio](https://github.com/vibrantgio): what
-Vibrant Gio is, where to start reading, and the layered table of the whole stack.
-That file, not this one, is the org page. This README renders only on
-[this repository's own page](https://github.com/vibrantgio/.github), so the two
-are edited separately and say different things.
+**[`profile/README.md`](https://github.com/vibrantgio/.github/blob/master/profile/README.md)
+in the [`.github`](https://github.com/vibrantgio/.github) repository — the
+organization page.** GitHub renders it at
+[github.com/vibrantgio](https://github.com/vibrantgio): what Vibrant Gio is,
+where to start reading, and the layered table of the whole stack. That file,
+not this one, is the org page. This README renders only on
+[this repository's own page](https://github.com/vibrantgio/organisation), so
+the two are edited separately and say different things.
 
 **[`PLAN.md`](PLAN.md) — the plan.** How Vibrant Gio itself is built. Eight
 phases that turn the repositories from a loose collection into one design
@@ -30,7 +32,7 @@ Every sibling's `AGENTS.md` is a short static pointer to that URL.
 ## Working tree
 
 The checkout mirrors the organization: one directory per repository, all
-siblings, this one — `.github` — among them rather than above them. Their
+siblings, this one — `organisation` — among them rather than above them. Their
 shared parent, the workspace root, is not a repository; `go.work` lives there,
 *generated* by `clone-all.sh` from the go.mod files actually present, joining
 the modules so they resolve each other from the checkout — the members never
