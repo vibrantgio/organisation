@@ -25912,7 +25912,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.50: Sk150's list tabs scroll as the page's column with the padding inside
 
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Column]], ruled on
+- [x] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Column]], ruled on
   finding 1128 and found under CK10.36 (finding 1156): the region
   that scrolls is the column and its padding is inside it. Sk150's
   page is inset by its 16 dp padding on every side, the tabs' lists
@@ -25923,7 +25923,7 @@ run, and no capture runs while the owner is at the machine
   the bar at the window's trailing edge, the Device footer below
   the list as it is. Goldens regenerate with the cause named (the
   rows' extent and the bar's edge).
-- [ ] Exit: a test that the bar at Always is drawn against the
+- [x] Exit: a test that the bar at Always is drawn against the
   window's trailing edge and the rows reach the window's bottom
   edge; green in `workbench/sk150` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
