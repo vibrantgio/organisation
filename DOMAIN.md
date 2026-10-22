@@ -1023,7 +1023,11 @@ content is visible. Operating it moves what is visible, never the content.
 Every region that scrolls has one. The region that scrolls is the
 column, and the column's padding is inside it: the bar is at the
 column's trailing edge, never inset by the padding. At Always the bar
-has a lane of its own and the rows stop short of the lane. The lane
+has a lane of its own and the rows stop short of the lane. A column
+of rows has no padding of its own: the rows run to the lane, and
+each row's own inset keeps its content and its pill from the end, as
+the platform's lists do. A page's padding stays between its content
+and the lane. The lane
 runs only beside what scrolls: a field or a header above the rows
 spans the column's full width, as the platform's search field above
 a list does. The standing bar's lane width, its track and its thumb
