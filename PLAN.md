@@ -26299,6 +26299,28 @@ run, and no capture runs while the owner is at the machine
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
+#### CK10.69: Every empty state line has the platform's shape
+
+- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1171: the line
+  is a few words in title case stating the condition, with no
+  period and no instruction, as Mail's "No Message Selected" is
+  measured; a description under it is a sentence and ends with a
+  period. Todos' "No todos." becomes "No Todos"; the folder
+  browser's "This folder holds no folders." becomes "No Folders"
+  with no description, since the sentence repeats the line; feeds'
+  "Select an article" becomes "No Article Selected"; sitedocs'
+  "No headings." becomes "No Headings"; iconbrowser's line keeps
+  the query and takes the shape (say the text). Vaultview's find
+  count "No matches" is the find field's text, not an empty state,
+  and stays. Every test that names a line is updated; the goldens
+  that show a line regenerate with the cause named (the line's
+  text).
+- [ ] Exit: `grep -rn` over the workbench finds no empty state line
+  ending in a period; green in `workbench/todos`, `workbench/feeds`,
+  `workbench/vaultview`, `workbench/sitedocs`, `workbench/iconbrowser`
+  by name and workbench root; guard OK; gofmt gate OK; one commit
+  in workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window

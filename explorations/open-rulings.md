@@ -3829,7 +3829,4 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 ## HI. From CK10.47, the empty states of todos and the folder browser
 
-Filed 2026-10-22 from CK10.47. What stays open is for the owner.
-
-
-1171. **[note]** **Empty-state lines in the workbench differ on a closing period.** Todos' "No todos." and the folder browser's "This folder holds no folders." end with a period, as vaultview's other lines do, and feeds' "Select an article" does not; the fresh-eyes review of CK10.47 notes that the platform's own line has none. The Empty state entry says nothing about punctuation, so each application chooses for itself.
+Filed 2026-10-22 from the fresh-eyes review of CK10.47. Findings 1170 and 1171 are ruled and planned as CK10.68 and CK10.69. Nothing stays open.
