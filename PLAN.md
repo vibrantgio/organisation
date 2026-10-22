@@ -25208,7 +25208,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.9: Feeds' Share is a bordered button titled with the share symbol
 
-- [ ] Ruled by the ontology session 2026-10-22 on finding 1081
+- [x] Ruled by the ontology session 2026-10-22 on finding 1081
   under the Toolbar entry: a toolbar action is a button, bordered,
   titled with a symbol or text in the label colour, never a word
   in the accent and never a link. Feeds' Share stands at the
@@ -25224,7 +25224,7 @@ run, and no capture runs while the owner is at the machine
   pixel in the renderer), with its golden in the icon set. The
   button opens the same popover the word opened, its message
   unchanged. Feeds' goldens regenerate with the cause named.
-- [ ] Exit: a test in feeds that the Share button is the toolbar
+- [x] Exit: a test in feeds that the Share button is the toolbar
   button style in the label colour and no accent pixel stands at
   its site; green in `components` and `workbench/feeds` by name
   and workbench root; guard OK; gofmt gate OK; commit and push per
