@@ -714,7 +714,10 @@ on such a material, each keeping its hairline.
 The width a run of text is allowed to reach, from typography: long
 lines tire the reader, so a paragraph stops at its measure however
 wide the region is. Content narrower than its region is centred
-within the region; nothing widens to fill. A region narrower than
+within the region; nothing widens to fill. The region is the column
+between its own edges, less the lane of a standing scrollbar; the
+padding on both sides of the text is equal, and the text is centred
+between the column's edges. A region narrower than
 the measure keeps the padding on both sides of the text, and the
 measure shrinks to the width that remains; a window needs no minimum
 width for this. Wide content that keeps
