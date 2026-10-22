@@ -26053,43 +26053,28 @@ run, and no capture runs while the owner is at the machine
   gofmt gate OK; commit and push per repo; no tag.
 
 
-#### CK10.72: The standing scrollbar is drawn from the platform's measured lane, track and thumb
-- [ ] Under [[DOMAIN#Scrollbar]], ruled on findings 1137, 1144, 1145
+#### CK10.72: The platform's standing scrollbar is measured into the reference
+
+- [x] Under [[DOMAIN#Scrollbar]], ruled on findings 1137, 1144, 1145
   and 1147: the standing bar's lane width, its track and its thumb
   are measured into the reference per scheme, never recalled; a
   lane exists only for a bar that is drawn; a region that scrolls
-  sideways has its bar at its bottom edge the same way. The bar at
-  Always is drawn today with no track and a 10 dp lane, and
-  vaultview's rails keep a 22 dp lane because `asideIndicator`
-  passes the rail's margin as the track's padding. Captures are
-  taken in both schemes under Show scroll bars: Always and stored
-  under `reference/macos`: Finder or Mail with rows that overflow;
-  one window whose content fits; Finder's column view with a
-  sideways bar. The lane's width, the track's fill, the thumb's
-  fill and inset, what the platform draws when the content fits (a
-  track with no thumb is a bar; no track is no lane), a list
-  row's end against the lane (finding 1164), and the sideways
-  lane's height, track and thumb are read into
-  `reference/macos/controls.md` as MEASURED rows.
-  `components/scrollbar` then draws the standing bar, upright and
-  sideways, from those rows; a column whose content fits draws what
-  the reference shows; vaultview's rails pass no padding of their
-  own and keep the one measured lane; the thumb's travel against
-  the content's follows the measured track ends (finding 1174:
-  sk150's thumb moves 13 px for a 50 px scroll where its length
-  implies 16); every golden that shows a standing bar regenerates
-  with the cause named. This task takes
+  sideways has its bar at its bottom edge the same way. Captures
+  are taken in both schemes under Show scroll bars: Always and
+  stored under `reference/macos`: Finder's list view with rows
+  that overflow, at rest, after Page Down and after End; a list
+  whose content fits; column view with a sideways bar; a narrow
+  list where both bars meet. The lane's width, the track's fill
+  and ends, the thumb's fill, width and rounding, what the
+  platform draws when the content fits, a list row's end against
+  the lane (finding 1164), the thumb's travel against the scroll
+  (finding 1174), the sideways lane's height, track and thumb, and
+  the corner where the bars meet are read into
+  `reference/macos/controls.md` as MEASURED rows. This task takes
   captures: it runs only on an open desktop the owner has left,
   under the phase's caffeinate rule.
-- [ ] Exit: the captures and the MEASURED rows are in the reference;
-  a test that the bar at Always is drawn at the measured lane width
-  with the measured track, upright and sideways, and a test that
-  vaultview's rails keep the same lane as every other column; green
-  in `components` (scrollbar, list, gallery and inventory by name),
-  `patterns` and every scrollbar caller by name and workbench root;
-  guard OK; gofmt gate OK; commit and push per repo; no tag.
-
-
+- [x] Exit: the captures and the MEASURED rows are in the reference;
+  guard OK; commit and push in `.github`; no tag.
 #### CK10.73: Todos' delete mark is drawn as the platform draws a control inside a row
 
 - [ ] Under [[DOMAIN#Action]], ruled on finding 1173: when a control
@@ -26650,6 +26635,47 @@ order.
   nothing draws one empty state line; green in
   `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
+
+#### CM1.27: The standing scrollbar is drawn from the measured lane, track and thumb
+
+- [ ] Under [[DOMAIN#Scrollbar]], ruled on findings 1137, 1144, 1145
+  and 1147, from the MEASURED rows of "What the standing scrollbar
+  measures" in `reference/macos/controls.md` (CK10.72):
+  `components/scrollbar`'s `Style.Always()` draws the standing
+  bar, upright and sideways, at the measured lane width with the
+  measured thumb width, padding and rounding; the track is drawn
+  as the measured pill inside the padding, at the measured
+  coverage flattened onto the fill passed to `FromTokens`, never
+  as a rectangle over the lane; the thumb is drawn at the measured
+  coverage per scheme, and `theme`'s light `scrollbarThumb` row
+  takes the light reading (finding 1192), a token change that
+  runs `effects/transition` and `workbench/themer` by name. Every
+  golden in `components` and `patterns` that shows a standing bar
+  regenerates with the cause named, `markdown`'s included.
+- [ ] Exit: a test that the bar at Always is drawn at the measured
+  lane width with the measured track, upright and sideways; green
+  in `theme`, `components` (scrollbar, list, gallery, inventory,
+  picker and scrollarea by name and the whole module), `patterns`
+  (shell by name), `markdown`, `effects/transition` and
+  `workbench/themer` by name; guard OK; gofmt gate OK; commit and
+  push per repo; no tag.
+
+#### CM1.28: Vaultview's rails keep the one measured lane and every window draws the standing bar from it
+
+- [ ] Under [[DOMAIN#Scrollbar]], after CM1.27: vaultview's
+  `asideIndicator` passes no padding of its own, so the rails keep
+  the one measured lane as every other column; every workbench
+  golden that shows a standing bar regenerates with the cause
+  named; sk150's thumb travel is read against the measured rule
+  (finding 1174: 13 px for a 50 px scroll where the length implies
+  16), and `FromListPosition`'s per-row estimate is corrected
+  where it is the cause. A fresh-eyes review of one window with a
+  standing bar in both schemes against the entry and the MEASURED
+  rows, recorded verbatim.
+- [ ] Exit: a test that vaultview's rails keep the same lane as
+  every other column and a test of sk150's thumb travel; green in
+  every workbench app by name and workbench root; guard OK; gofmt
+  gate OK; commit and push per repo; no tag.
 
 ### G-CM2: Every window offers its actions through the menu bar
 

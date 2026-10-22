@@ -3821,14 +3821,9 @@ found beside its own subject, stands here.
 
 1127. **[note]** **A document with no measure keeps its padding on the trailing side only.** `Style.Gutter` with a zero `Measure` still gives the blocks the width less the trailing padding, as before, because the Measure entry speaks of a region narrower than the measure and a document with no measure has none. A document laid out with a padding and no measure therefore runs its text against the leading edge. Whether the padding should be kept on both sides with no measure too is unasked; no caller in the tree sets a padding without a measure.
 
-## HQ. From CK10.71, the search field on content
-
-Filed 2026-10-22 from CK10.71. Findings 1184 to 1189 are ruled: 1184 is in CK10.81, 1185 in CK10.82, 1186 in CK10.83 and CK10.84, 1189 in CK10.85, 1188 in CK10.86; 1187 is closed by the Search field entry, a filtering field marks nothing. Nothing stays open.
-
 ## HR. From CK10.72, the standing scrollbar
 
 Filed 2026-10-22 from CK10.72's captures, read in `reference/macos/controls.md` under "What the standing scrollbar measures".
 
 1190. **[decide]** **Finder's two views draw different things for a column whose content fits.** At Always, Finder's list view of a folder that fits draws no track, no thumb and no lane, and its rows run to their own 10 px inset from the edge (`finder-list-fits-always-{light,dark}.png`); in column view, a column whose content fits draws the 11 px track with no thumb in its 17 px lane (`finder-column-sideways-always-{light,dark}.png`, x 416–426 and x 661–671). The Scrollbar entry says a fitting column draws what the reference shows and a lane exists only for a bar that is drawn; a ruling names which of the two views the library's columns follow, and the entry's sentence names the answer.
 1191. **[decide]** **Finder's column header's hairline stops at the lane, where the Seam entry says a seam across a column includes it.** In `finder-list-scrollbar-always-{light,dark}.png` the hairline under the column headers at y 79 runs x 1–782 and stops where the 17 px lane begins, while the header's own fill spans the lane; when the content fits the hairline runs to x 798. The Seam entry says a seam across a column runs the column's full width, a standing scrollbar's lane included, as Mail's do. A ruling says whether a column header's hairline is a seam, and the entry or the drawing follows.
-1192. **[bug]** **The light `scrollbarThumb` row carries the dark appearance's coverage where the light standing thumb reads 133/255.** `nscolors.tsv` and `theme/tokens` record the knob as black at 146/255 light because no light capture of the knob existed; the standing thumb reads black at 133/255 over `#ffffff` light and white at 146/255 over `#1e1e1e` dark, the dark one equal to the overlay knob's. Whether the light row takes 133/255 is a theme change with its field walkers, outside the scrollbar's own package.
