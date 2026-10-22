@@ -25028,8 +25028,17 @@ run, and no capture runs while the owner is at the machine
   behind a selected row and moves nothing, by the Pill and
   Selection entries, so every row's title stands at one edge
   selected or not, the section headings at theirs, and the
-  empty-state line at the rows' edge. Goldens regenerate with the
-  cause named per golden; no other composition change.
+  empty-state line at the rows' edge. Two defects from CK8.2 close
+  with it: opening another vault during a fetch leaves
+  `Downloading` set so the new vault says the wait text for ever
+  (`OpenVault` clears it and `downloadFrom` with it); the find
+  control leaves the toolbar for the length of a fetch, since it
+  follows `CurrentNote`, and stands while the window has a note to
+  find in, which during a fetch it has not, so it stays away but
+  returns the moment the note lands (say whether this is the
+  defect or the rule: the platform's find acts on a document, and
+  there is none; if so, record and close). Goldens regenerate with
+  the cause named per golden; no other composition change.
 - [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
 
