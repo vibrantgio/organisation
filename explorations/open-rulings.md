@@ -3813,3 +3813,10 @@ sitedocs' Docs column now draw `patterns/shell`'s `EmptyState`. What the
 work left open, and what it found beside its own subject, stands here.
 
 1112. **[note]** **The location the failed guide names is the checkout's, whichever source actually failed.** The description under "This guide can't be loaded." is the first candidate path resolved against the process's own directory, so in a checkout it names the file that is missing. A `go run …@latest` install has no checkout at all: the leg that really failed is the fetch of the canonical URL, and the path the reader is shown is one that was never going to exist. Whether the description should name the source whose failure was last, rather than the location the guide belongs at, is unasked.
+
+## GS. From CK10.26, the query in the field
+
+Filed 2026-10-22 from the work itself: iconbrowser's window goldens now
+draw the search field holding the query each is taken at.
+
+1125. **[note]** **Iconbrowser's search field is a plain text field, so it draws no looking glass and no clear mark.** The page builds its field with `input.TextField`, not `input.SearchField`, so the filtered goldens show the query in a bordered field with nothing at either end, where a macOS search field shows the looking glass before the text and the clear mark after it once text is typed. Whether the page adopts `SearchField`, which would also give the reader a way to clear the query with one press, is unasked; adopting it changes all six window goldens.

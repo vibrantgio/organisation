@@ -25523,7 +25523,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.26: Iconbrowser's filtered goldens show the query in the search field
 
-- [ ] Found under CK10.21: the static render behind iconbrowser's
+- [x] Found under CK10.21: the static render behind iconbrowser's
   window goldens passes the query to the model and not to the
   search field, so the "folder" and "zzzz" goldens show the field
   empty with its placeholder, which the running window never
@@ -25533,7 +25533,7 @@ run, and no capture runs while the owner is at the machine
   comment says "history" keeps some marks, which it does not: the
   test takes the goldens' queries and the comment says what each
   matches.
-- [ ] Exit: a test that the field's text in the filtered render
+- [x] Exit: a test that the field's text in the filtered render
   equals the query; green in `workbench/iconbrowser` by name and
   workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
