@@ -25267,7 +25267,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.12: The empty state stands a description and actions under its line and takes a pane's size
 
-- [ ] Under [[DOMAIN#Empty state]] (the entry's shape: a line, a
+- [x] Under [[DOMAIN#Empty state]] (the entry's shape: a line, a
   description and actions under it, centred as one group; the
   measured size in a column, the rows' size in a pane's section
   or a sheet's field): `patterns/shell`'s `EmptyState` grows to
@@ -25282,7 +25282,7 @@ run, and no capture runs while the owner is at the machine
   group centres as one block in the frame given. The existing
   callers (vaultview's column, feeds' column) move to the props
   shape with no pixel moving.
-- [ ] Exit: tests in `patterns/shell` that a line with a
+- [x] Exit: tests in `patterns/shell` that a line with a
   description and one action centres as one group both ways and
   that the pane size sets the line in the rows' style; vaultview's
   and feeds' goldens byte-identical; green in `patterns`,

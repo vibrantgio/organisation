@@ -3780,3 +3780,17 @@ with the vault's path. What the work left open, and what it found
 beside its own subject, stands here.
 
 1100. **[note]** **The workbench has no convention for where an application writes a diagnostic.** vaultview writes its two — the store it could not save, and now the vault it could not read — with `fmt.Fprintln(os.Stderr, "vaultview: …")`, hand-prefixed. No application in `workbench` imports `log` or `log/slog`, so there is no shared destination, no shared prefix and no level. The new ruling sends a cause "to the log" in every case where it does not reach the reader, which makes the destination load-bearing across the applications rather than private to one. Whether that is the standard `log` package, a `slog` handler the composition root installs, or the stderr line each application already writes, is unasked.
+
+## GE. From CK10.12, the empty state's shape
+
+Filed 2026-10-22 from the work itself: `patterns/shell`'s `EmptyState`
+grew to the entry's shape — a line, an optional description, optional
+actions, centred as one group — and takes the rows' style where it
+stands in a pane's section or a sheet's field. What the work left open,
+and what it found beside its own subject, stands here.
+
+1103. **[decide]** **Nothing measured says how far the description and the actions stand under the line.** `reference/macos` holds Mail's empty content column, which is a line and nothing else, and no capture of the platform's content unavailable view — the one that stands a description and controls under its line. So the two gaps the pattern now spends are steps of the spacing scale, 8 and 16, chosen so the description reads as the line's own and the controls read as parted from both, and the file says they are not readings. A capture of that view would close three numbers at once: the two gaps, the size the description is set at, and the width the description is allowed before it wraps. The reference's capture list is where it would go.
+
+1104. **[note]** **The description wraps across the whole frame it is given.** A content column 900 px wide stands a one-sentence description as one 900 px line, which is twice any measure the system sets prose on, while the platform's content unavailable view holds its description to a narrow column under the line. Nothing in the pattern caps it, because no reading says where the cap is. Whether the description should take a measure of its own — the reading measure `markdown` already computes, a fraction of the frame, or a fixed width — is unasked, and 1103's capture is what would answer it.
+
+1105. **[note]** **The line truncates where a pane's section is narrower than it.** The entry calls the line one line and the pattern keeps it one, so a frame too narrow ellipsises it. A content column is never that narrow; a pane's section is, and a sheet's field is narrower still — those are the two frames the rows' style was added for. Nothing was found to be broken here because no section draws the empty state yet, which is the next task's subject. Whether a line standing in a narrow frame should wrap to two lines rather than lose its end is unasked.
