@@ -31,7 +31,7 @@ goes with its pane removes nothing from the menu bar.
 The persistent state marking where the user is: the
 current tab, the current sidebar entry, the open document. Positional
 and one-of-many. Distinct from selection: selected is the thing you
-chose, active is the place you are; both are persistent and speak
+chose, active is the place you are; both are persistent and say
 through the accent.
 
 ### Affordance
@@ -73,7 +73,7 @@ side flips it to the side that has room; a surface taller than the
 room it wins scrolls inside itself. Content is never cut off.
 Placement is against the window, not the region the anchor is in: a
 floating surface leaves that region — a scroller, a column — and is
-clipped by the window alone. It leaves with its anchor: when the
+clipped by the window alone. It is dismissed with its anchor: when the
 anchor scrolls out of view, the surface is dismissed.
 
 Anchor and trigger usually coincide; they are still two parts, and
@@ -132,7 +132,7 @@ no status. A status colours it in that status's role; a badge with
 no status is coloured Neutral, a plain category label. There is no
 other choice — no badge in the theme colour. Hue is never its only channel: hue
 alone collapses for colour-blind readers. Filled/Tonal emphasis does not exist on a badge;
-emphasis lives where interaction lives. A badge may be dismissible
+emphasis is where interaction is. A badge may be dismissible
 (the close mark keeps an invisible control-sized hit area); what
 separates a dismissible badge from an Input chip is the
 originator, not the close — a badge is applied by the developer or
@@ -184,7 +184,7 @@ header, body and footer slots. It holds content that must stand
 apart from the content around it — a summary, a preview, the
 recommended tier. What a card holds stands on the card; a field in
 it is a raised thing on the card. A card holds content, never
-another card. It never wears a role: what the developer says about it
+another card. It never has a role: what the developer says about it
 is a badge in its header.
 
 ### Casing
@@ -232,7 +232,7 @@ it, it is a badge; if you use it, it is a chip.
 The window's furniture: every region placed directly on the
 backdrop that frames the document rather than being it — navbar,
 toolbar, sidebar, inspector, status bar, pane. A sidebar, a pane,
-an inspector, a navbar and a status bar wear the platform's sidebar
+an inspector, a navbar and a status bar are filled with the platform's sidebar
 material with wallpaper tinting off, measured into the reference
 for each scheme: a shade darker than the content in both, set apart
 from it by that shade and, where the two are flush, a seam. A
@@ -243,7 +243,7 @@ three-column window is measured. What the platform
 adds on top — the wallpaper showing through the glass — a window
 that cannot see the desktop does not paint. The shell pattern is
 the composition of chrome regions; a variant is "chrome" when the
-control lives in a chrome region. Chrome is window-scale only: the
+control is in a chrome region. Chrome is window-scale only: the
 trim inside a component or pattern — a card's header, a dialog's
 footer, a table's header row — is that thing's structure, never
 chrome.
@@ -309,7 +309,7 @@ control is a component, and a signal is a component:
 The matter the application exists to show: prose, pictures, data —
 what the user came to read or edit. Content stands at level 0; its
 originator is a person — the user, or the author who wrote it —
-never the developer and never the system, which only speak about
+never the developer and never the system, which only report on
 it. Content is rendered by modules — the markdown
 document, an image — not shipped as a component: components stand
 beside content or act on it. The controls inside content — its
@@ -410,7 +410,7 @@ spoken in levels, never in its own units.
 ### Emphasis
 
 How important an action is on the surface it sits on, ranked most
-pronounced to least. Emphasis lives where interaction lives:
+pronounced to least. Emphasis is where interaction is:
 signals have none.
 
 | Emphasis | Of | Meaning |
@@ -449,7 +449,7 @@ The hero's kicker: a short overline in the type stack
 that introduces the headline. Pure typography — a typographic role,
 not a badge: it has no status, no fill,
 says nothing about content; it is the developer speaking, not the
-system. Wears type styling (size, tracking, a hue if the theme says
+system. It has type styling (size, tracking, a hue if the theme says
 so), never a badge's fill.
 
 ### Feature
@@ -471,7 +471,7 @@ painted at the platform's value for the scheme. A role the platform
 paints at an alpha composites over the surface beneath, in encoded
 sRGB.
 
-| Fill | Who wears it |
+| Fill | What has it |
 |---|---|
 | the platform's push button fill, measured | the Tonal button, the disabled button, the chip at rest, the picker's trigger |
 | the theme colour | the Filled button — the one action a surface is about |
@@ -546,7 +546,7 @@ The pattern dividing the content: a hairline of the separator colour
 drawn around related components so the eye chunks them, no fill of
 its own — what it holds stands on the surface the group is in —
 optionally titled. It singles nothing out. A group may hold a
-card; it never holds another group. It wears no role.
+card; it never holds another group. It has no role.
 
 Which of the two a developer reaches for answers one question: am I
 dividing the content, or singling something out? A form in sections, a
@@ -618,7 +618,7 @@ The pattern of a column beside the content, showing the
 properties of whatever is selected in it and offering the controls
 that change them. It follows the selection; empty selection, empty
 inspector.
-It is chrome: it wears the sidebar
+It is chrome: it is filled with the sidebar
 material, with a seam to the content, and a list in it selects as
 the sidebar does, with the inset pill.
 
@@ -760,7 +760,7 @@ the placement and the timing, not the presentation.
 
 ### Originator
 
-Who a component speaks for.
+Whose statement a component shows: the user's or the system's.
 
 | Originator | Says | Example |
 |---|---|---|
@@ -768,8 +768,8 @@ Who a component speaks for.
 | **the developer** | text placed when the application was built | the "Popular" label, a control's caption, the eyebrow |
 | **the system** | what the running application computes | the unread count, the key-check verdict, "filtered by X" |
 
-A signal's originator is never the user: it speaks for the developer
-or the system. Content originates with a person — the user, or the
+A signal's originator is never the user: it shows the developer's
+statement or the system's. Content originates with a person — the user, or the
 author who wrote it — never with the developer's labels and never
 with the system.
 
@@ -802,7 +802,7 @@ sidebar symbol, the platform's Toggle Sidebar: it stands bare in
 the pane's top trailing corner while the pane is expanded and at
 the toolbar's leading end while it is collapsed. The pane's own
 marks stand bare before the toggle, at the measured gap, and go
-with the pane when it collapses: only the toggle travels, as the
+with the pane when it collapses: only the toggle moves, as the
 platform's sidebars show, and what acts on the pane's collection
 waits for the pane. A pane has a splitter on its trailing edge
 wherever it is expanded: the user widens or narrows it by dragging,
@@ -834,7 +834,7 @@ is a component, however large.
 | **notifications** | the column that receives notifications and presents them — today as toasts — positioned, stacked and timed |
 | **pane** | a column set in from the window's edges rather than being one of them, the backdrop showing around it |
 | **popover** | a small surface floating beside its anchor, a tail pointing at it |
-| **pricing** | a row of tier groups, the recommended tier a card wearing a badge |
+| **pricing** | a row of tier groups, the recommended tier a card with a badge |
 | **shell** | the top-level application layout: the composition of the regions around the content |
 | **sidebar** | a collapsible vertical column — expanded with symbols and titles or collapsed to a rail of symbols; the active entry marked |
 | **status bar** | the strip along the window's bottom, reporting on the document |
@@ -1074,9 +1074,9 @@ The persistent state marking the thing you chose: the picked menu
 row, the marked Filter chip, the sidebar's active entry. It is
 painted in the platform's selection colour with white text; the hover
 and press overlays are for transient states and paint no selection.
-A selected run of text in a field wears the platform's selected
+A selected run of text in a field has the platform's selected
 text colour over its selected text background, both measured,
-whatever colour the field's other text wears.
+whatever colour the field's other text has.
 
 ### Shadow
 
