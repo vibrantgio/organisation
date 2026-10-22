@@ -3755,16 +3755,3 @@ block's bar. What the work left open, and what it found beside its own
 subject, stands here.
 
 1085. **[note]** **The gallery's documents keep a bar that can never stand.** `components/gallery/inventory` builds two `markdown.Style`s of its own, and neither spends a setting on `CodeScrollbar`, because the gallery reads none: it is a module inside `components` that has no composition root of the kind the workbench apps have, and `mvu/desktop` stands in its `go.mod` only as an indirect requirement. `sitedocs` renders that inventory in a tab, so inside those tiles an overflowing fence fades its bar whatever the reader asked for, while the fences in the Docs tab beside it stand. Whether a demo module should read the platform at all, or take the setting from whatever embeds it, is unasked.
-
-## GA. From CK10.8, the tab strip's fill
-
-Filed 2026-10-22 from the work itself: `patterns/tabs` no longer fills
-its strip with the chrome material — the pattern takes the fill it
-stands on from its props and its foot's hairline is the separator
-flattened onto that fill — and the gallery's inventory, feeds, sitedocs
-and sk150 each hand it the fill their column paints. What the work left
-open, and what it found beside its own subject, stands here.
-
-1093. **[note]** **The pane under the strip keeps the content fill while the strip takes the handed one.** `drawTabs` paints the whole frame with `ControlBackground` and then the strip's rows with the fill its caller stated: the pane is the document and wears the platform's content plane whatever the column around it wears. Every caller today hands a fill that is that plane to the byte — sk150 hands the window's own plane, which the platform draws at #ffffff light and #1e1e1e dark, the content plane's own values — so no frame shows the two parting. A caller laying tabs inside a chrome column would get a chrome band over a content pane, which may be exactly right or may be a pattern that should stand on one fill throughout. Unasked.
-
-1094. **[decide]** **The Language's Tabs entry does not say what the strip stands on.** The ruling was taken under the Chrome entry, which speaks of toolbars and the columns beneath them; the Tabs entry still reads "a horizontal strip of titles, the active tab underlined, the active tab's content below" and says nothing of fill or trim, though a tab strip is not chrome and the Chrome entry's sentence does not reach it. Whether the Tabs entry should carry the rule in its own words — no fill of its own, standing on the fill it is in, a hairline for trim — is for the ontology session.

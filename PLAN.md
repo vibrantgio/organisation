@@ -25384,6 +25384,27 @@ its control posts.
   by name; guard OK; gofmt gate OK; commit and push per repo; no
   tag.
 
+#### CK10.17: A tab's content stands on the fill its strip stands on
+
+- [ ] Ruled by the ontology session 2026-10-22 (the Tabs entry at
+  a2ec3eb): the strip has no fill of its own, it stands on the fill
+  of the region it is in, and the active tab's content stands on
+  the same fill; the tab's content is content, never a pane.
+  `patterns/tabs` paints its whole frame in the content fill
+  before the strip takes the handed one, so a caller handing
+  another fill gets a strip on one fill over content on another.
+  The pattern paints the handed fill under the tab's content as
+  well (or paints nothing of its own and the caller's fill shows
+  through, say which and why), and its comments say "the tab's
+  content", never "the pane". Every caller today hands the content
+  plane's values, so no golden moves; a test holds the content's
+  fill equal to the strip's in both schemes for a handed fill that
+  differs from the content plane.
+- [ ] Exit: green in `patterns` by name and in every caller
+  (components/gallery and its inventory, workbench/feeds,
+  sitedocs, sk150) and workbench root; guard OK; gofmt gate OK;
+  commit and push per repo; no tag.
+
 #### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
 
 - [ ] The three windows gain their menu bars: vaultview (File: Open
