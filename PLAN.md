@@ -25560,6 +25560,58 @@ run, and no capture runs while the owner is at the machine
   `workbench/sitedocs`, `workbench/vaultview` by name and workbench
   root; guard OK; gofmt gate OK; commit and push per repo; no tag.
 
+#### CK10.28: Vaultview's rail rows and iconbrowser's grid draw the window's scrollbar
+
+- [ ] Under [[DOMAIN#Scrollbar]], ruled on finding 1120: every
+  region that scrolls has a scrollbar. Vaultview's rail rows
+  (`list.LayoutSelectable` with no bar) and iconbrowser's grid (a
+  `layout.List` with no bar) scroll without one. Each draws the
+  window's bar with the setting the window reads, as the other
+  columns do (vaultview's `noteScrollBar`, iconbrowser gains the
+  setting the way CK10.4 threaded it into the other apps; say the
+  seam); their empty states pass their frame through
+  `EmptyStateFrame`. Goldens regenerate only where a bar is drawn
+  at rest, with the cause named; none should at WhenScrolling.
+- [ ] Exit: a test per region that a bar is drawn at Always; green
+  in `workbench/vaultview` and `workbench/iconbrowser` by name and
+  workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
+
+#### CK10.29: A standing scrollbar occupies its lane and the rows stop short of it
+
+- [ ] Under [[DOMAIN#Scrollbar]], ruled on finding 1121: at Always
+  the bar has a lane of its own and the rows stop short of it; at
+  When scrolling and Automatic the bar lies over the rows' trailing
+  edge and takes no lane. Sitedocs' Docs column, mindchat's
+  provider field and every other region that passes `list.Overlay`
+  whatever the setting (enumerate them across the apps and the
+  patterns, say each) pass `list.Occupy` when the setting is
+  Always and `list.Overlay` otherwise, through one helper beside
+  `EmptyStateFrame` (say its name) so the choice is stated once.
+  No pixel moves at WhenScrolling; a test per region asserts the
+  rows end before the lane at Always.
+- [ ] Exit: green in `patterns` and every app named by name and
+  workbench root; guard OK; gofmt gate OK; commit and push per
+  repo; no tag.
+
+#### CK10.30: Feeds' article column scrolls when the article is taller than it
+
+- [ ] Under [[DOMAIN#Column]] and [[DOMAIN#Scrollbar]], ruled on
+  finding 1122: a column whose content is taller than it scrolls,
+  with its scrollbar at its trailing edge, and content is never
+  cut off. Feeds' content column does not scroll, so a long
+  article body is cut off at the bottom. The column becomes a
+  scrolling region with the window's bar at its trailing edge
+  (the setting as CK10.4 threaded it into feeds), the tab strip
+  and the headline scrolling with the body or pinned, say which
+  and why from the entries; the empty state passes its frame
+  through `EmptyStateFrame`. Goldens regenerate with the cause
+  named if a bar is drawn at rest; none should at WhenScrolling.
+- [ ] Exit: a test that an article taller than the column scrolls
+  to its end and a bar is drawn at Always; green in
+  `workbench/feeds` by name and workbench root; guard OK; gofmt
+  gate OK; one commit in workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
