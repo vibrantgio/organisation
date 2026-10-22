@@ -421,13 +421,19 @@ signals have none.
 
 ### Empty state
 
-The platform's term for a column with no content to show, and the
-one line of text that says why: nothing selected, nothing in the
-collection, content still arriving, a read that failed. It is a
-signal, read and never operated, centred both ways in the column's
-full frame, the toolbar's share included, in the platform's
-tertiary label colour at its measured size, as Mail's empty content
-column shows. It is not content and does not stand on the measure.
+The platform's term for a region with no content to show, and
+the text that says why: nothing selected, nothing in the
+collection, content still arriving, a read that failed. Its line is
+the application's own sentence, never the system's text. It is
+centred both ways in the frame of the region that has nothing: a
+column's full frame, the toolbar's share included, as Mail's empty
+content column shows, at the measured size in the platform's
+tertiary label colour; a pane's section or a sheet's field at the
+size of the rows it stands for. As the platform's content
+unavailable view does, it may stand a description under the line
+and the actions that fill the region under that, centred as one
+group; the line itself names no control. It is not content and
+does not stand on the measure.
 
 ### Eyebrow
 
