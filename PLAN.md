@@ -25035,7 +25035,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK8.2: The window names the note it is fetching while it waits
 
-- [ ] Found under CK8.1: while a placeholder note downloads, `Current`
+- [x] Found under CK8.1: while a placeholder note downloads, `Current`
   stays on the note being left, so the toolbar's trail, the tree's
   selection, the pinned properties block, and the inspector's
   outline and backlinks all show the previous note around the
@@ -25051,5 +25051,5 @@ run, and no capture runs while the owner is at the machine
   with the toast. The downloading goldens regenerate with the cause
   named. TextEdit's own wait draws nothing (CK8.1's reading), so
   the text stands alone as it does.
-- [ ] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
+- [x] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
