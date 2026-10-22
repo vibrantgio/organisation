@@ -25268,6 +25268,23 @@ its control posts.
   workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
 
+#### CK10.11: Sitedocs' Docs tab scrolls with a scroll bar like every other tab
+
+- [ ] Found under CK10.5: sitedocs draws its guide through
+  `markdown.Document.Layout`, not `LayoutScrollbar`, so the one
+  tab whose content is longest shows no scroll bar while every
+  other tab's column carries one that follows the setting. The
+  Docs tab's column takes the bar the other tabs' columns take
+  (the same `scrollingColumn` or `LayoutScrollbar` with the
+  snapshot's setting spent, say which), stated WhenScrolling in
+  the goldens' snapshots as CK10.4's are; the Docs golden
+  regenerates only if the bar stands at rest, with the cause
+  named, else no pixel moves.
+- [ ] Exit: a test that the Docs tab's column stands a bar at
+  Always; green in `workbench/sitedocs` by name and workbench
+  root; guard OK; gofmt gate OK; one commit in workbench, push;
+  no tag.
+
 #### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
 
 - [ ] The three windows gain their menu bars: vaultview (File: Open
