@@ -25693,7 +25693,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.35: A fading scrollbar takes no lane in the transcript, the note and the style column
 
-- [ ] Under [[DOMAIN#Scrollbar]], found under CK10.29: mindchat's
+- [x] Under [[DOMAIN#Scrollbar]], found under CK10.29: mindchat's
   transcript, vaultview's note column and themer's style column
   pass `list.Occupy` whatever the setting, so at When scrolling
   and Automatic an empty lane stands where the entry says the bar
@@ -25702,7 +25702,7 @@ run, and no capture runs while the owner is at the machine
   goldens that hold these columns regenerate with the cause named
   (the lane given back to the rows; vaultview's note measure
   recentres by half a lane through CK10.27's rule).
-- [ ] Exit: a test per column that the rows reach the trailing edge
+- [x] Exit: a test per column that the rows reach the trailing edge
   at WhenScrolling and stop short of the lane at Always; green in
   `workbench/mindchat`, `workbench/vaultview`, `workbench/themer`
   by name and workbench root; guard OK; gofmt gate OK; one commit
