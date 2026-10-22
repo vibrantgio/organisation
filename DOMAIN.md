@@ -531,7 +531,12 @@ a pane's control for its own collection, a column's status text. A
 footer is optional, and an empty footer takes no height. The status
 bar is the window's own strip, not a column's footer. A footer of
 status text has the height and the text's place the platform's
-status bar is measured with, from Finder's, never recalled. The
+status bar is measured with, from Finder's, never recalled. Its seam
+is the status bar's measured seam. Its text is centred on the
+column's middle: the platform's offset is its text centred beside a
+mark at the bar's leading end, which the footer does not draw. A
+footer of status text holds status only; an explanation of a
+setting is that setting's description under it, never footer text. The
 application's settings are never a footer's control: Settings stands
 in the application menu, the platform's place.
 
@@ -1105,8 +1110,9 @@ it.
 The hairline where two flush regions meet — a list column against
 the content, the navbar's foot, the status bar's top, a scrolling
 region's foot against a fixed band below it. Its colour is
-measured per scheme into the reference from the platform's own
-windows, Mail's list seam among them, never derived; it is drawn
+measured per scheme and per place into the reference from the
+platform's own windows, never derived: a column seam from Mail's
+list seam, a status bar's seam from Finder's; it is drawn
 once, by the region above or leading. A seam between two columns
 runs the window's full height, the toolbar included, as Mail's
 does. A seam across a column runs the column's full width, a
