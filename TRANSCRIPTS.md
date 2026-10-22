@@ -1313,3 +1313,5 @@ Rene: I don't like the name trunk. For vibrantgio I would almost call it vibrant
 github.com/vibrantgio/trunk, nah don't like it. Any more ideas?
 
 Rene: what it contains is the all the crunchgate method artifcats right?
+
+Rene: Give all the pros and cons for org and advise what to choose
