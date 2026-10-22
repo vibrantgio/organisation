@@ -25467,6 +25467,22 @@ run, and no capture runs while the owner is at the machine
 - [ ] Exit: green in every app named and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
 
+#### CK10.23: Sitedocs' outline column keeps its place when the guide fails to load
+
+- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1111: a column
+  whose content failed to arrive keeps its place and shows its own
+  empty state. Sitedocs' Docs page drops its outline column when
+  the guide cannot be loaded; the column stays at its width and
+  draws "No headings." centred in its frame at its rows' size in
+  the tertiary label, through `shell.EmptyState`, while the
+  content column draws its own line as CK10.14 left it. Goldens
+  regenerate only if one holds the failure state, with the cause
+  named; else a test holds the composition.
+- [ ] Exit: a test that a failed load keeps the outline column at
+  its width with the line centred in it; green in
+  `workbench/sitedocs` by name and workbench root; guard OK; gofmt
+  gate OK; one commit in workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
