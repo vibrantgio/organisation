@@ -26282,6 +26282,23 @@ run, and no capture runs while the owner is at the machine
   `workbench/sitedocs` by name and workbench root; guard OK; gofmt
   gate OK; layers gate OK; commit and push per repo; no tag.
 
+#### CK10.68: The folder browser tells a folder it cannot read from one that holds no folders
+
+- [ ] Under [[DOMAIN#Empty state]], found under CK10.47 (finding
+  1170): the browser says an unreadable folder holds no folders,
+  because `ListDir` returns no rows both when a folder has no
+  child folders and when its read fails, where the entry treats
+  content that fails to arrive as its own case with the
+  application's own sentence and the cause to a log. `ListDir`
+  returns the read's error; the model keeps it; the region draws
+  its own empty state for a failed read, the application's own
+  sentence that the folder could not be read, and the error is
+  logged. A test that an unreadable folder draws the failed-read
+  line and an empty folder the holds-no-folders line.
+- [ ] Exit: green in `workbench/vaultview` by name and workbench
+  root; guard OK; gofmt gate OK; one commit in workbench, push; no
+  tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
