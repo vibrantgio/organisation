@@ -1067,6 +1067,12 @@ sidebar material, measured per scheme, the ends fully rounded, with
 no edge except where the platform draws one — the dark toolbar's
 recess has a lighter rim, measured — read into the reference
 from System Settings' sidebar and Voice Memos' toolbar.
+On the content — a page on the window's own fill, a sheet, a form —
+it is the platform's text field with the search field's structure:
+raised, as every field is, never the flat recess of chrome. Its
+fill, edge and rounding there are measured into the reference from a
+platform window that has one. The window's own fill with content on
+it is content, not chrome.
 
 ### Section
 
