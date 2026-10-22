@@ -25637,6 +25637,23 @@ run, and no capture runs while the owner is at the machine
   workbench root; guard OK; gofmt gate OK; commit and push per
   repo; no tag.
 
+#### CK10.32: Iconbrowser's field is the platform's search field
+
+- [ ] Under [[DOMAIN#Search field]], found under CK10.26: the field
+  the reader types into to narrow the icon catalogue is a plain
+  `input.TextField`, so it draws no looking glass and no clear
+  mark. It becomes an `input.SearchField` as feeds' list field is
+  (CK10.3: the Chrome variant in the region it is in, placeholder
+  "Search", its clear mark and Escape clearing as the entry says,
+  posting the same message on change); any name or comment that
+  calls it a filter says search. The six window goldens regenerate
+  with the cause named (the search field's looking glass, recess
+  and clear mark).
+- [ ] Exit: a test that Escape clears the field and posts the empty
+  query; green in `workbench/iconbrowser` by name and workbench
+  root; guard OK; gofmt gate OK; one commit in workbench, push; no
+  tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
