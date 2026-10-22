@@ -159,3 +159,11 @@ It applies the theme palette synchronously, because a clock-driven `SetColors` n
 Rebut by fixing the harness and rendering the frame again.
 
 Established 2026-08-27.
+
+## A fixed field or header above a scrolling region looks like nested scrolling
+
+The reviewer reports that only part of a window scrolls while a field, a heading or a section above it stays fixed, and reads it as nested scrolling or a second scroll view.
+The region that scrolls is the column of rows; a field or header above the rows spans the column and does not scroll with them, as the Scrollbar entry says, and the lane runs only beside what scrolls.
+Rebut by naming the region that scrolls and the entry.
+
+Established 2026-10-22.

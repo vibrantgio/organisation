@@ -25779,7 +25779,36 @@ run, and no capture runs while the owner is at the machine
   and `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
-#### CK10.40: Iconbrowser's search field is drawn from the platform's field on content
+#### CK10.40: Every iconbrowser symbol is drawn in the text colour
+
+- [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Accent]], ruled on finding
+  1139: an icon on the content is in the text colour and the accent
+  marks the selected one only. Iconbrowser draws its marks and all
+  961 Material icons in the accent. Every symbol in the catalogue
+  and the marks section is drawn in the text colour; the accent is
+  passed only where a symbol is selected, and iconbrowser selects
+  none today, so no accent is passed. The six window goldens
+  regenerate with the cause named (the symbols' colour).
+- [ ] Exit: a test that a rendered catalogue cell's symbol pixels
+  are the text colour and none the accent, in both schemes; green
+  in `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CK10.41: Iconbrowser's marks note uses the Language's words
+
+- [ ] Under [[DOMAIN#Disclosure]] and [[DOMAIN#Icon]], ruled on
+  finding 1140: the marks section's note says "turned" and "open
+  row". A disclosure is closed (chevron pointing right) or open
+  (pointing down); a mark is named by what it depicts, chevron-right
+  and chevron-down; a row whose disclosure is open is said so. The
+  note's text is rewritten in those words and "dp" stays, as the
+  library's unit in a developer catalogue. The goldens that show
+  the note regenerate with the cause named (the note's text).
+- [ ] Exit: green in `workbench/iconbrowser` by name and workbench
+  root; guard OK; gofmt gate OK; one commit in workbench, push; no
+  tag.
+
+#### CK10.42: Iconbrowser's search field is drawn from the platform's field on content
 
 - [ ] Under [[DOMAIN#Search field]] and [[DOMAIN#Chrome]], ruled on
   finding 1136: the window's own fill with content on it is
@@ -25801,6 +25830,28 @@ run, and no capture runs while the owner is at the machine
 - [ ] Exit: the two captures and the MEASURED rows are in the
   reference; green in `components` (input by name),
   `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.43: The standing scrollbar is drawn from the platform's measured lane, track and thumb
+
+- [ ] Under [[DOMAIN#Scrollbar]], ruled on finding 1137: the standing
+  bar's lane width, its track and its thumb are measured into the
+  reference per scheme, never recalled. The bar at Always is drawn
+  today with no track and a 10 dp lane. A capture of Finder or Mail
+  under Show scroll bars: Always is taken in both schemes, stored
+  under `reference/macos`, and the lane's width, the track's fill,
+  the thumb's fill and the thumb's inset are read into
+  `reference/macos/controls.md` as MEASURED rows.
+  `components/scrollbar` then draws the standing bar from those
+  rows, and every golden that shows a standing bar regenerates
+  with the cause named. This task takes a capture: it runs only on
+  an open desktop the owner has left, under the phase's caffeinate
+  rule.
+- [ ] Exit: the two captures and the MEASURED rows are in the
+  reference; a test that the bar at Always is drawn at the measured
+  lane width with the measured track; green in `components`
+  (scrollbar, list, gallery and inventory by name), `patterns` and
+  every scrollbar caller by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
 ### G-CK11: Every window offers its actions through the menu bar
