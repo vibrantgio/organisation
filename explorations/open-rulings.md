@@ -3833,10 +3833,3 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 ## HC. From CK10.36, the lists that had no bar
 
 Filed 2026-10-22 from the fresh-eyes review of CK10.36. Every finding is ruled and planned, CK10.46 to CK10.53. Nothing stays open.
-
-## HE. From CK10.39, the search field's Escape
-
-Filed 2026-10-22 while CK10.39 was worked.
-
-1158. **[note]** **The clear mark posts the empty change twice.** Pressing the clear mark on a field with text calls OnChange with "" twice on the same frame (and Message twice): `SearchField` posts the change itself after `editor.SetText("")`, and the editor's update in the same frame reports the `SetText` as a change event, which posts it again; measured with a probe test on components e72e8b3, OnChange received `["" ""]`. Escape posts it once, because it lets the editor's update post the change; the clear mark could do the same, and `TestSearchFieldClearMarkEmptiesTheField` could assert one post.
-1159. **[note]** **A handler around a search field receives Escape only when it asks for the key after the field has laid out.** Gio delivers a key event to the first `gtx.Event` call in the frame whose filter matches, so a handler that asks for Escape before laying out the field takes the key even while the field holds text. A find within the content that closes on Escape from an empty field asks for the key after laying out the field; no find within the content uses `input.SearchField` yet, so nothing is wrong today, and the constraint can go into the find pattern's documentation when one is built.
