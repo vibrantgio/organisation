@@ -26244,7 +26244,7 @@ order.
 
 #### CM1.3: The workbench draws each application's icon in the text colour and its launch button in the default button fill
 
-- [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Fill]], ruled on findings
+- [x] Under [[DOMAIN#Icon]] and [[DOMAIN#Fill]], ruled on findings
   1160 and 1033: an application's icon on the workbench is an icon
   on the content, in the text colour, never the accent; the launch
   button's fill is the platform's default button fill, the theme
@@ -26256,7 +26256,7 @@ order.
   cause named (the icons' colour, the button's fill). A test that
   an icon's pixels are the text colour and none the accent, in
   both schemes.
-- [ ] Exit: green in `workbench` root by name; guard OK; gofmt gate
+- [x] Exit: green in `workbench` root by name; guard OK; gofmt gate
   OK; one commit in workbench, push; no tag.
 
 #### CM1.4: Todos' and mindchat's symbols are drawn in their foreground, not the accent
