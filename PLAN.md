@@ -25929,7 +25929,7 @@ run, and no capture runs while the owner is at the machine
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
 #### CK10.51: Sk150's tabs show content arriving as a task in progress
-- [ ] Under [[DOMAIN#Progress]] and [[DOMAIN#Empty state]], ruled on
+- [x] Under [[DOMAIN#Progress]] and [[DOMAIN#Empty state]], ruled on
   finding 1150: content still arriving is a task in progress, not
   an empty state. Sk150's Presets and Device tabs draw "reading
   memory slots…" and "reading the device settings…" as the list's
@@ -25941,7 +25941,7 @@ run, and no capture runs while the owner is at the machine
   stands above the sentence then. A test per tab that while the
   content is arriving the sentence is centred in the frame and no
   list row is drawn, and that after it arrives it is not drawn.
-- [ ] Exit: green in `workbench/sk150` by name and workbench root;
+- [x] Exit: green in `workbench/sk150` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 #### CK10.52: The list's focus ring is drawn outside the list's box
 
