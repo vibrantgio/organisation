@@ -21,7 +21,10 @@ Something the application does because the user asked for it:
 sending the message, keeping the colour, opening a menu. Performing
 an action changes more than the control that offered it — a control
 that only records a choice, like a checkbox taking a yes, has not
-performed an action.
+performed an action. Every action a window offers through a control
+also stands in the menu bar with its key equivalent, as the platform
+requires, so an action is never offered nowhere: a control that
+goes with its pane removes nothing from the menu bar.
 
 ### Active
 
