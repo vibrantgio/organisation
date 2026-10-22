@@ -1319,3 +1319,5 @@ Rene: Give all the pros and cons for org and advise what to choose
 Rene: If we'd choose organisation it could also read as a verb
 
 Rene: organisation it is. I seem to be using full words anyway like workbench and components etc. ^0005-organisation-repository
+
+Rene: You mention where the rulings come from in the method documents. This is canon, why would we need to explain ourselves here.
