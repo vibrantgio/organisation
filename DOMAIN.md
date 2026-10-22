@@ -425,7 +425,11 @@ signals have none.
 The platform's term for a region with no content to show, and
 the text that says why: nothing selected, nothing in the
 collection, content still arriving, a read that failed. Its line is
-the application's own sentence, never the system's text. It is
+the application's own text, never the system's. The line has the
+platform's shape, measured from Mail's "No Message Selected": a few
+words in title case, stating the condition, with no period and no
+instruction. A description under it, when there is one, is a
+sentence and ends with a period. It is
 centred both ways in the frame of the region that has nothing: a
 column's full frame, the toolbar's share included, as Mail's empty
 content column shows, at the measured size in the platform's
