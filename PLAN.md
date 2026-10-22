@@ -25748,15 +25748,15 @@ run, and no capture runs while the owner is at the machine
 - [ ] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Focused]], found under
   CK10.31: an unanchored tooltip registers a focus tag of its own
   over the trigger so focus shows it, and a control inside it has
-  its own tag, so Tab stops on the same control twice. The tooltip
-  registers no focus tag of its own when its trigger is a control;
-  it shows while the control is focused by reading the control's
-  focus (the trigger's tag passed through a prop, or the focus
-  event observed on the area it already registers; say which and
-  why); a trigger that is not a control keeps the tooltip's own
-  tag so the keyboard can focus it. A test that Tab through a
-  tooltipped button stops once and the tooltip shows while the
-  button is focused.
+  its own tag, so Tab stops on the same control twice. A tooltip
+  is a signal: it takes no focus and adds no Tab stop, so the
+  tooltip registers no focus tag at all; it shows on hover, and
+  while its trigger is a focused control it shows by reading the
+  control's focus (the trigger's tag passed through a prop, or the
+  focus event observed on the area it already registers; say which
+  and why). A test that Tab through a tooltipped button stops once
+  and the tooltip shows while the button is focused, and that a
+  tooltip on a trigger that is not a control is no Tab stop.
 - [ ] Exit: green in `components` (tooltip, gallery and inventory by
   name) and every tooltip caller by name and workbench root; guard
   OK; gofmt gate OK; commit and push per repo; no tag.
