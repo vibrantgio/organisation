@@ -1582,6 +1582,30 @@ Sources: [[TRANSCRIPTS#^0005-platform-colours]],
 [[TRANSCRIPTS#^0005-new-baseline]],
 [[TRANSCRIPTS#^0005-shapes-promise-stands]]
 
+### 0011 — organisation-repository
+
+Context: the library's trunk was kept in the organisation's `.github`
+repository: DOMAIN.md, PLAN.md, TRANSCRIPTS.md, the reference, the
+reviews, the pool and the gates. GitHub shows that repository's
+profile folder on the organisation page, so the repository had two
+jobs. A dotfolder hides the trunk from tools, and the method's skills
+cannot find it from the flat checkout.
+
+Decision: the trunk is a repository of its own,
+github.com/vibrantgio/organisation, checked out as `organisation`
+beside the modules. It holds the trunk and nothing else. The
+`.github` repository keeps the profile and nothing else. Each
+module's AGENTS.md points at the organisation repository.
+
+Rationale: the name is the full word, as the module names are. It
+says whose the documents are, and it says what they do: the
+organisation of the library. Trunk is the method's word, not the
+library's; org is an abbreviation. System, library, design, plan and
+root are words the Language uses for other things.
+
+Sources: [[TRANSCRIPTS#^0005-trunk-setup]],
+[[TRANSCRIPTS#^0005-organisation-repository]]
+
 ## Example dialogue
 
 Rene: anchor doesn't even look like a chip where it stands. So how

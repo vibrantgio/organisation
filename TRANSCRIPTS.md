@@ -1307,7 +1307,7 @@ Rene: Agreed
 Rene: Agreed
 
 Rene: The current configuration for vibrantgio where the github organization contains the crunchgate method in the .github repo.
-Is there a better way to set this up?
+Is there a better way to set this up? ^0005-trunk-setup
 
 Rene: I don't like the name trunk. For vibrantgio I would almost call it vibrantgio. However that gives me a stutter I don't like.
 github.com/vibrantgio/trunk, nah don't like it. Any more ideas?
@@ -1317,3 +1317,5 @@ Rene: what it contains is the all the crunchgate method artifcats right?
 Rene: Give all the pros and cons for org and advise what to choose
 
 Rene: If we'd choose organisation it could also read as a verb
+
+Rene: organisation it is. I seem to be using full words anyway like workbench and components etc. ^0005-organisation-repository
