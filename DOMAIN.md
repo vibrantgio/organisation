@@ -971,6 +971,12 @@ down. Nothing in it is chosen; the content is never reflowed or cut.
 The control moving the visible part through content larger than its
 surface: a thumb on a track whose size mirrors how much of the
 content is visible. Operating it moves what is visible, never the content.
+It follows the platform's Show scroll bars setting: Always is the
+standing bar in a lane of its own; When scrolling is the overlay
+bar, showing while the content scrolls and under the pointer and
+fading after; Automatic, which on the platform means standing with
+a mouse and fading with a trackpad, is shown as the fading bar
+because the device driving it cannot be told.
 It shows while the content scrolls and under the pointer, and fades
 otherwise: at rest there is no thumb, and a still picture of a
 resting window holds none. A bar given a lane of its own, which the
