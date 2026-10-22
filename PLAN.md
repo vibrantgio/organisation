@@ -25449,6 +25449,24 @@ run, and no capture runs while the owner is at the machine
   `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
 
+#### CK10.22: An empty state centres in the frame its rows would occupy, outside a standing scroll bar's lane
+
+- [ ] Under [[DOMAIN#Empty state]] and [[DOMAIN#Scrollbar]], ruled
+  on finding 1106: the frame an empty state centres in is the one
+  the content would occupy, and a standing scroll bar's lane lies
+  outside it. Every region that draws the empty state and can
+  stand a bar (vaultview's rail rows, outline and backlinks
+  sections, its content column, feeds' content column, sitedocs'
+  Docs column, iconbrowser's grid, mindchat's provider field, the
+  sections CK10.15 adds) hands `shell.EmptyState` the frame less
+  the bar's lane when the setting is Always, the full frame
+  otherwise; say where each region learns the lane (the
+  `scrollbar.Style`'s width) so the subtraction is one helper, not
+  a number per app. No golden moves at WhenScrolling; a test per
+  region asserts the line's centre moves half a lane in at Always.
+- [ ] Exit: green in every app named and workbench root; guard OK;
+  gofmt gate OK; one commit in workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
