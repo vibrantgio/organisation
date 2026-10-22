@@ -25193,14 +25193,14 @@ its control posts.
 
 #### CK10.7: Every workbench window's message in place of content is the empty state
 
-- [ ] Feeds' "Select an article" in the content column and every
+- [x] Feeds' "Select an article" in the content column and every
   other message a workbench window draws in place of a column's
   content (enumerate them by reading each window's content and
   list columns: mindchat, todos, themer, sitedocs, iconbrowser,
   marketing, sk150, the workbench) take CK10.6's pattern value; a
   hand-rolled centred line goes with each. Goldens regenerate with
   the cause named per window.
-- [ ] Exit: green in every app by name and workbench root; guard
+- [x] Exit: green in every app by name and workbench root; guard
   OK; gofmt gate OK; one commit in workbench, push; no tag.
 
 #### CK10.8: A tab strip stands on the fill it is in and its trim is a hairline
