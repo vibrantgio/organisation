@@ -26469,9 +26469,16 @@ order.
   Device tabs draw it above their content-arriving phrase
   (CK10.51), centred as one group, and remove both when the
   content arrives; sk150's three phrases, the Monitor tab's
-  included, take the shape CK10.74 read. A test that the indicator is drawn at the
+  included, take the shape CK10.74 read. Ruled on finding 1197:
+  in an empty region the indicator stands above the text, centred
+  as one group; the gap between them is a DERIVED row in
+  `reference/macos/controls.md` with its arithmetic stated, the
+  indicator's measured extent the unit, until a platform window
+  that centres an indicator with text is captured; in a row the
+  text is at the leading end and the indicator at the trailing
+  end, as measured. A test that the indicator is drawn at the
   measured size and a test per tab that it stands above the
-  sentence while the content is arriving.
+  sentence at the DERIVED gap while the content is arriving.
 - [ ] Exit: green in `components` (progress, gallery and inventory
   by name), `workbench/sk150` by name and workbench root; guard
   OK; gofmt gate OK; layers gate OK; commit and push per repo; no
