@@ -25369,6 +25369,21 @@ its control posts.
   `workbench/sk150` by name and workbench root; guard OK; gofmt
   gate OK; one commit in workbench, push; no tag.
 
+#### CK10.16: The published sheet's tab strip stands on the fill it is in
+
+- [ ] Found under CK10.8: `theme/export`'s `.tabs` rule still
+  paints the strip in the sidebar material, which the Go pattern
+  no longer draws; the strip stands on the fill of the region it
+  is in, so the rule paints no background of its own (or inherits
+  the region's, say which) and its foot is the separator over that
+  fill. The `design` repo's navigation mirror scores `tabs.Render`
+  against a browser render of that rule; its bundle regenerates
+  so the mirror delivers a verdict again, with the cause named.
+- [ ] Exit: the mirror's check green on this machine as far as it
+  runs here (say what it cannot run); green in `theme` and `design`
+  by name; guard OK; gofmt gate OK; commit and push per repo; no
+  tag.
+
 #### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
 
 - [ ] The three windows gain their menu bars: vaultview (File: Open
