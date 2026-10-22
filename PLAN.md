@@ -25815,67 +25815,6 @@ run, and no capture runs while the owner is at the machine
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
-#### CK10.42: Iconbrowser's search field is drawn from the platform's field on content
-
-- [ ] Under [[DOMAIN#Search field]] and [[DOMAIN#Chrome]], ruled on
-  finding 1136: the window's own fill with content on it is
-  content, not chrome, so a search field on it is the platform's
-  text field with the search field's structure, raised as every
-  field is, never a sidebar's or a toolbar's flat recess. The
-  reference has no measurement of that field's fill, edge and
-  rounding. A capture of a platform window with a search field on
-  its content (System Settings' Keyboard Shortcuts sheet has one)
-  is taken in both schemes, stored under `reference/macos`, and its
-  fill, edge, rounding, height and the looking glass's inset are
-  read into `reference/macos/controls.md` as MEASURED rows.
-  Iconbrowser's field is then drawn from those rows through
-  `input.SearchField` (a region or variant for a field on content,
-  say which and why), and the six window goldens regenerate with
-  the cause named. In the same commit, under [[DOMAIN#Icon]] and
-  [[DOMAIN#Disclosure]], iconbrowser draws the set's chevron-down
-  for a row whose disclosure is open instead of a turned
-  chevron-right, the note says "chevron-down, for a row whose
-  disclosure is open", and `TurnedMark` and its test are renamed
-  as the chevron-down mark's. This task takes a capture: it runs only on an
-  open desktop the owner has left, under the phase's caffeinate
-  rule.
-- [ ] Exit: the two captures and the MEASURED rows are in the
-  reference; green in `components` (input by name),
-  `workbench/iconbrowser` by name and workbench root; guard OK;
-  gofmt gate OK; commit and push per repo; no tag.
-
-#### CK10.43: The standing scrollbar is drawn from the platform's measured lane, track and thumb
-- [ ] Under [[DOMAIN#Scrollbar]], ruled on findings 1137, 1144, 1145
-  and 1147: the standing bar's lane width, its track and its thumb
-  are measured into the reference per scheme, never recalled; a
-  lane exists only for a bar that is drawn; a region that scrolls
-  sideways has its bar at its bottom edge the same way. The bar at
-  Always is drawn today with no track and a 10 dp lane, and
-  vaultview's rails keep a 22 dp lane because `asideIndicator`
-  passes the rail's margin as the track's padding. Captures are
-  taken in both schemes under Show scroll bars: Always and stored
-  under `reference/macos`: Finder or Mail with rows that overflow;
-  one window whose content fits; Finder's column view with a
-  sideways bar. The lane's width, the track's fill, the thumb's
-  fill and inset, what the platform draws when the content fits (a
-  track with no thumb is a bar; no track is no lane), a list
-  row's end against the lane (finding 1164), and the sideways
-  lane's height, track and thumb are read into
-  `reference/macos/controls.md` as MEASURED rows.
-  `components/scrollbar` then draws the standing bar, upright and
-  sideways, from those rows; a column whose content fits draws what
-  the reference shows; vaultview's rails pass no padding of their
-  own and keep the one measured lane; every golden that shows a
-  standing bar regenerates with the cause named. This task takes
-  captures: it runs only on an open desktop the owner has left,
-  under the phase's caffeinate rule.
-- [ ] Exit: the captures and the MEASURED rows are in the reference;
-  a test that the bar at Always is drawn at the measured lane width
-  with the measured track, upright and sideways, and a test that
-  vaultview's rails keep the same lane as every other column; green
-  in `components` (scrollbar, list, gallery and inventory by name),
-  `patterns` and every scrollbar caller by name and workbench root;
-  guard OK; gofmt gate OK; commit and push per repo; no tag.
 #### CK10.44: Themer's style column scrolls as the box's column with its padding inside
 
 - [x] Under [[DOMAIN#Scrollbar]], found under CK10.35 (finding
@@ -26320,6 +26259,107 @@ run, and no capture runs while the owner is at the machine
   `workbench/vaultview`, `workbench/sitedocs`, `workbench/iconbrowser`
   by name and workbench root; guard OK; gofmt gate OK; one commit
   in workbench, push; no tag.
+
+#### CK10.70: Todos' add action is a toolbar action
+
+- [ ] Under [[DOMAIN#Toolbar]] and [[DOMAIN#Action]], ruled on
+  finding 1172: an action on the collection a window shows, adding
+  first of all, is a toolbar action, a bordered button with the
+  plus symbol in the label colour, as Notes' and Reminders'
+  new-item marks are measured in the reference; no action floats
+  over the content. Todos draws a round floating "+" at the page's
+  trailing bottom corner. The round button is removed; the add
+  action is a bordered toolbar button with `icons.Plus` in the
+  label colour and its key equivalent; the menu-bar item comes
+  with CK11.1. The bottom inset CK10.48 kept under the last row
+  for the button is removed with it. A test that the toolbar
+  draws the add button and the page draws no floating button.
+- [ ] Exit: green in `workbench/todos` by name and workbench root;
+  guard OK; gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CK10.71: Iconbrowser's search field is drawn from the platform's field on content
+
+- [ ] Under [[DOMAIN#Search field]] and [[DOMAIN#Chrome]], ruled on
+  finding 1136: the window's own fill with content on it is
+  content, not chrome, so a search field on it is the platform's
+  text field with the search field's structure, raised as every
+  field is, never a sidebar's or a toolbar's flat recess. The
+  reference has no measurement of that field's fill, edge and
+  rounding. A capture of a platform window with a search field on
+  its content (System Settings' Keyboard Shortcuts sheet has one)
+  is taken in both schemes, stored under `reference/macos`, and its
+  fill, edge, rounding, height and the looking glass's inset are
+  read into `reference/macos/controls.md` as MEASURED rows.
+  Iconbrowser's field is then drawn from those rows through
+  `input.SearchField` (a region or variant for a field on content,
+  say which and why), and the six window goldens regenerate with
+  the cause named. In the same commit, under [[DOMAIN#Icon]] and
+  [[DOMAIN#Disclosure]], iconbrowser draws the set's chevron-down
+  for a row whose disclosure is open instead of a turned
+  chevron-right, the note says "chevron-down, for a row whose
+  disclosure is open", and `TurnedMark` and its test are renamed
+  as the chevron-down mark's. This task takes a capture: it runs only on an
+  open desktop the owner has left, under the phase's caffeinate
+  rule.
+- [ ] Exit: the two captures and the MEASURED rows are in the
+  reference; green in `components` (input by name),
+  `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
+
+#### CK10.72: The standing scrollbar is drawn from the platform's measured lane, track and thumb
+- [ ] Under [[DOMAIN#Scrollbar]], ruled on findings 1137, 1144, 1145
+  and 1147: the standing bar's lane width, its track and its thumb
+  are measured into the reference per scheme, never recalled; a
+  lane exists only for a bar that is drawn; a region that scrolls
+  sideways has its bar at its bottom edge the same way. The bar at
+  Always is drawn today with no track and a 10 dp lane, and
+  vaultview's rails keep a 22 dp lane because `asideIndicator`
+  passes the rail's margin as the track's padding. Captures are
+  taken in both schemes under Show scroll bars: Always and stored
+  under `reference/macos`: Finder or Mail with rows that overflow;
+  one window whose content fits; Finder's column view with a
+  sideways bar. The lane's width, the track's fill, the thumb's
+  fill and inset, what the platform draws when the content fits (a
+  track with no thumb is a bar; no track is no lane), a list
+  row's end against the lane (finding 1164), and the sideways
+  lane's height, track and thumb are read into
+  `reference/macos/controls.md` as MEASURED rows.
+  `components/scrollbar` then draws the standing bar, upright and
+  sideways, from those rows; a column whose content fits draws what
+  the reference shows; vaultview's rails pass no padding of their
+  own and keep the one measured lane; every golden that shows a
+  standing bar regenerates with the cause named. This task takes
+  captures: it runs only on an open desktop the owner has left,
+  under the phase's caffeinate rule.
+- [ ] Exit: the captures and the MEASURED rows are in the reference;
+  a test that the bar at Always is drawn at the measured lane width
+  with the measured track, upright and sideways, and a test that
+  vaultview's rails keep the same lane as every other column; green
+  in `components` (scrollbar, list, gallery and inventory by name),
+  `patterns` and every scrollbar caller by name and workbench root;
+  guard OK; gofmt gate OK; commit and push per repo; no tag.
+
+
+#### CK10.73: Todos' delete mark is drawn as the platform draws a control inside a row
+
+- [ ] Under [[DOMAIN#Action]], ruled on finding 1173: when a control
+  inside a row is drawn (at rest, under the pointer or on the
+  selected row) is read from the platform's lists, never assumed.
+  Todos draws every row's delete mark at full size all the time.
+  `reference/macos/reminders-window.png` is read first for the rows
+  at rest; one capture of Reminders in both schemes with a row
+  under the pointer and a row selected is taken, stored under
+  `reference/macos`, and read into `reference/macos/controls.md` as
+  MEASURED rows; the delete mark is then drawn as the capture
+  shows. This task takes a capture: it runs only on an open
+  desktop the owner has left, under the phase's caffeinate rule.
+- [ ] Exit: the captures and the MEASURED rows are in the reference;
+  a test that the mark is drawn in the states the rows name and
+  not in the others; green in `workbench/todos` by name and
+  workbench root; guard OK; gofmt gate OK; commit and push per
+  repo; no tag.
+
 
 ### G-CK11: Every window offers its actions through the menu bar
 

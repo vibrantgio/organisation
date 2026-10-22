@@ -3829,7 +3829,4 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 ## HJ. From CK10.48, todos' add button
 
-Filed 2026-10-22 from the fresh-eyes review of CK10.48. The reviewer's first complaint, the unchecked checkbox's faint edge on white, is already on the capture list (an enabled unchecked checkbox beside a switched-off one), and the delete mark's accent colour is CK10.59's.
-
-1172. **[note]** **Todos' add button is a floating round button, which no platform list window draws.** The platform puts a list's add action in the toolbar or in a bordered +/- pair under the list, and under [[DOMAIN#Platform]] the window looks like a macOS window; todos keeps the button's height and the page's padding below its last row only because the button floats over the list. Whether todos' add action moves to the toolbar or to a +/- pair under the list, which would also return that space to the rows, is unasked.
-1173. **[note]** **Every todo row draws its delete mark at full size at all times.** The mark is a 22 px glyph on each row, about the size of the row's text, so a column of eight marks outweighs the todos themselves; the platform's lists draw a per-row delete as a muted glyph shown under the pointer, or reach it from a context menu. CK10.59 rules the mark's colour; whether the mark is drawn only on the row under the pointer, or smaller, is unasked.
+Filed 2026-10-22 from the fresh-eyes review of CK10.48. Findings 1172 and 1173 are ruled and planned as CK10.70 and CK10.73. Nothing stays open.
