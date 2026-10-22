@@ -25398,6 +25398,24 @@ run, and no capture runs while the owner is at the machine
   name and workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
 
+#### CK10.19: A scroll bar with a transparent track paints nothing for it
+
+- [ ] Found under CK10.11: `components/scrollbar`'s `Style.Layout`
+  fills the track rectangle with `TrackColor` even when its alpha
+  is zero, so a fully transparent 10 dp path enters the frame and
+  shifts antialiased glyph edges in prose nowhere near it (sitedocs'
+  Docs goldens moved by 31 and 145 pixels of at most 3 in 255 for
+  a bar that does not stand). The track is painted only when its
+  colour has alpha; the thumb is unaffected. Goldens across the
+  windows regenerate only where the drift reverses, each named
+  with the cause; the bar's own pixels move nowhere.
+- [ ] Exit: a test in `components/scrollbar` that a transparent
+  track leaves the op stream byte-identical to no bar at all;
+  sitedocs' Docs goldens return to their pre-CK10.11 bytes or the
+  difference is named; green in `components` and every app by
+  name and workbench root; guard OK; gofmt gate OK; commit and
+  push per repo; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
