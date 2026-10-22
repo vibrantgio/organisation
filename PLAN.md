@@ -26428,6 +26428,23 @@ run, and no capture runs while the owner is at the machine
   gate OK; commit and push per repo; no tag.
 
 
+#### CK10.77: Iconbrowser's marks section renders each mark once at the catalogue's size
+
+- [ ] Under [[DOMAIN#Icon]], ruled on finding 1140 by the owner:
+  the marks section renders each mark once at the catalogue's
+  size, and its note names the three sizes the set ships, 16, 20
+  and 24 dp; there is no second rendering. The section draws each
+  mark at 16, 20 and 24 dp today, the 16 dp chevron-down about
+  6 px wide at 1x, under a catalogue at 40 dp. The three cells per
+  mark become one at the catalogue's size; the note's words follow
+  the Icon entry; the window goldens regenerate with the cause
+  named (the marks' cells). A test that each mark is drawn once at
+  the catalogue's cell size.
+- [ ] Exit: green in `workbench/iconbrowser` by name and workbench
+  root; guard OK; gofmt gate OK; one commit in workbench, push; no
+  tag.
+
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
