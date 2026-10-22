@@ -123,7 +123,7 @@ about content — read, not used. One purpose, three utterances:
 
 | Utterance | Example | Fill |
 |---|---|---|
-| a word | "Popular" | the status's system colour at full strength with white text, as the platform draws a count badge; Neutral wears the system grey |
+| a word | "Popular" | the status's system colour at full strength with white text, as the platform draws a count badge; Neutral is in the system grey |
 | a count | the unread 9 | the same |
 | a symbol | the key-check verdict | may stand bare, the symbol in the status's system colour — the symbol's shape gives the meaning; the green check and the red cross differ by form before they differ by hue |
 
