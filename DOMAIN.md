@@ -1376,7 +1376,10 @@ The signal naming a control or explaining another signal on demand:
 a small annotation floating at level 3 beside its trigger, appearing
 by itself after a short delay on hover or focus and leaving when they
 do. It holds text only, never a control; anything the user must
-operate is the job for a popover. It is filled with the window's
+operate is the job for a popover. It is a signal: it takes no focus
+and adds no Tab stop. Its attachment places it in the available room
+beside the trigger, inside the window, never cut off, as it places
+every floating surface. It is filled with the window's
 own background inside a separator hairline, its text in the text
 colour, the same in both schemes, and it has no status. The
 tooltip and the toast are the two floating signals that tell about a
