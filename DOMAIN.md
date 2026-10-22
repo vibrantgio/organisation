@@ -637,7 +637,8 @@ control is in that control's foreground, never the accent. On the
 content, an application's icon, an avatar and a symbol in a row are
 in the text colour. The accent marks the selected entry and fills
 the one action; it tints a symbol only where a measured platform
-window does. Inside a
+window does, as it tints a control inside a content list's row,
+measured from Reminders'. Inside a
 control's structure an icon is a part, not a signal of its own.
 A mark is named by what it depicts, never by what it does: one
 mark serves several actions, and the same picture has one name. A
