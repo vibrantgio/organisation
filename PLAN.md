@@ -26328,8 +26328,11 @@ run, and no capture runs while the owner is at the machine
   `components/scrollbar` then draws the standing bar, upright and
   sideways, from those rows; a column whose content fits draws what
   the reference shows; vaultview's rails pass no padding of their
-  own and keep the one measured lane; every golden that shows a
-  standing bar regenerates with the cause named. This task takes
+  own and keep the one measured lane; the thumb's travel against
+  the content's follows the measured track ends (finding 1174:
+  sk150's thumb moves 13 px for a 50 px scroll where its length
+  implies 16); every golden that shows a standing bar regenerates
+  with the cause named. This task takes
   captures: it runs only on an open desktop the owner has left,
   under the phase's caffeinate rule.
 - [ ] Exit: the captures and the MEASURED rows are in the reference;
