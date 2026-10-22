@@ -25654,6 +25654,24 @@ run, and no capture runs while the owner is at the machine
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
+#### CK10.33: Iconbrowser's page scrolls as the column with its padding inside
+
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Column]], ruled on
+  finding 1128: the region that scrolls is the column and its
+  padding is inside it; the bar is at the column's trailing edge,
+  never inset by the padding. Iconbrowser lays its grid inside the
+  page's 12 dp padding, so its bar is drawn 12 dp in from the
+  window's trailing edge. The scrolling region becomes the page's
+  column with the padding inside it, the bar at the window's
+  trailing edge; the grid's cell count is taken from the width
+  inside the padding and, at Always, less the lane. The six
+  window goldens regenerate with the cause named (the grid's
+  width inside the padding; no bar at WhenScrolling).
+- [ ] Exit: a test that the bar at Always is drawn against the
+  window's trailing edge; green in `workbench/iconbrowser` by name
+  and workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
