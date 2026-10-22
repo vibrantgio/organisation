@@ -25368,12 +25368,12 @@ run, and no capture runs while the owner is at the machine
 - [ ] Under [[DOMAIN#Tabs]] (the active tab's content stands on the
   fill the strip stands on; the tab's content is content, never a
   pane): `patterns/tabs` paints its whole frame in the content fill
-  before the strip takes the handed one, so a caller handing
+  before the strip is painted in the fill the caller passes, so a caller passing
   another fill gets a strip on one fill over content on another.
-  The pattern paints the handed fill under the tab's content as
+  The pattern paints the passed fill under the tab's content as
   well (or paints nothing of its own and the caller's fill shows
   through, say which and why), and its comments say "the tab's
-  content", never "the pane". Every caller today hands the content
+  content", never "the pane". Every caller today passes the content
   plane's values, so no golden moves; a test holds the content's
   fill equal to the strip's in both schemes for a handed fill that
   differs from the content plane.
@@ -25388,12 +25388,12 @@ run, and no capture runs while the owner is at the machine
   1099: a rescan that fails and leaves the vault's content as it
   was is an event, so the toast stands; its body is the
   application's own sentence, "The vault couldn't be rescanned.",
-  and the system's text goes to the log with the vault's path, as
+  and the system's text is written to the log with the vault's path, as
   the unreadable vault's does in CK10.10. `vaultRescanned`'s
-  `notifications.Request(toast.Warning, m.err)` takes the sentence;
+  `notifications.Request(toast.Warning, m.err)` shows the sentence;
   the log line is written where the rescan's error is caught.
 - [ ] Exit: a test that a failed rescan raises the toast with the
-  sentence and not the system's text, and that the log carries the
+  sentence and not the system's text, and that the log holds the
   system's text with the path; green in `workbench/vaultview` by
   name and workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
@@ -25458,9 +25458,9 @@ run, and no capture runs while the owner is at the machine
   stand a bar (vaultview's rail rows, outline and backlinks
   sections, its content column, feeds' content column, sitedocs'
   Docs column, iconbrowser's grid, mindchat's provider field, the
-  sections CK10.15 adds) hands `shell.EmptyState` the frame less
+  sections CK10.15 adds) passes `shell.EmptyState` the frame less
   the bar's lane when the setting is Always, the full frame
-  otherwise; say where each region learns the lane (the
+  otherwise; say where each region reads the lane (the
   `scrollbar.Style`'s width) so the subtraction is one helper, not
   a number per app. No golden moves at WhenScrolling; a test per
   region asserts the line's centre moves half a lane in at Always.
@@ -25471,7 +25471,7 @@ run, and no capture runs while the owner is at the machine
 
 - [ ] Under [[DOMAIN#Empty state]], ruled on finding 1111: a column
   whose content failed to arrive keeps its place and shows its own
-  empty state. Sitedocs' Docs page drops its outline column when
+  empty state. Sitedocs' Docs page removes its outline column when
   the guide cannot be loaded; the column stays at its width and
   draws "No headings." centred in its frame at its rows' size in
   the tertiary label, through `shell.EmptyState`, while the
@@ -25483,18 +25483,18 @@ run, and no capture runs while the owner is at the machine
   `workbench/sitedocs` by name and workbench root; guard OK; gofmt
   gate OK; one commit in workbench, push; no tag.
 
-#### CK10.24: Sk150's empty state drops the repeated status and the demo button names its duration
+#### CK10.24: Sk150's empty state loses the repeated status and the demo button names its duration
 
 - [ ] Under [[DOMAIN#Empty state]], [[DOMAIN#Status]] and
   [[DOMAIN#Tooltip]], ruled on findings 1114 and 1115. While no
   SK150 is connected the connection status stands twice: in the
   header's status line, which is the status signal for the
   connection and stays, and as the empty state's description,
-  which goes, since a description says what the line does not and
+  which is removed, since a description says what the line does not and
   repeats nothing the window already shows. The demo's duration is
   what the control does, so the demo button gains the tooltip
   "Shows demo readings until you quit" through `components/tooltip`
-  as the other workbench buttons carry theirs. Goldens regenerate
+  as the other workbench buttons have theirs. Goldens regenerate
   only if one holds the empty state, with the cause named; a test
   holds the description empty and the tooltip's text.
 - [ ] Exit: green in `workbench/sk150` by name and workbench root;
@@ -25505,7 +25505,7 @@ run, and no capture runs while the owner is at the machine
 Under [[DOMAIN#Action]]: every action a window
 offers through a control also stands in the menu bar with its key
 equivalent, as the platform requires, so an action is never offered
-nowhere; a control that goes with its pane removes nothing from the
+nowhere; a control that is hidden with its pane removes nothing from the
 menu bar. Mindchat has a menu bar; feeds gains one in CK10.3; the
 other eight workbench windows have none and are defects under the
 entry. Each gains the platform's menu bar through `mvu/desktop`'s
@@ -25537,7 +25537,7 @@ its control posts.
   selectable, else none beyond the platform's; the application
   menu's standard items), sitedocs (View: the five tabs on their
   chords), iconbrowser (Edit: Find), marketing (none beyond the
-  platform's standard items, which the bar still carries), sk150
+  platform's standard items, which the bar still holds), sk150
   (File: Connect, Save; Edit: the presets' acts); the worker reads
   each window and lists the table. No composition change; goldens
   do not move.
