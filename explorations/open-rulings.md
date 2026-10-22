@@ -3834,3 +3834,12 @@ Filed 2026-10-22 from CK10.73. Findings 1193 to 1196 are ruled: 1193 is in CM1.3
 ## HT. From CK10.74, the indeterminate indicator
 
 Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stays open.
+
+## HU. From CK10.76, the status bar
+
+Filed 2026-10-22 from CK10.76, from the captures and rows of "What the status
+bar measures" in `reference/macos/controls.md`.
+
+1198. **[decide]** **The status bar's light seam reads `#d9d9d9`, while the seam the library draws reads `#e6e6e6`.** Finder's status bar draws its seam at `#d9d9d9` in light over every column of `finder-status-bar-fits-light.png`, 13 levels darker than the `seam` row of `nscolors.tsv`, which is read off Mail's list seam and is what sk150's Device grid draws above its footer; the dark seam is `#000000` in both. The ruling is whether the seam across a column above a footer of status text takes the status bar's light value or keeps the one seam value.
+1199. **[decide]** **The status bar's text is centred 5 px to the leading side of the window's middle.** In Finder's status bar the text's middle is at x 394–394.5 in an 800 px window for two strings 13 px apart in width, so the offset is constant; sk150's footer centres its text on the window's middle. The captures do not show the offset's cause: the 10 × 10 px grey × drawn at the bar's leading end, x 9–18, is one candidate. The ruling is whether a footer of status text reproduces the offset, and what the × is.
+1200. **[decide]** **Sk150's Device footer holds a sentence of explanation, not only status.** The footer reads "Link: 9600 baud, Modbus address 1 — changing either needs a power cycle, so this app leaves them alone.", 516 px of a 720 px window, where Finder's status bar holds a short fact; the fresh-eyes review of CK10.76 read the second half as help text. The ruling is whether the footer keeps the link settings only and the explanation moves beside the settings or into help.

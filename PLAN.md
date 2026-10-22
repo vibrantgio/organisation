@@ -26116,7 +26116,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.76: Sk150's Device footer is drawn from the platform's measured status bar
 
-- [ ] Under [[DOMAIN#Footer]], ruled on finding 1177: a footer of
+- [x] Under [[DOMAIN#Footer]], ruled on finding 1177: a footer of
   status text has the height and the text's place the platform's
   status bar is measured with, from Finder's, never recalled; the
   reference has no status bar row. A capture of Finder's window
@@ -26127,7 +26127,7 @@ run, and no capture runs while the owner is at the machine
   rows. Sk150's Device footer is then drawn from those rows. This
   task takes a capture: it runs only on an open desktop the owner
   has left, under the phase's caffeinate rule.
-- [ ] Exit: the captures and the MEASURED rows are in the reference;
+- [x] Exit: the captures and the MEASURED rows are in the reference;
   a test that the footer's text is at the measured place; green
   in `workbench/sk150` by name and workbench root; guard OK; gofmt
   gate OK; commit and push per repo; no tag.
