@@ -25205,7 +25205,7 @@ its control posts.
 
 #### CK10.8: A tab strip stands on the fill it is in and its trim is a hairline
 
-- [ ] Ruled by the ontology session 2026-10-22 on finding 1080
+- [x] Ruled by the ontology session 2026-10-22 on finding 1080
   under the Chrome entry (188b712): a tab strip has no fill of its
   own; it stands on the fill it is in, and its trim is a hairline.
   `patterns/tabs` paints its strip band in the sidebar material
@@ -25218,7 +25218,7 @@ its control posts.
   inventory, feeds, sitedocs and sk150 regenerate with the cause
   named per golden: the strip's band now reads the column's fill.
   Nothing else moves.
-- [ ] Exit: a test in `patterns/tabs` that the strip's band reads
+- [x] Exit: a test in `patterns/tabs` that the strip's band reads
   the fill it was given in both schemes; green in `patterns`,
   `components/gallery` and every app named, and workbench root;
   guard OK; gofmt gate OK; commit and push per repo; no tag.
