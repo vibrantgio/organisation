@@ -25854,6 +25854,24 @@ run, and no capture runs while the owner is at the machine
   every scrollbar caller by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
+#### CK10.44: Themer's style column scrolls as the box's column with its padding inside
+
+- [ ] Under [[DOMAIN#Scrollbar]], found under CK10.35 (finding
+  1146): the bar is at the trailing edge of the region that
+  scrolls, with the region's padding inside it, never inset by the
+  padding. Themer's style column is laid out inside its titled
+  box's padding, so its bar is drawn 12 dp in from the box's
+  trailing edge, 2 dp from the marked row. The scrolling region
+  becomes the box's column with the padding inside it, the bar at
+  the box's trailing edge, the rows stopping short of the lane at
+  Always and widening to the edge at WhenScrolling. The themer
+  goldens regenerate with the cause named (the bar's edge and the
+  rows' width).
+- [ ] Exit: a test that the bar at Always is drawn against the
+  box's trailing edge; green in `workbench/themer` by name and
+  workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
