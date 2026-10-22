@@ -1290,3 +1290,8 @@ Rene: Draft all five, one at a time
 Rene: You don't mention where the evidence is placed relative to the method document files
 
 Rene: I agree, draft the next one.
+
+Rene: The wording you use consistently mentions "word" where "term" would be more appropriate.
+For the drafts in the method I'd like you to use "term" instead of "word" where that would fit.
+The reason is that I don't want the method infected with this kind of formulation.
+Please push back if you don't agree.
