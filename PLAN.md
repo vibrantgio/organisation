@@ -26262,20 +26262,22 @@ order.
 #### CM1.4: Todos' and mindchat's symbols are drawn in their foreground, not the accent
 
 - [ ] Under [[DOMAIN#Icon]], ruled on findings 1161 and 1162: an
-  icon in a control is in that control's foreground, never the
-  accent, and a symbol on the content is in the text colour.
-  Todos draws its add and delete symbols in the accent and
-  mindchat draws the assistant's avatar symbol in the accent. The
-  add symbol is drawn in the button's foreground, the label colour;
-  the row's delete mark in the row's text colour; the avatar in the
-  transcript's text colour. `Icon: p.ControlAccent` is removed
+  icon in a control is in that control's foreground, and a symbol
+  on the content is in the text colour; the accent tints a symbol
+  only where a measured platform window does, as it tints a
+  control inside a content list's row, measured from Reminders'.
+  Todos draws its add symbol in the accent and mindchat draws the
+  assistant's avatar symbol in the accent. The add symbol is drawn
+  in the button's foreground, the label colour; the avatar in the
+  transcript's text colour; the row's delete mark keeps the
+  measured accent (CK10.73). `Icon: p.ControlAccent` is removed
   from both palettes. Goldens regenerate with the cause named (the
-  symbols' colour). A test per app that a symbol's pixels are its
-  foreground and none the accent, in both schemes.
+  symbols' colour). A test per app that the add symbol's and the
+  avatar's pixels are their foreground and none the accent, in
+  both schemes.
 - [ ] Exit: green in `workbench/todos`, `workbench/mindchat` by
   name and workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
-
 #### CM1.5: Every mark in the icon set is named by what it depicts
 
 - [ ] Under [[DOMAIN#Icon]], ruled on findings 944 and 1163: a mark
