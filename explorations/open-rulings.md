@@ -3813,3 +3813,11 @@ sitedocs' Docs column now draw `patterns/shell`'s `EmptyState`. What the
 work left open, and what it found beside its own subject, stands here.
 
 1112. **[note]** **The location the failed guide names is the checkout's, whichever source actually failed.** The description under "This guide can't be loaded." is the first candidate path resolved against the process's own directory, so in a checkout it names the file that is missing. A `go run …@latest` install has no checkout at all: the leg that really failed is the fetch of the canonical URL, and the path the reader is shown is one that was never going to exist. Whether the description should name the source whose failure was last, rather than the location the guide belongs at, is unasked.
+
+## GM. From CK10.20, the Docs column's viewport
+
+Filed 2026-10-22 from the work itself: sitedocs' Docs column is now one
+full-width scrolling viewport with the document's blocks capped at the
+measure and centred in it. What the work left open is listed here.
+
+1117. **[note]** **A Docs column narrower than the measure loses its leading blank.** The column now passes the 24 dp blank as markdown's `Gutter` on the trailing side only. While the column is wider than 744 dp the measure is centred and both sides have blank; below that, markdown's seating rule gives the blocks the width that is left with a lead of zero, so the prose runs against the outline column's edge. The window has no minimum width, so a reader who narrows it reaches this state. Whether markdown should keep a leading margin as well when the measure no longer fits, or the Docs column should state a minimum width, is unasked.

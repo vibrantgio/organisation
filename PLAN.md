@@ -25418,7 +25418,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.20: Sitedocs' Docs column scrolls as a whole with its bar at the pane's edge
 
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Measure]], ruled on
+- [x] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Measure]], ruled on
   finding 1102: the bar stands at the trailing edge of the region
   that scrolls, whatever the measure of the content inside; the
   region scrolls as a whole and the measure caps the text within
@@ -25430,7 +25430,7 @@ run, and no capture runs while the owner is at the machine
   the measure and centred inside it, the bar at the pane's edge
   like the other tabs'. The Docs goldens regenerate with the cause
   named (the measure centred, the bar at the pane's edge).
-- [ ] Exit: a test that the Docs column's bar stands at the pane's
+- [x] Exit: a test that the Docs column's bar stands at the pane's
   trailing edge at Always and the document's blocks centre on the
   column; green in `workbench/sitedocs` by name and workbench
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
