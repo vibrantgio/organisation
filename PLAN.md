@@ -26077,7 +26077,7 @@ run, and no capture runs while the owner is at the machine
   guard OK; commit and push in `.github`; no tag.
 #### CK10.73: Todos' delete mark is drawn as the platform draws a control inside a row
 
-- [ ] Under [[DOMAIN#Action]], ruled on finding 1173: when a control
+- [x] Under [[DOMAIN#Action]], ruled on finding 1173: when a control
   inside a row is drawn (at rest, under the pointer or on the
   selected row) is read from the platform's lists, never assumed.
   Todos draws every row's delete mark at full size all the time.
@@ -26088,7 +26088,7 @@ run, and no capture runs while the owner is at the machine
   MEASURED rows; the delete mark is then drawn as the capture
   shows. This task takes a capture: it runs only on an open
   desktop the owner has left, under the phase's caffeinate rule.
-- [ ] Exit: the captures and the MEASURED rows are in the reference;
+- [x] Exit: the captures and the MEASURED rows are in the reference;
   a test that the mark is drawn in the states the rows name and
   not in the others; green in `workbench/todos` by name and
   workbench root; guard OK; gofmt gate OK; commit and push per
