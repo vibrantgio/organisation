@@ -25914,7 +25914,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.46: Todos' list keeps its scroll position across changes to a todo
 
-- [ ] Found under CK10.36 (finding 1148): todos' `List` builds a new
+- [x] Found under CK10.36 (finding 1148): todos' `List` builds a new
   `complist.State` on each theme or model emission, so ticking or
   deleting a todo in a scrolled list draws the list from its first
   row again and the bar's thumb jumps to the top. The list's state
@@ -25922,7 +25922,7 @@ run, and no capture runs while the owner is at the machine
   and is passed to each layout; a change to a todo keeps the
   scroll position. A test that after scrolling to the end and
   ticking the last todo the first visible row is unchanged.
-- [ ] Exit: green in `workbench/todos` by name and workbench root;
+- [x] Exit: green in `workbench/todos` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
 #### CK10.47: Todos' empty list and vaultview's folder with no subfolders have an empty state
