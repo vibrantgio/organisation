@@ -25381,6 +25381,22 @@ run, and no capture runs while the owner is at the machine
   sitedocs, sk150) and workbench root; guard OK; gofmt gate OK;
   commit and push per repo; no tag.
 
+#### CK10.18: A rescan that fails tells the reader in vaultview's own words
+
+- [ ] Under [[DOMAIN#Status]] and [[DOMAIN#Toast]], ruled on finding
+  1099: a rescan that fails and leaves the vault's content as it
+  was is an event, so the toast stands; its body is the
+  application's own sentence, "The vault couldn't be rescanned.",
+  and the system's text goes to the log with the vault's path, as
+  the unreadable vault's does in CK10.10. `vaultRescanned`'s
+  `notifications.Request(toast.Warning, m.err)` takes the sentence;
+  the log line is written where the rescan's error is caught.
+- [ ] Exit: a test that a failed rescan raises the toast with the
+  sentence and not the system's text, and that the log carries the
+  system's text with the path; green in `workbench/vaultview` by
+  name and workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
