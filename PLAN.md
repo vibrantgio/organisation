@@ -25203,6 +25203,50 @@ its control posts.
 - [ ] Exit: green in every app by name and workbench root; guard
   OK; gofmt gate OK; one commit in workbench, push; no tag.
 
+#### CK10.8: A tab strip stands on the fill it is in and its trim is a hairline
+
+- [ ] Ruled by the ontology session 2026-10-22 on finding 1080
+  under the Chrome entry (188b712): a tab strip has no fill of its
+  own; it stands on the fill it is in, and its trim is a hairline.
+  `patterns/tabs` paints its strip band in the sidebar material
+  and rules its foot with the separator flattened onto that
+  material; the band's fill goes, the strip stands on whatever
+  fill its caller painted, and the foot's hairline is the
+  separator flattened onto that fill (the pattern takes the fill
+  it stands on from its props, as the toolbar's shares do, say
+  the field). The goldens of `patterns/tabs`, the gallery's
+  inventory, feeds, sitedocs and sk150 regenerate with the cause
+  named per golden: the strip's band now reads the column's fill.
+  Nothing else moves.
+- [ ] Exit: a test in `patterns/tabs` that the strip's band reads
+  the fill it was given in both schemes; green in `patterns`,
+  `components/gallery` and every app named, and workbench root;
+  guard OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.9: Feeds' Share is a bordered button titled with the share symbol
+
+- [ ] Ruled by the ontology session 2026-10-22 on finding 1081
+  under the Toolbar entry: a toolbar action is a button, bordered,
+  titled with a symbol or text in the label colour, never a word
+  in the accent and never a link. Feeds' Share stands at the
+  trailing end of the toolbar's share over the article as the word
+  "Share" in the accent with the pointing hand; it becomes the
+  toolbar's bordered button, as the pane toggle and the other
+  toolbar buttons are built, titled with the platform's share
+  symbol. `components/icons` gains that mark, named by its picture
+  under the Icon rule (a box open at the top with an arrow rising
+  out of it; name it for the picture, say the name), drawn in the
+  set's own grammar (square forms rounded at the set's radius,
+  the arrow's head as the set's chevrons, clearance of one device
+  pixel in the renderer), with its golden in the icon set. The
+  button opens the same popover the word opened, its message
+  unchanged. Feeds' goldens regenerate with the cause named.
+- [ ] Exit: a test in feeds that the Share button is the toolbar
+  button style in the label colour and no accent pixel stands at
+  its site; green in `components` and `workbench/feeds` by name
+  and workbench root; guard OK; gofmt gate OK; commit and push per
+  repo; no tag.
+
 #### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
 
 - [ ] The three windows gain their menu bars: vaultview (File: Open
