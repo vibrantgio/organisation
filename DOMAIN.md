@@ -1259,7 +1259,10 @@ columns, sortable and filterable, however many rows there are.
 
 The pattern dividing content into parts shown one at a time: a horizontal
 strip of titles, the active tab underlined, the active tab's content
-below.
+below. The strip has no fill of its own: it stands on the fill of
+the region it is in, its trim is a hairline, and the active tab's
+content stands on the same fill. The tab's content is content,
+never a pane.
 
 ### Testimonial
 
