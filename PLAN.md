@@ -25754,7 +25754,7 @@ run, and no capture runs while the owner is at the machine
   focus (the trigger's tag passed through a prop, or the focus
   event observed on the area it already registers; say which and
   why); a trigger that is not a control keeps the tooltip's own
-  tag so the keyboard can reach it. A test that Tab through a
+  tag so the keyboard can focus it. A test that Tab through a
   tooltipped button stops once and the tooltip shows while the
   button is focused.
 - [ ] Exit: green in `components` (tooltip, gallery and inventory by
