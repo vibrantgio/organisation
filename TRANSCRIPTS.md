@@ -1226,3 +1226,5 @@ sessions that own them to edit them. Your judgement should be
 followed. I see that vibrantgio is using strange language in its
 PLAN.md sometimes. An example "CK7.4: Mindchat stands on the shell"
 ^0005-ontology-judgement-followed
+
+Rene: Take a break please, I'd like to discuss something with you.
