@@ -25416,6 +25416,26 @@ run, and no capture runs while the owner is at the machine
   name and workbench root; guard OK; gofmt gate OK; commit and
   push per repo; no tag.
 
+#### CK10.20: Sitedocs' Docs column scrolls as a whole with its bar at the pane's edge
+
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Measure]], ruled on
+  finding 1102: the bar stands at the trailing edge of the region
+  that scrolls, whatever the measure of the content inside; the
+  region scrolls as a whole and the measure caps the text within
+  it, centred when the region is wider. Sitedocs' Docs column caps
+  its measure at 720 dp, keeps its left edge and stands its bar at
+  the measure's trailing edge (x 1044 in a 1180 dp window) while
+  every other tab's bar stands at the pane's edge (x 1156). The
+  column becomes a full-width viewport whose document is capped at
+  the measure and centred inside it, the bar at the pane's edge
+  like the other tabs'. The Docs goldens regenerate with the cause
+  named (the measure centred, the bar at the pane's edge).
+- [ ] Exit: a test that the Docs column's bar stands at the pane's
+  trailing edge at Always and the document's blocks centre on the
+  column; green in `workbench/sitedocs` by name and workbench
+  root; guard OK; gofmt gate OK; one commit in workbench, push; no
+  tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
