@@ -25672,6 +25672,60 @@ run, and no capture runs while the owner is at the machine
   and workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
 
+#### CK10.34: The anchor choice is stated once in the list component
+
+- [ ] Found under CK10.29: `components/picker`'s menu passes
+  `list.Overlay` whatever the setting and cannot call
+  `shell.BarAnchor`, since components is below patterns. The
+  choice moves down: `components/list` gains the function (say
+  its name) that returns Occupy when the bar stands and Overlay
+  when it fades, reading the `scrollbar.Style` as `shell.BarAnchor`
+  does; `shell.BarAnchor` is deleted and every caller calls the
+  list's function; `shell.EmptyStateFrame` reads the same fact
+  through it. The picker's menu passes the function's result for
+  the style its Scrollbar prop resolves. No pixel moves at
+  WhenScrolling; the picker's test from CK10.5 gains the Occupy
+  case at Always.
+- [ ] Exit: green in `components` (picker, list, gallery and
+  inventory by name), `patterns` and every app that called
+  `shell.BarAnchor` by name and workbench root; guard OK; gofmt
+  gate OK; layers gate OK; commit and push per repo; no tag.
+
+#### CK10.35: A fading scrollbar takes no lane in the transcript, the note and the style column
+
+- [ ] Under [[DOMAIN#Scrollbar]], found under CK10.29: mindchat's
+  transcript, vaultview's note column and themer's style column
+  pass `list.Occupy` whatever the setting, so at When scrolling
+  and Automatic an empty lane stands where the entry says the bar
+  takes none. Each passes the list's anchor function (CK10.34)
+  instead; the rows widen by the lane at WhenScrolling and the
+  goldens that hold these columns regenerate with the cause named
+  (the lane given back to the rows; vaultview's note measure
+  recentres by half a lane through CK10.27's rule).
+- [ ] Exit: a test per column that the rows reach the trailing edge
+  at WhenScrolling and stop short of the lane at Always; green in
+  `workbench/mindchat`, `workbench/vaultview`, `workbench/themer`
+  by name and workbench root; guard OK; gofmt gate OK; one commit
+  in workbench, push; no tag.
+
+#### CK10.36: Todos' list, sk150's lists and vaultview's picker and chooser draw the window's scrollbar
+
+- [ ] Under [[DOMAIN#Scrollbar]], found under CK10.29 and ruled on
+  finding 1120: every region that scrolls has a scrollbar. Todos'
+  list, sk150's presets and device lists, and vaultview's picker
+  and chooser scroll with no bar. Each draws the window's bar
+  with the setting the window reads, through the seam CK10.4
+  gave the apps (todos and sk150 gain it if they do not read it;
+  say the seam), the anchor from the list's function; their empty
+  states, where one exists, pass their frame through
+  `EmptyStateFrame`. Goldens regenerate only where a bar is drawn
+  at rest, with the cause named.
+- [ ] Exit: a test per region that a bar is drawn at Always and the
+  rows stop short of the lane; green in `workbench/todos`,
+  `workbench/sk150`, `workbench/vaultview` by name and workbench
+  root; guard OK; gofmt gate OK; one commit in workbench, push; no
+  tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window

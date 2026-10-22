@@ -3823,17 +3823,3 @@ vaultview's note column calls. What the work left open, and what it
 found beside its own subject, stands here.
 
 1127. **[note]** **A document with no measure keeps its padding on the trailing side only.** `Style.Gutter` with a zero `Measure` still gives the blocks the width less the trailing padding, as before, because the Measure entry speaks of a region narrower than the measure and a document with no measure has none. A document laid out with a padding and no measure therefore runs its text against the leading edge. Whether the padding should be kept on both sides with no measure too is unasked; no caller in the tree sets a padding without a measure.
-
-## GV. From CK10.29, the standing bar's lane
-
-CK10.29 added `shell.BarAnchor(bar scrollbar.Style) list.Anchor` beside
-`EmptyStateFrame`: `list.Occupy` when the bar stands and `list.Overlay`
-when it fades. Every region in the workbench apps that passed
-`list.Overlay` whatever the setting now passes its result. What the work
-left open stands here.
-
-1130. **[bug]** **Three regions take a lane at When scrolling.** Mindchat's transcript (`ChatPane`), vaultview's note column (`doc.LayoutScrollbar` in note.go) and themer's style column (styles.go) pass `list.Occupy` whatever the setting, so at When scrolling and Automatic the rows stop short of an empty lane where the Scrollbar entry says the bar lies over the rows' trailing edge and takes no lane. Passing `shell.BarAnchor` of their bar is the change; it moves pixels at When scrolling, which CK10.29 excluded, so the windows' goldens would regenerate with that cause named.
-
-1131. **[bug]** **Regions that scroll and draw no bar.** Todos' list (`complist.Layout`), sk150's presets and device lists (a bare `layout.List`), and vaultview's vault picker and chooser (`list.LayoutSelectable`) scroll with no scrollbar, where the Scrollbar entry says every region that scrolls has one.
-
-1132. **[decide]** **The picker's menu stands its bar over the rows at Always.** `components/picker`'s menu passes `list.Overlay` whatever the setting, and an application that spends the setting on the menu's bar (mindchat's model menu does) gets a standing bar over the rows' trailing edge. `components` sits below `patterns`, so the menu cannot call `shell.BarAnchor`. Either the choice moves into `components/list` (an anchor read off the bar's fade delay there, with `shell.BarAnchor` deleted) or the menu states it a second time. The gallery is left as it is: it reads no setting and shows the two anchors side by side.
