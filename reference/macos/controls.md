@@ -24,7 +24,8 @@ The push button's own corner is CG7.8. What Control Center measures,
 and the coverage a material over a painted backdrop is painted at, is
 CK5.1. What Mail's window measures — the three columns, the two seams,
 the list column's width and its bounds, and the toolbar's three shares —
-is CK7.6.
+is CK7.6. What the search field on content measures — its fill, edge,
+corner, height, insets and the text's place — is CK10.71.
 
 ## How coverage is read off a rendered component
 
@@ -1219,6 +1220,54 @@ the fill with no stroke row on any side. It stands apart from the bordered
 control's own rim above, which is `#404040` over that control's `#262626` and
 misses by five — two different pixels over two different fills, so neither
 name can carry the other.
+
+## What the search field on content measures
+
+Added 2026-10-22 by CK10.71, from `systemsettings-add-input-source-search-light.png`
+and `systemsettings-add-input-source-search-dark.png` — one capture per
+appearance of System Settings' "add an input source" sheet (Keyboard → Text
+Input → Edit… → +), taken on the 2560×1440 display at 1x where one pixel is
+one point, the capture being the sheet's own bounds as System Events reports
+them (547×392) with nothing else cropped away. The sheet holds a search field
+at its bottom-leading corner on the sheet's own fill, in no sidebar and no
+toolbar, which is the field on content the Language names. The Keyboard
+Shortcuts sheet was opened first and holds no search field on this system,
+and the Text Replacements sheet holds none either. The field is unfocused and
+empty in both captures, so the prompt "Search" is the text read. The sheet's
+lists hold the platform's language names and nothing personal.
+Coordinates are capture coordinates, (0,0) at the sheet's top-leading
+outer corner. Read with PIL over the stored PNGs.
+
+| what | measured | where | method |
+| --- | --- | --- | --- |
+| the field's fill | NONE of its own: the sheet's `#ffffff` light and `#1e1e1e` dark show through | `systemsettings-add-input-source-search-{light,dark}.png` | flat-region samples inside the field, x 100–199, y 349–370: `#ffffff` over all 2200 pixels light and `#1e1e1e` over all 2200 dark, the same values the sheet reads above the field at y 335–344. The field's interior is the surface it stands on, as the Save panel's text field's is (`fieldEdge` in `nscolors.tsv`) |
+| the field's edge | **1 px** the whole way round, `#f3f3f3` light, `#282828` dark | both | a luminance run down x=150 steps from the sheet to `#f3f3f3` at y=347 and y=372 and is the sheet's `#ffffff` in every row between; dark the same two rows read `#282828` over `#1e1e1e`. A run across y=360 reads the ends at x=19 and x=227, `#f4f4f4` light and `#272727` dark, the end column taking the corner's curve. The top and bottom rows read `#f3f3f3` over 173 of the 209 columns light and `#282828` over 170 dark, the rest being the corners' antialiasing. The light pixel is the Save panel field's `#f3f3f3` to the byte; the dark one is 10 levels over the untinted `#1e1e1e`, as the Save panel's `#2c3338` is 9 over its tinted `#232a2f` |
+| the field's extent | 209 × **26 px**, x 19–227, y 347–372 | both | the runs above, outer edge to outer edge, the edge rows and columns included |
+| the field's corner | fully rounded — 13 px, half its height | both | a least-squares circle fitted to the edge's coverage at the leading end, weighted by each pixel's step from the sheet, the looking glass's block left out: centre (31.77, 360.0), radius 12.34 px to the edge's centreline, rms 0.46 px over 92 pixels light; centre (31.78, 360.0), radius 12.35, rms 0.45 over 90 dark. The centreline radius plus the half pixel of the edge is 12.85, against the 13 that half the 26 px height gives |
+| the looking glass | 14 × 13 px, x 27–40, y 354–366 | both | the bounding box of the pixels more than 20 levels off the sheet inside the field. Its leading inset is **8 px** from the field's outer edge — the edge column at x=19 to the symbol's first pixel at x=27, which is 7 px from the inner edge at x=20 |
+| the gap | **4 px** | both | the symbol's last pixel column at x=40 against the prompt's first at x=45, with x 41–44 standing clear |
+| the text's place | "Search" over x 45–84 light and x 45–86 dark, its cap band **10 px**, y 355–364 | both | the bounding box of the prompt by the same threshold, the dark one reaching two columns further for its lighter antialiasing. The band's middle row, 359.5, is the field's own (y 347–372); the looking glass's, 360, is half a row below it |
+| the looking glass's and the prompt's colour | `placeholderTextColor` over the sheet — black at 127/255 light, white at 140/255 dark | both | light: the prompt bottoms out at `#808080`, which is that coverage over `#ffffff` to the byte, and the looking glass at `#838383`, three 255ths short because a thin ring never fully covers a pixel. Dark: the prompt peaks at `#9a9a9a`, which is white at 140/255 over `#1e1e1e` to the byte, and the looking glass at `#969696`. The mark and the prompt are one colour, as they are in both recesses above |
+
+**The field on content is the Save panel's field with a capsule's ends.**
+Its fill is the surface it stands on and its edge is the Save panel text
+field's `#f3f3f3` hairline in the light appearance, so it is the bordered
+field and not a recess: no fill of its own, where the sidebar's and the
+toolbar's recesses each read one. What sets it apart from the Save panel's
+field is its corner, half its height where the text field's is not, and its
+own insets: the looking glass 7 px inside the edge and 4 px clear of the
+prompt, against the toolbar field's 10 and 8 and the sidebar recess's 9 and
+5.
+
+**What is open here.** The field measures 26 px tall, where this library's
+Comfortable field draws 28 — BodyLarge's 24 dp line box and the density's
+2 dp padding either side — and the prompt's cap band is 10 px, against the
+11 px the sidebar recess's prompt reads: the platform sets this field's text a
+size smaller. Both close only by moving a typography role. The dark edge
+reads `#282828` over an untinted `#1e1e1e`, where the `fieldEdge` recorded
+from the Save panel is `#2c3338`, read with wallpaper tinting on; the two are
+the same step over two different sheets, and neither capture corrects the
+other.
 
 ## What the band's segmented control measures
 
