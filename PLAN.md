@@ -25779,6 +25779,30 @@ run, and no capture runs while the owner is at the machine
   and `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
+#### CK10.40: Iconbrowser's search field is drawn from the platform's field on content
+
+- [ ] Under [[DOMAIN#Search field]] and [[DOMAIN#Chrome]], ruled on
+  finding 1136: the window's own fill with content on it is
+  content, not chrome, so a search field on it is the platform's
+  text field with the search field's structure, raised as every
+  field is, never a sidebar's or a toolbar's flat recess. The
+  reference has no measurement of that field's fill, edge and
+  rounding. A capture of a platform window with a search field on
+  its content (System Settings' Keyboard Shortcuts sheet has one)
+  is taken in both schemes, stored under `reference/macos`, and its
+  fill, edge, rounding, height and the looking glass's inset are
+  read into `reference/macos/controls.md` as MEASURED rows.
+  Iconbrowser's field is then drawn from those rows through
+  `input.SearchField` (a region or variant for a field on content,
+  say which and why), and the six window goldens regenerate with
+  the cause named. This task takes a capture: it runs only on an
+  open desktop the owner has left, under the phase's caffeinate
+  rule.
+- [ ] Exit: the two captures and the MEASURED rows are in the
+  reference; green in `components` (input by name),
+  `workbench/iconbrowser` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
