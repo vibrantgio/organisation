@@ -3833,3 +3833,12 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 ## HC. From CK10.36, the lists that had no bar
 
 Filed 2026-10-22 from the fresh-eyes review of CK10.36. Every finding is ruled and planned, CK10.46 to CK10.53. Nothing stays open.
+
+## HF. From CK10.40, iconbrowser's symbols
+
+Filed 2026-10-22 from CK10.40 and its fresh-eyes review. The first three are found in the workbench beside the task: other windows draw a symbol on the content in the accent, which the Icon and Accent entries rule out. The reviewer's other names (clear, refresh) are finding 944 already and are not filed again.
+
+1160. **[note]** **The workbench draws every application's icon in the accent.** `workbench/view.go` builds each roster group's icon with `raster.WithColors(tok.color.ControlAccent)`; the icon is on the content and nothing in the roster is selected, so by the Icon entry it is drawn in the text colour. Finding 1033 measured the same icon's contrast in the accent and asked whether the accent is readable enough; the Icon entry answers it differently, with no accent at all.
+1161. **[note]** **Todos draws its add and delete symbols in the accent.** `workbench/todos/theme.go` resolves `Palette.Icon` from `ControlAccent`, and `view.go` and `list.go` draw `ContentAddCircle` and `ContentClear` in it. Each symbol is a control's only content, so by the Icon entry it is drawn in that control's foreground, and no todo is selected for the accent to show.
+1162. **[note]** **Mindchat draws the assistant's avatar symbol in the accent.** `workbench/mindchat/theme.go` resolves `Palette.Icon` from `ControlAccent`, and `view.go` draws the avatar in it beside every assistant message. The avatar is on the content and shows no selection, so by the Icon entry it is drawn in the text colour.
+1163. **[note]** **The search mark is named by what a control does with it.** The reviewer read the "search" caption under a magnifying glass against the Icon entry's "named by what it depicts, never by what it does"; `components/icons/icons.go` already describes the drawing as "the looking glass a search field leads with". This is the same question finding 944 asks of `Clear`, for one more name: whether the name says the picture (a magnifying glass) or stays with the field it serves.

@@ -25788,7 +25788,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.40: Every iconbrowser symbol is drawn in the text colour
 
-- [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Accent]], ruled on finding
+- [x] Under [[DOMAIN#Icon]] and [[DOMAIN#Accent]], ruled on finding
   1139: an icon on the content is in the text colour and the accent
   marks the selected one only. Iconbrowser draws its marks and all
   961 Material icons in the accent. Every symbol in the catalogue
@@ -25796,7 +25796,7 @@ run, and no capture runs while the owner is at the machine
   passed only where a symbol is selected, and iconbrowser selects
   none today, so no accent is passed. The six window goldens
   regenerate with the cause named (the symbols' colour).
-- [ ] Exit: a test that a rendered catalogue cell's symbol pixels
+- [x] Exit: a test that a rendered catalogue cell's symbol pixels
   are the text colour and none the accent, in both schemes; green
   in `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
