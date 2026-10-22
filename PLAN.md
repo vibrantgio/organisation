@@ -25291,7 +25291,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.13: Vaultview's pane sections and iconbrowser's grid draw the empty state
 
-- [ ] Under [[DOMAIN#Empty state]], ruled on findings 1087 and
+- [x] Under [[DOMAIN#Empty state]], ruled on findings 1087 and
   1091. Vaultview's three
   lines outside the content column ("No note by that name." when
   the tree's filter matches nothing, "No notes link here." in the
@@ -25306,7 +25306,7 @@ run, and no capture runs while the owner is at the machine
   the sibling until the next tagging round, as the other apps'
   pins do), the one `go.mod` edit this task makes. Goldens
   regenerate with the cause named per golden.
-- [ ] Exit: a test per window that each line centres in its
+- [x] Exit: a test per window that each line centres in its
   region's frame at the stated size; green in
   `workbench/vaultview` and `workbench/iconbrowser` by name and
   workbench root; guard OK; gofmt gate OK; one commit in

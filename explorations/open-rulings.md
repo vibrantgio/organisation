@@ -3794,3 +3794,18 @@ and what it found beside its own subject, stands here.
 1104. **[note]** **The description wraps across the whole frame it is given.** A content column 900 px wide stands a one-sentence description as one 900 px line, which is twice any measure the system sets prose on, while the platform's content unavailable view holds its description to a narrow column under the line. Nothing in the pattern caps it, because no reading says where the cap is. Whether the description should take a measure of its own — the reading measure `markdown` already computes, a fraction of the frame, or a fixed width — is unasked, and 1103's capture is what would answer it.
 
 1105. **[note]** **The line truncates where a pane's section is narrower than it.** The entry calls the line one line and the pattern keeps it one, so a frame too narrow ellipsises it. A content column is never that narrow; a pane's section is, and a sheet's field is narrower still — those are the two frames the rows' style was added for. Nothing was found to be broken here because no section draws the empty state yet, which is the next task's subject. Whether a line standing in a narrow frame should wrap to two lines rather than lose its end is unasked.
+
+## GF. From CK10.13, the panes' empty states
+
+Filed 2026-10-22 from the work itself: vaultview's three pane sections
+and iconbrowser's grid now draw `patterns/shell`'s `EmptyState`, each
+line centred in the frame of the section that has nothing. What the work
+left open, and what it found beside its own subject, stands here.
+
+1106. **[note]** **The line centres across a section's full width, the lane a standing scroll bar takes included.** The aside's two panes hand the pattern the whole width of the column, and the pattern centres the line in it. Where the reader has asked for scroll bars always, the rows stop a bar's lane short of the trailing edge while the line does not, so the line stands half a lane off the centre the rows keep. Nothing measured says which centre a section's empty state belongs on — the frame's, or the frame less whatever the rows give up — and no capture of a platform pane with an empty section and a standing bar is stored. The rail's row region has the same shape.
+
+1107. **[note]** **No stored picture carries the rail's empty state.** vaultview's `tree-filtered` golden types a query that matches notes, so the rail's "No note by that name." is drawn only inside a test that reads pixels and never into an image a person looks at. The window goldens carry the aside's two lines because the models behind them have no headings and no citations; the rail has no such case. A third tree golden with a query nothing matches would record it.
+
+1108. **[note]** **iconbrowser stores no goldens at all.** Its whole-window render test draws both schemes on three query states every run and compares them with nothing, writing frames out only when `-window.dump` names a directory. So the page's own picture — the search field, the two sections, and now the grid's empty state — is held by pixel assertions alone, where every other application in the workbench holds its composition in stored images as well. Whether this window should store its three states is unasked.
+
+1109. **[note]** **None of the three lines truncates at the widths these panes ship at.** The rail's row region is 240 dp wide and the aside's panes 320, and the longest of the three sentences sets to about 160 dp at the rows' size, so the one-line rule costs nothing here. The question of what a line too long for its section should do stays open on the sheet's field, which is narrower than either, and on a reader who has dragged the rail to its minimum.
