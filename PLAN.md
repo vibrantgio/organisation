@@ -26009,9 +26009,16 @@ run, and no capture runs while the owner is at the machine
   remove the available room today. Each sets the tooltip
   collector (CK10.54) and calls its callbacks once the child is
   placed, passing the area moved by the child's offset, so every
-  tooltip they place is drawn whole inside the window. A test that
-  a tooltip in a toolbar control at the trailing edge and one in
-  an empty state's action are drawn whole inside the window.
+  tooltip they place is drawn whole inside the window. Found under
+  CK10.54 (findings 1178 and 1179): `shell.AvailableRoomAt` moves
+  a set `tooltip.Surfaces` with the area, so an arrangement laid
+  out inside a child that set one places its surfaces at the right
+  offset; and `flexOffsets` repeats Gio's Flex placement, so a test
+  compares it with `layout.Flex` for every spacing and alignment.
+  A test that a tooltip in a toolbar control at the trailing edge
+  and one in an empty state's action are drawn whole inside the
+  window, and one that a tooltip in an arrangement inside a
+  collected child is placed at its trigger.
 - [ ] Exit: green in `patterns` by name and workbench root; guard
   OK; gofmt gate OK; layers gate OK; one commit in patterns, push;
   no tag.
