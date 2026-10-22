@@ -1286,3 +1286,5 @@ something in your set of responsibilies that is not mentioned in
 the crunchgate method?
 
 Rene: Draft all five, one at a time
+
+Rene: You don't mention where the evidence is placed relative to the method document files
