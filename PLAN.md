@@ -25350,7 +25350,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.16: The published sheet's tab strip stands on the fill it is in
 
-- [ ] Found under CK10.8: `theme/export`'s `.tabs` rule still
+- [x] Found under CK10.8: `theme/export`'s `.tabs` rule still
   paints the strip in the sidebar material, which the Go pattern
   no longer draws; the strip stands on the fill of the region it
   is in, so the rule paints no background of its own (or inherits
@@ -25358,7 +25358,7 @@ run, and no capture runs while the owner is at the machine
   fill. The `design` repo's navigation mirror scores `tabs.Render`
   against a browser render of that rule; its bundle regenerates
   so the mirror delivers a verdict again, with the cause named.
-- [ ] Exit: the mirror's check green on this machine as far as it
+- [x] Exit: the mirror's check green on this machine as far as it
   runs here (say what it cannot run); green in `theme` and `design`
   by name; guard OK; gofmt gate OK; commit and push per repo; no
   tag.
