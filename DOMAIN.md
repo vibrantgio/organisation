@@ -432,7 +432,9 @@ tertiary label colour; a pane's section or a sheet's field at the
 size of the rows it stands for. As the platform's content
 unavailable view does, it may stand a description under the line
 and the actions that fill the region under that, centred as one
-group; the line itself names no control. The frame it centres in
+group; the line itself names no control, and the description says
+what the line does not and repeats nothing the window already shows
+elsewhere. The frame it centres in
 is the one the content would occupy: a standing scroll bar's lane
 lies outside it, as the platform's clip view excludes its scroller.
 Each region that has nothing to show says so for itself: a column
