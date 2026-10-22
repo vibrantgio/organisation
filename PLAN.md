@@ -25100,7 +25100,7 @@ run, and no capture runs while the owner is at the machine
   disagree: read the dark golden and say) take the one material.
   One more from CK7.9: with the pane collapsed feeds offers Add
   feed nowhere, since it has no menu bar of its own; the platform
-  keeps every act reachable through the menu bar, so feeds gains a
+  offers every act through the menu bar as well, so feeds gains a
   menu as mindchat has (`mvu/desktop`'s menu bar: File with Add
   Feed… and its chord Command-N, and the application menu's
   Preferences… carrying the chord `shortcut.go` already binds),
