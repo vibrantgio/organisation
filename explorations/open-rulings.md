@@ -3830,20 +3830,11 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 1140. **[note]** **Iconbrowser's marks section reads at sizes apart from the catalogue under it.** The marks are drawn at 16, 20 and 24 dp above Material icons at 40 dp, the 16 dp chevron-down about 6 px wide at 1x. No Language entry governs a catalogue's sizes; the ontology session ruled it the application's own composition, planned only on the owner's go. The note's wording is planned as CK10.41.
 
-## HB. From CK10.35, the fading bar's lane
-
-Filed 2026-10-22 from the fresh-eyes review of CK10.35. Findings 1144, 1145 and 1147 are ruled under the Scrollbar entry and planned in CK10.43 and CK10.45; 1146 is CK10.44. Nothing stays open.
-
 ## HC. From CK10.36, the lists that had no bar
 
 Filed 2026-10-22 while working CK10.36.
 
-1148. **[note]** **Todos' list returns to its top on every change to a todo.** `List` builds a new `complist.State` on each (theme, model) emission, so ticking or deleting a todo in a scrolled list draws the list from its first row again and the bar's thumb jumps to the top; the state belongs at subscription scope, as sk150 keeps its tabs' states.
-1149. **[note]** **Todos says nothing when the list is empty.** An empty list draws the window's plane and the add button only; under the Empty state entry a collection with nothing in it says so in the region's frame, which `EmptyStateFrame` gives once the bar is drawn.
 1150. **[note]** **Sk150's Presets and Device tabs draw "reading memory slots…" and "reading the device settings…" as a row of the list.** Content still arriving is an empty state under the Empty state entry, centred in the tab's frame as the Monitor tab's is, not a first row in the list's padding.
-1151. **[note]** **Vaultview's folder browser says nothing for a folder with no subfolders.** The picker and the switch dialog draw an empty list under the trail; under the Empty state entry the list's frame says that the folder holds no folders.
 1152. **[note]** **The list's focus ring lies 2 px over the first row and the list's edges in vaultview's two dialogs.** The fresh-eyes review of CK10.36 measured the 4 px band half inside the list's box in the switch dialog and the chooser, over the selected row's fill; `list.FocusRing` draws it there on purpose so the band's inner half lies on the row it crosses, and the platform draws a list's focus ring outside the scroll view's frame, so the placement wants a ruling under the focus ring's entry.
-1153. **[note]** **Todos' add button lies over the last row's delete button.** The review measured the button at x 594–633, y 544–583 over the last visible row's delete mark; the list's padding below the last row is the page's, not the button's height, so scrolled to the end the last todo's delete mark is still under the button.
 1154. **[note]** **Sk150's Presets heading and column heads scroll with the slots.** The list's first rows are the "Memory slots" heading, its line and the M V A LVP… heads, so the bar's lane starts under the tab strip and a scroll takes the heads away from the columns; under the Scrollbar entry a header above the rows spans the column and the lane runs only beside the rows.
 1155. **[note]** **Sk150's Device grid is cut against its footer with no edge between them.** The review measured the next row's field tops as 2 px slivers at y 281–282 in a 320 px frame, with the footer's text starting at y 285; the list ends where the footer begins with nothing marking the edge.
-1156. **[note]** **Sk150's list tabs stop 16 px above the window's bottom edge.** The page is inset by its 16 dp padding on every side, the tabs' lists included, so rows are cut at y 304 in a 320 px frame over a band of the window's plane; whether the page's bottom padding is inside the region that scrolls, as the Scrollbar entry says of a column's padding, wants a ruling.

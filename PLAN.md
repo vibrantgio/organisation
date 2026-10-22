@@ -25899,6 +25899,83 @@ run, and no capture runs while the owner is at the machine
   `workbench/vaultview` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
+#### CK10.46: Todos' list keeps its scroll position across changes to a todo
+
+- [ ] Found under CK10.36 (finding 1148): todos' `List` builds a new
+  `complist.State` on each theme or model emission, so ticking or
+  deleting a todo in a scrolled list draws the list from its first
+  row again and the bar's thumb jumps to the top. The list's state
+  is kept at subscription scope, as sk150 keeps its tabs' states,
+  and is passed to each layout; a change to a todo keeps the
+  scroll position. A test that after scrolling to the end and
+  ticking the last todo the first visible row is unchanged.
+- [ ] Exit: green in `workbench/todos` by name and workbench root;
+  guard OK; gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CK10.47: Todos' empty list and vaultview's folder with no subfolders have an empty state
+
+- [ ] Under [[DOMAIN#Empty state]], found under CK10.36 (findings
+  1149 and 1151): todos with no todo draws the window's plane and
+  the add button only, and vaultview's picker and switch dialog
+  draw an empty list under the trail for a folder with no
+  subfolders. Each draws `shell.EmptyState` in the region's frame
+  passed through `EmptyStateFrame` with the bar the region draws:
+  todos' line is the application's own sentence for a list with
+  nothing in it; the folder browser's line says the folder holds
+  no folders. Goldens that show these states regenerate with the
+  cause named.
+- [ ] Exit: a test per region that the empty state's line is drawn
+  centred in the region's frame; green in `workbench/todos`,
+  `workbench/vaultview` by name and workbench root; guard OK;
+  gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CK10.48: Todos' list ends above the add button
+
+- [ ] Found under CK10.36 (finding 1153): todos' add button is drawn
+  at the page's trailing bottom corner over the last visible row's
+  delete mark, and the list's padding below its last row is the
+  page's, not the button's height, so scrolled to the end the last
+  todo's delete mark is under the button. The list's last row ends
+  above the button's band: the region that scrolls keeps the
+  button's height plus the page padding as its bottom inset, so
+  every row's delete mark is reachable. A test that the last row,
+  scrolled to the end, does not overlap the button's frame.
+- [ ] Exit: green in `workbench/todos` by name and workbench root;
+  guard OK; gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CK10.49: Sk150's Presets heading and column heads stay above the rows
+
+- [ ] Under [[DOMAIN#Scrollbar]], found under CK10.36 (finding
+  1154): sk150's Presets tab draws the "Memory slots" heading, its
+  line and the M V A LVP… column heads as the list's first rows, so
+  the bar's lane starts under the tab strip and a scroll takes the
+  heads away from the columns. A header above the rows spans the
+  column and the lane runs only beside the rows: the heading, its
+  line and the column heads are drawn above the region that
+  scrolls, at full width, and only the slots scroll under them.
+  A test that after scrolling the column heads are drawn at the
+  same place and the lane starts under them.
+- [ ] Exit: green in `workbench/sk150` by name and workbench root;
+  guard OK; gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CK10.50: Sk150's list tabs scroll as the page's column with the padding inside
+
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Column]], ruled on
+  finding 1128 and found under CK10.36 (finding 1156): the region
+  that scrolls is the column and its padding is inside it. Sk150's
+  page is inset by its 16 dp padding on every side, the tabs' lists
+  included, so rows are cut 16 dp above the window's bottom edge
+  over a band of the window's plane and the bar is drawn 16 dp in
+  from the trailing edge. The Presets and Device lists scroll as
+  the page's column to the window's edges with the padding inside,
+  the bar at the window's trailing edge, the Device footer below
+  the list as it is. Goldens regenerate with the cause named (the
+  rows' extent and the bar's edge).
+- [ ] Exit: a test that the bar at Always is drawn against the
+  window's trailing edge and the rows reach the window's bottom
+  edge; green in `workbench/sk150` by name and workbench root;
+  guard OK; gofmt gate OK; one commit in workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
