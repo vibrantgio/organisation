@@ -432,8 +432,10 @@ tertiary label colour; a pane's section or a sheet's field at the
 size of the rows it stands for. As the platform's content
 unavailable view does, it may stand a description under the line
 and the actions that fill the region under that, centred as one
-group; the line itself names no control. It is not content and
-does not stand on the measure.
+group; the line itself names no control. The frame it centres in
+is the one the content would occupy: a standing scroll bar's lane
+lies outside it, as the platform's clip view excludes its scroller.
+It is not content and does not stand on the measure.
 
 ### Eyebrow
 
