@@ -82,3 +82,9 @@ every module in the checkout and files every hit by module and kind, with
 one exclusion rule per kept sense, each carrying its reason. Run
 `inventory` for the work list, `check` for the gate, `excluded` to audit
 the rules against the tree.
+
+The nested module `scripts/retiredwords` is built and tested with `GOWORK=off`,
+because the generated `go.work` excludes the organisation repository.
+
+The nested module `scripts/retiredwords` is built and tested with `GOWORK=off`,
+because the generated `go.work` excludes the organisation repository.

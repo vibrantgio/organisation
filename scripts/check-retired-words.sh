@@ -286,7 +286,7 @@ if [ -f "$here/explorations/open-rulings.md" ]; then
   [ -n "$pool_frozen" ] || pool_frozen=0
 fi
 
-hits=$(cd "$root" && list_files | go run "$here/scripts/retiredwords/main.go" -words "$WORDS") || exit 2
+hits=$(cd "$root" && list_files | GOWORK=off go run "$here/scripts/retiredwords/main.go" -words "$WORDS") || exit 2
 
 # The rules travel in the environment, not through -v: an -v assignment runs
 # escape processing over the value and would eat the backslashes the regexes

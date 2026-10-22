@@ -26177,7 +26177,7 @@ session when the move lands.
 
 #### CL1.2: The workbench README and the trunk's scripts guide name the organisation repository
 
-- [ ] Under [[DOMAIN#0011 — organisation-repository]], found under
+- [x] Under [[DOMAIN#0011 — organisation-repository]], found under
   CL1.1 (findings 1202 and 1203): `workbench/README.md` line 131
   says `llms.txt` is maintained at the root of `vibrantgio/.github`,
   which now holds the profile only; the line names the organisation
@@ -26186,7 +26186,7 @@ session when the move lands.
   organisation repository by design; the trunk's AGENTS.md says in
   one sentence that the nested module is built and tested with
   `GOWORK=off`, and the guard scripts that run it set it.
-- [ ] Exit: `GOWORK=off go build ./... && GOWORK=off go test ./...`
+- [x] Exit: `GOWORK=off go build ./... && GOWORK=off go test ./...`
   OK in `organisation/scripts/retiredwords`; guard OK; guides gate
   OK; one commit in workbench and one in organisation, push; no tag.
 
@@ -26763,6 +26763,39 @@ order.
   `components` (checkbox by name) if it changes, `workbench/todos`
   by name and workbench root; guard OK; gofmt gate OK; commit and
   push per repo; no tag.
+
+#### CM1.33: The status footer's seam is the status bar's measured seam
+
+- [ ] Under [[DOMAIN#Seam]] and [[DOMAIN#Footer]], ruled on finding
+  1198: a seam's colour is measured per scheme and per place; a
+  footer of status text has the status bar's measured seam, read in
+  "What the status bar measures" in `reference/macos/controls.md`,
+  and the column seam token keeps Mail's reading. `theme` gains a
+  second seam token for the status footer at the MEASURED values
+  per scheme, a token change that runs `effects/transition` and
+  `workbench/themer` by name; sk150's Device footer draws its seam
+  from it. Finding 1199 closes with the entry: the footer centres
+  its text on the column's middle. Goldens regenerate with the
+  cause named.
+- [ ] Exit: a test that the status footer's seam equals the MEASURED
+  value per scheme; green in `theme`, `effects/transition`,
+  `workbench/themer`, `workbench/sk150` by name and workbench root;
+  guard OK; gofmt gate OK; commit and push per repo; no tag.
+
+#### CM1.34: Sk150's link explanation is the setting's description
+
+- [ ] Under [[DOMAIN#Footer]], ruled on finding 1200: a footer of
+  status text holds status only; an explanation of a setting is
+  that setting's description under it, as the platform's forms put
+  help text. Sk150's sentence explaining the link settings is
+  removed from the Device footer and drawn as the description
+  under the setting it explains, in the description's measured
+  role; the footer keeps the status text only. Goldens regenerate
+  with the cause named.
+- [ ] Exit: a test that the footer holds the status text only and
+  the description is drawn under its setting; green in
+  `workbench/sk150` by name and workbench root; guard OK; gofmt
+  gate OK; one commit in workbench, push; no tag.
 
 ### G-CM2: Every window offers its actions through the menu bar
 
