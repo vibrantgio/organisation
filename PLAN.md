@@ -25944,7 +25944,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.48: Todos' list ends above the add button
 
-- [ ] Found under CK10.36 (finding 1153): todos' add button is drawn
+- [x] Found under CK10.36 (finding 1153): todos' add button is drawn
   at the page's trailing bottom corner over the last visible row's
   delete mark, and the list's padding below its last row is the
   page's, not the button's height, so scrolled to the end the last
@@ -25953,7 +25953,7 @@ run, and no capture runs while the owner is at the machine
   button's height plus the page padding as its bottom inset, so
   every row's delete mark can be clicked. A test that the last row,
   scrolled to the end, does not overlap the button's frame.
-- [ ] Exit: green in `workbench/todos` by name and workbench root;
+- [x] Exit: green in `workbench/todos` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
 #### CK10.49: Sk150's Presets heading and column heads stay above the rows
