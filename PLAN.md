@@ -25042,7 +25042,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.5: The picker's menu and markdown's code block take the scroll bar setting
 
-- [ ] Found under CK10.4: `components/picker`'s menu and `markdown`'s
+- [x] Found under CK10.4: `components/picker`'s menu and `markdown`'s
   code block build their own scrollbar style with no seam to be
   told the setting, so under Always they fade where every other
   bar stands. Each gains the seam its callers already have for the
@@ -25053,7 +25053,7 @@ run, and no capture runs while the owner is at the machine
   snapshots state WhenScrolling as CK10.4's do. No pixel moves at
   WhenScrolling; a test per package asserts the standing bar at
   Always.
-- [ ] Exit: green in `components`, `markdown` and every app by name;
+- [x] Exit: green in `components`, `markdown` and every app by name;
   guard OK; gofmt gate OK; commit and push per repo; no tag.
 
 #### CK10.2: Vaultview's content column aligns on one edge, its corner closes and its outline rows hold their titles

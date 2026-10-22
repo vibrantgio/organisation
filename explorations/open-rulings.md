@@ -3745,3 +3745,15 @@ outline's own level step. What the work left open stands here.
 1077. **[note]** **The content column itself still ends a lane short of the inspector's seam.** `shell.TwoColumn`'s `InspectorGap` holds 6 dp between the content column's trailing edge and the seam, so the column's rows — the document's scroll bar above all, which the platform stands hard against the edge it follows — stop at x 774 in a window whose seam is at 780, with the content fill showing in between. Only the pinned head's rule was carried across it here. Whether the gap is a lane with a reason or the empty lane the Show-scroll-bars ruling closed elsewhere, and whether the content column should simply run to the seam, is unasked.
 
 1078. **[note]** **The rule that seats a document's measure is restated outside `markdown`.** `markdown`'s `blockInsets` decides where a document's blocks sit — the bar's lane off the viewport, the gutter off what is left, the measure centred in the viewport — and it is unexported, so vaultview's `noteTextBox` restates the same arithmetic to put the properties pane and the status bar on that edge. A test holds the two together against the rendered column, which is a test and not a seam. Whether `markdown.Style` should answer where its blocks lead, so a caller composing rows around a document asks rather than repeats, is unasked.
+
+## FY. From CK10.5, the picker's and the code block's bars
+
+Filed 2026-10-22 from the work itself: the capped picker menu gained a
+prop its caller spends the platform's "Show scroll bars" setting on, and
+the four applications that render markdown now spend theirs on the code
+block's bar. What the work left open, and what it found beside its own
+subject, stands here.
+
+1085. **[note]** **The gallery's documents keep a bar that can never stand.** `components/gallery/inventory` builds two `markdown.Style`s of its own, and neither spends a setting on `CodeScrollbar`, because the gallery reads none: it is a module inside `components` that has no composition root of the kind the workbench apps have, and `mvu/desktop` stands in its `go.mod` only as an indirect requirement. `sitedocs` renders that inventory in a tab, so inside those tiles an overflowing fence fades its bar whatever the reader asked for, while the fences in the Docs tab beside it stand. Whether a demo module should read the platform at all, or take the setting from whatever embeds it, is unasked.
+
+1086. **[note]** **The Docs tab's document column has no scroll bar at all.** `sitedocs`' guide is drawn through `markdown.Document.Layout`, not `LayoutScrollbar`, so the one tab whose content is longer than any other shows nothing of where the reader is in it — while every other tab's column is a `scrollingColumn` with a bar that now follows the setting. Found while threading the code block's bar through the same function. Unasked.
