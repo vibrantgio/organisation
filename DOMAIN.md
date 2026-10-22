@@ -1099,7 +1099,10 @@ windows, Mail's list seam among them, never derived; it is drawn
 once, by the region above or leading. A seam between two columns
 runs the window's full height, the toolbar included, as Mail's
 does. A seam across a column runs the column's full width, a
-standing scrollbar's lane included, as Mail's do. An inset object
+standing scrollbar's lane included, as Mail's do. A table header's
+hairline is the header's own edge, part of the table's structure,
+not a seam: it ends where the header's rows end, at the lane, as
+Finder's is measured. An inset object
 needs no seam: the backdrop showing around
 it does that work. A seam the user can drag is a splitter.
 
