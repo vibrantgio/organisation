@@ -26003,7 +26003,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.55: The toolbar, the empty state, the pane strip, the footer and the stacked page place their tooltips inside the window
 
-- [ ] Under [[DOMAIN#Tooltip]], the rest of CK10.37: the toolbar's
+- [x] Under [[DOMAIN#Tooltip]], the rest of CK10.37: the toolbar's
   controls, the pane's strip marks, `EmptyState`'s group and its
   actions, a footer with no stated depth and the stacked page
   remove the available room today. Each sets the tooltip
@@ -26019,7 +26019,7 @@ run, and no capture runs while the owner is at the machine
   and one in an empty state's action are drawn whole inside the
   window, and one that a tooltip in an arrangement inside a
   collected child is placed at its trigger.
-- [ ] Exit: green in `patterns` by name and workbench root; guard
+- [x] Exit: green in `patterns` by name and workbench root; guard
   OK; gofmt gate OK; layers gate OK; one commit in patterns, push;
   no tag.
 
