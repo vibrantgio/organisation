@@ -1236,10 +1236,11 @@ to x=999 and its sidebar meeting the content at x 316–318.
 | the band's top rows | one fill across both columns | same | at y=2, y=5, y=8 and y=12 the ten columns x 313–322 read within one level of each other — `#fafafa` at y=2, `#f9f9f9` at y=5, `#f7f7f7`/`#f8f8f8` at y=8, `#f5f5f5`/`#f6f6f6` at y=12 — so the band's own rows carry no boundary at all where the columns meet |
 | the band's depth | 52 px | the same five toolbar windows | the toolbar-control row at the head of this reference: a 36 px control with 8 px above and 8 below |
 
-**What this settles.** The platform's window is columns running top to
-bottom and the band runs across all of them; inside it the fill change alone
-says where a column's edge is. So `patterns/pane` stops its seam line at the
-band's lower edge, and a splitter drawn over that seam stops with it.
+**What this settles.** Finder's own sidebar boundary carries no line at
+all, in the band or below it: the pane is inset and the surface around it
+is the boundary. It settles nothing about a window whose columns ARE
+parted by a line — Mail's three-column reading below is that window, and
+there the seam runs the band's rows too.
 
 **Where the pane learns the band's extent.** From its own `StripDp`, and
 from nothing a caller passes. That strip is cut to hold the window control
@@ -1364,10 +1365,10 @@ reading the commonest colour down a column or across a row.
 
 **The seam between the list and the content runs the window's WHOLE
 height, the toolbar included.** It is one pixel at x=779 at every row from
-the window's top edge to its foot. This is where the three-column
-arrangement parts from the two-column's inspector, whose seam stops at the
-toolbar's foot because nothing parts the toolbar over it: here the toolbar
-has two shares and the seam is what says where one ends.
+the window's top edge to its foot. That is the rule for a seam between two
+columns, and the library draws every such boundary that way: the
+two-column arrangement's inspector seam stopped at the toolbar's foot on
+an unmeasured rule until CK7.7 and runs the full height with this one now.
 
 ### The fills
 

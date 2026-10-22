@@ -24779,7 +24779,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK7.7: The seams are measured per scheme, run the window's height, and the list column has no header
 
-- [ ] Ruled by the ontology session 2026-10-22 from measured beats
+- [x] Ruled by the ontology session 2026-10-22 from measured beats
   stated, on findings 1036 to 1038 off the Mail capture. The Seam
   entry now says a seam's colour is measured per scheme into the
   reference from the platform's own windows, never derived: the
@@ -24796,8 +24796,15 @@ run, and no capture runs while the owner is at the machine
   ships no `Header` slot: Mail's list column has no header row,
   what names it standing in the toolbar's share over it; the slot,
   its layout field and the specimen's use of it go (no tag carries
-  them). Goldens regenerate with the cause named per golden.
-- [ ] Exit: green in `theme` (if the token lands there), `patterns`,
+  them). Goldens regenerate with the cause named per golden. Landed
+  2026-10-22 at theme ac6f333, design 1fa3c32, effects 512bc1b,
+  patterns e6f1d11, components 2282550, workbench 38a702c. The pair is
+  `tokens.PlatformColors.Seam` in `theme/tokens` beside the other
+  measured materials, not `patterns/splitter`: that repository's own
+  lint forbids a colour literal outside `theme`. The cost is that
+  `patterns` no longer builds with `GOWORK=off` until the next tagging
+  round, as `workbench` has not since CK5.1.
+- [x] Exit: green in `theme` (if the token lands there), `patterns`,
   `components/gallery`, `workbench/vaultview`, `workbench/mindchat`
   by name; guard OK; gofmt gate OK; `scripts/check-layers.sh` OK;
   commit and push per repo; no tag.
