@@ -25076,3 +25076,29 @@ run, and no capture runs while the owner is at the machine
   the text stands alone as it does.
 - [x] Exit: green in `workbench/vaultview` by name; guard OK; gofmt
   gate OK; commit and push in `workbench` and `.github`; no tag.
+
+#### CK10.3: Feeds answers four defects the review read against the entries
+
+- [ ] Ruled by the ontology session 2026-10-22 on findings 1056,
+  1059, 1061 and 1066. The field the reader types into to narrow
+  the article list is the platform's search field (the Search
+  field entry), never a "filter field": feeds' field becomes a
+  `components/input` search field in the list toolbar's share,
+  named Search, its clear mark and Escape as the entry says, the
+  word filter leaving feeds' names and comments for it (filter
+  stays only for the Filter chip's purpose). The theme colour is
+  one accent: feeds draws two blues (the review read the link
+  and the selection as different hues); every blue in feeds is
+  the accent's own token or the platform's link colour as the
+  Link entry gives it, a second derived blue going. Three leading
+  insets stand down the article's column; content inside one
+  region aligns on one leading edge unless an entry indents it,
+  so the article's headline, byline, tab strip and prose share
+  the column's leading inset. In dark the chrome shows two fills
+  for one kind; chrome of one kind wears one measured material,
+  so the pane and the list toolbar's share (or whichever two
+  disagree: read the dark golden and say) take the one material.
+  Goldens regenerate with the cause named per golden; nothing else
+  moves.
+- [ ] Exit: green in `workbench/feeds` by name; guard OK; gofmt gate
+  OK; commit and push in `workbench` and `.github`; no tag.
