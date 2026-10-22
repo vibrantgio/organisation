@@ -509,9 +509,11 @@ closed, a menu let go — gives it back to where it came from, as the
 platform does. Its accent is the ring around the control, and the ring is all it may draw: a checked
 control that is focused gets the ring and keeps its mark — redrawing
 a checked box as unchecked would let one state overwrite another.
-The ring is drawn around the control's outer edge, outside its
-content: around a list's box, never over a row. Its width is
-measured into the reference.
+The ring is drawn around the control's box as the reference measures
+it for that control: it straddles a field's bezel by the measured
+amount, and it is outside a list's box. It is never over the
+control's content, a row or text. Its width is measured into the
+reference.
 
 ### Footer
 
