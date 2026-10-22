@@ -25752,7 +25752,7 @@ run, and no capture runs while the owner is at the machine
   no tag.
 #### CK10.38: A tooltip adds no Tab stop of its own
 
-- [ ] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Focused]], found under
+- [x] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Focused]], found under
   CK10.31: an unanchored tooltip registers a focus tag of its own
   over the trigger so focus shows it, and a control inside it has
   its own tag, so Tab stops on the same control twice. A tooltip
@@ -25764,7 +25764,7 @@ run, and no capture runs while the owner is at the machine
   and why). A test that Tab through a tooltipped button stops once
   and the tooltip shows while the button is focused, and that a
   tooltip on a trigger that is not a control is no Tab stop.
-- [ ] Exit: green in `components` (tooltip, gallery and inventory by
+- [x] Exit: green in `components` (tooltip, gallery and inventory by
   name) and every tooltip caller by name and workbench root; guard
   OK; gofmt gate OK; commit and push per repo; no tag.
 
