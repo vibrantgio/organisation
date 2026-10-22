@@ -25976,6 +25976,57 @@ run, and no capture runs while the owner is at the machine
   edge; green in `workbench/sk150` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
+#### CK10.51: Sk150's tabs show content arriving as a task in progress
+
+- [ ] Under [[DOMAIN#Progress]] and [[DOMAIN#Empty state]], ruled on
+  finding 1150: content still arriving is a task in progress, not
+  an empty state. Sk150's Presets and Device tabs draw "reading
+  memory slots…" and "reading the device settings…" as the list's
+  first row. Each tab draws the platform's indeterminate indicator
+  and the application's own sentence centred in the tab's frame,
+  as an empty state is placed, never as a row of the list, and
+  they are removed when the content arrives. A test per tab that
+  while the content is arriving the indicator and the sentence
+  are centred in the frame and no list row is drawn, and that
+  after it arrives neither is drawn.
+- [ ] Exit: green in `workbench/sk150` by name and workbench root;
+  guard OK; gofmt gate OK; one commit in workbench, push; no tag.
+
+#### CK10.52: The list's focus ring is drawn outside the list's box
+
+- [ ] Under [[DOMAIN#Focused]], ruled on finding 1152: the ring is
+  drawn around the control's outer edge, outside its content,
+  around the list's box and never over a row; its width is the
+  measured 4 px in the reference. `list.FocusRing` draws the band
+  half inside the box, over the row it crosses, in vaultview's
+  switch dialog and chooser. `list.FocusRing` draws the ring
+  outside the box at the measured width; every caller's frame
+  keeps the ring's width around the box so it is not clipped;
+  goldens that show a focused list regenerate with the cause named
+  (the ring's place).
+- [ ] Exit: a test that the ring's inner edge is the box's outer
+  edge and no ring pixel lies over a row; green in `components`
+  (list, gallery and inventory by name), `patterns` and every
+  `list.FocusRing` caller by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
+#### CK10.53: Sk150's Device grid is clipped at its foot with a seam against the footer
+
+- [ ] Under [[DOMAIN#Seam]] and [[DOMAIN#Footer]], ruled on finding
+  1155: a scrolling region's foot against a fixed band below it is
+  where two flush regions meet, a hairline in the measured seam
+  colour drawn once by the region above, and the rows are clipped
+  at the region's foot so no sliver shows under it. Sk150's Device
+  grid ends where its footer begins with nothing marking the edge
+  and the next row's field tops showing as slivers. The grid is
+  clipped at its foot and draws the seam hairline there; the
+  footer draws none. The goldens that show the Device tab
+  regenerate with the cause named (the seam and the clip).
+- [ ] Exit: a test that the row below the grid's foot is clipped and
+  the seam hairline is drawn at the foot in the measured colour;
+  green in `workbench/sk150` by name and workbench root; guard OK;
+  gofmt gate OK; one commit in workbench, push; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window

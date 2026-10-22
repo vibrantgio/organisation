@@ -3832,8 +3832,4 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 ## HC. From CK10.36, the lists that had no bar
 
-Filed 2026-10-22 while working CK10.36.
-
-1150. **[note]** **Sk150's Presets and Device tabs draw "reading memory slots…" and "reading the device settings…" as a row of the list.** Content still arriving is an empty state under the Empty state entry, centred in the tab's frame as the Monitor tab's is, not a first row in the list's padding.
-1152. **[note]** **The list's focus ring lies 2 px over the first row and the list's edges in vaultview's two dialogs.** The fresh-eyes review of CK10.36 measured the 4 px band half inside the list's box in the switch dialog and the chooser, over the selected row's fill; `list.FocusRing` draws it there on purpose so the band's inner half lies on the row it crosses, and the platform draws a list's focus ring outside the scroll view's frame, so the placement wants a ruling under the focus ring's entry.
-1155. **[note]** **Sk150's Device grid is cut against its footer with no edge between them.** The review measured the next row's field tops as 2 px slivers at y 281–282 in a 320 px frame, with the footer's text starting at y 285; the list ends where the footer begins with nothing marking the edge.
+Filed 2026-10-22 from the fresh-eyes review of CK10.36. Every finding is ruled and planned, CK10.46 to CK10.53. Nothing stays open.
