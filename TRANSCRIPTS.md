@@ -1308,3 +1308,6 @@ Rene: Agreed
 
 Rene: The current configuration for vibrantgio where the github organization contains the crunchgate method in the .github repo.
 Is there a better way to set this up?
+
+Rene: I don't like the name trunk. For vibrantgio I would almost call it vibrantgio. However that gives me a stutter I don't like.
+github.com/vibrantgio/trunk, nah don't like it. Any more ideas?
