@@ -3827,10 +3827,6 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 1140. **[note]** **Iconbrowser's marks section reads at sizes apart from the catalogue under it.** The marks are drawn at 16, 20 and 24 dp above Material icons at 40 dp, the 16 dp chevron-down about 6 px wide at 1x. No Language entry governs a catalogue's sizes; the ontology session ruled it the application's own composition, planned only on the owner's go. The note's wording is planned as CK10.41.
 
-## HM. From CK10.52, the list's focus ring
-
-Filed 2026-10-22 from the fresh-eyes review of CK10.52. Finding 1176 is ruled under the Focused entry with no task: a control's ring is drawn around its box as the reference measures it for that control. Nothing stays open.
-
 ## HN. From CK10.53, the Device grid's foot
 
 Filed 2026-10-22 from the fresh-eyes review of CK10.53.
