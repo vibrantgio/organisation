@@ -26032,9 +26032,15 @@ run, and no capture runs while the owner is at the machine
   a known offset calls `shell.AvailableRoomAt`, and each that
   places a child only after measuring it sets the tooltip
   collector (CK10.54); sk150, which uses no arrangement, sets the
-  area at its root with `shell.WithAvailableRoom`. A test per app
-  that a tooltip on a control at the window's trailing edge is
-  drawn whole inside the window.
+  area at its root with `shell.WithAvailableRoom`. Found under
+  CK10.55 (finding 1180): an offset pushed between a placing
+  layout and a tooltip that does not move the collector draws the
+  surface away from its trigger, so the docs of
+  `components/tooltip` and `patterns/shell` state the rule: a
+  layout that pushes an offset moves the collector and the area
+  with `shell.AvailableRoomAt` (or `tooltip.SurfacesAt` below the
+  shell). A test per app that a tooltip on a control at the
+  window's trailing edge is drawn whole inside the window.
 - [ ] Exit: green in `workbench/feeds`, `workbench/sk150`,
   `workbench/vaultview` by name and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
@@ -26443,6 +26449,53 @@ run, and no capture runs while the owner is at the machine
 - [ ] Exit: green in `workbench/iconbrowser` by name and workbench
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
+
+
+#### CK10.78: `pane.Strip` is deleted
+
+- [ ] Found under CK10.55 (finding 1181): the pane column's strip
+  is laid out by the shell's placing row, and `pane.Strip` has no
+  caller left in the organisation while it repeats that row. The
+  function and its tests are deleted; no alias is kept; the pane
+  guide names the shell's strip.
+- [ ] Exit: `grep -rn 'pane\.Strip\b'` over the org finds nothing;
+  green in `patterns` by name and workbench root; guard OK; gofmt
+  gate OK; guides gate OK; one commit in patterns, push; no tag.
+
+
+#### CK10.79: The stacked page's navbar places its tooltips inside the window
+
+- [ ] Under [[DOMAIN#Tooltip]], found under CK10.55 (finding 1182):
+  `patterns/navbar` lays its brand, links and actions out in rows
+  that place their children after measuring them and set no
+  collector, and the stacked page gives the navbar no available
+  room, so a tooltip in a navbar action is placed as one given
+  none. The navbar's rows set a collector per child and add each
+  child's surfaces at its offset with `tooltip.SurfacesAt`; the
+  stacked page sets a collector on the navbar and places its
+  surfaces in the window's area. A test that a tooltip in the
+  navbar's trailing action is drawn whole inside the window.
+- [ ] Exit: green in `patterns` by name and workbench root; guard
+  OK; gofmt gate OK; layers gate OK; one commit in patterns, push;
+  no tag.
+
+
+#### CK10.80: A toolbar control is laid out at its own width
+
+- [ ] Under [[DOMAIN#Toolbar]], found under CK10.55 (finding 1183):
+  the toolbar lays every control out as a rigid child with the
+  rest of the row as its maximum, and `button.Button` fills the
+  maximum it is given, so a bare button takes the whole rest of
+  the row. The toolbar passes each control a maximum of its own
+  content width (the measured toolbar control height, the text or
+  symbol's width plus the measured insets), so a bare button in
+  any slot is drawn at its own width; the workbench's fixed-width
+  reservations stay as they are where they match. A test that a
+  bare button in a toolbar's leading slot is drawn at its content
+  width and the trailing group keeps its place.
+- [ ] Exit: green in `patterns` by name and every workbench app
+  with a toolbar by name and workbench root; guard OK; gofmt gate
+  OK; commit and push per repo; no tag.
 
 
 ### G-CK11: Every window offers its actions through the menu bar
