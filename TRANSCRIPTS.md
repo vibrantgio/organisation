@@ -1284,3 +1284,5 @@ you want to solve a problem create indirections.
 Rene: Now you have knowledge of the crunchgate method is there
 something in your set of responsibilies that is not mentioned in
 the crunchgate method?
+
+Rene: Draft all five, one at a time
