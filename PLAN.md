@@ -25331,7 +25331,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.15: Sk150's Monitor tab offers the demo from its empty state
 
-- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1090. Before
+- [x] Under [[DOMAIN#Empty state]], ruled on finding 1090. Before
   the first reading
   the Monitor tab stands "No SK150 connected" in the Title role,
   the connection status, a Demo button and a sentence explaining
@@ -25343,7 +25343,7 @@ run, and no capture runs while the owner is at the machine
   "waiting for the first reading…" line is the same empty state
   with its own sentence. `monitorFallback`'s top-anchored block
   goes. Goldens regenerate with the cause named.
-- [ ] Exit: a test that the group centres in the tab's frame and
+- [x] Exit: a test that the group centres in the tab's frame and
   the button still posts the demo's message; green in
   `workbench/sk150` by name and workbench root; guard OK; gofmt
   gate OK; one commit in workbench, push; no tag.

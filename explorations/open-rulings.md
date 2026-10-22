@@ -3813,3 +3813,15 @@ sitedocs' Docs column now draw `patterns/shell`'s `EmptyState`. What the
 work left open, and what it found beside its own subject, stands here.
 
 1112. **[note]** **The location the failed guide names is the checkout's, whichever source actually failed.** The description under "This guide can't be loaded." is the first candidate path resolved against the process's own directory, so in a checkout it names the file that is missing. A `go run …@latest` install has no checkout at all: the leg that really failed is the fetch of the canonical URL, and the path the reader is shown is one that was never going to exist. Whether the description should name the source whose failure was last, rather than the location the guide belongs at, is unasked.
+
+## GH. From CK10.15, sk150's Monitor empty state
+
+Filed 2026-10-22 from the work itself: sk150's Monitor tab now draws
+`patterns/shell`'s `EmptyState` before the first reading. What the work
+left open, and what it found beside its own subject, stands here.
+
+1113. **[note]** **The tab pattern paints the platform's content fill under the active tab's content, whatever fill the strip stands on.** `patterns/tabs` fills its whole region with ControlBackground before it draws the strip on the caller's fill, so the content stands on ControlBackground and not on the strip's fill, which is what the Tabs entry says it stands on. sk150's strip stands on WindowBackground, and the two are the same colour in both schemes today, so nothing shows; a platform whose window and content fills differ would part the content from the strip, and the empty state, which flattens its line over the strip's fill, would be flattened onto the wrong colour.
+
+1114. **[note]** **The connection status stands twice while no SK150 is connected.** The header's status line shows it in the danger colour and the empty state's description shows it again under "No SK150 connected", a hand's width apart. Whether the header keeps its line while the empty state says the same, or the description says something the header does not, is unasked.
+
+1115. **[note]** **Nothing before the demo starts says it lasts until the app restarts.** The sentence that stood under the demo button said so; it left with the top-anchored block, because the empty state's description says why there is nothing to show and the sentence was about the control. The notice the demo posts once it starts says no hardware is being touched but not how to leave. Whether the button's help tag or that notice should carry it is unasked.
