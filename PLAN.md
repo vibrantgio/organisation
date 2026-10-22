@@ -25877,7 +25877,7 @@ run, and no capture runs while the owner is at the machine
   guard OK; gofmt gate OK; commit and push per repo; no tag.
 #### CK10.44: Themer's style column scrolls as the box's column with its padding inside
 
-- [ ] Under [[DOMAIN#Scrollbar]], found under CK10.35 (finding
+- [x] Under [[DOMAIN#Scrollbar]], found under CK10.35 (finding
   1146): the bar is at the trailing edge of the region that
   scrolls, with the region's padding inside it, never inset by the
   padding. Themer's style column is laid out inside its titled
@@ -25888,7 +25888,7 @@ run, and no capture runs while the owner is at the machine
   Always and widening to the edge at WhenScrolling. The themer
   goldens regenerate with the cause named (the bar's edge and the
   rows' width).
-- [ ] Exit: a test that the bar at Always is drawn against the
+- [x] Exit: a test that the bar at Always is drawn against the
   box's trailing edge; green in `workbench/themer` by name and
   workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
