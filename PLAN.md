@@ -26104,6 +26104,61 @@ run, and no capture runs while the owner is at the machine
   and `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; one commit in components, push; no tag.
 
+#### CK10.58: The workbench draws each application's icon in the text colour and its launch button in the default button fill
+
+- [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Fill]], ruled on findings
+  1160 and 1033: an application's icon on the workbench is an icon
+  on the content, in the text colour, never the accent; the launch
+  button's fill is the platform's default button fill, the theme
+  colour for the one action. The workbench draws every icon with
+  the accent and the launch button's fill at the accent, which
+  read under the graphic floor in the dark appearance. The icons
+  are drawn in the text colour and the launch button takes the
+  default button fill; the workbench goldens regenerate with the
+  cause named (the icons' colour, the button's fill). A test that
+  an icon's pixels are the text colour and none the accent, in
+  both schemes.
+- [ ] Exit: green in `workbench` root by name; guard OK; gofmt gate
+  OK; one commit in workbench, push; no tag.
+
+#### CK10.59: Todos' and mindchat's symbols are drawn in their foreground, not the accent
+
+- [ ] Under [[DOMAIN#Icon]], ruled on findings 1161 and 1162: an
+  icon in a control is in that control's foreground, never the
+  accent, and a symbol on the content is in the text colour.
+  Todos draws its add and delete symbols in the accent and
+  mindchat draws the assistant's avatar symbol in the accent. The
+  add symbol is drawn in the button's foreground, the label colour;
+  the row's delete mark in the row's text colour; the avatar in the
+  transcript's text colour. `Icon: p.ControlAccent` is removed
+  from both palettes. Goldens regenerate with the cause named (the
+  symbols' colour). A test per app that a symbol's pixels are its
+  foreground and none the accent, in both schemes.
+- [ ] Exit: green in `workbench/todos`, `workbench/mindchat` by
+  name and workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
+
+#### CK10.60: Every mark in the icon set is named by what it depicts
+
+- [ ] Under [[DOMAIN#Icon]], ruled on findings 944 and 1163: a mark
+  is named by what it depicts, never by the control that uses it.
+  In `components/icons` `Search` becomes `MagnifyingGlass`
+  ("magnifying-glass"), `Clear` becomes `XmarkCircle`
+  ("xmark-circle"), `Refresh` becomes `ArrowClockwise`
+  ("arrow-clockwise"), `Sidebar` becomes `SidebarLeft`
+  ("sidebar-left", the platform's name for that picture); `Plus`
+  and `Minus` stay; the functions and files named after `Search`
+  (`SearchDrawingOriginPx`, `SearchDrawingSizePx`, the svg) are
+  renamed with it; every doc comment in the set says what the mark
+  depicts and never "is the control that"; every caller in
+  `components`, `patterns`, `markdown` and `workbench` is renamed.
+  No alias is kept. No pixel moves.
+- [ ] Exit: `grep -rn 'icons\.\(Search\|Clear\|Refresh\|Sidebar\)\b'`
+  over the org finds nothing; green in `components` (icons, gallery
+  and inventory by name), `patterns`, `markdown` and every caller
+  by name and workbench root; guard OK; gofmt gate OK; layers gate
+  OK; commit and push per repo; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
