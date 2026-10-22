@@ -3827,3 +3827,7 @@ found beside its own subject, stands here.
 Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 and the wording half of 1140 are ruled and planned as CK10.40, CK10.41 and CK10.43; the non-defect 1138 is recorded in the misreads briefing. What stays open is for the owner.
 
 1140. **[note]** **Iconbrowser's marks section reads at sizes apart from the catalogue under it.** The marks are drawn at 16, 20 and 24 dp above Material icons at 40 dp, the 16 dp chevron-down about 6 px wide at 1x. No Language entry governs a catalogue's sizes; the ontology session ruled it the application's own composition, planned only on the owner's go. The note's wording is planned as CK10.41.
+
+## HG. From CK10.44, themer's style column
+
+Filed 2026-10-22 from the fresh-eyes review of CK10.44. Finding 1164 is ruled under the Scrollbar entry and planned as CK10.61. Nothing stays open.
