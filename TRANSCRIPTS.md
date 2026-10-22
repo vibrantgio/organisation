@@ -1265,3 +1265,8 @@ for dynamic exploration.
 4. Bespoke Explainer Videos: Custom animated walkthroughs (such as
 3Blue1Brown-style generation paired with voice synthesis).
 ^0005-simplified-technical-english
+
+Rene: If we agree, then the first thing we now need to take care of
+is making this discoverable for a newly created or compacted
+context. How do we make this something you can discover?
+^0005-ste-discoverable
