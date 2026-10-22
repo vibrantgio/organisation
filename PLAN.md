@@ -26175,6 +26175,21 @@ session when the move lands.
   repository's `scripts/retiredwords`; commit and push per repo; no
   tag.
 
+#### CL1.2: The workbench README and the trunk's scripts guide name the organisation repository
+
+- [ ] Under [[DOMAIN#0011 — organisation-repository]], found under
+  CL1.1 (findings 1202 and 1203): `workbench/README.md` line 131
+  says `llms.txt` is maintained at the root of `vibrantgio/.github`,
+  which now holds the profile only; the line names the organisation
+  repository. `go build ./...` in `organisation/scripts/retiredwords`
+  fails inside the generated workspace because go.work excludes the
+  organisation repository by design; the trunk's AGENTS.md says in
+  one sentence that the nested module is built and tested with
+  `GOWORK=off`, and the guard scripts that run it set it.
+- [ ] Exit: `GOWORK=off go build ./... && GOWORK=off go test ./...`
+  OK in `organisation/scripts/retiredwords`; guard OK; guides gate
+  OK; one commit in workbench and one in organisation, push; no tag.
+
 ## Phase CM: The rulings of the hidden-sidebar round are built
 
 Owner-ruled 2026-10-22 ([[TRANSCRIPTS#^0005-split-ck-insert-cl]]):
