@@ -3830,3 +3830,11 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 ## HN. From CK10.53, the Device grid's foot
 
 Filed 2026-10-22 from the fresh-eyes review of CK10.53. Finding 1177 is ruled under the Footer entry and planned as CK10.76. Nothing stays open.
+
+## HO. From CK10.54, the tooltip collector
+
+Filed 2026-10-22 by the CK10.54 worker.
+
+1178. **[note]** **A shell arrangement laid out inside a child with tooltip Surfaces set does not move the surfaces by its own offset.** `shell.AvailableRoomAt` moves only the available room, and inside such a child no area is set, so it returns the context as it is: a tooltip in a slot the inner arrangement places at a known offset records its surface in the outer child's Surfaces, which draws it in the outer child's coordinates, off by the slot's offset. Either `AvailableRoomAt` sets a Surfaces of its own for the slot and forwards its callbacks moved by the offset, or the arrangements state that they are not laid out inside such a child.
+
+1179. **[note]** **The shell's row works out each child's offset by repeating layout.Flex's placement rules.** `flexOffsets` in `patterns/shell/surfaces.go` follows gioui.org v0.10.2's `layout.Flex.Layout` for every spacing and alignment; a Gio release that changes those rules would place the surfaces apart from their triggers with no test failing. A test that lays a row out with each spacing and alignment and reads every child's offset back against `flexOffsets` would hold the two together.

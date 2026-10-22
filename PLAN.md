@@ -25980,7 +25980,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.54: A tooltip's surface is placed once its layout knows the trigger's offset
 
-- [ ] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Placement]], found under
+- [x] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Placement]], found under
   CK10.37 (finding 1157): a layout that places a child only after
   measuring it (a `layout.Flex` centring its controls, a centred
   box, a list row) cannot pass the available room before the
@@ -25997,7 +25997,7 @@ run, and no capture runs while the owner is at the machine
   them. A test that a tooltip inside a Flex-centred row at the
   window's trailing edge is drawn whole inside the window, and one
   that a tooltip shown by focus is placed the same way.
-- [ ] Exit: green in `components` (tooltip, gallery and inventory
+- [x] Exit: green in `components` (tooltip, gallery and inventory
   by name), `patterns` and workbench root; guard OK; gofmt gate
   OK; layers gate OK; commit and push per repo; no tag.
 
