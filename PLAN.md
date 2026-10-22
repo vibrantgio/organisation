@@ -24994,31 +24994,50 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.1: The toolbar's shadow falls below it and the scrollbar shows as the platform's does
 
-- [ ] Ruled by the ontology session 2026-10-22 from the Language on
-  findings 1024 and 1026. The bordered toolbar control's shadow
-  falls below the strip onto the content, as the platform's does,
-  never upward past the toolbar: the reading of the regenerated
-  hidden-sidebar golden put it from y 0 to 74 at one to nine
-  levels off white; the shadow's extent is measured against the
-  stored toolbar captures and bounded to what they show, in the
-  control's drawing (`components` or `patterns/shell`, wherever
-  the bordered control's shadow is drawn; say which). The overlay
-  scrollbar follows the platform: it shows while the content
-  scrolls and under the pointer and fades otherwise, following the
-  user's Show scroll bars setting (read off the platform where the
-  bridge can; else the default of showing when scrolling), its
-  thumb colour and inset measured per scheme off the stored
-  captures (the catalogue's scrollbar readings, or a capture taken
-  in CK8.1's run); a thumb drawn always, dark, flush to the edge is
-  the defect. Goldens drawing a scrollbar hold the at-rest state
-  the entry gives (no thumb unless the pointer stands or the
-  content scrolls, so most lose the thumb) and regenerate with the
-  cause named; a test drives a scroll and asserts the thumb shows
-  then fades after the platform's delay.
-- [ ] Exit: green in `components`, `components/gallery`, `patterns`,
+- [x] Ruled by the ontology session 2026-10-22 from the Language on
+  findings 1024 and 1026, the library half. The bordered toolbar
+  control's shadow rises at most 8 px above the control, read off
+  `mail-three-column-light.png` and `finder-window-light.png` (the
+  captures close eight rows above a control; the fitted rectangle
+  had carried the ramp 14 px up on an extrapolation), named
+  `ToolbarShadowRiseDp`; below it is the platform's, unbounded but
+  for its reach. `components/scrollbar` draws no thumb at rest: a
+  bar nothing has scrolled or hovered shows nothing, the thumb
+  shows on the scrolling frame and under the pointer and fades
+  after the library's one-second delay over the slow motion
+  duration (no capture can measure the platform's overlay fade,
+  since the overlay bar cannot be summoned by synthesis);
+  `Style.Always()` is the standing bar the platform's Always
+  setting asks for; `mvu/desktop.ScrollBars()` reads the platform's
+  Show scroll bars setting (Automatic on this machine, the key
+  unwritten), the stub answering WhenScrolling. Goldens drawing a
+  resting thumb lost it; goldens about the bar ask for the standing
+  one. Landed 2026-10-22 at components a50ec66, mvu 3dfe270,
+  markdown 5558162, effects 63661de, workbench a0a15d5.
+- [x] Exit: green in `components`, `components/gallery`, `patterns`,
   `markdown`, `workbench` and every app whose golden moved, by
   name; guard OK; gofmt gate OK; `scripts/check-layers.sh` OK;
   commit and push per repo; no tag (the next round carries it).
+
+#### CK10.4: Every window spends the platform's Show scroll bars setting
+
+- [ ] The application half of CK10.1. Six sites build their scrollbar
+  style from the colours alone and never read the setting:
+  vaultview's note column and inspector, mindchat's view and
+  settings, feeds' rail, marketing's page, sitedocs' columns,
+  themer's styles. Each window reads `desktop.ScrollBars()` once
+  at its composition root into its own snapshot (never at frame
+  time, so a golden never depends on the machine it runs on: the
+  goldens' snapshot states WhenScrolling or Automatic, the fading
+  bar) and asks `Style.Always()` when the setting is Always.
+  Vaultview's inspector bar stands today in a reserved lane the
+  rows stop short of (an empty lane is a margin with no reason): it
+  follows the setting as the note's does, and the lane it was
+  given collapses when the bar is away, so the rows run to the
+  pane's edge as they do beside the note (the ruling on 1071 if it
+  comes first, else this). Goldens regenerate with the cause named.
+- [ ] Exit: green in every app by name; guard OK; gofmt gate OK;
+  commit and push in `workbench` and `.github`; no tag.
 
 #### CK10.2: Vaultview's content column aligns on one edge, its corner closes and its outline rows hold their titles
 
