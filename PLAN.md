@@ -26206,7 +26206,7 @@ order.
 
 #### CM1.1: Feeds, sk150 and vaultview pass the window's available room to their tooltips
 
-- [ ] Under [[DOMAIN#Tooltip]], the applications' half of CK10.37
+- [x] Under [[DOMAIN#Tooltip]], the applications' half of CK10.37
   and finding 1157: feeds' "Unread" tip, sk150's demo button tip
   and vaultview's link tip pass `shell.AvailableRoom` as
   `AvailableRoom`; each layer of their own that places a child at
@@ -26222,7 +26222,7 @@ order.
   with `shell.AvailableRoomAt` (or `tooltip.SurfacesAt` below the
   shell). A test per app that a tooltip on a control at the
   window's trailing edge is drawn whole inside the window.
-- [ ] Exit: green in `workbench/feeds`, `workbench/sk150`,
+- [x] Exit: green in `workbench/feeds`, `workbench/sk150`,
   `workbench/vaultview` by name and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
 
