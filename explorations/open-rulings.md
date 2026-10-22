@@ -3829,6 +3829,4 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 ## HM. From CK10.52, the list's focus ring
 
-Filed 2026-10-22 while CK10.52 moved the list's ring outside its box.
-
-1176. **[note]** **Every other control still draws its focus ring half over its own box.** The Focused entry says the ring is drawn around the control's outer edge, outside its content, but the text field, search field, picker trigger, chip, checkbox, radio, button and paragraph link all call `focus.Ring` on their own box, so the band is 2 dp past the box and 2 dp over it; the reference records both readings (the save panel's field straddles its box, the Voice Memos search field's ring lies outside it), so a ruling is needed on whether the entry's "outside its content" binds every control or the list alone.
+Filed 2026-10-22 from the fresh-eyes review of CK10.52. Finding 1176 is ruled under the Focused entry with no task: a control's ring is drawn around its box as the reference measures it for that control. Nothing stays open.
