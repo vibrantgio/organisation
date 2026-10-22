@@ -3827,10 +3827,6 @@ Filed 2026-10-22 from the fresh-eyes review of CK10.33. Findings 1137 to 1139 an
 
 1140. **[note]** **Iconbrowser's marks section reads at sizes apart from the catalogue under it.** The marks are drawn at 16, 20 and 24 dp above Material icons at 40 dp, the 16 dp chevron-down about 6 px wide at 1x. No Language entry governs a catalogue's sizes; the ontology session ruled it the application's own composition, planned only on the owner's go. The note's wording is planned as CK10.41.
 
-## HL. From CK10.51, sk150's content arriving
-
-Filed 2026-10-22 from the fresh-eyes review of CK10.51. Finding 1175 is settled in the Progress entry and read by CK10.74. Nothing stays open.
-
 ## HM. From CK10.52, the list's focus ring
 
 Filed 2026-10-22 while CK10.52 moved the list's ring outside its box.
