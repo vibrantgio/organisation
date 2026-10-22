@@ -1269,6 +1269,63 @@ from the Save panel is `#2c3338`, read with wallpaper tinting on; the two are
 the same step over two different sheets, and neither capture corrects the
 other.
 
+## What the standing scrollbar measures
+
+Added 2026-10-22 by CK10.72, from captures of Finder taken under Show scroll
+bars: Always, one per appearance, on the 2560×1440 display at 1x where one
+pixel is one point, each capture being the window's own bounds as System
+Events reports them with nothing else cropped away. Finder was chosen because
+AppleScript sets its folder, its view and its bounds, and because the folders
+shown hold the system's own files and nothing personal; the sidebar is set to
+no width so the window holds the content only, and nothing is selected.
+
+- `finder-list-scrollbar-always-{light,dark}.png`: 800×500, list view of
+  `/System/Library/CoreServices`, 208 rows of 20 px, scrolled to the top. The
+  rows overflow downward and fit sideways, so one upright bar is drawn.
+- `finder-list-scrollbar-always-pagedown-{light,dark}.png` and
+  `finder-list-scrollbar-always-end-{light,dark}.png`: the same window after
+  Page Down and after End, taken to read the thumb's travel.
+- `finder-list-fits-always-{light,dark}.png`: 800×300, list view of
+  `/System/Library/CoreServices/Finder.app/Contents`, nine rows that fit.
+- `finder-column-sideways-always-{light,dark}.png`: 800×500, column view
+  opened at `Finder.app/Contents/Resources`, the columns wider than the window,
+  so a sideways bar is drawn at the bottom, under columns that overflow and
+  columns that fit.
+- `finder-list-corner-always-{light,dark}.png`: 500×400, the list of the
+  first capture in a narrower window, so both bars are drawn and meet.
+
+Coordinates are capture coordinates, (0,0) at the window's top-leading outer
+corner; the window's last column is x 799 and its last row y 499 in the
+800×500 captures. Read with PIL over the stored PNGs, as runs of equal pixels
+down a column or across a row.
+
+| what | measured | where | method |
+| --- | --- | --- | --- |
+| the lane's width | **17 px** at the region's trailing edge, x 783–799 | `finder-list-scrollbar-always-{light,dark}.png`, `finder-list-fits-always-{light,dark}.png` | three readings agree. The column header's hairline at y 79 runs x 1–782 while the bar is drawn and x 1–798 when the content fits, so the region's rows stop at x 782. The rows' fill ends at x 772 while the bar is drawn and at x 789 when it fits, the rows' own 10 px end inset in both, so the region narrows by 17 px. The track is x 786–796 with 3 px of the content's fill either side, x 783–785 and x 797–799: 3 + 11 + 3 = 17 |
+| the lane's fill | NONE of its own: the content's `#ffffff` light and `#1e1e1e` dark show through | both schemes, list | x 773–785 and x 797–798 read the content's fill on every row beside the track, y 83–461, in both schemes, light x 799 too; dark x 799 is the window's edge, `#4b4b4b`, as it is when the content fits. Below y 461 the window's rounded corner begins |
+| the track | **11 px** wide, x 786–796, fully rounded ends; `#f3f3f3` light over `#ffffff`, `#292929` dark over `#1e1e1e` — the label's black or white at **12/255** over the content | `finder-list-scrollbar-always-{light,dark}.png` | a run down x 791 reads the track's fill over 350 rows (y 129–478 light and dark) under the thumb's 46. Black at 12/255 over `#ffffff` is 243, `#f3`; white at 12/255 over `#1e1e1e` is 30 + 225 × 12/255 = 40.6, `#29`. Where a row's `#f4f5f5` stripe lies under the track in `finder-list-corner-always-light.png` it reads `#e9eaea`, 244 × 243/255 = 232.5: the track is drawn over the content at that coverage, not as a fill of its own. The ends close over three rows at y 476–478, the half-width curve of an 11 px pill |
+| the thumb | the track's full **11 px** width with no inset inside it, fully rounded ends (radius 5.5 px); `#7a7a7a` light, `#9f9f9f` dark — black at **133/255** over `#ffffff`, white at **146/255** over `#1e1e1e` | `finder-list-scrollbar-always-{light,dark}.png` | rows across y 92–120 read `#7a7a7a` light over x 786–796 and nothing of the track beside it; the top row at y 83 covers 7 columns partly and the full 11 are reached at y 92, a half-width curve. 255 × 122/255 = 122, `#7a`; 30 + 225 × 146/255 = 158.8, `#9f`. Over a `#f4f5f5` stripe in `finder-list-corner-always-light.png` the thumb reads `#757575`, 244 × 122/255 = 116.7, so it too is drawn over the content at its coverage. The dark coverage is the overlay knob's in `nscolors.tsv` to the 255th; the light one is 13 255ths under the light row recorded there |
+| the track's ends | **3 px** inside the lane's ends; **21 px** from a rounded window corner | `finder-list-scrollbar-always-*`, `finder-column-sideways-always-*`, `finder-list-corner-always-*` | the upright lane starts at y 80 under the header's hairline and the track at y 83. Its lower end is y 478 with y 479–499 clear, the window's rounded bottom corner. The sideways track is x 21–779 in the 0–799 window. In column view each column's upright track ends at y 478–479, 3 px above the sideways lane at y 483, and in the narrow list the upright track ends at y 379 above the sideways lane at y 383 and the sideways track ends at x 479 before the upright lane at x 483 |
+| the thumb's length and travel | **46 px** on the 396 px track (y 83–478); the thumb meets both track ends: top at y 83 at rest, y 124 after Page Down, y 433 at End, its bottom then at y 478 | `finder-list-scrollbar-always{,-pagedown,-end}-{light,dark}.png` | runs down x 791 in all six captures, the dark ones the same rows. The rows' stripes give the scroll: the row `BluetoothSetupAssistant`, row 22 of the sorted folder, has its top at y 87 after Page Down where it is at y 525 at rest, so Page Down scrolled 438 px; row 207's top is at y 470 at End against y 4225 at rest, so the full scroll is 3755 px. DERIVED: the thumb's offset is (track − thumb) × scrolled ÷ full scroll, 350 × 438/3755 = 40.8 against the 41 read. Solving 396 × H/(3755 + H) = 46 for the visible height gives H ≈ 494, the window's 500 px and not the 419 px of rows under the header: Finder's list scrolls under its toolbar and header and counts them in the visible part |
+| what is drawn when the content fits, in a list | **nothing**: no track, no thumb and no lane | `finder-list-fits-always-{light,dark}.png` | a run down x 791 reads the content's fill from y 80 to the window's bottom corner in both schemes; the rows' stripe runs to x 789 and the header's hairline to x 798 |
+| what is drawn when the content fits, in a column view's column | the **track with no thumb** | `finder-column-sideways-always-{light,dark}.png` | the column holding only `Contents` and the column holding Finder.app's nine items both fit; runs down x 421 and across y 300 read the track's `#f3f3f3` light, `#292929` dark at x 416–426 and x 661–671 from y 83 to 479, and no thumb's fill in either |
+| a row's end against the lane | the row's fill stops at **x 772** with a rounded end, 13 px of the content's fill before the track and no hairline between | `finder-list-scrollbar-always-{light,dark}.png` | a run across y 150 reads the stripe `#f4f5f5` light, `#292929` dark to x 771 with one antialiased column at x 772, then the content's fill x 773–785, then the track; no column between the stripe's end and the track differs from the content's fill. The header's own fill spans the lane, x 740–799 at y 70 reading `#fefefe`/`#fdfdfd` light and `#1e1e1e` dark, while its hairline stops at x 782 |
+| the sideways lane | **17 px** at the region's bottom edge, y 483–499; track **11 px**, y 486–496, 3 px above the bottom; thumb the track's full height | `finder-column-sideways-always-{light,dark}.png` | a run across y 491 reads the track x 21–423, the thumb x 424–732, the track x 733–779; a run down x 600 reads the thumb at y 486–496 and the content's fill at y 497–499 light, y 497–498 dark with the window's edge at 499. The fills are the upright bar's, `#f3f3f3`/`#7a7a7a` light and `#292929`/`#9f9f9f` dark |
+| where the two bars meet | a 17 × 17 px square, x 483–499 and y 383–399, with **no fill of its own** | `finder-list-corner-always-{light,dark}.png` | the upright track ends at y 379 and the sideways track at x 479, each 3 px short of the other's lane; inside the square the content's own rows read through, `#f4f5f5` light and `#292929` dark at x 480–488 on y 392, and the window's rounded corner takes the rest |
+
+**The standing bar is an 11 px pill in a 17 px lane.** The lane has no fill of
+its own and the rows stop short of it, ending at their own 10 px inset as they
+do when the bar is not drawn. The track and the thumb are one shape at two
+coverages of the label's black or white, 12/255 and 133/255 light, 12/255 and
+146/255 dark, drawn over the content; the thumb fills the track's width. The
+track's ends are 3 px inside the lane's, and the thumb runs between them.
+
+**What is open here.** The two Finder views disagree on a region whose content
+fits: the list draws nothing and takes no lane, the column view draws the
+track with no thumb. The light standing thumb reads 133/255 where the light
+`scrollbarThumb` row carries the dark appearance's 146/255; the dark readings
+agree to the 255th.
+
 ## What the band's segmented control measures
 
 Read 2026-09-18 by CG5.3o at 1x from `finder-window-light.png` and
