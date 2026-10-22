@@ -956,7 +956,13 @@ application's own text stand centred in the region's frame, as an
 empty state does, never as a row of the content, and leave when the
 content arrives. That text is a short phrase naming the task and
 ending with an ellipsis, its capitalisation read from the reference
-with the indicator.
+with the indicator. In an empty region the indicator stands above
+the text, centred as one group, as the platform's content
+unavailable view stacks its image above its title; the gap between
+them is the reference's, DERIVED from the measured parts until a
+platform window that centres them is captured. In a row the text is
+at the leading end and the indicator at the trailing end, as System
+Settings' is measured.
 
 ### Purpose
 
