@@ -25538,6 +25538,28 @@ run, and no capture runs while the owner is at the machine
   workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
 
+#### CK10.27: A region narrower than the measure keeps its padding on both sides
+
+- [ ] Under [[DOMAIN#Measure]], ruled on finding 1117: a region
+  narrower than the measure keeps the padding on both sides of the
+  text, and the measure shrinks to the width that remains; no
+  window needs a minimum width for this. `markdown`'s block
+  seating sets the lead to zero once the viewport is narrower than
+  the measure plus the padding on one side, so sitedocs' Docs prose
+  runs against the outline column's edge below 744 dp, and
+  vaultview's note would do the same below its own threshold. The
+  rule keeps the padding on both sides at every width and caps the
+  measure at the viewport less both paddings; the wide case moves
+  no pixel (the measure centred as before). The field that carries
+  the padding keeps its name in code; comments and the report say
+  padding.
+- [ ] Exit: a test in `markdown` that at a viewport narrower than
+  the measure the first block's lead equals the padding and its
+  width equals the viewport less twice the padding, and that a wide
+  viewport renders byte-identical to before; green in `markdown`,
+  `workbench/sitedocs`, `workbench/vaultview` by name and workbench
+  root; guard OK; gofmt gate OK; commit and push per repo; no tag.
+
 ### G-CK11: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
