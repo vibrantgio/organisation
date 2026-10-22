@@ -25108,3 +25108,48 @@ run, and no capture runs while the owner is at the machine
   cause named per golden; nothing else moves.
 - [ ] Exit: green in `workbench/feeds` by name; guard OK; gofmt gate
   OK; commit and push in `workbench` and `.github`; no tag.
+
+### G-CK11: Every window offers its actions through the menu bar
+
+Ruled 2026-10-22 (the Action entry at 3724a9f): every action a window
+offers through a control also stands in the menu bar with its key
+equivalent, as the platform requires, so an action is never offered
+nowhere; a control that goes with its pane removes nothing from the
+menu bar. Mindchat has a menu bar; feeds gains one in CK10.3; the
+other eight workbench windows have none and are defects under the
+entry. Each gains the platform's menu bar through `mvu/desktop`'s
+menu bar: the application menu with Settings… or Preferences… where
+the window has one, File with the window's own acts (open, new,
+reload, switch) and their key equivalents, Edit with the platform's
+standard items where a field exists, View with the pane's toggle
+where a pane exists; the chords the window already binds move into
+the table so one place states them. Each menu item posts the message
+its control posts.
+
+#### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
+
+- [ ] The three windows gain their menu bars: vaultview (File: Open
+  Vault… and Switch Vault… on the chords it binds, Rescan, Find on
+  the platform's find chord and Find in Rail on its shifted one,
+  Back and Forward; View: Toggle Sidebar, Toggle Inspector), todos
+  (File: New Todo; Edit: Delete), themer (File: Open Picture…, Keep;
+  View: the scheme toggle); the worker reads each window's
+  controls and chords and lists the table in the commit body. No
+  composition change; goldens do not move (the menu bar is the
+  platform's, outside the window).
+- [ ] Exit: green in each app by name; guard OK; gofmt gate OK; commit
+  and push in `workbench` and `.github`; no tag.
+
+#### CK11.2: The workbench, sitedocs, iconbrowser, marketing and sk150 offer their actions through the menu bar
+
+- [ ] The five windows gain their menu bars the same way: the
+  workbench (File: Launch for the selected application if one is
+  selectable, else none beyond the platform's; the application
+  menu's standard items), sitedocs (View: the five tabs on their
+  chords), iconbrowser (Edit: Find), marketing (none beyond the
+  platform's standard items, which the bar still carries), sk150
+  (File: Connect, Save; Edit: the presets' acts); the worker reads
+  each window and lists the table. No composition change; goldens
+  do not move.
+- [ ] Exit: green in each app by name; guard OK; gofmt gate OK; commit
+  and push in `workbench` and `.github`; no tag.
