@@ -25710,7 +25710,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.36: Todos' list, sk150's lists and vaultview's picker and chooser draw the window's scrollbar
 
-- [ ] Under [[DOMAIN#Scrollbar]], found under CK10.29 and ruled on
+- [x] Under [[DOMAIN#Scrollbar]], found under CK10.29 and ruled on
   finding 1120: every region that scrolls has a scrollbar. Todos'
   list, sk150's presets and device lists, and vaultview's picker
   and chooser scroll with no bar. Each draws the window's bar
@@ -25720,7 +25720,7 @@ run, and no capture runs while the owner is at the machine
   states, where one exists, pass their frame through
   `EmptyStateFrame`. Goldens regenerate only where a bar is drawn
   at rest, with the cause named.
-- [ ] Exit: a test per region that a bar is drawn at Always and the
+- [x] Exit: a test per region that a bar is drawn at Always and the
   rows stop short of the lane; green in `workbench/todos`,
   `workbench/sk150`, `workbench/vaultview` by name and workbench
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
