@@ -1333,3 +1333,5 @@ Rene: Do you need anything from me
 Rene: I agree with most but hold off on the controlled-language rewrite. ^0005-rewrite-held
 I'm away for a while so use caffeinate.
 Note diarizer DOMAIN.md has no entry for Centroid (go figure that)
+
+Rene: So for vibrantgio/organisation, I haven't seen it yet
