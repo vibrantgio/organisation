@@ -25162,13 +25162,13 @@ where a pane exists; the chords the window already binds move into
 the table so one place states them. Each menu item posts the message
 its control posts.
 
-#### CK10.6: A column with nothing to show says so in the platform's empty-column text
+#### CK10.6: A column with nothing to show draws the platform's empty state
 
 - [ ] Ruled by the ontology session 2026-10-22 on finding 1076: a
   message that stands in for a column's content when there is none
   to show ("No notes in this vault.", "Scanning vault…",
-  "Downloading…", a scan's error) is the platform's empty-column
-  text, centred in the column both ways, as Mail's "No Message
+  "Downloading…", a scan's error) is the platform's empty state
+  (the Empty state entry at be504fc), centred in the column both ways, as Mail's "No Message
   Selected" and its loading text stand; it is not content and does
   not stand on the measure. Text that is part of the content
   stands on the measure's lead with everything else. Mail's empty
@@ -25178,9 +25178,7 @@ its control posts.
   ruling said secondary; the platform reads tertiary, and the
   reading wins), cap height 20 px at 1x, centred in the column's
   full frame with the toolbar share included. `patterns/shell`
-  gains one value for the empty column's text (name it from the
-  entry the ontology session writes, or "EmptyColumn" until it
-  does) that paints the reading; vaultview's four messages are
+  gains one value, `EmptyState`, that paints the reading; vaultview's four messages are
   drawn by it and `messageChild` goes. The goldens that hold a
   message regenerate, each with its cause named.
 - [ ] Exit: a test in `patterns` that the text centres both ways in
@@ -25189,7 +25187,7 @@ its control posts.
   `patterns` and `workbench/vaultview` by name and workbench root;
   guard OK; gofmt gate OK; commit and push per repo; no tag.
 
-#### CK10.7: Every workbench window's standing-in message is the empty-column text
+#### CK10.7: Every workbench window's message in place of content is the empty state
 
 - [ ] Feeds' "Select an article" in the content column and every
   other message a workbench window draws in place of a column's
