@@ -1006,10 +1006,14 @@ down. Nothing in it is chosen; the content is never reflowed or cut.
 The control moving the visible part through content larger than its
 surface: a thumb on a track whose size mirrors how much of the
 content is visible. Operating it moves what is visible, never the content.
-Every region that scrolls has one. At Always the bar has a lane of
-its own and the rows stop short of the lane. At When scrolling and
-at Automatic the bar lies over the rows' trailing edge and takes no
-lane.
+Every region that scrolls has one. The region that scrolls is the
+column, and the column's padding is inside it: the bar is at the
+column's trailing edge, never inset by the padding. At Always the bar
+has a lane of its own and the rows stop short of the lane. The lane
+runs only beside what scrolls: a field or a header above the rows
+spans the column's full width, as the platform's search field above
+a list does. At When scrolling and at Automatic the bar lies over
+the rows' trailing edge and takes no lane.
 It stands at the trailing edge of the region that scrolls, whatever
 the measure of the content inside: the region scrolls as a whole
 and the measure caps the text within it, as the platform's reading
