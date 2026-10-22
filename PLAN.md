@@ -24811,7 +24811,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK7.8: Feeds stands on the three-column arrangement and the split pane leaves
 
-- [ ] Feeds adopts the three-column arrangement: the pane a
+- [x] Feeds adopts the three-column arrangement: the pane a
   `PaneColumn` (no marks, no head, the rail as rows, no footer),
   the list column's head the filter field, its rows the article
   table, its footer the pager, its width stated by feeds off its
@@ -24836,7 +24836,7 @@ run, and no capture runs while the owner is at the machine
   fresh-eyes review of feeds' window in both schemes, by the
   worker and by a fresh reader with no checklist, recorded
   verbatim with the known misreads briefed.
-- [ ] Exit: green in `patterns`, `components/gallery`,
+- [x] Exit: green in `patterns`, `components/gallery`,
   `workbench/feeds`, `workbench/sitedocs`, `workbench` and every
   app by name; guard OK; guides gate OK; `scripts/check-layers.sh`
   OK; one commit per repo with the heading as subject; push every
