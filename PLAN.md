@@ -25149,23 +25149,6 @@ run, and no capture runs while the owner is at the machine
 - [x] Exit: green in `workbench/feeds` by name; guard OK; gofmt gate
   OK; commit and push in `workbench` and `.github`; no tag.
 
-### G-CK11: Every window offers its actions through the menu bar
-
-Ruled 2026-10-22 (the Action entry at 3724a9f): every action a window
-offers through a control also stands in the menu bar with its key
-equivalent, as the platform requires, so an action is never offered
-nowhere; a control that goes with its pane removes nothing from the
-menu bar. Mindchat has a menu bar; feeds gains one in CK10.3; the
-other eight workbench windows have none and are defects under the
-entry. Each gains the platform's menu bar through `mvu/desktop`'s
-menu bar: the application menu with Settings… or Preferences… where
-the window has one, File with the window's own acts (open, new,
-reload, switch) and their key equivalents, Edit with the platform's
-standard items where a field exists, View with the pane's toggle
-where a pane exists; the chords the window already binds move into
-the table so one place states them. Each menu item posts the message
-its control posts.
-
 #### CK10.6: A column with nothing to show draws the platform's empty state
 
 - [x] Ruled by the ontology session 2026-10-22 on finding 1076: a
@@ -25404,6 +25387,23 @@ its control posts.
   (components/gallery and its inventory, workbench/feeds,
   sitedocs, sk150) and workbench root; guard OK; gofmt gate OK;
   commit and push per repo; no tag.
+
+### G-CK11: Every window offers its actions through the menu bar
+
+Ruled 2026-10-22 (the Action entry at 3724a9f): every action a window
+offers through a control also stands in the menu bar with its key
+equivalent, as the platform requires, so an action is never offered
+nowhere; a control that goes with its pane removes nothing from the
+menu bar. Mindchat has a menu bar; feeds gains one in CK10.3; the
+other eight workbench windows have none and are defects under the
+entry. Each gains the platform's menu bar through `mvu/desktop`'s
+menu bar: the application menu with Settings… or Preferences… where
+the window has one, File with the window's own acts (open, new,
+reload, switch) and their key equivalents, Edit with the platform's
+standard items where a field exists, View with the pane's toggle
+where a pane exists; the chords the window already binds move into
+the table so one place states them. Each menu item posts the message
+its control posts.
 
 #### CK11.1: Vaultview, todos and themer offer their actions through the menu bar
 
