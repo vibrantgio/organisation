@@ -607,10 +607,17 @@ yellow is the highlight's alone; Warning is orange so that it can be.
 The signal showing a symbol for a concept: it names an action or a
 thing at a glance. It is drawn in the foreground of what it sits in
 — a button's icon in the button's foreground, an icon on the content
-in the text colour — and has no role of its own. Inside a
+in the text colour — and has no role of its own. An icon in a
+control is in that control's foreground, never the accent. On the
+content, an application's icon, an avatar and a symbol in a row are
+in the text colour. The accent marks the selected entry and fills
+the one action; it tints a symbol only where a measured platform
+window does. Inside a
 control's structure an icon is a part, not a signal of its own.
 A mark is named by what it depicts, never by what it does: one
-mark serves several actions, and the same picture has one name.
+mark serves several actions, and the same picture has one name. A
+magnifying glass is magnifying-glass, a disc with a cross knocked
+out is xmark-circle, a clockwise arrow is arrow-clockwise.
 
 ### Image
 
