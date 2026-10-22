@@ -1220,3 +1220,9 @@ Rene: Which DOMAIN.md do you rule on?
 Rene: You do have direct access tothe other DOMAIN.md files right?
 
 Rene: What are you doing exactly right now?
+
+Rene: Read the other DOMAIN.md files directly, but allow the
+sessions that own them to edit them. Your judgement should be
+followed. I see that vibrantgio is using strange language in its
+PLAN.md sometimes. An example "CK7.4: Mindchat stands on the shell"
+^0005-ontology-judgement-followed
