@@ -25579,7 +25579,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.29: A standing scrollbar occupies its lane and the rows stop short of it
 
-- [ ] Under [[DOMAIN#Scrollbar]], ruled on finding 1121: at Always
+- [x] Under [[DOMAIN#Scrollbar]], ruled on finding 1121: at Always
   the bar has a lane of its own and the rows stop short of it; at
   When scrolling and Automatic the bar lies over the rows' trailing
   edge and takes no lane. Sitedocs' Docs column, mindchat's
@@ -25590,7 +25590,7 @@ run, and no capture runs while the owner is at the machine
   `EmptyStateFrame` (say its name) so the choice is stated once.
   No pixel moves at WhenScrolling; a test per region asserts the
   rows end before the lane at Always.
-- [ ] Exit: green in `patterns` and every app named by name and
+- [x] Exit: green in `patterns` and every app named by name and
   workbench root; guard OK; gofmt gate OK; commit and push per
   repo; no tag.
 
