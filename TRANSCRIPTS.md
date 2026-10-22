@@ -1216,3 +1216,5 @@ method; from now on tasks cite a ruling as a wikilink to the
 DOMAIN entry. ^0005-tasks-cite-entries
 
 Rene: Which DOMAIN.md do you rule on?
+
+Rene: You do have direct access tothe other DOMAIN.md files right?
