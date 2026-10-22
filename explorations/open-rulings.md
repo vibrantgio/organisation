@@ -3839,10 +3839,6 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
 
-## HW. From CM1.1, the applications' tooltips
-
-Filed 2026-10-22 from CM1.1. Findings 1204 and 1205 are ruled: 1204 is in CM1.36 and CM3.1, 1205 in CM1.37; 1206 is in CM1.35. Nothing stays open.
-
 ## HX. From CM1.3, the workbench's icons and launch button
 
 Filed 2026-10-22 from CM1.3. Finding 1207 is ruled and in CM1.38. Nothing stays open.
