@@ -25938,7 +25938,7 @@ run, and no capture runs while the owner is at the machine
   todo's delete mark is under the button. The list's last row ends
   above the button's band: the region that scrolls keeps the
   button's height plus the page padding as its bottom inset, so
-  every row's delete mark is reachable. A test that the last row,
+  every row's delete mark can be clicked. A test that the last row,
   scrolled to the end, does not overlap the button's frame.
 - [ ] Exit: green in `workbench/todos` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
