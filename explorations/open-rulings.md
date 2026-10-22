@@ -3824,3 +3824,19 @@ found beside its own subject, stands here.
 ## HP. From CK10.55, the layouts that place after measuring
 
 Filed 2026-10-22 from CK10.55. Findings 1180 to 1183 are in CK10.56, CK10.78, CK10.79 and CK10.80. Nothing stays open.
+
+## HQ. From CK10.71, the search field on content
+
+Filed 2026-10-22 from CK10.71.
+
+1184. **[note]** **The dark field edge is a tinted reading, and the untinted field on content reads a neutral one.** `fieldEdge` dark is `#2c3338`, read off the Save panel with wallpaper tinting on over its `#232a2f` sheet; the search field on content in `systemsettings-add-input-source-search-dark.png` reads `#282828` over the untinted `#1e1e1e`, the same 9 to 10 levels over its sheet. Every dark text field and the iconbrowser's search field draw the blue-cast `#2c3338` on the neutral `#1e1e1e` window fill. Whether `fieldEdge` dark is re-read as `#282828` (a token change, which runs the field walkers and regenerates every dark field golden) is unasked.
+
+1185. **[note]** **The field on content measures 26 px with a 10 px cap band, and the library draws it 28 px with the body text's band.** The platform sets the search field's text on content a size smaller than the sidebar recess's (cap band 10 px against 11), and the field is 26 px tall where the Comfortable field draws 28: BodyLarge's 24 dp line box and 2 dp of padding either side. Both close only by giving a field's text a typography role of its own; whether that role is drawn for the search field alone or for every text field, which the Save panel measures at 27, is unasked.
+
+1186. **[note]** **Three disclosures turn chevron-right for an open row, and the set's chevron-down is half its size.** `patterns/sidebar`'s `PaintDisclosure`, `workbench/sitedocs`' `drawOutlineDisclosure` and `workbench/vaultview`'s `drawDisclosure` each turn chevron-right a quarter turn when the row opens, and `components/icons`' doc for `ChevronRight` says a sidebar's disclosure does so; under the Icon entry one picture has one name, so an open row draws chevron-down. The set's chevron-down is the stacked pair's lower half: at 24 dp it covers 8 × 5 px in iconbrowser's window golden, where chevron-right covers 8 × 14, so a disclosure switched to it as drawn would shrink when it opens. Whether chevron-down is redrawn at chevron-right's extent before the three disclosures take it is unasked.
+
+1187. **[note]** **Iconbrowser's query narrows the catalogue and marks nothing it finds.** The fresh-eyes reader of CK10.71 sampled the "folder" frames and found no pixel with chroma between y 80 and 290: the names are filtered, not marked. The Search field entry says the field marks what it finds with the search highlight. Whether a field that filters a catalogue owes the highlight on the matched part of each name, or the entry says a filtering field marks nothing, is unasked.
+
+1188. **[note]** **With no match, the marks section's heading is removed and the Material section's heading stays with "0 icons".** In iconbrowser's no-match goldens "Vibrant Gio marks" is gone while "Material Design icons — 0 icons" is drawn at y ≈ 97. The two sections answer an empty query differently; whether both keep their headings with a count or both are removed is unasked.
+
+1189. **[note]** **Iconbrowser's search field is as wide as the page.** It runs 976 px across the 1000 px window, where the platform's field on content in the "add an input source" sheet is 209 px wide and the toolbar field 325. No capture says what width a field at the top of a page on content takes; whether it keeps the page's width or a measured width is unasked.

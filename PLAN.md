@@ -26291,7 +26291,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.71: Iconbrowser's search field is drawn from the platform's field on content
 
-- [ ] Under [[DOMAIN#Search field]] and [[DOMAIN#Chrome]], ruled on
+- [x] Under [[DOMAIN#Search field]] and [[DOMAIN#Chrome]], ruled on
   finding 1136: the window's own fill with content on it is
   content, not chrome, so a search field on it is the platform's
   text field with the search field's structure, raised as every
@@ -26313,7 +26313,7 @@ run, and no capture runs while the owner is at the machine
   as the chevron-down mark's. This task takes a capture: it runs only on an
   open desktop the owner has left, under the phase's caffeinate
   rule.
-- [ ] Exit: the two captures and the MEASURED rows are in the
+- [x] Exit: the two captures and the MEASURED rows are in the
   reference; green in `components` (input by name),
   `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
