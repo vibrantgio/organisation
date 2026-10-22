@@ -25656,7 +25656,7 @@ run, and no capture runs while the owner is at the machine
 
 #### CK10.33: Iconbrowser's page scrolls as the column with its padding inside
 
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Column]], ruled on
+- [x] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Column]], ruled on
   finding 1128: the region that scrolls is the column and its
   padding is inside it; the bar is at the column's trailing edge,
   never inset by the padding. Iconbrowser lays its grid inside the
@@ -25667,7 +25667,7 @@ run, and no capture runs while the owner is at the machine
   inside the padding and, at Always, less the lane. The six
   window goldens regenerate with the cause named (the grid's
   width inside the padding; no bar at WhenScrolling).
-- [ ] Exit: a test that the bar at Always is drawn against the
+- [x] Exit: a test that the bar at Always is drawn against the
   window's trailing edge; green in `workbench/iconbrowser` by name
   and workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
