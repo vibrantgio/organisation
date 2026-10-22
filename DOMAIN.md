@@ -231,11 +231,15 @@ it, it is a badge; if you use it, it is a chip.
 
 The window's furniture: every region placed directly on the
 backdrop that frames the document rather than being it — navbar,
-toolbar, sidebar, inspector, status bar, pane. Its fill is the
-platform's sidebar material with wallpaper tinting off, measured
-into the reference for each scheme: a shade darker than the content
-in both, set apart from it by that shade and, where the two are flush, a
-seam. What the platform
+toolbar, sidebar, inspector, status bar, pane. A sidebar, a pane,
+an inspector, a navbar and a status bar wear the platform's sidebar
+material with wallpaper tinting off, measured into the reference
+for each scheme: a shade darker than the content in both, set apart
+from it by that shade and, where the two are flush, a seam. A
+toolbar has no fill of its own: each share of it stands on the fill
+of the column beneath it, the sidebar material over the pane and
+the column's own fill over a list or the content, as Mail's
+three-column window is measured. What the platform
 adds on top — the wallpaper showing through the glass — a window
 that cannot see the desktop does not paint. The shell pattern is
 the composition of chrome regions; a variant is "chrome" when the
@@ -1315,7 +1319,11 @@ notifications column.
 
 The pattern of a strip along the window's top, below the
 title, holding the controls that act on the document. Its controls
-are in the chrome variant; it holds controls, never content. In its
+are in the chrome variant; it holds controls, never content. It has
+no fill of its own; each share stands on its column's fill, as the
+Chrome entry says. A toolbar action is a button, bordered, titled
+with a symbol or text in the label colour, never a word in the
+accent and never a link. In its
 centre stands the window's title or, where the platform shows the
 document's place, a breadcrumb as the platform's path bar: a
 control standing where the title stands, not content. The picker's
