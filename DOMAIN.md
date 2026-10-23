@@ -968,7 +968,11 @@ operated, and leaves when the task ends. Content still arriving is a
 task in progress, not an empty state: the indicator and the
 application's own text stand centred in the region's frame, as an
 empty state does, never as a row of the content, and leave when the
-content arrives. That text is a short phrase naming the task and
+content arrives. A region whose content is derived from content
+still arriving in another region has content still arriving too. It
+draws the indicator and its own text, never an empty state, which
+would name a condition the window does not know yet. That text is a
+short phrase naming the task and
 ending with an ellipsis, its capitalisation read from the reference
 with the indicator. In an empty region the indicator stands above
 the text, centred as one group, as the platform's content
