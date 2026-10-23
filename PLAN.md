@@ -26865,6 +26865,30 @@ order.
   no badge; green in `workbench` root by name; guard OK; gofmt gate
   OK; one commit in workbench, push; no tag.
 
+#### CM1.39: Mindchat's arriving turn and its sidebar row draw the indeterminate indicator
+
+- [ ] Under [[DOMAIN#Progress]], ruled on finding 1209: a turn still
+  arriving is content still arriving, a task with no known end, so
+  it is the platform's indeterminate indicator, never a custom
+  indicator. The turn is a row of the transcript, so the row shape
+  applies: the application's phrase ending with an ellipsis at the
+  leading end of the body and the `components/progress` indicator
+  (CM1.16) at the trailing end, both removed when the turn's first
+  text arrives; `WaitingDots` is deleted. The sidebar row's
+  in-flight dot (`StreamDot` in `ChatRow`) is the same signal for
+  the same task: the row keeps its title and the indicator is at
+  its trailing end; `StreamDot` is deleted, and the mindchat
+  palette's Accent comment naming the dot and the waiting
+  indicator with it. The goldens that change regenerate with the
+  cause named. A test that an arriving turn draws the indicator at
+  the measured size at the body's trailing end and no accent dot,
+  and a test that an in-flight sidebar row draws it at the row's
+  trailing end.
+- [ ] Exit: `grep -rn 'WaitingDots\|StreamDot'` in `workbench`
+  finds nothing; green in `workbench/mindchat` by name and
+  workbench root; guard OK; gofmt gate OK; layers gate OK; one
+  commit in workbench, push; no tag.
+
 ### G-CM2: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
