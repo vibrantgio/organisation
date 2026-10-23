@@ -26394,17 +26394,24 @@ order.
 #### CM1.11: What is past a scrolling region's edge is clipped, never faded
 
 - [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], ruled
-  on finding 1168: what is past a scrolling region's edge is
-  clipped at the edge, never faded, as the platform's scroll views
-  clip; the bar says there is more. The code block draws a
-  dissolve over an edge with hidden code. The dissolve is removed
-  from `markdown`; the goldens that showed it regenerate with the
-  cause named (the clip in place of the dissolve). A test that the
-  glyphs at a cut edge keep their full contrast.
-- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
-  name and workbench root; guard OK; gofmt gate OK; commit and
-  push per repo; no tag.
-
+  on finding 1168 and found again as finding 1211: what is past a
+  scrolling region's edge is clipped at the edge, never faded, as
+  the platform's scroll views clip; the bar says there is more.
+  `components/scrollarea` draws a dissolve over every edge with
+  hidden content: `FromTokens` sets a `Fade` of S4 into
+  `ControlBackground` and `Style.Layout` draws it. The `Fade`
+  field and its drawing are removed from `components/scrollarea`;
+  the gallery's Scroll area section is retitled to what it shows,
+  the clip and the bar; the code block's own dissolve is removed
+  from `markdown`. The goldens that showed a dissolve regenerate
+  with the cause named (the clip in place of the dissolve). A test
+  in `components/scrollarea` and one in `markdown` that the pixels
+  at a cut edge keep their full contrast.
+- [ ] Exit: `grep -rn 'Fade' components/scrollarea` finds nothing;
+  green in `components` (scrollarea, gallery and inventory by
+  name), `markdown` by name, `workbench/vaultview` by name and
+  workbench root; guard OK; gofmt gate OK; layers gate OK; commit
+  and push per repo; no tag.
 #### CM1.12: The gallery's documents draw the bar with the setting of the window that shows them
 
 - [ ] Under [[DOMAIN#Scrollbar]], found as finding 1085: every
