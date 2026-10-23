@@ -26451,7 +26451,7 @@ order.
 
 #### CM1.14: Every empty state line has the platform's shape
 
-- [ ] Under [[DOMAIN#Empty state]], ruled on finding 1171: the line
+- [x] Under [[DOMAIN#Empty state]], ruled on finding 1171: the line
   is a few words in title case stating the condition, with no
   period and no instruction, as Mail's "No Message Selected" is
   measured; a description under it is a sentence and ends with a
@@ -26465,7 +26465,7 @@ order.
   and stays. Every test that names a line is updated; the goldens
   that show a line regenerate with the cause named (the line's
   text).
-- [ ] Exit: `grep -rn` over the workbench finds no empty state line
+- [x] Exit: `grep -rn` over the workbench finds no empty state line
   ending in a period; green in `workbench/todos`, `workbench/feeds`,
   `workbench/vaultview`, `workbench/sitedocs`, `workbench/iconbrowser`
   by name and workbench root; guard OK; gofmt gate OK; one commit
