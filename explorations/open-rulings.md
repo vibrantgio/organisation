@@ -3843,4 +3843,3 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 Filed 2026-10-23 from CM1.14's fresh-eyes review.
 
-1213. **[decide]** **Vaultview's outline pane says "No Headings" while the note is still downloading.** [[DOMAIN#Progress]] names the platform's indeterminate indicator for content still arriving, and [[DOMAIN#Empty state]] names the empty state for a region that has nothing to show, a failed read included. In the golden `window-downloading-{light,dark}.png` the note column shows the download in progress while the outline pane beside it draws the empty state "No Headings", which states a condition the window does not know yet. CM1.16 covers sk150 and CM1.39 mindchat; no task covers vaultview's outline, backlinks or note column while a note is arriving. The ruling says which panes draw the indicator while the note arrives, and the task follows CM1.39.

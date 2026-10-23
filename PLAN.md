@@ -26970,6 +26970,30 @@ order.
   `theme`, `effects/transition` by name, `workbench` root and
   every app module by name; guard OK with the new row; gofmt gate
   OK; guides gate OK; commit and push per repo; no tag.
+
+#### CM1.43: Vaultview's note column, outline and backlinks draw the indicator while a note arrives
+
+- [ ] Under [[DOMAIN#Progress]] and [[DOMAIN#Empty state]], ruled on
+  finding 1213: a region whose content is derived from content
+  still arriving in another region has content still arriving too;
+  it draws the indicator and its own text, never an empty state.
+  While a note is downloading, vaultview's note column, its outline
+  pane and its backlinks pane each draw the `components/progress`
+  indicator (CM1.16) in their own frame in the entry's empty-region
+  shape: the indicator above the phrase, centred as one group, at
+  the DERIVED gap, the phrase in sentence case ending with an
+  ellipsis and naming what that region waits for in the
+  application's words. The signals are removed when the note's
+  content arrives, and each pane then draws its content or, with
+  none, its empty state. The `window-downloading` goldens
+  regenerate with the cause named. A test per pane that the
+  indicator and the phrase are drawn while the note is downloading
+  and the empty state is not, and that the empty state is drawn
+  once the note has arrived with no headings or links.
+- [ ] Exit: green in `workbench/vaultview` by name and workbench
+  root; guard OK; gofmt gate OK; one commit in workbench, push; no
+  tag.
+
 ### G-CM2: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
