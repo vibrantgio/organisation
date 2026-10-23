@@ -26473,7 +26473,7 @@ order.
 
 #### CM1.15: Todos' add action is a toolbar action
 
-- [ ] Under [[DOMAIN#Toolbar]] and [[DOMAIN#Action]], ruled on
+- [x] Under [[DOMAIN#Toolbar]] and [[DOMAIN#Action]], ruled on
   finding 1172: an action on the collection a window shows, adding
   first of all, is a toolbar action, a bordered button with the
   plus symbol in the label colour, as Notes' and Reminders'
@@ -26487,7 +26487,7 @@ order.
   button's dark plus drawn in the window fill, closes with the
   removal. A test that the toolbar
   draws the add button and the page draws no floating button.
-- [ ] Exit: green in `workbench/todos` by name and workbench root;
+- [x] Exit: green in `workbench/todos` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
 #### CM1.16: The progress signal draws the platform's indeterminate indicator

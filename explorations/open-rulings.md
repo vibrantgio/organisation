@@ -3843,3 +3843,10 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 Filed 2026-10-23 from CM1.14's fresh-eyes review.
 
+
+## IJ. From CM1.15, todos' add action
+
+Filed 2026-10-23 from CM1.15's fresh-eyes review.
+
+1214. **[decide]** **The light toolbar control's drop shadow reaches 31 px below the control.** Under [[DOMAIN#Toolbar]], its controls are in the chrome variant. In a light render of todos, the bordered toolbar control drawn by `shell.ToolbarControl` spans y 8–43, and its drop shadow is still drawn at y=74 in column x=622. The shadow is drawn as a diamond that runs from y=0 to y=74 and from x=583 to the window's edge, and it peaks at (246,246,246) over y 45–55. In light the shadow is the control's only edge, because its fill and the band are both #ffffff. The stored reference reads the Finder view pop-up's shadow to five rows above the control and records no extent below it. A ruling measures the shadow's extent and shape below a light toolbar control from a capture and states whether the component's shadow follows it.
+
