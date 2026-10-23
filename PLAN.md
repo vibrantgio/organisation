@@ -64,7 +64,10 @@ later). The gallery itself has
 a downstream: sitedocs renders it in a tab, so a gallery/inventory
 change also runs `workbench/sitedocs`' goldens — and note the root
 `go test ./...` does NOT reach the nested app modules; run them by
-name (it bit on 2026-08-27, found one task later). Never commit red.
+name (it bit on 2026-08-27, found one task later). Never commit red. The runs are one module at a time, in the foreground, under
+the default timeout; never several modules at once and never in the
+background: sixteen parallel runs once started about 288 compilers,
+filled 32 GB and swap, and the owner had to kill them.
 
 **Layers from this directory.** A task that can grow an import edge — a new
 `import`, a `go.mod` change, a package moved across repos — ends with
