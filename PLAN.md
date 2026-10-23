@@ -26377,7 +26377,7 @@ order.
   push per repo; no tag.
 #### CM1.10: A code block's side padding scrolls with the code
 
-- [ ] Under [[DOMAIN#Scroll area]] and [[DOMAIN#Scrollbar]], ruled
+- [x] Under [[DOMAIN#Scroll area]] and [[DOMAIN#Scrollbar]], ruled
   on finding 1167: a scroll area's padding is inside it and moves
   with the content, as a platform text view's inset moves with the
   text. The fence's side padding is outside its scroll area, so
@@ -26387,7 +26387,7 @@ order.
   the rim. The goldens that hold a wide code block regenerate with
   the cause named (the clip at the rim). A test that a scrolled
   block draws glyph pixels up to the rim.
-- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
+- [x] Exit: green in `markdown` by name, `workbench/vaultview` by
   name and workbench root; guard OK; gofmt gate OK; commit and
   push per repo; no tag.
 
