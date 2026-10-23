@@ -26414,7 +26414,7 @@ order.
   and push per repo; no tag.
 #### CM1.12: The gallery's documents draw the bar with the setting of the window that shows them
 
-- [ ] Under [[DOMAIN#Scrollbar]], found as finding 1085 and again
+- [x] Under [[DOMAIN#Scrollbar]], found as finding 1085 and again
   as finding 1212: every region that scrolls draws the window's
   bar with the setting the window reads. `components/gallery/inventory`
   builds two `markdown.Style`s of its own with no setting on
@@ -26429,7 +26429,7 @@ order.
   bars, and the gallery's own window passes what it reads. A test
   that the inventory's fence and its wide table at Always draw a
   standing bar.
-- [ ] Exit: green in `components` (gallery and inventory by name),
+- [x] Exit: green in `components` (gallery and inventory by name),
   `workbench/sitedocs` by name and workbench root; guard OK; gofmt
   gate OK; layers gate OK; commit and push per repo; no tag.
 #### CM1.13: The folder browser tells a folder it cannot read from one that holds no folders
