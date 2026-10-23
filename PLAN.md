@@ -26994,6 +26994,30 @@ order.
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
+#### CM1.45: The toolbar control's shadow is read at its corners
+
+- [ ] Under [[DOMAIN#Shadow]], ruled on finding 1214: the light
+  toolbar control's shadow is measured in every direction in
+  "What the toolbar control's drop shadow measures" in
+  `reference/macos/controls.md`, and the component's fitted
+  drawing (black at 9/255, reach 23, the rectangle sunk 9, bounded
+  8 rows above) is within that fit; what is unread is the shape at
+  the corners, since the fit sampled the axis runs only. From the
+  stored captures and no desktop: the darkening along the
+  diagonals from the pop-up's corners in `finder-window-light.png`
+  and the three controls in `mail-three-column-light.png` is read,
+  the distance function is fitted with the sunk rectangle's triple
+  held, the rows are recorded MEASURED in `controls.md` with their
+  arithmetic, and the ramp's distance in `effects/depth` or
+  `components/internal/control` changes only if the corners read
+  rounded, with the goldens that show a toolbar control
+  regenerating with the cause named in that case.
+- [ ] Exit: the MEASURED rows are in the reference and name their
+  captures; green in `effects` and `components` (the whole
+  modules), `patterns` (shell by name) and workbench root, if the
+  ramp changed; guard OK; gofmt gate OK; commit and push per repo;
+  no tag.
+
 ### G-CM2: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
