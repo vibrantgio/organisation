@@ -26361,7 +26361,7 @@ order.
 
 #### CM1.9: A code block's thumb is flattened onto the fill the block is drawn in
 
-- [ ] Under [[DOMAIN#Scrollbar]], found under CK10.45 (finding
+- [x] Under [[DOMAIN#Scrollbar]], found under CK10.45 (finding
   1169): `markdown.FromTokens` builds `CodeScrollbar` on the
   theme's code fill, and a document drawn in a syntax highlighter
   style draws the block in that style's background, so the thumb
@@ -26372,7 +26372,7 @@ order.
   goldens that show the bar regenerate with the cause named (the
   thumb's colour). A test that the thumb over a highlighter-styled
   block is a step from that block's background.
-- [ ] Exit: green in `markdown` by name, `workbench/vaultview` by
+- [x] Exit: green in `markdown` by name, `workbench/vaultview` by
   name and workbench root; guard OK; gofmt gate OK; commit and
   push per repo; no tag.
 #### CM1.10: A code block's side padding scrolls with the code
