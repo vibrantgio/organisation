@@ -3838,3 +3838,7 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 ## HV. From CL1.1, the move to the organisation repository
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
+
+## IN. From CM1.20, the toolbar control's width
+
+1216. **[decide]** **The toolbar lays every control out twice a frame.** Under [[DOMAIN#Toolbar]]: `patterns/shell` reads a toolbar control's width in a second layout pass, which gives the control no room and holds its events back. A control in a toolbar must therefore change no state in a disabled context. Vault View's find field broke on that rule: it cleared its pending keyboard request in the disabled pass, and CM1.20 guarded it. The open choice is whether the toolbar keeps the second pass or a toolbar slot states its own width.

@@ -26561,7 +26561,7 @@ order.
 
 #### CM1.20: A toolbar control is laid out at its own width
 
-- [ ] Under [[DOMAIN#Toolbar]], found under CK10.55 (finding 1183):
+- [x] Under [[DOMAIN#Toolbar]], found under CK10.55 (finding 1183):
   the toolbar lays every control out as a rigid child with the
   rest of the row as its maximum, and `button.Button` fills the
   maximum it is given, so a bare button takes the whole rest of
@@ -26572,7 +26572,7 @@ order.
   reservations stay as they are where they match. A test that a
   bare button in a toolbar's leading slot is drawn at its content
   width and the trailing group keeps its place.
-- [ ] Exit: green in `patterns` by name and every workbench app
+- [x] Exit: green in `patterns` by name and every workbench app
   with a toolbar by name and workbench root; guard OK; gofmt gate
   OK; commit and push per repo; no tag.
 
