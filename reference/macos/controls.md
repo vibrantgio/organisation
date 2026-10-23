@@ -1427,6 +1427,7 @@ under x 14 its fill is darkened by the sidebar's shadow.
 | the text | **"Checking for updates…"**: sentence case, the first word alone capitalised, ending with the ellipsis character U+2026 | `systemsettings-software-update-checking-{light,dark}.png` against AppKit renders of the two strings | the phrase is read off the pixels. Rendered in `NSFont.systemFont(ofSize: 13)` over `#f7f7f7`, U+2026 draws its three dots at a 3.3 px pitch in columns 0–1, 3–4 and 6–7 after the "s", and three periods at a 4 px pitch in columns 0–1, 4–5 and 8–9. The capture's dots are columns 144–146, 148–149 and 151–152, the ellipsis's pattern column for column, in both schemes |
 | the text's size | **13 pt**, the system font's regular weight | `systemsettings-software-update-checking-light.png` against an AppKit render | the 13 pt render of "Checking for updates…" is 139 px wide, x 14–152 in the capture's position, and, scaled by `labelColor`'s 216/255, matches the capture within 5 levels on every one of the 1960 pixels of x 14–153, y 16–29, 0.8 levels on average; the 12 pt render is 130 px and the 14 pt render 149 px |
 | the text's colour | **`labelColor`**: `#262626` light, `#dedede` dark | `systemsettings-software-update-checking-{light,dark}.png` | the darkest text pixel reads 38 light over 60 pixels and the lightest 222 dark over 26 pixels. `labelColor` flattened over `#f7f7f7` gives 37.8 and over `#252525` gives 221.7 |
+| the gap between indicator and text, stacked | **8 px**, from the indicator's last row to the top of the text's line box; DERIVED | the indicator's extent above | no stored capture centres the indicator above text, so the gap is stated in the indicator's measured extent: 16 px × ½ = 8 px, the wheel's radius. The gap is smaller than either part it separates, the 16 px indicator and the 13 pt text's line, so the two read as one group. The text's line box holds about 3 px above the glyphs at 13 pt, so the glyphs begin about 11 px under the indicator |
 
 **The platform's indeterminate indicator is a 16 px wheel of eight grey
 strokes, the darkest stroke moving clockwise about once a second.** In a row
@@ -1441,7 +1442,9 @@ catalogue: the light darkest stroke lies between `labelColor` and
 `secondaryLabelColor` within one level. Three dark frames are not enough to
 read the dark strokes' full range. The pane draws the indicator and the text
 at the two ends of a row, so these captures read no gap for the two drawn
-together as a group.
+together as a group. The stacked gap in the table is DERIVED from the
+indicator's extent until a platform window that centres the two as one group
+is captured.
 
 ## What the status bar measures
 

@@ -3838,3 +3838,7 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 ## HV. From CL1.1, the move to the organisation repository
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
+
+## IK. From CM1.16, the progress signal
+
+1215. **[decide]** **The progress signal's text is set at a measured 13 sp that no typography role carries.** Under [[DOMAIN#Typography role]]: "A label or a heading is set in a typography role, never in a bare size." The reference measures the phrase beside the indeterminate indicator at 13 pt in the system font's regular weight, and the type set's roles are 11, 12, 14 and 16 sp in the Label and Body families. `components/progress` sets the phrase in the Body Medium role's typeface and weight at a carried 13 sp, as `patterns/shell` carries the empty state's measured 28 sp. The ruling is whether a role of the type set carries the platform's 13 pt body size, or whether a measured size beside a role stays allowed.

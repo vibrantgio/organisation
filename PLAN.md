@@ -26492,7 +26492,7 @@ order.
 
 #### CM1.16: The progress signal draws the platform's indeterminate indicator
 
-- [ ] Under [[DOMAIN#Progress]]: the signal showing how far a task
+- [x] Under [[DOMAIN#Progress]]: the signal showing how far a task
   has come, the platform's indeterminate indicator when the end is
   not known, read and never operated. `components/progress` is
   added (name its props, say why) drawing the indeterminate
@@ -26511,7 +26511,7 @@ order.
   end, as measured. A test that the indicator is drawn at the
   measured size and a test per tab that it stands above the
   sentence at the DERIVED gap while the content is arriving.
-- [ ] Exit: green in `components` (progress, gallery and inventory
+- [x] Exit: green in `components` (progress, gallery and inventory
   by name), `workbench/sk150` by name and workbench root; guard
   OK; gofmt gate OK; layers gate OK; commit and push per repo; no
   tag.
