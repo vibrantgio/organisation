@@ -26582,7 +26582,7 @@ order.
 
 #### CM1.21: The dark field edge is re-read from the untinted capture
 
-- [ ] Under [[DOMAIN#Field]], ruled on finding 1184: every platform
+- [x] Under [[DOMAIN#Field]], ruled on finding 1184: every platform
   value is measured with wallpaper tinting off, and a reading
   taken with tinting on is re-read. `fieldEdge` dark was read off
   the Save panel with tinting on. The token takes the edge colour
@@ -26593,7 +26593,7 @@ order.
   row. A token change: `effects/transition` and `workbench/themer`
   run by name; every dark golden that shows a field regenerates
   with the cause named.
-- [ ] Exit: a test that the dark field edge equals the MEASURED
+- [x] Exit: a test that the dark field edge equals the MEASURED
   untinted value; green in `theme`, `components` (input by name),
   `effects/transition`, `workbench/themer` by name and workbench
   root; guard OK; gofmt gate OK; commit and push per repo; no tag.

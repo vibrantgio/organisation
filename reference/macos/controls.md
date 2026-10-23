@@ -86,8 +86,8 @@ the sheet is the Save panel, which is what every reading below calls it.
 | --- | --- | --- | --- |
 | push button — "Cancel", "Save" | 24 px, y 501–524 | `save-dialog-{light,dark}.png` | luminance run down x=365, clear of the label: the fill `#ececec` light and `#333a3f` dark against the sheet |
 | pop-up button — "Where:", "File Format:" | 24 px, y 281–304 and y 336–359 | same | the same run at x=440 and x=430 |
-| text field — "Tags:", unfocused | 27 px, y 243–269 | same | the field's fill is the sheet's, so the run reads its border rows, `#f3f3f3` light and `#2c3338` dark |
-| that text field's edge, its width | **1 px** on every side | same | runs across and down the "Tags:" box: one column at x=264 and one at x=495, one row at y=243 and one at y=269, each reading `#f3f3f3` light and `#2c3338` dark with the sheet on one side of it and the field's interior — which is the sheet's own fill — on the other. The column at x=263 and the one at x=496 are the sheet, unblended. It is the only unfocused enabled control on the sheet that draws an edge at all, which is what makes it the reading a checkbox and a radio spend until a capture holds one of theirs. Read 2026-09-18 by CG5.3h |
+| text field — "Tags:", unfocused | 27 px, y 243–269 | same | the field's fill is the sheet's, so the run reads its border rows, `#f3f3f3` light and `#2c3338` dark. The dark value is a tinted reading, superseded as the next row says |
+| that text field's edge, its width | **1 px** on every side | same | runs across and down the "Tags:" box: one column at x=264 and one at x=495, one row at y=243 and one at y=269, each reading `#f3f3f3` light and `#2c3338` dark with the sheet on one side of it and the field's interior — which is the sheet's own fill — on the other. The column at x=263 and the one at x=496 are the sheet, unblended. It is the only unfocused enabled control on the sheet that draws an edge at all, which is what makes it the reading a checkbox and a radio spend until a capture holds one of theirs. Read 2026-09-18 by CG5.3h. The dark `#2c3338` is a tinted reading: the capture was taken with wallpaper tinting on. The edge row under "What the search field on content measures" supersedes it with `#282828` over the untinted `#1e1e1e`, and `fieldEdge` takes that value |
 | that text field's leading inset: the field's inner edge to the text's first pixel | 7 px | same | read off the focused "Save As:" field, the only one in the sheet holding a value. Its box runs x 264–495, the same columns the "Tags:" field below it runs, so its fill begins at x=265; the first pixel column of "Untitled" is x=272. The focus ring is drawn two columns outside the box, over x 262–266, which is why the box is read off the pair rather than off the ring. Both appearances give 272; dark carries one faint antialiased column at x=271, three of 255 above the selection's fill, which light does not, and a fringe is not the symbol's first column |
 | that text field's text origin: the field's inner edge to the column the text is laid from | 6 px | same | the "Save As:" value is selected in the capture, and the selection fills from the run's origin: `#b4d8fd` light and `#406489` dark from x=271 against the fill beginning at x=265. The first covered pixel of "Untitled" is one column further in, at x=272, so the U carries 1 px of left side bearing in the face the platform sets the field in, and the 7 above is that origin plus that bearing |
 | that text field's trailing end | no reading | same | nothing in either capture reaches it. The selection behind "Untitled" ends at x=318 and the value's last covered pixel at x=317, against an inner trailing edge at x=494; the "Tags:" field below holds no value at all. The trailing inset is the leading one mirrored until a capture holds a value that reaches a field's trailing edge, which is on the capture list |
@@ -376,8 +376,10 @@ one unfocused enabled control on the sheet that draws an edge at all: the
 "Tags:" field's box, one column at x=264 and one at x=495, one row at
 y=243 and one at y=269, `#f3f3f3` light and `#2c3338` dark against the
 sheet on one side and the field's interior on the other. `FieldEdge`
-already carries that colour; the width it is drawn at is now measured too,
-and it is a hairline and not the two pixels `components/input` drew.
+carries the light colour; the width it is drawn at is measured too,
+and it is a hairline and not the two pixels `components/input` drew. The
+dark `#2c3338` is a tinted reading, and `FieldEdge` takes the untinted
+`#282828` the search field on content measures.
 
 System Settings' radio settles the disc and not the edge. Its one radio is
 selected, so it is accent-filled and draws no edge of its own, and the
@@ -1268,7 +1270,8 @@ size smaller. Both close only by moving a typography role. The dark edge
 reads `#282828` over an untinted `#1e1e1e`, where the `fieldEdge` recorded
 from the Save panel is `#2c3338`, read with wallpaper tinting on; the two are
 the same step over two different sheets, and neither capture corrects the
-other.
+other. Every platform value is read with wallpaper tinting off, so
+`fieldEdge` takes the untinted `#282828`.
 
 ## What the standing scrollbar measures
 
