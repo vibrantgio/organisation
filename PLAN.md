@@ -26301,7 +26301,7 @@ order.
 
 #### CM1.6: Themer's style rows run to the lane
 
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Row]], ruled on
+- [x] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Row]], ruled on
   findings 1164 and 1210: a column of rows has no padding of its
   own at either end; the rows span the column edge to edge, and
   each row's own inset keeps its text and the selected row's fill
@@ -26319,7 +26319,7 @@ order.
   until CM4.1. Iconbrowser's grid is a page and keeps its padding.
   The themer goldens regenerate with the cause named (the rows'
   extent).
-- [ ] Exit: a test that the column has no padding at either end: the
+- [x] Exit: a test that the column has no padding at either end: the
   marked row's hit area spans the column to the lane at Always and
   to the box's edge at WhenScrolling, and its fill is inset one row
   inset from each of the row's ends; green in `workbench/themer` by

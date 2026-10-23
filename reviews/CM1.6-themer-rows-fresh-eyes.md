@@ -71,5 +71,41 @@ VERDICT: FAIL — Scrollbar: the selected row's fill (x 30..319) runs flush agai
 
 - The Scrollbar finding stands, and it is not a recorded misread. [[DOMAIN#Pill]] defines the pill as "the rounded fill behind a selected row, inset from the row's ends". The Scrollbar entry keeps the pill from the row's end. CM1.6's Exit asks for the marked row's fill to end at the lane. b7cc233 follows the Exit, so the task's Exit and the entries disagree. This is filed as finding 1210 [decide].
 - The leading-side padding is part of the same ruling. Under the Pill reading, the row spans the column from edge to edge, and the pill is inset from both of the row's ends. Finding 1210 covers this.
-- CM1.6 stays unticked until finding 1210 is ruled. b7cc233 is pushed and is green.
+- CM1.6 stayed unticked until finding 1210 was ruled. b7cc233 is pushed and is green.
 - Row, Selection and Scroll area hold in both replies. There is nothing to do for them.
+
+## Second round, after finding 1210 was ruled
+
+Finding 1210 was ruled: the Exit was the defect. The Row entry now says that a row spans its list edge to edge, that a list has no padding at its ends, and that the row's own inset keeps the selection's fill from the end. Workbench dbe83ea removes the column's padding at both ends and insets the selected row's fill by `StyleRowInset`, 10 dp, from each of the row's ends. Both goldens are pixel-identical to the goldens of ee358ad. The reviewer was given the two goldens at dbe83ea, the rewritten task's text, the Scrollbar, Scroll area, Row and Selection entries verbatim, and `reviews/misreads.md` whole. `grep -c 'Recorded misreads'` on that file returned 1.
+
+### The reply, verbatim
+
+I made no edits. I sampled the pixels from both goldens with Pillow, read the code and the test, and ran the tests. `go test ./...` is green in the workbench root, the new test passes by name in themer, `gofmt -l` reports nothing, and master is level with origin/master.
+
+**Scrollbar: the entry holds.**
+- **No padding at the column's ends:** The box runs x 20 to 320 in both schemes, measured at y 470. The marked row's fill (catppuccin-latte, y 490 to 509) runs x 30 to 310, which is 10 px from each edge of the box. The commit says the fill's pixels did not move from ee358ad. What changed is that the hit area now spans the whole row.
+- **No thumb at rest:** In the trailing x 311 to 319 strip, outside the selection band, the only pixels that differ from the box are its rounded corners at y 450 and y 833. That matches a resting window at When scrolling.
+- **Lane at Always (from the test, since a still cannot show it):** The marked row's hit area takes the pointer from x 0 to x laneMin−1, and the lane at laneMin does not take it. The fill must span exactly inset to laneMin−inset.
+- **When scrolling (from the test):** The hit area reaches the bar's own area at the box's edge, and the fill is inset 10 from x 240, the row's end.
+- **Header above the list:** The "Syntax highlighter style" header sits above the box and is not in the scrolling region. This is the recorded misread about fixed headers, so I did not file it.
+
+**Scroll area: the entry holds.** This change does not touch a scroll area. The code block in the preview is unchanged and is not clipped or faded.
+
+**Row: the entry holds.**
+- In `ChoiceRow` the row's area is the full width from 0 to Max.X, and the click area is the whole row.
+- `StyleRowInset` (10 dp) insets the fill, the name and the tag from both ends.
+- The `BoxInset` offset that made the column's padding is gone.
+- The DERIVED row is in `organisation/reference/macos/controls.md:775` with its arithmetic: Finder 52 − 42 = 10 and 351 − 341 = 10, Voice Memos 74 − 64 = 10 and 283 − 273 = 10.
+- Row height is unchanged at 20 px (y 490 to 509).
+
+**Selection: holds for the scope of this task.** The fill is the platform selection colour with white text: (0,100,225) in light and (0,89,209) in dark. The Selection entry's sentence "A content list's selected row has the fill the reference measures for its platform counterpart … with the row's own text colour" is not met yet. The task explicitly leaves the fill's shape and colours for CM4.1, so I am not filing it against this change.
+
+**One process note, not a Language finding.** The task landed as two commits, b7cc233 and then dbe83ea, both titled "CM1.6". The exit asks for one commit in workbench. b7cc233 removed only the trailing padding and dbe83ea completes both ends. That makes it two commits, though the final state meets the exit.
+
+VERDICT: PASS
+
+### What was done with it
+
+- Scrollbar, Scroll area and Row hold. There is nothing to do for them.
+- Selection: the accent fill with white text against the Selection entry's content-list sentence is finding 1210's second defect. CM3.2 and CM4.1 plan it, so nothing new is filed.
+- The process note: the coordinator called for the second workbench commit under the same subject when finding 1210 was ruled. The two commits are b7cc233 and dbe83ea. Nothing is filed.
