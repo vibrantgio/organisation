@@ -26927,7 +26927,7 @@ order.
   caller by name; guard OK; gofmt gate OK; guides gate OK; commit
   and push per repo; no tag.
 
-#### CM1.41: Components and patterns say what a thing is drawn in, never what it wears
+#### CM1.41: Components and patterns say what a thing is drawn in
 
 - [ ] Under [[DOMAIN#Syntax highlighter style]] and the ruling of
   CM1.40: every "wear", "wears", "wearing", "worn", "dress",
