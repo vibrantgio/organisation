@@ -1476,7 +1476,11 @@ are in the chrome variant; it holds controls, never content. It has
 no fill of its own; each share stands on its column's fill, as the
 Chrome entry says. A toolbar action is a button, bordered, titled
 with a symbol or text in the label colour, never a word in the
-accent and never a link. An action on the collection a window
+accent and never a link. A toolbar control is as wide as its
+content between its measured insets: the capsule for a symbol
+alone, the text and an inset each side for a title. That width is
+the control's own, from the reference, never found by laying it
+out. An action on the collection a window
 shows, adding to it first of all, is a toolbar action, as Notes' and
 Reminders' new-item marks are measured; no action floats over the
 content. In its
