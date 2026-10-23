@@ -3839,11 +3839,6 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
 
-## II. From CM1.14, the empty state lines
-
-Filed 2026-10-23 from CM1.14's fresh-eyes review.
-
-
 ## IJ. From CM1.15, todos' add action
 
 Filed 2026-10-23 from CM1.15's fresh-eyes review.
