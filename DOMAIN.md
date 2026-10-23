@@ -926,7 +926,8 @@ The operating system the application runs on: macOS. The application
 looks like a macOS application. Wherever the platform and Material
 differ, the platform's value is read off the platform and Material's
 is dropped: the platform's system colours for the four statuses, its
-control heights for density, its accent colour for the accent, its
+control heights for density, its text sizes for the typography
+roles, its accent colour for the accent, its
 controls' shapes for the controls. Where the platform's published
 guideline and what the platform actually draws differ, what it draws
 wins: measured beats published. Where the platform paints a colour
@@ -1514,7 +1515,12 @@ they are set on more lines up to their measure.
 ### Typography role
 
 A named style of the type stack. A label or a heading is set in
-a typography role, never in a bare size. Each family below comes in
+a typography role, never in a bare size. A role's size and weight
+are the platform's for the text the role sets, read from the
+reference. The platform's sizes are its text styles and its control
+sizes, measured where a capture holds them, published otherwise.
+A measured size no role has is a role's size to correct, never a
+size carried beside a role. Each family below comes in
 Large, Medium and Small.
 
 | Family | Sets |
