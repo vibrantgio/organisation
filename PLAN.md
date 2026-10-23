@@ -26545,7 +26545,7 @@ order.
 
 #### CM1.19: The stacked page's navbar places its tooltips inside the window
 
-- [ ] Under [[DOMAIN#Tooltip]], found under CK10.55 (finding 1182):
+- [x] Under [[DOMAIN#Tooltip]], found under CK10.55 (finding 1182):
   `patterns/navbar` lays its brand, links and actions out in rows
   that place their children after measuring them and set no
   collector, and the stacked page gives the navbar no available
@@ -26555,7 +26555,7 @@ order.
   stacked page sets a collector on the navbar and places its
   surfaces in the window's area. A test that a tooltip in the
   navbar's trailing action is drawn whole inside the window.
-- [ ] Exit: green in `patterns` by name and workbench root; guard
+- [x] Exit: green in `patterns` by name and workbench root; guard
   OK; gofmt gate OK; layers gate OK; one commit in patterns, push;
   no tag.
 
