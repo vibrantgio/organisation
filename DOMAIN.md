@@ -1039,7 +1039,10 @@ regions.
 
 One entry of a list: as tall as the list's row height, holding the
 entry's parts across the list's width. The row is what the keyboard
-moves through and what the selection marks. A list's row height is
+moves through and what the selection marks. A row spans its list
+edge to edge; a list has no padding at its ends. The row's own inset
+keeps its text, a control and the selection's fill from the end,
+measured for the list's kind. A list's row height is
 the platform's measured row for the list's kind, Reminders' for a
 content list of one-line rows, never the text and paddings stacked.
 
