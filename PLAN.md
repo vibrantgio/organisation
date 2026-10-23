@@ -26518,7 +26518,7 @@ order.
 
 #### CM1.17: Iconbrowser's marks section renders each mark once at the catalogue's size
 
-- [ ] Under [[DOMAIN#Icon]], ruled on finding 1140 by the owner:
+- [x] Under [[DOMAIN#Icon]], ruled on finding 1140 by the owner:
   the marks section renders each mark once at the catalogue's
   size, and its note names the three sizes the set ships, 16, 20
   and 24 dp; there is no second rendering. The section draws each
@@ -26528,7 +26528,7 @@ order.
   the Icon entry; the window goldens regenerate with the cause
   named (the marks' cells). A test that each mark is drawn once at
   the catalogue's cell size.
-- [ ] Exit: green in `workbench/iconbrowser` by name and workbench
+- [x] Exit: green in `workbench/iconbrowser` by name and workbench
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
