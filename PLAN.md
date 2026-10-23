@@ -27049,6 +27049,30 @@ order.
   ramp changed; guard OK; gofmt gate OK; commit and push per repo;
   no tag.
 
+#### CM1.46: A toolbar control states its own width and the toolbar lays it out once
+
+- [ ] Under [[DOMAIN#Toolbar]], ruled on finding 1216: a toolbar
+  control is as wide as its content between its measured insets,
+  the capsule for a symbol alone, the text and an inset each side
+  for a title; that width is the control's own, from the
+  reference, never found by laying it out. The control reports its
+  width (the measured 38 px capsule for a symbol-only control, the
+  text's measured width plus the inset each side for a titled one,
+  the inset the row CM3.3 reads once it is MEASURED and the
+  PUBLISHED row until then); the toolbar takes that width and lays
+  the control out once; the held-back measure pass CM1.20 added
+  and its event rule are deleted; vaultview's find field keeps the
+  live-events guard only if something else still needs it, say
+  which. Fixed-width slots stay as they are. A test that a
+  symbol-only control is laid out at the capsule's width and a
+  titled one at its text plus the insets, each laid out once per
+  frame.
+- [ ] Exit: `grep -rn 'Disabled()' patterns/shell/toolbar.go` finds
+  nothing; green in `patterns` (shell by name), `workbench/feeds`,
+  `mindchat`, `themer`, `vaultview`, `todos` by name and workbench
+  root; guard OK; gofmt gate OK; layers gate OK; commit and push
+  per repo; no tag.
+
 ### G-CM2: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
@@ -27133,6 +27157,24 @@ has left, under Phase CK's caffeinate rule, after the tasks above it.
   `reference/macos/controls.md` as MEASURED rows; the DERIVED row
   CM1.6 wrote is replaced by them. This task takes a capture: it
   runs only on an open desktop the owner has left.
+- [ ] Exit: the captures and the MEASURED rows are in the reference;
+  guard OK; one commit in organisation, push; no tag.
+
+
+#### CM3.3: The platform's titled toolbar controls are measured into the reference
+
+- [ ] Under [[DOMAIN#Toolbar]], ruled on finding 1216: the inset each
+  side of a title in a bordered toolbar button is PUBLISHED ("about
+  8 pt") and no stored band holds one. Calendar's toolbar, which
+  holds a bordered text button (Today) and a segmented control with
+  text titles (Day, Week, Month, Year), is captured in both
+  schemes, frontmost, cropped to the band, and stored under
+  `reference/macos`; the inset each side of a title in the
+  bordered button and in a segment, each control's width and
+  height, and the title's size and colour are read into
+  `reference/macos/controls.md` as MEASURED rows, and the
+  PUBLISHED row becomes MEASURED from them. This task takes a
+  capture: it runs only on an open desktop the owner has left.
 - [ ] Exit: the captures and the MEASURED rows are in the reference;
   guard OK; one commit in organisation, push; no tag.
 
