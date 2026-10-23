@@ -26594,7 +26594,38 @@ order.
   `effects/transition`, `workbench/themer` by name and workbench
   root; guard OK; gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.22: A field's text is set in the Label role and the field is the measured height
+#### CM1.22: The type set's roles are the platform's text sizes and weights
+
+- [ ] Under [[DOMAIN#Typography role]] and [[DOMAIN#Platform]], ruled
+  on finding 1215: a role's size and weight are the platform's for
+  the text the role sets, read from the reference; a measured size
+  no role has is a role's size to correct, never a size carried
+  beside a role. The type set in `theme/tokens/typography.go` is
+  the other design system's scale (11, 12, 14, 16 and up, medium
+  weight on labels); the reference measures the platform at 13 pt
+  regular for a label and for body text, 11 pt for small text and
+  28 pt for the content unavailable title, and its text styles
+  table is the published input for the rest. The type set's role
+  sizes and weights become the platform's; the mapping of the
+  families to the platform's text styles and control sizes is
+  stated in `reference/macos/controls.md` per role as MEASURED or
+  PUBLISHED with the row it comes from; `components/progress`'s
+  13 sp and `patterns/shell`'s 28 sp become roles; the reference's
+  derivation of the 10 px cap band as a 14 dp role is re-read
+  against the width method that found 13 pt, since the shipped
+  face's cap ratio and the platform's are within a hundredth of an
+  em of each other. The typeface is not in it. Every golden
+  regenerates with the cause named (the roles' sizes). This task
+  is org-wide: it dispatches only on the owner's explicit go.
+- [ ] Exit: `grep -rn` over `components`, `patterns`, `markdown`
+  and `workbench` finds no text size set beside a role; a test
+  that each role's size and weight equal the reference's row;
+  green in `theme`, `effects/transition` by name, `components`,
+  `patterns`, `markdown`, `workbench` root and every app module by
+  name; guard OK; gofmt gate OK; layers gate OK; commit and push
+  per repo; no tag.
+
+#### CM1.23: A field's text is set in the Label role and the field is the measured height
 
 - [ ] Under [[DOMAIN#Field]] and [[DOMAIN#Typography role]], ruled
   on finding 1185: a field's text is set in the Label role at the
@@ -26614,7 +26645,7 @@ order.
   `patterns` and every text field caller by name and workbench
   root; guard OK; gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.23: Chevron-down is redrawn at chevron-right's extent
+#### CM1.24: Chevron-down is redrawn at chevron-right's extent
 
 - [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Disclosure]], ruled on
   finding 1186: chevron-down is chevron-right's figure turned a
@@ -26630,10 +26661,10 @@ order.
   and workbench root; guard OK; gofmt gate OK; commit and push per
   repo; no tag.
 
-#### CM1.24: An open disclosure draws chevron-down
+#### CM1.25: An open disclosure draws chevron-down
 
 - [ ] Under [[DOMAIN#Disclosure]], ruled on finding 1186, after
-  CM1.23: `patterns/sidebar`'s `PaintDisclosure`,
+  CM1.24: `patterns/sidebar`'s `PaintDisclosure`,
   `workbench/sitedocs`' `drawOutlineDisclosure` and
   `workbench/vaultview`'s `drawDisclosure` draw the set's
   chevron-down for an open row instead of turning chevron-right,
@@ -26646,7 +26677,7 @@ order.
   `workbench/vaultview` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.25: Iconbrowser's search field keeps the measured width
+#### CM1.26: Iconbrowser's search field keeps the measured width
 
 - [ ] Under [[DOMAIN#Search field]], ruled on finding 1189: on the
   content the field keeps the width the reference measures for
@@ -26661,7 +26692,7 @@ order.
   `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.26: Iconbrowser's page with no match shows one empty state
+#### CM1.27: Iconbrowser's page with no match shows one empty state
 
 - [ ] Under [[DOMAIN#Empty state]], ruled on finding 1188: a
   section of a filtered collection with no match is removed with
@@ -26677,7 +26708,7 @@ order.
   `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.27: The standing scrollbar is drawn from the measured lane, track and thumb
+#### CM1.28: The standing scrollbar is drawn from the measured lane, track and thumb
 
 - [ ] Under [[DOMAIN#Scrollbar]], ruled on findings 1137, 1144, 1145
   and 1147, from the MEASURED rows of "What the standing scrollbar
@@ -26701,9 +26732,9 @@ order.
   `workbench/themer` by name; guard OK; gofmt gate OK; commit and
   push per repo; no tag.
 
-#### CM1.28: Vaultview's rails keep the one measured lane and every window draws the standing bar from it
+#### CM1.29: Vaultview's rails keep the one measured lane and every window draws the standing bar from it
 
-- [ ] Under [[DOMAIN#Scrollbar]], after CM1.27: vaultview's
+- [ ] Under [[DOMAIN#Scrollbar]], after CM1.28: vaultview's
   `asideIndicator` passes no padding of its own, so the rails keep
   the one measured lane as every other column; every workbench
   golden that shows a standing bar regenerates with the cause
@@ -26718,9 +26749,9 @@ order.
   every workbench app by name and workbench root; guard OK; gofmt
   gate OK; commit and push per repo; no tag.
 
-#### CM1.29: A table header's hairline ends at the lane
+#### CM1.30: A table header's hairline ends at the lane
 
-- [ ] Under [[DOMAIN#Seam]], ruled on finding 1191, after CM1.27: a
+- [ ] Under [[DOMAIN#Seam]], ruled on finding 1191, after CM1.28: a
   table header's hairline is the header's own edge, part of the
   table's structure, not a seam; it ends where the header's rows
   end, at the lane, while the header's fill spans the lane.
@@ -26734,7 +26765,7 @@ order.
   and every table caller by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.30: Todos' rows are the platform's measured row height
+#### CM1.31: Todos' rows are the platform's measured row height
 
 - [ ] Under [[DOMAIN#Row]], ruled on finding 1193: a list's row
   height is the platform's measured row for the list's kind, never
@@ -26747,7 +26778,7 @@ order.
   green in `workbench/todos` by name and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
 
-#### CM1.31: Todos' list selects a row
+#### CM1.32: Todos' list selects a row
 
 - [ ] Under [[DOMAIN#List]] and [[DOMAIN#Selection]], ruled on
   finding 1194: a content list selects as the platform's does: a
@@ -26765,7 +26796,7 @@ order.
   start; green in `workbench/todos` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
-#### CM1.32: Todos' unchecked checkbox is drawn at the measured contrast
+#### CM1.33: Todos' unchecked checkbox is drawn at the measured contrast
 
 - [ ] Under [[DOMAIN#Checkbox]], found under CK10.73 (finding
   1195): todos' unchecked checkbox reads (243,243,243) on white
@@ -26781,7 +26812,7 @@ order.
   by name and workbench root; guard OK; gofmt gate OK; commit and
   push per repo; no tag.
 
-#### CM1.33: The status footer's seam is the status bar's measured seam
+#### CM1.34: The status footer's seam is the status bar's measured seam
 
 - [ ] Under [[DOMAIN#Seam]] and [[DOMAIN#Footer]], ruled on finding
   1198: a seam's colour is measured per scheme and per place; a
@@ -26799,7 +26830,7 @@ order.
   `workbench/themer`, `workbench/sk150` by name and workbench root;
   guard OK; gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.34: Sk150's link explanation is the setting's description
+#### CM1.35: Sk150's link explanation is the setting's description
 
 - [ ] Under [[DOMAIN#Footer]], ruled on finding 1200: a footer of
   status text holds status only; an explanation of a setting is
@@ -26814,7 +26845,7 @@ order.
   `workbench/sk150` by name and workbench root; guard OK; gofmt
   gate OK; one commit in workbench, push; no tag.
 
-#### CM1.35: Feeds' Unread tooltip hover test reads the window's own props
+#### CM1.36: Feeds' Unread tooltip hover test reads the window's own props
 
 - [ ] Found under CM1.1 (finding 1206): feeds'
   `TestUnreadTooltipHoverHeadless` builds its own copy of the
@@ -26827,7 +26858,7 @@ order.
   workbench root; guard OK; gofmt gate OK; one commit in workbench,
   push; no tag.
 
-#### CM1.36: A tooltip's text and an empty state's line are set on more lines, never truncated
+#### CM1.37: A tooltip's text and an empty state's line are set on more lines, never truncated
 
 - [ ] Under [[DOMAIN#Truncation]], [[DOMAIN#Tooltip]] and
   [[DOMAIN#Empty state]], ruled on finding 1204: prose, a tooltip's
@@ -26847,7 +26878,7 @@ order.
   name and workbench root; guard OK; gofmt gate OK; commit and push
   per repo; no tag.
 
-#### CM1.37: The available room is a value of mvu's context and the cap moves it
+#### CM1.38: The available room is a value of mvu's context and the cap moves it
 
 - [ ] Under [[DOMAIN#Tooltip]], ruled on finding 1205 by the
   orchestrator: the value both layers need is defined in the lowest
@@ -26865,7 +26896,7 @@ order.
   `workbench/sk150` by name and workbench root; layers gate OK;
   guard OK; gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.38: The workbench shows a running application with a Neutral badge
+#### CM1.39: The workbench shows a running application with a Neutral badge
 
 - [ ] Under [[DOMAIN#Badge]] and [[DOMAIN#Accent]], ruled on finding
   1207: "running" is the system's word about the application's
@@ -26880,7 +26911,7 @@ order.
   no badge; green in `workbench` root by name; guard OK; gofmt gate
   OK; one commit in workbench, push; no tag.
 
-#### CM1.39: Mindchat's arriving turn and its sidebar row draw the indeterminate indicator
+#### CM1.40: Mindchat's arriving turn and its sidebar row draw the indeterminate indicator
 
 - [ ] Under [[DOMAIN#Progress]], ruled on finding 1209: a turn still
   arriving is content still arriving, a task with no known end, so
@@ -26904,7 +26935,7 @@ order.
   workbench root; guard OK; gofmt gate OK; layers gate OK; one
   commit in workbench, push; no tag.
 
-#### CM1.40: The highlighter style is applied, and markdown says so
+#### CM1.41: The highlighter style is applied, and markdown says so
 
 - [ ] Under [[DOMAIN#Syntax highlighter style]], ruled 2026-10-23 by
   the Language steward: "wear" and "dress" are retired in the
@@ -26925,7 +26956,7 @@ order.
   other "wear", "wears", "wearing", "worn", "dress", "dresses" and
   "dressed" in `markdown`'s code, comments, tests, README and
   guide is reworded from the row. No alias is kept. No pixel
-  moves. The retired row waits for CM1.42, so the gate stays
+  moves. The retired row waits for CM1.43, so the gate stays
   green.
 - [ ] Exit: `grep -rniE '\b(wear|wears|wearing|worn|dress|dresses|dressed|dressing)\b'`
   over `markdown` finds nothing and `grep -rn 'highlight\.Wear'`
@@ -26933,24 +26964,24 @@ order.
   (gallery and inventory by name) and workbench root and every
   caller by name; guard OK; gofmt gate OK; guides gate OK; commit
   and push per repo; no tag.
-#### CM1.41: Components and patterns say what a thing is drawn in
+#### CM1.42: Components and patterns say what a thing is drawn in
 
 - [ ] Under [[DOMAIN#Syntax highlighter style]] and the ruling of
-  CM1.40, with its replacement per sense: every "wear", "wears",
+  CM1.41, with its replacement per sense: every "wear", "wears",
   "wearing", "worn", "dress", "dresses" and "dressed" in
   `components` and `patterns` (code, comments, tests, READMEs and
   guides) is reworded from the row, identifiers included where one
   has the word; a comment that only said a thing "wears" what its
   field already says is deleted. No pixel moves. The retired row
-  waits for CM1.42.
-- [ ] Exit: the grep of CM1.40's Exit over `components` and
+  waits for CM1.43.
+- [ ] Exit: the grep of CM1.41's Exit over `components` and
   `patterns` finds nothing; green in `components` and `patterns`,
   the whole modules; guard OK; gofmt gate OK; guides gate OK;
   commit and push per repo; no tag.
-#### CM1.42: Theme and the workbench say what a thing is drawn in, and the words are retired
+#### CM1.43: Theme and the workbench say what a thing is drawn in, and the words are retired
 
 - [ ] Under [[DOMAIN#Syntax highlighter style]] and the ruling of
-  CM1.40, with its replacement per sense: every "wear", "wears",
+  CM1.41, with its replacement per sense: every "wear", "wears",
   "wearing", "worn", "dress", "dresses" and "dressed" in `theme`
   and `workbench` (code, comments, tests, `llms.txt`, READMEs and
   guides) is reworded from the row, identifiers included where one
@@ -26965,13 +26996,13 @@ order.
   gate goes red and green in one step; the frozen records keep
   theirs under the guard's measured exclusions;
   `scripts/sync-agents.sh` runs clean. No pixel moves.
-- [ ] Exit: the grep of CM1.40's Exit over `theme`, `workbench`,
+- [ ] Exit: the grep of CM1.41's Exit over `theme`, `workbench`,
   `markdown`, `components` and `patterns` finds nothing; green in
   `theme`, `effects/transition` by name, `workbench` root and
   every app module by name; guard OK with the new row; gofmt gate
   OK; guides gate OK; commit and push per repo; no tag.
 
-#### CM1.43: Vaultview's note column, outline and backlinks draw the indicator while a note arrives
+#### CM1.44: Vaultview's note column, outline and backlinks draw the indicator while a note arrives
 
 - [ ] Under [[DOMAIN#Progress]] and [[DOMAIN#Empty state]], ruled on
   finding 1213: a region whose content is derived from content
@@ -27077,7 +27108,7 @@ has left, under Phase CK's caffeinate rule, after the tasks above it.
   and stored under `reference/macos`, and the tag's width, the
   lines' count and pitch and the text's padding are read into
   `reference/macos/controls.md` as MEASURED rows; the DERIVED row
-  CM1.36 wrote is replaced by them, and `components/tooltip` takes
+  CM1.37 wrote is replaced by them, and `components/tooltip` takes
   the MEASURED width. This task takes a capture: it runs only on an
   open desktop the owner has left.
 - [ ] Exit: the captures and the MEASURED rows are in the reference;
