@@ -26301,23 +26301,30 @@ order.
 
 #### CM1.6: Themer's style rows run to the lane
 
-- [ ] Under [[DOMAIN#Scrollbar]], ruled on finding 1164: a column of
-  rows has no padding of its own; the rows run to the lane and each
-  row's own inset keeps its content and its pill from the end, as
-  the platform's lists do; a page's padding stays between its
-  content and the lane. Themer's style column, a column of rows,
-  keeps a 10 dp trailing padding between its rows and the lane, so
-  at Always the marked row ends 12 px from the thumb. The column's
-  trailing padding is removed: the rows run to the lane at Always
-  and to the box's edge at WhenScrolling, each row's inset keeping
-  its name and its pill from the end. Iconbrowser's grid is a page
-  and keeps its padding. The themer goldens regenerate with the
-  cause named (the rows' extent).
-- [ ] Exit: a test that at Always the marked row's fill ends at the
-  lane and at WhenScrolling at the box's edge; green in
-  `workbench/themer` by name and workbench root; guard OK; gofmt
-  gate OK; one commit in workbench, push; no tag.
-
+- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Row]], ruled on
+  findings 1164 and 1210: a column of rows has no padding of its
+  own at either end; the rows span the column edge to edge, and
+  each row's own inset keeps its text and the selected row's fill
+  from the end, as the platform's lists do; a page's padding stays
+  between its content and the lane. Themer's style column, a column
+  of rows, keeps a 10 dp padding at both ends between its rows and
+  the box's edges, so at Always the marked row ends 12 px from the
+  thumb. The column's padding is removed at both ends: the rows run
+  to the lane at Always and to the box's edge at WhenScrolling, and
+  the marked row's fill is inset from each of the row's ends by the
+  row's own inset, the value the column's padding had, DERIVED from
+  the sidebar pill's measured inset until the capture CM3.2 takes;
+  a DERIVED row in `reference/macos/controls.md` names that with
+  its arithmetic. The fill's shape and colours stay as they are
+  until CM4.1. Iconbrowser's grid is a page and keeps its padding.
+  The themer goldens regenerate with the cause named (the rows'
+  extent).
+- [ ] Exit: a test that the column has no padding at either end: the
+  marked row's hit area spans the column to the lane at Always and
+  to the box's edge at WhenScrolling, and its fill is inset one row
+  inset from each of the row's ends; green in `workbench/themer` by
+  name and workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
 #### CM1.7: The scroll area draws its bar at its owner's edge with a lane at Always
 
 - [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
@@ -26956,3 +26963,43 @@ has left, under Phase CK's caffeinate rule, after the tasks above it.
   `components` (tooltip by name) and workbench root; guard OK; gofmt
   gate OK; commit and push per repo; no tag.
 
+
+#### CM3.2: The platform's selected row in a list inside a grouped box is measured into the reference
+
+- [ ] Under [[DOMAIN#Selection]] and [[DOMAIN#Row]], ruled on finding
+  1210: a content list's selected row has the fill the reference
+  measures for its platform counterpart, and the reference holds no
+  selected row of a list inside a grouped box. The platform's list
+  inside a grouped box (System Settings, Keyboard, Input Sources)
+  is captured in both schemes, the set Reminders' rows were
+  captured as: at rest, a row under the pointer, the selected row
+  with the keyboard in the list and with it elsewhere; the captures
+  are stored under `reference/macos`, and the fill's extent and
+  ends, its inset, its corner, its colour, the text colour on it,
+  and whether a hovered row draws a fill at all are read into
+  `reference/macos/controls.md` as MEASURED rows; the DERIVED row
+  CM1.6 wrote is replaced by them. This task takes a capture: it
+  runs only on an open desktop the owner has left.
+- [ ] Exit: the captures and the MEASURED rows are in the reference;
+  guard OK; one commit in organisation, push; no tag.
+
+
+### G-CM4: Every ruling that waits on a Phase CM capture is built
+
+The tasks follow the captures of G-CM3 and read their MEASURED rows.
+
+#### CM4.1: Themer's style column draws its selected row as measured
+
+- [ ] Under [[DOMAIN#Selection]] and [[DOMAIN#Row]], ruled on finding
+  1210: themer's style column is a content list inside a titled
+  grouped box, and a content list's selected row has the fill the
+  reference measures for its platform counterpart, with the row's
+  own text colour. The chosen row is drawn as CM3.2's MEASURED rows
+  read: the fill's extent, inset, corner and colour, the text
+  colour on it, and a hovered row's fill only if the capture shows
+  one; the accent fill and the AccentForeground text are removed.
+  The themer goldens regenerate with the cause named.
+- [ ] Exit: a test that the chosen row's fill and text match the
+  MEASURED values in both schemes; green in `workbench/themer` by
+  name and workbench root; guard OK; gofmt gate OK; one commit in
+  workbench, push; no tag.
