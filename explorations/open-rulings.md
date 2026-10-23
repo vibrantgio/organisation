@@ -3838,3 +3838,7 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 ## HV. From CL1.1, the move to the organisation repository
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
+
+## IB. From CM1.8, the wide table's bar
+
+1212. **[bug]** **The gallery's documents leave the wide table's bar fading at Always.** Under [[DOMAIN#Scrollbar]] ("Every region that scrolls has one", following the window's Show scroll bars setting): `markdown.Style` has a second bar, `TableScrollbar`, beside `CodeScrollbar`. Mindchat, sitedocs, themer and vaultview apply the setting to both. CM1.12 names only `CodeScrollbar` for `components/gallery/inventory`; when it lands, the inventory applies the passed setting to `TableScrollbar` too, or a wide table in the inventory tab fades its bar while the reader asked for Always.

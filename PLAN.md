@@ -26344,7 +26344,7 @@ order.
 
 #### CM1.8: A table too wide for the column draws its sideways scrollbar
 
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
+- [x] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
   under CK10.45 (finding 1165): a table whose min-content widths
   overflow the column is laid out in a sideways `layout.List` that
   the wheel scrolls, and no bar is drawn at either setting. A
@@ -26356,7 +26356,7 @@ order.
   that a wide table at Always is taller by the lane and the thumb
   is drawn inside its bottom edge, and that a table that fits
   draws none.
-- [ ] Exit: green in `markdown` by name and workbench root; guard
+- [x] Exit: green in `markdown` by name and workbench root; guard
   OK; gofmt gate OK; commit and push per repo; no tag.
 
 #### CM1.9: A code block's thumb is flattened onto the fill the block is drawn in
