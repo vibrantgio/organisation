@@ -5,9 +5,13 @@
 ### Accent
 
 How a persistent state is shown: the platform's selection colour for
-the place — the list's selected row, the sidebar's pill, the menu's
-picked row — as the fill, with white text. On a focused control the
-accent is the ring around it, in the theme colour.
+the place — the sidebar's pill, the menu's picked row — as the fill,
+with white text. While the sidebar does not hold the keyboard, its
+pill is grey and its title, symbol and count are in the accent,
+measured from Finder. A content list's selected row has the fill
+measured from its platform counterpart, as the Selection entry says:
+Reminders' grey for a list of todos. On a focused control the accent
+is the ring around it, in the theme colour.
 
 ### Accordion
 
@@ -637,8 +641,11 @@ control is in that control's foreground, never the accent. On the
 content, an application's icon, an avatar and a symbol in a row are
 in the text colour. The accent marks the selected entry and fills
 the one action; it tints a symbol only where a measured platform
-window does, as it tints a control inside a content list's row,
-measured from Reminders'. Inside a
+window does. Two places are measured: a control inside a content
+list's row, from Reminders, and the symbol in the sidebar's pill,
+from Finder. On the pill the symbol is in the pill's text colour:
+white while the sidebar holds the keyboard, the accent while it does
+not. Inside a
 control's structure an icon is a part, not a signal of its own.
 A mark is named by what it depicts, never by what it does: one
 mark serves several actions, and the same picture has one name. A
@@ -969,7 +976,9 @@ unavailable view stacks its image above its title; the gap between
 them is the reference's, DERIVED from the measured parts until a
 platform window that centres them is captured. In a row the text is
 at the leading end and the indicator at the trailing end, as System
-Settings' is measured.
+Settings' is measured. When the task belongs to one row of content,
+the row keeps its title and the indicator stands at its trailing
+end.
 
 ### Purpose
 
@@ -1234,11 +1243,12 @@ keyboard in the sidebar, as Finder and Notes do; the content takes
 it on a click inside the content, or when the move began there — a
 followed link, back, forward. The active
 entry is marked the platform's way: a pill inset from the sidebar's
-edges, rounded, in the sidebar's own selection colour with a white
-title while the sidebar holds the keyboard, and a grey pill with the
-title in the accent colour while it does not — both measured into
-the reference from Voice Memos and Finder, never edge to edge and
-never the list's selection colour.
+edges, rounded, never edge to edge and never the list's selection
+colour. While the sidebar holds the keyboard the pill is in the
+sidebar's own selection colour, with its title, symbol and count
+white. While it does not, the pill is grey, with its title, symbol
+and count in the accent colour. Both are measured into the reference
+from Voice Memos and Finder.
 
 ### Signal
 
