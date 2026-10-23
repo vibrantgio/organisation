@@ -26534,12 +26534,12 @@ order.
 
 #### CM1.18: `pane.Strip` is deleted
 
-- [ ] Found under CK10.55 (finding 1181): the pane column's strip
+- [x] Found under CK10.55 (finding 1181): the pane column's strip
   is laid out by the shell's placing row, and `pane.Strip` has no
   caller left in the organisation while it repeats that row. The
   function and its tests are deleted; no alias is kept; the pane
   guide names the shell's strip.
-- [ ] Exit: `grep -rn 'pane\.Strip\b'` over the org finds nothing;
+- [x] Exit: `grep -rn 'pane\.Strip\b'` over the org finds nothing;
   green in `patterns` by name and workbench root; guard OK; gofmt
   gate OK; guides gate OK; one commit in patterns, push; no tag.
 
