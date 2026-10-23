@@ -26434,7 +26434,7 @@ order.
   gate OK; layers gate OK; commit and push per repo; no tag.
 #### CM1.13: The folder browser tells a folder it cannot read from one that holds no folders
 
-- [ ] Under [[DOMAIN#Empty state]], found under CK10.47 (finding
+- [x] Under [[DOMAIN#Empty state]], found under CK10.47 (finding
   1170): the browser says an unreadable folder holds no folders,
   because `ListDir` returns no rows both when a folder has no
   child folders and when its read fails, where the entry treats
@@ -26445,7 +26445,7 @@ order.
   sentence that the folder could not be read, and the error is
   logged. A test that an unreadable folder draws the failed-read
   line and an empty folder the holds-no-folders line.
-- [ ] Exit: green in `workbench/vaultview` by name and workbench
+- [x] Exit: green in `workbench/vaultview` by name and workbench
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
