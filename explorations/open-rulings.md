@@ -3838,3 +3838,7 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 ## HV. From CL1.1, the move to the organisation repository
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
+
+## IA. From CM1.7, the scroll area's bar
+
+1211. **[bug]** **`components/scrollarea` fades a cut edge by default.** [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]] say that what is past a scrolling region's edge is clipped at the edge, never faded. `scrollarea.FromTokens` sets a `Fade` of S4 into `ControlBackground`, and `Style.Layout` draws that dissolve over every edge with hidden content. The gallery's Scroll area section draws the dissolve, and its title reads "the edge dissolves while content is hidden past it". CM1.11 removes the dissolve from `markdown` only. The fix removes the fade from `components/scrollarea` and retitles the gallery section.

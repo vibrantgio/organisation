@@ -26327,7 +26327,7 @@ order.
   workbench, push; no tag.
 #### CM1.7: The scroll area draws its bar at its owner's edge with a lane at Always
 
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
+- [x] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], found
   under CK10.45 (finding 1166): `components/scrollarea`'s
   `Style.LayoutScrollbar` draws the bar over the area's bottom
   rows whatever the bar's fade, and its doc tells callers to place
@@ -26338,7 +26338,7 @@ order.
   names no padding; the code block calls the area's bar again if
   that removes its own copy. A test that the area at Always is
   taller by the lane and the thumb is drawn inside its bottom edge.
-- [ ] Exit: green in `components` (scrollarea, gallery and inventory
+- [x] Exit: green in `components` (scrollarea, gallery and inventory
   by name), `markdown` by name and workbench root; guard OK;
   gofmt gate OK; layers gate OK; commit and push per repo; no tag.
 
