@@ -1157,6 +1157,8 @@ Rene (to the earwitness session, relayed by vibrantgio): The drop
 worked when coming from a file in finder but not directly dropped
 from voice memos.
 
+## 2026-10-21
+
 Rene (to the vibrantgio session, relayed in its words): the address
 of a hovered link in vaultview, at once in the status bar and after
 a while in a tooltip beside the link. ^0005-hovered-link-address
@@ -1197,6 +1199,8 @@ Rene (to the vibrantgio session, relayed in its words): a huge
 iCloud vault blocks the window while it is scanned; "Let's go" on
 the scan listing first, reading in bounded parallel newest folder
 first, delivering in batches.
+
+## 2026-10-22
 
 Rene (to the vibrantgio session, relayed in its words): the note
 column read narrow on the Thunderbolt Display; he rejected a type
@@ -1339,3 +1343,29 @@ Rene: So for vibrantgio/organisation, I haven't seen it yet
 Rene: So what are all those capture tasks, making goldens?
 
 Rene: split the CK list in 2 CK and CM insert CL ^0005-split-ck-insert-cl
+
+## 2026-10-23
+
+Rene (pasted into the vibrantgio session, relayed by it; no words of
+his own around the paste):
+What it was
+
+- Session: ~/code/w/vibrantgio, session 3baad769…. It has spawned 930 subagents so far.
+- Subagent: agent-abea5fdbef1b44968, working on plan item "CM1.21 dark field edge re-read".
+- Command: at 06:15:51 local it started a pre-regen test run with go test ./... in 16 modules at the same time:
+for m in components components/gallery patterns markdown effects workbench workbench/feeds \
+         workbench/iconbrowser ... workbench/vaultview design; do
+  (cd $m && go test ./... > $S/pre_$n.txt 2>&1) &
+done; wait
+- Why 288: each go test runs its own build with up to 10 parallel compiles, one per core. Sixteen of them at once gives about 16 × 18 ≈ 288 compilers, each loading the whole Gio/vibrantgio dependency graph. They also couldn't share work, because each module was built separately. On 32 GB that filled memory and swap, and the load average reached about 900.
+- Timeline: the command passed its 10-minute timeout at 06:31, and Claude Code moved it to the background (task bhz0xfret). The subagent carried on with other edits while the tests kept running. Your killall at 08:11 ended it after about 2 hours. The task output shows [killed], and three modules had already failed: components/gallery, workbench/themer and patterns.
+
+Leftovers
+
+- No compile or go test processes are still running.
+- That vibrantgio session is still active. Its subagent will be told the background task died and may run the same loop again, so watch for it or tell that session.
+- 182 stale go-build* directories are sitting in $TMPDIR. They're harmless, but you can delete them.
+
+To stop it happening again
+
+The fix belongs in vibrantgio's agent instructions, not here. Add a rule along the lines of "never background-parallelize go test across modules; run them sequentially, or as a single go test over the go.work modules so one build shares the CPU limit." I can add that to vibrantgio's AGENTS.md/CLAUDE.md if you want.
