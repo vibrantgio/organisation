@@ -26280,7 +26280,7 @@ order.
   workbench, push; no tag.
 #### CM1.5: Every mark in the icon set is named by what it depicts
 
-- [ ] Under [[DOMAIN#Icon]], ruled on findings 944 and 1163: a mark
+- [x] Under [[DOMAIN#Icon]], ruled on findings 944 and 1163: a mark
   is named by what it depicts, never by the control that uses it.
   In `components/icons` `Search` becomes `MagnifyingGlass`
   ("magnifying-glass"), `Clear` becomes `XmarkCircle`
@@ -26293,7 +26293,7 @@ order.
   depicts and never "is the control that"; every caller in
   `components`, `patterns`, `markdown` and `workbench` is renamed.
   No alias is kept. No pixel moves.
-- [ ] Exit: `grep -rn 'icons\.\(Search\|Clear\|Refresh\|Sidebar\)\b'`
+- [x] Exit: `grep -rn 'icons\.\(Search\|Clear\|Refresh\|Sidebar\)\b'`
   over the org finds nothing; green in `components` (icons, gallery
   and inventory by name), `patterns`, `markdown` and every caller
   by name and workbench root; guard OK; gofmt gate OK; layers gate
