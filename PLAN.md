@@ -26904,6 +26904,63 @@ order.
   workbench root; guard OK; gofmt gate OK; layers gate OK; one
   commit in workbench, push; no tag.
 
+#### CM1.40: The highlighter style is applied, and markdown says so
+
+- [ ] Under [[DOMAIN#Syntax highlighter style]], ruled 2026-10-23 by
+  the Language steward: "wear" and "dress" are retired in the
+  sense of a style put on a thing; the style is applied. In
+  `markdown/highlight` `Wear` becomes `Apply` and `WearPair`
+  becomes `ApplyPair`, their docs read "Apply applies the style
+  named to st's fenced code blocks" and "Apply the Style again when
+  the theme changes", and "worn before or after this call" becomes
+  "applied before or after this call"; every caller in `workbench`
+  and `components` is renamed with them. Every other "wear",
+  "wears", "wearing", "worn", "dress", "dresses" and "dressed" in
+  `markdown`'s code, comments, tests, README and guide is reworded
+  with a literal verb: a style is applied, a fill is drawn in, a
+  value is taken. No alias is kept. No pixel moves. The retired
+  row waits for CM1.42, so the gate stays green.
+- [ ] Exit: `grep -rniE '\b(wear|wears|wearing|worn|dress|dresses|dressed|dressing)\b'`
+  over `markdown` finds nothing and `grep -rn 'highlight\.Wear'`
+  over the org finds nothing; green in `markdown`, `components`
+  (gallery and inventory by name) and workbench root and every
+  caller by name; guard OK; gofmt gate OK; guides gate OK; commit
+  and push per repo; no tag.
+
+#### CM1.41: Components and patterns say what a thing is drawn in, never what it wears
+
+- [ ] Under [[DOMAIN#Syntax highlighter style]] and the ruling of
+  CM1.40: every "wear", "wears", "wearing", "worn", "dress",
+  "dresses" and "dressed" in `components` and `patterns` (code,
+  comments, tests, READMEs and guides) is reworded with a literal
+  verb: a component is drawn in a fill, a fill is applied, a value
+  is taken, a state is in force; identifiers included where one
+  has the word. No pixel moves. The retired row waits for CM1.42.
+- [ ] Exit: the grep of CM1.40's Exit over `components` and
+  `patterns` finds nothing; green in `components` and `patterns`,
+  the whole modules; guard OK; gofmt gate OK; guides gate OK;
+  commit and push per repo; no tag.
+
+#### CM1.42: Theme and the workbench say what a thing is drawn in, and the words are retired
+
+- [ ] Under [[DOMAIN#Syntax highlighter style]] and the ruling of
+  CM1.40: every "wear", "wears", "wearing", "worn", "dress",
+  "dresses" and "dressed" in `theme` and `workbench` (code,
+  comments, tests, `llms.txt`, READMEs and guides) is reworded
+  with a literal verb, identifiers included where one has the
+  word. The Retired words table in `AGENTS.md` gains the row
+  (wear, dress, with wears, worn, dresses and dressed; a style put
+  on a thing; apply, apply the style to) and the guard gains both
+  words with no kept sense, in the same commit as the migration so
+  the gate goes red and green in one step; the frozen records keep
+  theirs under the guard's measured exclusions;
+  `scripts/sync-agents.sh` runs clean. No pixel moves.
+- [ ] Exit: the grep of CM1.40's Exit over `theme`, `workbench`,
+  `markdown`, `components` and `patterns` finds nothing; green in
+  `theme`, `effects/transition` by name, `workbench` root and
+  every app module by name; guard OK with the new row; gofmt gate
+  OK; guides gate OK; commit and push per repo; no tag.
+
 ### G-CM2: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
