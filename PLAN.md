@@ -26393,7 +26393,7 @@ order.
 
 #### CM1.11: What is past a scrolling region's edge is clipped, never faded
 
-- [ ] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], ruled
+- [x] Under [[DOMAIN#Scrollbar]] and [[DOMAIN#Scroll area]], ruled
   on finding 1168 and found again as finding 1211: what is past a
   scrolling region's edge is clipped at the edge, never faded, as
   the platform's scroll views clip; the bar says there is more.
@@ -26407,7 +26407,7 @@ order.
   with the cause named (the clip in place of the dissolve). A test
   in `components/scrollarea` and one in `markdown` that the pixels
   at a cut edge keep their full contrast.
-- [ ] Exit: `grep -rn 'Fade' components/scrollarea` finds nothing;
+- [x] Exit: `grep -rn 'Fade' components/scrollarea` finds nothing;
   green in `components` (scrollarea, gallery and inventory by
   name), `markdown` by name, `workbench/vaultview` by name and
   workbench root; guard OK; gofmt gate OK; layers gate OK; commit
