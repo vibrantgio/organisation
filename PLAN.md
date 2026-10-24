@@ -26732,7 +26732,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 
 #### CN1.4: The READMEs of ivg, markdown, mvu, seen and svg say what ships
 
-- [ ] Rene's request 2026-10-24, continued, under the same rules as
+- [x] Rene's request 2026-10-24, continued, under the same rules as
   CN1.3. ivg: the package is `generate`, decoding is
   `decode.Decode`, `render.Gradient` implements `GradientConfig`,
   the rasterizer is `raster/img`, the examples are arrow, info,
@@ -26748,7 +26748,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   `face` and `layer/bsort/bsp` in the package table, the consumer
   sentences deleted. svg: the version sentences deleted, the
   AGENTS.md mention deleted, the consumer sentence deleted.
-- [ ] Exit: `grep -rn 'svgicon\|raster/vec\|decode/Decoder\|generator package\|v0.0.7\|v0.0.8\|v0.2.0\|two consumers\|Phong\b' --include=README.md ivg markdown mvu seen svg`
+- [x] Exit: `grep -rn 'svgicon\|raster/vec\|decode/Decoder\|generator package\|v0.0.7\|v0.0.8\|v0.2.0\|two consumers\|Phong\b' --include=README.md ivg markdown mvu seen svg`
   finds nothing; guides gate OK; guard OK; one commit per repo
   whose README changes, push each; no tag.
 

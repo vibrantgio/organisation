@@ -3828,3 +3828,11 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
 
+
+## IS. From CN1.4, the graphics library READMEs
+
+Filed 2026-10-24 from CN1.4's reading of the ivg, markdown, mvu, seen and svg sources.
+
+1230. **[bug]** **`mvu/desktop`'s package documentation says the mvu root is cgo-free, and it is not.** The doc comment's last section says the package is a nested module so that "the root stays cgo-free and platform-neutral"; the root's `frame_darwin.go` imports `"C"` with Objective-C flags and links AppKit. Either the sentence or the reason for the split is wrong. Touches [[DOMAIN#Window]], whose native window the package adjusts.
+1231. **[bug]** **ivg's `raster/gio/example/README.md` describes a tree that is not there.** It imports `github.com/reactivego/ivg/raster/gio/example`, links pkg.go.dev for `reactivego`, and calls its first example PlayArrow with `app.NewWindow`; the example directory is `arrow`, the module path is `github.com/vibrantgio/ivg/raster/gio`, and the programs use `new(app.Window)`. The guides gate passes it because none of its phrases are history phrases. The README is a guide under the same rules as the repository README; no Language entry is touched.
+1232. **[decide]** **seen keeps a finished `PLAN.md` at its root.** It covers one refactor of the camera and viewport pipeline, all its boxes are checked, and its header names a working directory and workspace layout of its own. The plan root is `organisation`; whether seen's file is deleted or kept as the record of that refactor is unasked. No Language entry is touched.
