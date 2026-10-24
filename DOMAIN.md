@@ -315,7 +315,7 @@ control is a component, and a signal is a component:
 ### Content
 
 The matter the application exists to show: prose, pictures, data —
-what the user came to read or edit. Content stands at level 0; its
+what the user came to read or edit. Content stands at the content level; its
 originator is a person — the user, or the author who wrote it —
 never the developer and never the system, which only report on
 it. Content is rendered by modules — the markdown
@@ -399,7 +399,7 @@ from the control height.
 The pattern that interrupts for a decision: the platform's term for
 the box that asks it and makes the window modal until it is
 answered. On macOS it is a sheet attached to the window's title bar,
-elsewhere a box floating at level 2 over the scrim. Structure: a
+elsewhere a box at the floating level over the scrim. Structure: a
 header holding its title and close, a body, and a footer of actions,
 Cancel and the default among them. The platform's own dialogs — the
 Open and Save panels, and its alert box with a message and buttons —
@@ -789,7 +789,7 @@ distance.
 
 ### Menu
 
-The floating list component: items stacked on a surface at level 3,
+The floating list component: items stacked on a surface at the floating level,
 opened by a trigger and placed by the attachment rules. Each item
 either performs an action — a context menu's Copy — or records a
 choice — the picker's option. One menu, many openers: the picker's
@@ -957,7 +957,7 @@ another; a region never leaves its shape behind.
 
 ### Popover
 
-The attachment pattern for a small surface floating at level 3
+The attachment pattern for a small surface at the floating level
 beside its anchor, a tail pointing at what it belongs to. It is
 opened by an action on its trigger and stays until dismissed — a
 click outside, Escape, its close — and it may hold anything: controls,
@@ -1342,7 +1342,7 @@ what each is about and how long it stays:
 |---|---|---|---|
 | **badge** | a thing, with a status or without one | inline with it | it stops being true |
 | **alert** | a situation | in the content's flow | the situation resolves |
-| **toast** | an event | floating at level 2 | it leaves by itself |
+| **toast** | an event | at the floating level | it leaves by itself |
 
 The tooltip is not of the family: it names a control on demand and
 indicates no status. None of the three changes behaviour when
@@ -1465,7 +1465,7 @@ control's title is part of the control and is operated with it.
 ### Toast
 
 The status signal that presents a notification for a set time: a
-small annotation floating at level 2 that appears when the
+small annotation at the floating level that appears when the
 notification is raised and leaves by itself when the time is up. It
 is filled with the window's own background inside a separator
 hairline under the platform's shadow, its message in the text colour,
@@ -1503,7 +1503,7 @@ chrome trigger is named after it.
 ### Tooltip
 
 The signal naming a control or explaining another signal on demand:
-a small annotation floating at level 3 beside its trigger, appearing
+a small annotation at the floating level beside its trigger, appearing
 by itself after a short delay on hover or focus and leaving when they
 do. It holds text only, never a control; anything the user must
 operate is the job for a popover. It is a signal: it takes no focus
