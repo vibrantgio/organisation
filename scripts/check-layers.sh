@@ -32,7 +32,7 @@
 #
 # Usage:
 #   scripts/check-layers.sh              # from the organisation repository:
-#                                        # checks all 19 root modules beside
+#                                        # checks every root module beside
 #                                        # organisation
 #                                        # (requires clone-all.sh + go.work)
 #   scripts/check-layers.sh DIR [DIR..]  # check specific module directories
@@ -40,16 +40,15 @@
 #                                        # stdout and say nothing else there
 #
 # --edges exists so that the one derivation in this file can be *read* as well
-# as judged. Two measurements of one fact is the defect G0.1 closed, so there
+# as judged. Two measurements of one fact are a defect, so there
 # must not be a second walk of the graph anywhere in the organization —
 # extend this one.
 #
 # In --edges mode the judgment is unchanged, but the *scope* widens: the
-# default target becomes every module beside organisation, all 39, because a
+# default target becomes every module beside organisation, because a
 # guide has to describe the exempt ones too — an application repository is mostly
 # its applications, and a demo's edges are the ones most easily mistaken for
-# its parent's, `components/gallery`'s to effects being the cycle the whole of
-# phase B went after. They are measured and emitted, still never judged.
+# its parent's, `components/gallery`'s edge to effects being a cycle. They are measured and emitted, still never judged.
 #
 # What a guide never prints is this graph read backwards. Both directions are
 # measured here and the tier rule is judged on both, because a forbidden edge

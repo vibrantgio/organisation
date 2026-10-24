@@ -26811,7 +26811,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 
 #### CN1.6: The code text and comments the guide sweep found say what ships
 
-- [ ] Findings 1217, 1218, 1219 and 1221 of the review pool, from
+- [x] Findings 1217, 1218, 1219 and 1221 of the review pool, from
   CN1.1's reading, 1223, 1225 and 1226 from CN1.2's, 1227, 1228 and
   1229 from CN1.3's, 1230, 1231 and 1232 from CN1.4's, and 1235 and
   1239 from CN1.5's. Under [[DOMAIN#Workbench]]: the workbench's
@@ -26863,7 +26863,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   Ghost the button's emphases, never variants. No history, no task
   or decision numbers. No pixel moves beyond the Icon Browser text
   line.
-- [ ] Exit:
+- [x] Exit:
   `grep -n '961\|card\|separate tags' workbench/apps.go workbench/launch.go`
   finds nothing;
   `grep -n 'all 39' organisation/scripts/check-layers.sh` finds
