@@ -3828,3 +3828,15 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
 
+
+## IW. From CN2.3, the popover's placement in the available room
+
+Filed 2026-10-24 from CN2.3 and its fresh-eyes review.
+
+1249. **[bug]** **`components/list` names a scroll-bar setting `Anchor`.** `list.Anchor`, `list.AnchorFor` and its value `list.Occupy` say whether a scroll bar takes a lane of its own or lies over the content. The Attachment entry reserves "anchor" for the attachment part alone, and no component may use it as a name. The popover now calls `list.AnchorFor` to size a surface that scrolls. Touches [[DOMAIN#Attachment]] and [[DOMAIN#Scrollbar]].
+
+1250. **[decide]** **The popover is shifted flush against the room's edge; the tooltip keeps a gap from it.** `attachment.ShiftInward` takes an inset. The tooltip passes its gap from the trigger, because a surface flush against the edge looks cut off by it. The popover passes zero, as its shift against the frame always did, and every popover golden depends on that. The question is whether every floating surface keeps the same inset from the window's edge. Touches [[DOMAIN#Attachment]] and [[DOMAIN#Popover]].
+
+1251. **[decide]** **Which side a surface takes when neither side holds it whole.** `attachment.TakeSide` gives it the side with more room, or the preferred side when the two sides are equal, and the surface scrolls in the length that side has. Before this round the tooltip kept the side asked for. The Attachment entry says only that a surface with no room on the preferred side flips "to the side that has room", and that a surface taller than the room it wins scrolls. Touches [[DOMAIN#Attachment]].
+
+1252. **[bug]** **The popover's and the tooltip's package docs say their transitions are deferred to a later goal.** "Open/close is instantaneous in this package; entrance/exit transitions are deferred to a later Effects-integration goal" names a plan, not what ships. Touches [[DOMAIN#Popover]] and [[DOMAIN#Tooltip]].

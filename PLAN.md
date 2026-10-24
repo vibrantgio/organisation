@@ -26966,7 +26966,7 @@ is built here in its order.
 
 #### CN2.3: The popover's surface takes the side that has room
 
-- [ ] Ruled on finding 1244 under [[DOMAIN#Attachment]], first:
+- [x] Ruled on finding 1244 under [[DOMAIN#Attachment]], first:
   CN2.2's mechanism moves whole to `components/attachment` (the room
   key and its window setter, the one mover of room and surfaces,
   `Surfaces` and `PlaceSurfacesAt`, `PlacingFlex`), because these
@@ -26992,7 +26992,7 @@ is built here in its order.
   third copy; the Toolbar trigger's menu inherits the fix through
   the popover. Every window that opens a popover passes the room.
   The goldens that move regenerate with the cause named.
-- [ ] Exit: a test that a popover whose preferred side has no room
+- [x] Exit: a test that a popover whose preferred side has no room
   is drawn whole on the other side with the tail at the anchor, and
   one that a popover taller than both sides scrolls inside itself;
   `grep -rn 'flip' components/tooltip components/picker patterns/popover`
