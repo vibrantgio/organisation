@@ -26808,38 +26808,47 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 #### CN1.6: The code text and comments the guide sweep found say what ships
 
 - [ ] Findings 1217, 1218, 1219 and 1221 of the review pool, from
-  CN1.1's reading, and 1223, 1225 and 1226 from CN1.2's. Under
-  [[DOMAIN#Workbench]]: the workbench's Icon Browser text says the
-  application shows the marks of `components/icons` above the
-  Material Design icons, and the workbench window goldens regenerate
-  with the cause named. Under [[DOMAIN#Group]]: the comments in
-  `workbench/apps.go` and `workbench/launch.go` say group, never
-  card, and say that the workbench repository carries no tags. Under
-  [[DOMAIN#Density]]: the pointer-target paragraph of
-  `theme/tokens/density.go` states the floor and the drawn height as
-  its own table has them. `organisation/scripts/check-layers.sh`'s
-  header states what `--edges` covers without a module count and
-  without a plan number. In `workbench/llms.txt`, the chrome-column
-  line says "level" or "surface" where it says "plane", and its
-  sentence on patterns/pane's top strip is re-read against
-  `patterns/pane` as it is after CM1.18 and states what the package
-  has. Under [[DOMAIN#Emphasis]] and [[DOMAIN#Variant]]:
+  CN1.1's reading, 1223, 1225 and 1226 from CN1.2's, and 1227 and
+  1228 from CN1.3's. Under [[DOMAIN#Workbench]]: the workbench's
+  Icon Browser text says the application shows the marks of
+  `components/icons` above the Material Design icons, and the
+  workbench window goldens regenerate with the cause named. Under
+  [[DOMAIN#Group]]: the comments in `workbench/apps.go` and
+  `workbench/launch.go` say group, never card, and say that the
+  workbench repository carries no tags. Under [[DOMAIN#Density]]:
+  the pointer-target paragraph of `theme/tokens/density.go` states
+  the floor and the drawn height as its own table has them.
+  `organisation/scripts/check-layers.sh`'s header states what
+  `--edges` covers without a module count and without a plan number.
+  In `workbench/llms.txt`, the chrome-column line says "level" or
+  "surface" where it says "plane", and its sentence on
+  patterns/pane's top strip is re-read against `patterns/pane` as it
+  is after CM1.18 and states what the package has. Under
+  [[DOMAIN#Emphasis]] and [[DOMAIN#Variant]]:
   `components/button/button.go` documents Filled, Tonal and Ghost as
   emphases, never variants. `theme/cmd/a11y-check`'s doc comment
   says it prints at start and on each change, and `theme/system`'s
   package comment says what `Live`'s doc comment says of the poll
-  interval. No history, no task or decision numbers. No pixel moves
-  beyond the Icon Browser text line.
+  interval. Under [[DOMAIN#Foreground]]: `textdraw.FillLabel` and
+  `textdraw.Label` name their text colour parameter `foreground`,
+  never `onFill`, and textdraw's README quotes the new name. Under
+  [[DOMAIN#Backdrop]] and [[DOMAIN#Level]]: the `backdrop.go` doc
+  comments of marketing, mindchat, iconbrowser, sk150 and todos say
+  the backdrop, level 0, where they say "plane". No history, no task
+  or decision numbers. No pixel moves beyond the Icon Browser text
+  line.
 - [ ] Exit: `grep -n '961\|card\|separate tags' workbench/apps.go
   workbench/launch.go` finds nothing; `grep -n 'all 39'
   organisation/scripts/check-layers.sh` finds nothing; `grep -n
   'draws 19 and offers' theme/tokens/density.go` finds nothing;
-  `grep -n 'plane' workbench/llms.txt` finds nothing; `grep -n
-  'variant' components/button/button.go` finds nothing; `grep -n
+  `grep -rn 'plane' workbench/llms.txt workbench/*/backdrop.go`
+  finds nothing; `grep -rn 'onFill' textdraw` finds nothing; `grep
+  -n 'variant' components/button/button.go` finds nothing; `grep -n
   'once per second' theme/cmd/a11y-check/*.go` finds nothing; green
-  in workbench root, `components` (button by name) and `theme` by
-  name; guides gate OK; guard OK; gofmt gate OK; one commit in
-  workbench, components, theme and organisation each, push; no tag.
+  in workbench root, `components` (button by name), `theme` by name
+  and `textdraw`; guides gate OK; guard OK; gofmt gate OK; one
+  commit in workbench, components, theme, textdraw and organisation
+  each, push; no tag.
 
 ### G-CN2: Every ruling on a code finding of the guide sweep is built
 
