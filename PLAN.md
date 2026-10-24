@@ -27112,6 +27112,32 @@ is built here in its order.
   repo touched, push; no tag.
 
 
+#### CN2.9: Every layout that offsets a child moves the room and the surfaces, and the picker's menu records into them
+
+- [ ] Findings 1245, 1247 and 1248 of the review pool, the sentences
+  of CN2.2's ruling under [[DOMAIN#Attachment]] that its landing
+  did not reach: `patterns/pane`, `patterns/sidebar`,
+  `patterns/dialog`, `patterns/accordion` and `patterns/table`
+  push offsets and call the mover for each, so a floating surface
+  laid out inside them is placed against the window's edges;
+  `components/picker`'s open menu records into the `Surfaces` its
+  context carries, as the tooltip does, so a picker in a list row
+  or a `PlacingFlex` child lands inside the window; mindchat's
+  settings dialog moves the window's room into its body with the
+  mover and hands the picker that room, never the body's own
+  rectangle. No pixel moves where a surface already fit; the
+  goldens that move regenerate with the cause named.
+- [ ] Exit: `grep -rn 'op.Offset\|Offset(' patterns/pane patterns/sidebar patterns/dialog patterns/accordion patterns/table`
+  finds no push without a mover call beside it, each named in the
+  commit body; a test that a picker in a scrolled list row opens
+  its menu inside the window's room; a test that the settings
+  dialog's picker menu is bounded by the window; green in
+  `components` (picker and list by name), `patterns` (the five by
+  name and the module), `workbench/mindchat` by name and workbench
+  root; guard OK; gofmt gate OK; layers gate OK; commit and push
+  per repo; no tag.
+
+
 ## Phase CO: The remaining rulings of the hidden-sidebar round are built
 
 Owner-ruled 2026-10-24
