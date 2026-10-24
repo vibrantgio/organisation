@@ -26798,9 +26798,13 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   names the six component pages and the three shadow-step
   variables so `design/readme.md` regenerates true. No history, no
   task or decision numbers, no plan named. No pixel moves.
-- [ ] Exit: `grep -n 'ADR-\|road from v1\|DESIGN-v1\|CIELAB\|--color-\|36 dp\|44 dp\|tonal\|seed\|knob\|plane\b\|touch-first' design/DESIGN.md workbench/llms.txt`
-  finds nothing and `design/DESIGN-v1.md` does not exist; green in
-  `theme/export` by name and `design/mirror` by name; guides gate
+- [ ] Exit:
+  `grep -n 'ADR-\|road from v1\|DESIGN-v1\|CIELAB\|--color-\|44 dp\|tonal\|seed\|knob\|plane\b\|touch-first' design/DESIGN.md`
+  finds nothing,
+  `grep -n 'ADR-\|DESIGN-v1\|plane\b' workbench/llms.txt` finds
+  nothing, and a "36 dp" left in either file is the toolbar
+  control's height and `design/DESIGN-v1.md` does not exist; green
+  in `theme/export` by name and `design/mirror` by name; guides gate
   OK with its exclusion removed; guard OK with its exclusion
   removed; one commit in design, theme, workbench and organisation
   each, push; no tag.
