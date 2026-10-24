@@ -1383,3 +1383,5 @@ Rene (to the vibrantgio session, relayed by it): fix the mindchat window and the
 Rene (to the vibrantgio session, relayed by it; his one word, holding the dispatch queue): STOP
 
 Rene (to the vibrantgio session, relayed in its words): "a window without a room" is not Language; every window has the available room, a window not reporting it is a code defect.
+
+Rene: explain 1190 so I can decide
