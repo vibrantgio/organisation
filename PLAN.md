@@ -26813,22 +26813,23 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 
 - [ ] Findings 1217, 1218, 1219 and 1221 of the review pool, from
   CN1.1's reading, 1223, 1225 and 1226 from CN1.2's, 1227, 1228 and
-  1229 from CN1.3's, and 1230, 1231 and 1232 from CN1.4's. Under
-  [[DOMAIN#Workbench]]: the workbench's Icon Browser text says the
-  application shows the marks of `components/icons` above the
-  Material Design icons, and the workbench window goldens regenerate
-  with the cause named. Under [[DOMAIN#Group]]: the comments in
-  `workbench/apps.go` and `workbench/launch.go` say group, never
-  card, and say that the workbench repository carries no tags. Under
-  [[DOMAIN#Density]]: the pointer-target paragraph of
-  `theme/tokens/density.go` states the floor and the drawn height as
-  its own table has them. `organisation/scripts/check-layers.sh`'s
-  header states what `--edges` covers without a module count and
-  without a plan number. In `workbench/llms.txt`, the chrome-column
-  line says "level" or "surface" where it says "plane", and its
-  sentence on patterns/pane's top strip is re-read against
-  `patterns/pane` as it is after CM1.18 and states what the package
-  has. Under [[DOMAIN#Emphasis]] and [[DOMAIN#Variant]]:
+  1229 from CN1.3's, 1230, 1231 and 1232 from CN1.4's, and 1235 and
+  1239 from CN1.5's. Under [[DOMAIN#Workbench]]: the workbench's
+  Icon Browser text says the application shows the marks of
+  `components/icons` above the Material Design icons, and the
+  workbench window goldens regenerate with the cause named. Under
+  [[DOMAIN#Group]]: the comments in `workbench/apps.go` and
+  `workbench/launch.go` say group, never card, and say that the
+  workbench repository carries no tags. Under [[DOMAIN#Density]]:
+  the pointer-target paragraph of `theme/tokens/density.go` states
+  the floor and the drawn height as its own table has them.
+  `organisation/scripts/check-layers.sh`'s header states what
+  `--edges` covers without a module count and without a plan number.
+  In `workbench/llms.txt`, the chrome-column line says "level" or
+  "surface" where it says "plane", and its sentence on
+  patterns/pane's top strip is re-read against `patterns/pane` as it
+  is after CM1.18 and states what the package has. Under
+  [[DOMAIN#Emphasis]] and [[DOMAIN#Variant]]:
   `components/button/button.go` documents Filled, Tonal and Ghost as
   emphases, never variants. `theme/cmd/a11y-check`'s doc comment
   says it prints at start and on each change, and `theme/system`'s
@@ -26855,8 +26856,13 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   kept it from naming. Ruled on 1232: `seen/PLAN.md` and
   `components/PLAN.md`, both finished and linked from nothing, are
   deleted; the commit body names the trunk's plan as the one plan
-  and nothing else. No history, no task or decision numbers. No
-  pixel moves beyond the Icon Browser text line.
+  and nothing else. Under [[DOMAIN#Scrollbar]]:
+  `theme/tokens/platform.go`'s doc counts the measured fields as the
+  struct has them and says thumb where it says knob. Under
+  [[DOMAIN#Emphasis]]: `workbench/llms.txt` calls Filled, Tonal and
+  Ghost the button's emphases, never variants. No history, no task
+  or decision numbers. No pixel moves beyond the Icon Browser text
+  line.
 - [ ] Exit:
   `grep -n '961\|card\|separate tags' workbench/apps.go workbench/launch.go`
   finds nothing;
@@ -26870,6 +26876,8 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   nothing;
   `grep -rn 'onFill\|FillLabel\|textdraw\.Label\b' textdraw` finds
   nothing; `grep -n 'variant' components/button/button.go` finds
+  nothing; `grep -n 'knob\|Twenty-two' theme/tokens/platform.go`
+  finds nothing; `grep -n 'Ghost variants' workbench/llms.txt` finds
   nothing; `grep -n 'once per second' theme/cmd/a11y-check/*.go`
   finds nothing;
   `test ! -e seen/PLAN.md -a ! -e components/PLAN.md`; green in
@@ -26940,29 +26948,53 @@ is built here in its order.
 #### CN2.3: `tokens.ElevationScale` is deleted and elevation is spoken in levels
 
 - [ ] Ruled on finding 1224 under [[DOMAIN#Level]],
-  [[DOMAIN#Elevation]], [[DOMAIN#Shadow]] and
-  [[DOMAIN#0010 — platform-over-material]]: the scale's numbers are
-  the Material scale's and a shadow depth in dp is elevation in its
-  own units; the levels are the five of the Level entry, each a
-  fill of the platform's, and the floating level has one shadow,
-  the measured `DropShadow` that `effects/depth` draws. Nothing
-  reads the token: `patterns/dialog`, `patterns/popover` and
-  `patterns/notifications` drop the member and its comment line
-  from their tuples, `theme.Elevation` leaves the theme
-  (`theme.go`, `auto.go`, `system.go`), `theme/export` drops the
-  field, the `--elevation-*` lines and their page,
-  `tokens/elevation.go` is deleted with its test, `tokens/doc.go`
-  and `theme/README.md` stop naming it, `effects/transition` and
-  `workbench/themer` are run by name as the field walkers, and the
-  design bundle regenerates. No two shadow depths, no renamed
-  fields. No pixel moves in any window.
-- [ ] Exit: `grep -rn 'ElevationScale\|theme\.Elevation\|--elevation-' --include='*.go' --include='*.css' --include='*.md' --include='*.html' theme components patterns effects workbench design`
-  finds nothing; green in `theme`, `effects/transition` by name,
-  `patterns` (dialog, popover, notifications by name), `theme/export`
-  by name, `design/mirror` by name, `workbench/themer` by name and
-  workbench root; guard OK; gofmt gate OK; layers gate OK; guides
-  gate OK; commit and push per repo (theme, patterns, design,
-  workbench if a golden moves); no tag.
+  [[DOMAIN#Elevation]], [[DOMAIN#Shadow]] and [[DOMAIN#0010 —
+  platform-over-material]]: the scale's numbers are the Material
+  scale's and a shadow depth in dp is elevation in its own units;
+  the levels are the five of the Level entry, each a fill of the
+  platform's, and the floating level has one shadow, the measured
+  `DropShadow` that `effects/depth` draws. Nothing reads the token:
+  `patterns/dialog`, `patterns/popover` and `patterns/notifications`
+  drop the member and its comment line from their tuples,
+  `theme.Elevation` leaves the theme (`theme.go`, `auto.go`,
+  `system.go`), `theme/export` drops the field, the `--elevation-*`
+  lines and their page, `tokens/elevation.go` is deleted with its
+  test, `tokens/doc.go` and `theme/README.md` stop naming it,
+  `effects/transition` and `workbench/themer` are run by name as the
+  field walkers, and the design bundle regenerates;
+  `design/components/cards.html`'s shadow section (finding 1237)
+  says that a floating thing casts the measured floating shadow,
+  `--floating-shadow-step`, and names no `--shadow-N`. No two shadow
+  depths, no renamed fields. No pixel moves in any window.
+- [ ] Exit:
+  `grep -rn 'ElevationScale\|theme\.Elevation\|--elevation-' --include='*.go' --include='*.css' --include='*.md' --include='*.html' theme components patterns effects workbench design`
+  finds nothing;
+  `grep -n 'shadow-[0-9]' design/components/cards.html` finds
+  nothing; green in `theme`, `effects/transition` by name,
+  `patterns` (dialog, popover, notifications by name),
+  `theme/export` by name, `design/mirror` by name,
+  `workbench/themer` by name and workbench root; guard OK; gofmt
+  gate OK; layers gate OK; guides gate OK; commit and push per repo
+  (theme, patterns, design, workbench if a golden moves); no tag.
+
+#### CN2.4: Springbutton reads the theme's Motion
+
+- [ ] Finding 1234 of the review pool: `effects/springbutton` uses
+  spring constants of its own, steps its spring once per frame at a
+  fixed 1/60 s so it runs twice as fast on a 120 Hz display, and
+  never sees the zero durations reduced motion emits, so the press
+  animation plays with reduced motion on. `tokens.MotionScale`'s
+  doc says a spring-driven component reads the zeros and snaps.
+  Springbutton takes its spring from the theme's Motion, steps it
+  by the frame's elapsed time, and snaps when Motion's durations
+  are zero; the effects README's row says so. No Language entry is
+  touched. The goldens that move regenerate with the cause named.
+- [ ] Exit: a test that the spring's position after a frame depends
+  on the frame's elapsed time, and one that with reduced motion on
+  the press lands in one frame; green in `effects` (springbutton by
+  name and the module) and in every module that imports
+  springbutton, by name; guard OK; gofmt gate OK; guides gate OK;
+  one commit in effects, push; no tag.
 
 ## Phase CO: The remaining rulings of the hidden-sidebar round are built
 
