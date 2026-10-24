@@ -1372,4 +1372,6 @@ The fix belongs in vibrantgio's agent instructions, not here. Add a rule along t
 
 ## 2026-10-24
 
-Rene (to the vibrantgio session, relayed by it): See if you can update the documentation in the repos to reflect the code reality
+Rene (to the vibrantgio session, relayed by it): See if you can update the documentation in the repos to reflect the code reality ^0005-documentation-reflects-code
+
+Rene (to the vibrantgio session, relayed by it; his one word on splitting Phase CM at the guide tasks): split ^0005-split-cm-at-the-guides
