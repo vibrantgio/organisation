@@ -26928,32 +26928,59 @@ is built here in its order.
   workbench root; guard OK; gofmt gate OK; layers gate OK; one
   commit in components and one in workbench, push; no tag.
 
-#### CN2.2: The popover's surface takes the side that has room
+#### CN2.2: The available room and the floating surfaces are one mechanism in components, and the popover's surface takes the side that has room
 
+- [ ] Ruled on findings 1242 and 1243 under [[DOMAIN#Attachment]],
+  [[DOMAIN#0007 — shared-recipes]] and [[DOMAIN#0002 —
+  extend-the-component]]: the available room and the floating
+  surfaces are one mechanism. Both are set by the shell at the
+  window and both are moved by every layout that offsets a child (a
+  list's rows and scroll, a flex, a scroller, sk150's grid) with one
+  exported call that moves the two together, so neither is present
+  without the other and a list never places a row's surface against
+  the wrong edges. The mechanism is in `components`, at the tier of
+  its lowest reader: the room's key leaves `patterns/shell` for the
+  package that holds `tooltip.Surfaces` (or a components package
+  both read), and `patterns/shell` only sets it at the window and
+  calls the same mover as everyone else. The flex that lays children
+  out and then places their surfaces (shell's `placingFlex`,
+  `placeSurfaces`, `flexOffsets`) is that package's exported recipe;
+  sk150's three-line copy and its hand-worked cell offset are
+  deleted and it calls the recipe. The picker's menu reads the same
+  room: `FieldProps.AvailableRoom`'s above-and-below pair is the
+  picker's own derivation from the one rectangle, so the field takes
+  the rectangle and derives the pair inside. Every window that sets
+  the room through the shell keeps working unchanged.
 - [ ] Ruled on finding 1222 under [[DOMAIN#Attachment]] and
   [[DOMAIN#0007 — shared-recipes]]: `patterns/popover` takes the
-  available room as the tooltip does, an `AvailableRoom` in its
-  Props given by the shell, and inside it the surface takes the
-  opposite side when the preferred side has no room and the other
-  holds it whole, is shifted inward along the cross axis when it
-  would cross the room's edge, scrolls inside itself when taller
-  than the side it wins, and the tail points at the anchor through
-  all of it. The doc comment's deferral sentence is deleted. The
-  tooltip and the picker's menu already do this: the flip
-  arithmetic becomes one recipe the three share, in a package the
-  tiers allow, never a third copy; the Toolbar trigger's menu
-  inherits the fix through the popover. Every window that opens a
-  popover passes the shell's available room. The goldens that move
-  regenerate with the cause named.
-- [ ] Exit: a test that a popover whose preferred side has no room
-  is drawn whole on the other side with the tail at the anchor, and
-  one that a popover taller than both sides scrolls inside itself;
+  moved room from that package, an `AvailableRoom` in its Props, and
+  inside it the surface takes the opposite side when the preferred
+  side has no room and the other holds it whole, is shifted inward
+  along the cross axis when it would cross the room's edge, scrolls
+  inside itself when taller than the side it wins, and the tail
+  points at the anchor through all of it. The doc comment's deferral
+  sentence is deleted. The tooltip and the picker's menu already do
+  this: the flip arithmetic becomes one recipe the three share, in a
+  package the tiers allow, never a third copy; the Toolbar trigger's
+  menu inherits the fix through the popover. Every window that opens
+  a popover passes the room. The goldens that move regenerate with
+  the cause named.
+- [ ] Exit: a test that a tooltip in a scrolled list row under a
+  shell that set the room, with no Surfaces set by any caller, is
+  placed inside the window's room;
+  `grep -rn 'placeSurfaces\|flexOffsets' workbench` finds nothing
+  and
+  `grep -rn 'func (.*) AvailableRoom\|AvailableRoom func' patterns/shell`
+  finds only the window-level setter; a test that a popover whose
+  preferred side has no room is drawn whole on the other side with
+  the tail at the anchor, and one that a popover taller than both
+  sides scrolls inside itself;
   `grep -rn 'flip' components/tooltip components/picker patterns/popover`
   finds the arithmetic in one package; green in `components`
-  (tooltip and picker by name), `patterns` (popover, shell and
-  toolbar by name), workbench root and every app module that opens
-  a popover by name; guard OK; gofmt gate OK; layers gate OK;
-  commit and push per repo; no tag.
+  (tooltip, picker, list and the mechanism's package by name),
+  `patterns` (popover, shell and toolbar by name), workbench root
+  and every app module by name; guard OK; gofmt gate OK; layers gate
+  OK; commit and push per repo; no tag.
 
 #### CN2.3: `tokens.ElevationScale` is deleted and elevation is spoken in levels
 
