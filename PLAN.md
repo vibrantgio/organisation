@@ -26928,7 +26928,7 @@ is built here in its order.
   workbench root; guard OK; gofmt gate OK; layers gate OK; one
   commit in components and one in workbench, push; no tag.
 
-#### CN2.2: The available room and the floating surfaces are one mechanism in components, and the popover's surface takes the side that has room
+#### CN2.2: The available room and the floating surfaces are one mechanism in components
 
 - [ ] Ruled on findings 1242 and 1243 under [[DOMAIN#Attachment]],
   [[DOMAIN#0007 — shared-recipes]] and
@@ -26952,38 +26952,45 @@ is built here in its order.
   field takes the rectangle and derives the pair inside. Every
   window that sets the room through the shell keeps working
   unchanged.
-- [ ] Ruled on finding 1222 under [[DOMAIN#Attachment]] and
-  [[DOMAIN#0007 — shared-recipes]]: `patterns/popover` takes the
-  moved room from that package, an `AvailableRoom` in its Props, and
-  inside it the surface takes the opposite side when the preferred
-  side has no room and the other holds it whole, is shifted inward
-  along the cross axis when it would cross the room's edge, scrolls
-  inside itself when taller than the side it wins, and the tail
-  points at the anchor through all of it. The doc comment's deferral
-  sentence is deleted. The tooltip and the picker's menu already do
-  this: the flip arithmetic becomes one recipe the three share, in a
-  package the tiers allow, never a third copy; the Toolbar trigger's
-  menu inherits the fix through the popover. Every window that opens
-  a popover passes the room. The goldens that move regenerate with
-  the cause named.
 - [ ] Exit: a test that a tooltip in a scrolled list row under a
   shell that set the room, with no Surfaces set by any caller, is
   placed inside the window's room;
   `grep -rn 'placeSurfaces\|flexOffsets' workbench` finds nothing
   and
   `grep -rn 'func (.*) AvailableRoom\|AvailableRoom func' patterns/shell`
-  finds only the window-level setter; a test that a popover whose
-  preferred side has no room is drawn whole on the other side with
-  the tail at the anchor, and one that a popover taller than both
-  sides scrolls inside itself;
+  finds only the window-level setter; green in `components`
+  (tooltip, picker, list and the mechanism's package by name),
+  `patterns` (shell, navbar and tabs by name), workbench root and
+  every app module by name; guard OK; gofmt gate OK; layers gate OK;
+  commit and push per repo; no tag.
+
+#### CN2.3: The popover's surface takes the side that has room
+
+- [ ] Ruled on finding 1222 under [[DOMAIN#Attachment]] and
+  [[DOMAIN#0007 — shared-recipes]]: `patterns/popover` takes the
+  moved room from CN2.2's package, an `AvailableRoom` in its Props,
+  and inside it the surface takes the opposite side when the
+  preferred side has no room and the other holds it whole, is
+  shifted inward along the cross axis when it would cross the room's
+  edge, scrolls inside itself when taller than the side it wins, and
+  the tail points at the anchor through all of it. The doc comment's
+  deferral sentence is deleted. The tooltip and the picker's menu
+  already do this: the flip arithmetic becomes one recipe the three
+  share, in a package the tiers allow, never a third copy; the
+  Toolbar trigger's menu inherits the fix through the popover. Every
+  window that opens a popover passes the room. The goldens that move
+  regenerate with the cause named.
+- [ ] Exit: a test that a popover whose preferred side has no room
+  is drawn whole on the other side with the tail at the anchor, and
+  one that a popover taller than both sides scrolls inside itself;
   `grep -rn 'flip' components/tooltip components/picker patterns/popover`
   finds the arithmetic in one package; green in `components`
-  (tooltip, picker, list and the mechanism's package by name),
-  `patterns` (popover, shell and toolbar by name), workbench root
-  and every app module by name; guard OK; gofmt gate OK; layers gate
-  OK; commit and push per repo; no tag.
+  (tooltip, picker and the flip's package by name), `patterns`
+  (popover, shell and toolbar by name), workbench root and every app
+  module that opens a popover by name; guard OK; gofmt gate OK;
+  layers gate OK; commit and push per repo; no tag.
 
-#### CN2.3: `tokens.ElevationScale` is deleted and elevation is spoken in levels
+#### CN2.4: `tokens.ElevationScale` is deleted and elevation is spoken in levels
 
 - [ ] Ruled on finding 1224 under [[DOMAIN#Level]],
   [[DOMAIN#Elevation]], [[DOMAIN#Shadow]] and [[DOMAIN#0010 —
@@ -27015,7 +27022,7 @@ is built here in its order.
   gate OK; layers gate OK; guides gate OK; commit and push per repo
   (theme, patterns, design, workbench if a golden moves); no tag.
 
-#### CN2.4: Springbutton reads the theme's Motion
+#### CN2.5: Springbutton reads the theme's Motion
 
 - [ ] Finding 1234 of the review pool: `effects/springbutton` uses
   spring constants of its own, steps its spring once per frame at a
@@ -27034,7 +27041,7 @@ is built here in its order.
   springbutton, by name; guard OK; gofmt gate OK; guides gate OK;
   one commit in effects, push; no tag.
 
-#### CN2.5: The dialog without a footer is the dismissible dialog
+#### CN2.6: The dialog without a footer is the dismissible dialog
 
 - [ ] Ruled on finding 1236 under [[DOMAIN#Dialog]]: the entry has
   two forms, a dialog asking a decision, with the footer and no
@@ -27053,7 +27060,7 @@ is built here in its order.
   and `design/mirror` by name; guard OK; gofmt gate OK; guides gate
   OK; commit and push per repo; no tag.
 
-#### CN2.6: The three measured accent fills follow the user's accent on macOS
+#### CN2.7: The three measured accent fills follow the user's accent on macOS
 
 - [ ] Ruled on finding 1238 under [[DOMAIN#Accent]]: the platform's
   selection colour for the place follows the user's accent on
@@ -27074,7 +27081,7 @@ is built here in its order.
   by name, `workbench/themer` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
-#### CN2.7: No guide or comment cites a numbered level, and the toolbar control's overlay doc names only the toolbar control
+#### CN2.8: No guide or comment cites a numbered level, and the toolbar control's overlay doc names only the toolbar control
 
 - [ ] Under [[DOMAIN#Level]], ruled 2026-10-24: the Language names
   the levels (backdrop, chrome, content, raised, floating) and no
