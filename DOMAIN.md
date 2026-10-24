@@ -362,6 +362,17 @@ A component the user operates to act or to choose.
 | **breadcrumb** | going back up the hierarchy — each step a link, the last where you are |
 | **pagination** | moving between numbered pages of content |
 
+### Coverage
+
+A colour at less than full opacity, composited over the surface
+beneath it in encoded sRGB. The platform records as coverages the
+colours of its text, its separator, its hover and press overlays, its
+focus ring and its shadow. One recorded value is then right on every
+fill. A coverage is flattened onto the fill it is drawn on before it
+is painted. That fill is the one thing a component must be told. An
+overlay with no one fill beneath it, a scrim over a page, is
+composited against what is already painted.
+
 ### Density
 
 How tightly controls pack, set once for the whole window and never
@@ -489,7 +500,7 @@ field of every row.
 
 The colour a component paints behind its content: a colour role,
 painted at the platform's value for the scheme. A role the platform
-paints at an alpha composites over the surface beneath, in encoded
+records as a coverage composites over the surface beneath, in encoded
 sRGB.
 
 | Fill | What has it |
