@@ -26893,7 +26893,7 @@ goes to the review pool, the ontology session rules, and the ruling
 is built here in its order.
 #### CN2.1: Components' list moves the available room through its rows and sk150's hint cells are the library's tooltip
 
-- [ ] Ruled on finding 1220 under [[DOMAIN#Tooltip]] and
+- [x] Ruled on finding 1220 under [[DOMAIN#Tooltip]] and
   [[DOMAIN#0002 — extend-the-component]]: `components/tooltip` takes
   a trigger the caller drew (`Props.Anchor` is documented for a word
   in a paragraph or a cell of a table, the anchored tooltip is
@@ -26917,7 +26917,7 @@ is built here in its order.
   cannot be inline goes with the file. The Tooltip entry's wrapping
   applies to these cells; the copy's one-line bubble goes with it.
   The sk150 goldens regenerate with the cause named.
-- [ ] Exit: `test ! -e workbench/sk150/tip.go`;
+- [x] Exit: `test ! -e workbench/sk150/tip.go`;
   `grep -rn 'tip\.' workbench/sk150/*.go` finds no reference to the
   deleted package's names; a test that a hovered hint cell shows the
   library tooltip below the cell and an unhovered one shows none; a
