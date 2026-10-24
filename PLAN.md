@@ -26841,12 +26841,11 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   name; guides gate OK; guard OK; gofmt gate OK; one commit in
   workbench, components, theme and organisation each, push; no tag.
 
-### G-CN2: Every application copy of a component that the guide sweep finds is the library's component
+### G-CN2: Every ruling on a code finding of the guide sweep is built
 
-The sweep reads code beside the guides; where an application keeps
-its own copy of a library component, the ontology session rules and
-the copy goes.
-
+The sweep reads code beside the guides; what it finds in the code
+goes to the review pool, the ontology session rules, and the ruling
+is built here in its order.
 #### CN2.1: Sk150's hint cells are the library's tooltip
 
 - [ ] Ruled on finding 1220 under [[DOMAIN#Tooltip]] and
@@ -26873,6 +26872,60 @@ the copy goes.
   unhovered one shows none; green in `workbench/sk150` by name and
   workbench root; guard OK; gofmt gate OK; layers gate OK; one
   commit in workbench, push; no tag.
+
+#### CN2.2: The popover's surface takes the side that has room
+
+- [ ] Ruled on finding 1222 under [[DOMAIN#Attachment]] and
+  [[DOMAIN#0007 — shared-recipes]]: `patterns/popover` takes the
+  available room as the tooltip does, an `AvailableRoom` in its
+  Props given by the shell, and inside it the surface takes the
+  opposite side when the preferred side has no room and the other
+  holds it whole, is shifted inward along the cross axis when it
+  would cross the room's edge, scrolls inside itself when taller
+  than the side it wins, and the tail points at the anchor through
+  all of it. The doc comment's deferral sentence is deleted. The
+  tooltip and the picker's menu already do this: the flip
+  arithmetic becomes one recipe the three share, in a package the
+  tiers allow, never a third copy; the Toolbar trigger's menu
+  inherits the fix through the popover. Every window that opens a
+  popover passes the shell's available room. The goldens that move
+  regenerate with the cause named.
+- [ ] Exit: a test that a popover whose preferred side has no room
+  is drawn whole on the other side with the tail at the anchor, and
+  one that a popover taller than both sides scrolls inside itself;
+  `grep -rn 'flip' components/tooltip components/picker patterns/popover`
+  finds the arithmetic in one package; green in `components`
+  (tooltip and picker by name), `patterns` (popover, shell and
+  toolbar by name), workbench root and every app module that opens
+  a popover by name; guard OK; gofmt gate OK; layers gate OK;
+  commit and push per repo; no tag.
+
+#### CN2.3: `tokens.ElevationScale` is deleted and elevation is spoken in levels
+
+- [ ] Ruled on finding 1224 under [[DOMAIN#Level]],
+  [[DOMAIN#Elevation]], [[DOMAIN#Shadow]] and
+  [[DOMAIN#0010 — platform-over-material]]: the scale's numbers are
+  the Material scale's and a shadow depth in dp is elevation in its
+  own units; the levels are the five of the Level entry, each a
+  fill of the platform's, and the floating level has one shadow,
+  the measured `DropShadow` that `effects/depth` draws. Nothing
+  reads the token: `patterns/dialog`, `patterns/popover` and
+  `patterns/notifications` drop the member and its comment line
+  from their tuples, `theme.Elevation` leaves the theme
+  (`theme.go`, `auto.go`, `system.go`), `theme/export` drops the
+  field, the `--elevation-*` lines and their page,
+  `tokens/elevation.go` is deleted with its test, `tokens/doc.go`
+  and `theme/README.md` stop naming it, `effects/transition` and
+  `workbench/themer` are run by name as the field walkers, and the
+  design bundle regenerates. No two shadow depths, no renamed
+  fields. No pixel moves in any window.
+- [ ] Exit: `grep -rn 'ElevationScale\|theme\.Elevation\|--elevation-' --include='*.go' --include='*.css' --include='*.md' --include='*.html' theme components patterns effects workbench design`
+  finds nothing; green in `theme`, `effects/transition` by name,
+  `patterns` (dialog, popover, notifications by name), `theme/export`
+  by name, `design/mirror` by name, `workbench/themer` by name and
+  workbench root; guard OK; gofmt gate OK; layers gate OK; guides
+  gate OK; commit and push per repo (theme, patterns, design,
+  workbench if a golden moves); no tag.
 
 ## Phase CO: The remaining rulings of the hidden-sidebar round are built
 
