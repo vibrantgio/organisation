@@ -26886,33 +26886,6 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   gofmt gate OK; one commit in workbench, components, theme,
   textdraw, mvu, ivg, seen and organisation each, push; no tag.
 
-#### CN1.7: No guide or comment cites a numbered level, and the toolbar control's overlay doc names only the toolbar control
-
-- [ ] Under [[DOMAIN#Level]], ruled 2026-10-24: the Language names
-  the levels (backdrop, chrome, content, raised, floating) and no
-  text cites a numbered one. Every guide, README, comment and the
-  retired-words table's replacement column that says "level 0",
-  "level 2" or "level 3" for an elevation level
-  (`markdown/README.md`, `components/toast/toast.go`,
-  `theme/export/doc.go`, the five workbench `backdrop.go` comments,
-  `organisation/AGENTS.md`, and whatever `grep -rniw 'level [0-3]'`
-  finds beside them outside the frozen records) says the level's
-  name; a heading level or a typography level is another sense and
-  stays. Under [[DOMAIN#Fill]] and [[DOMAIN#State]], the mechanical
-  half of finding 1233: `controlface.Fill`'s doc states the toolbar
-  control's overlays and says nothing about other controls; the
-  sentence claiming a push button does not tint cites a capture the
-  reference does not hold and is deleted. `scripts/sync-agents.sh`
-  runs clean after the AGENTS.md row changes. No history, no task or
-  decision numbers. No pixel moves.
-- [ ] Exit: `grep -rniw 'level [0-3]' --include='*.go' --include='*.md' --include='*.txt' --include='*.css' --include='*.html' .`
-  from the tree root finds nothing outside `organisation/PLAN.md`,
-  `TRANSCRIPTS.md`, `reviews/`, `explorations/`, `reference/` and
-  the markdown heading-level sense; `grep -n 'push button' components/internal/controlface/controlface.go`
-  finds no sentence about tinting; guides gate OK; guard OK;
-  `scripts/sync-agents.sh check` OK; gofmt gate OK; one commit per
-  repo touched, push; no tag.
-
 ### G-CN2: Every ruling on a code finding of the guide sweep is built
 
 The sweep reads code beside the guides; what it finds in the code
@@ -27072,6 +27045,34 @@ is built here in its order.
   equal the measured values; green in `theme`, `effects/transition`
   by name, `workbench/themer` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
+
+#### CN2.7: No guide or comment cites a numbered level, and the toolbar control's overlay doc names only the toolbar control
+
+- [ ] Under [[DOMAIN#Level]], ruled 2026-10-24: the Language names
+  the levels (backdrop, chrome, content, raised, floating) and no
+  text cites a numbered one. Every guide, README, comment and the
+  retired-words table's replacement column that says "level 0",
+  "level 2" or "level 3" for an elevation level
+  (`markdown/README.md`, `components/toast/toast.go`,
+  `theme/export/doc.go`, the five workbench `backdrop.go` comments,
+  `organisation/AGENTS.md`, and whatever `grep -rniw 'level [0-3]'`
+  finds beside them outside the frozen records) says the level's
+  name; a heading level or a typography level is another sense and
+  stays. Under [[DOMAIN#Fill]] and [[DOMAIN#State]], the mechanical
+  half of finding 1233: `controlface.Fill`'s doc states the toolbar
+  control's overlays and says nothing about other controls; the
+  sentence claiming a push button does not tint cites a capture the
+  reference does not hold and is deleted. `scripts/sync-agents.sh`
+  runs clean after the AGENTS.md row changes. No history, no task or
+  decision numbers. No pixel moves.
+- [ ] Exit: `grep -rniw 'level [0-3]' --include='*.go' --include='*.md' --include='*.txt' --include='*.css' --include='*.html' .`
+  from the tree root finds nothing outside `organisation/PLAN.md`,
+  `TRANSCRIPTS.md`, `reviews/`, `explorations/`, `reference/` and
+  the markdown heading-level sense; `grep -n 'push button' components/internal/controlface/controlface.go`
+  finds no sentence about tinting; guides gate OK; guard OK;
+  `scripts/sync-agents.sh check` OK; gofmt gate OK; one commit per
+  repo touched, push; no tag.
+
 
 ## Phase CO: The remaining rulings of the hidden-sidebar round are built
 
