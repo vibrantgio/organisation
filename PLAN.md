@@ -26600,7 +26600,9 @@ order.
 
 ## Phase CN: The guides describe what the tree ships
 
-Owner-ruled 2026-10-24, his word: "split". Rene asked that the
+Owner-ruled 2026-10-24, his word "split"
+([[TRANSCRIPTS#^0005-split-cm-at-the-guides]]). Rene asked
+([[TRANSCRIPTS#^0005-documentation-reflects-code]]) that the
 documentation in the repos be updated to the code; the guides had
 drifted from it in every repository but mvu. Phase CM ends with
 CM1.21, this phase brings the guides to the code, and every task of
@@ -26614,7 +26616,6 @@ no plan, no history and no decision number; a support library's
 guide names no consumer; where a guide disagrees with the Language
 the guide follows the Language, and where the code disagrees with
 the Language that is a review-pool finding, never a doc edit.
-
 ### G-CN1: Every live guide says what the code ships
 
 The tasks run in order, one worker each, no pixel moves anywhere.
@@ -26806,13 +26807,13 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 
 ## Phase CO: The remaining rulings of the hidden-sidebar round are built
 
-Owner-ruled 2026-10-24 ("split"): Phase CM ends with CM1.21, Phase
-CN brings the guides to the code, and every task of Phase CM
-unchecked at that ruling runs here in its order. Phase CM's rules
-stand: the recorder's requests come first, captures run only on an
-open desktop, and the tasks here run when none is waiting. CO1.1
-dispatches only on the owner's explicit go.
-
+Owner-ruled 2026-10-24
+([[TRANSCRIPTS#^0005-split-cm-at-the-guides]]): Phase CM ends with
+CM1.21, Phase CN brings the guides to the code, and every task of
+Phase CM unchecked at that ruling runs here in its order. Phase CM's
+rules stand: the recorder's requests come first, captures run only
+on an open desktop, and the tasks here run when none is waiting.
+CO1.1 dispatches only on the owner's explicit go.
 ### G-CO1: Every remaining ruling of the hidden-sidebar round that takes no capture is built
 
 The tasks are G-CM1's tasks unchecked at the ruling, in their

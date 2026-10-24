@@ -3829,7 +3829,7 @@ Filed 2026-10-22 from CK10.72's captures, read in `reference/macos/controls.md` 
 
 ## HS. From CK10.73, the control inside a row
 
-Filed 2026-10-22 from CK10.73. Findings 1193 to 1196 are ruled: 1193 is in CM1.30, 1194 in CM1.31, 1195 in CM1.32, 1196 in CM1.15. Nothing stays open.
+Filed 2026-10-22 from CK10.73. Findings 1193 to 1196 are ruled: 1193 is in CO1.9, 1194 in CO1.10, 1195 in CO1.11, 1196 in CM1.15. Nothing stays open.
 
 ## HT. From CK10.74, the indeterminate indicator
 
