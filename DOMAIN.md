@@ -396,12 +396,15 @@ from the control height.
 
 ### Dialog
 
-The pattern that interrupts for a decision: the platform's term for
-the box that asks it and makes the window modal until it is
-answered. On macOS it is a sheet attached to the window's title bar,
-elsewhere a box at the floating level over the scrim. Structure: a
-header holding its title and close, a body, and a footer of actions,
-Cancel and the default among them. The platform's own dialogs — the
+The pattern that interrupts: the platform's term for the box that
+makes the window modal until it is answered or left. On macOS it is
+a sheet attached to the window's title bar, elsewhere a box at the
+floating level over the scrim. Structure: a header holding its
+title, a body, and either a footer of actions, Cancel and the
+default among them, or a close in the header. A dialog asking a
+decision has the footer and no close. A dismissible dialog has the
+close and no footer, and its changes apply as they are made. It is
+left by its close, Escape or a click outside it. The platform's own dialogs — the
 Open and Save panels, and its alert box with a message and buttons —
 are used where the platform offers them, the library's dialog where
 it does not; on Open the whole window follows the choice. When a
@@ -514,7 +517,8 @@ sRGB.
 | none | the Ghost button at rest, the symbol badge |
 
 Transient states lay the platform's hover and press overlays over the
-fill, or over the surface where there is none.
+fill, or over the surface where there is none, on the controls the
+platform draws them on, read from the reference.
 
 ### Focus ring
 
@@ -1512,8 +1516,9 @@ beside the trigger, inside the window, never cut off, as it places
 every floating surface. Text wider than its surface is set on more
 lines, up to the tooltip's measured width, never shortened with an
 ellipsis, as the platform's help tag wraps. It is filled with the window's
-own background inside a separator hairline, its text in the text
-colour, the same in both schemes, and it has no status. The
+own background, with the edge and the shadow the platform's help tag
+has, measured. Its text is in the text colour, the same in both
+schemes, and it has no status. The
 tooltip and the toast are the two floating signals that tell about a
 thing.
 
