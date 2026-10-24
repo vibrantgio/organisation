@@ -26669,7 +26669,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 
 #### CN1.2: The theme, components, patterns and effects READMEs describe the packages that ship
 
-- [ ] Rene's request 2026-10-24, continued. The four READMEs are
+- [x] Rene's request 2026-10-24, continued. The four READMEs are
   corrected claim by claim, each re-read from the source. All
   four: the sentence that AGENTS.md has the build, test and golden
   commands is replaced by where they are, `organisation/AGENTS.md`.
@@ -26701,7 +26701,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   tooltip delay is `components/tooltip`'s. No history, no
   consumer named, no task or decision numbers; the same Language
   rule as CN1.1. No pixel moves.
-- [ ] Exit: `grep -n 'ColorTokens\|ElevationLevel\|Level3,\|CIELAB\|36 dp\|28 dp\|ships empty\|golden line there\|v1.0.0\|sixteen composed\|Aside' theme/README.md components/README.md patterns/README.md effects/README.md`
+- [x] Exit: `grep -n 'ColorTokens\|ElevationLevel\|Level3,\|CIELAB\|36 dp\|28 dp\|ships empty\|golden line there\|v1.0.0\|sixteen composed\|Aside' theme/README.md components/README.md patterns/README.md effects/README.md`
   finds nothing; green in `components/coordination` by name; guides
   gate OK; guard OK; gofmt gate OK; one commit per repo, push; no
   tag.
