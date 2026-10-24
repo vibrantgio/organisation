@@ -3828,3 +3828,15 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
 
+
+## IV. From CN2.2, the available room and the floating surfaces
+
+1244. **[decide]** **The window's available room and the floating surfaces' collector are in a package named for the tooltip.** `components/tooltip` now holds `WithAvailableRoom`, `AvailableRoom`, `AvailableRoomAt`, `PlaceSurfacesAt`, `PlacingFlex` and `Surfaces`, and every floating surface (the picker's menu, the popover once it reads the room) and every layout that offsets a child names them as `tooltip.*`. Under [[DOMAIN#Attachment]] the mechanism belongs to the attachment, not to one component; a ruling says whether it moves to a components package named for the attachment, with `tooltip` keeping only the tooltip.
+
+1245. **[bug]** **The settings dialog's default-model picker is given the dialog body's rectangle, not the window's available room.** `workbench/mindchat/settings.go` hands the field `image.Rect(-fieldX, pickerRow-size.Y, fieldW, pickerRow)`, the body it is drawn in, so its menu is bounded by the body. [[DOMAIN#Attachment]] says placement is against the window, not the region the anchor is in; the dialog would move the window's room into the body with `tooltip.AvailableRoomAt` and pass `tooltip.AvailableRoom`.
+
+1246. **[bug]** **`TestUnreadTooltipHoverHeadless` in `workbench/feeds` failed once in a full `go test ./...` run and passed alone and on the rerun.** The test drives the tooltip's show delay through `gtx.Now` and a real input router; a failure that does not repeat points at an ordering or timing dependence in the harness. Touches [[DOMAIN#Tooltip]].
+
+1247. **[bug]** **The picker's open menu does not record into a `tooltip.Surfaces`.** `components/picker/field.go` draws the menu through `op.Defer` at once, so a picker laid out in a child that a layout places only after measuring it (a list row, a `PlacingFlex` child) reads no available room, since `WithSurfaces` removed it, and its menu is bounded by nothing. Under [[DOMAIN#Attachment]] the menu must land inside the window; the field would record its menu in the Surfaces as the tooltip does.
+
+1248. **[bug]** **Several patterns layouts push an offset without moving the available room and the floating surfaces.** `patterns/pane/pane.go:274`, `patterns/sidebar/sidebar.go:591,772,820,904`, `patterns/dialog/dialog.go:716,731,744`, `patterns/accordion/accordion.go:244,253` and `patterns/table/table.go:323,406,461` push offsets and call neither `tooltip.AvailableRoomAt` nor `tooltip.PlaceSurfacesAt`, so a floating surface laid out inside them is placed against edges left unmoved. [[DOMAIN#Attachment]] says placement is against the window; each would call the mover.

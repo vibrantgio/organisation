@@ -26930,7 +26930,7 @@ is built here in its order.
 
 #### CN2.2: The available room and the floating surfaces are one mechanism in components
 
-- [ ] Ruled on findings 1242 and 1243 under [[DOMAIN#Attachment]],
+- [x] Ruled on findings 1242 and 1243 under [[DOMAIN#Attachment]],
   [[DOMAIN#0007 — shared-recipes]] and
   [[DOMAIN#0002 — extend-the-component]]: the available room and the
   floating surfaces are one mechanism. Both are set by the shell at
@@ -26952,7 +26952,7 @@ is built here in its order.
   field takes the rectangle and derives the pair inside. Every
   window that sets the room through the shell keeps working
   unchanged.
-- [ ] Exit: a test that a tooltip in a scrolled list row under a
+- [x] Exit: a test that a tooltip in a scrolled list row under a
   shell that set the room, with no Surfaces set by any caller, is
   placed inside the window's room;
   `grep -rn 'placeSurfaces\|flexOffsets' workbench` finds nothing
