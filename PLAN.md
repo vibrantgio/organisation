@@ -26621,13 +26621,15 @@ order.
   em of each other. The typeface is not in it. Every golden
   regenerates with the cause named (the roles' sizes). This task
   is org-wide: it dispatches only on the owner's explicit go.
-- [ ] Exit: `grep -rn` over `components`, `patterns`, `markdown`
-  and `workbench` finds no text size set beside a role; a test
-  that each role's size and weight equal the reference's row;
-  green in `theme`, `effects/transition` by name, `components`,
-  `patterns`, `markdown`, `workbench` root and every app module by
-  name; guard OK; gofmt gate OK; layers gate OK; commit and push
-  per repo; no tag.
+- [ ] Exit: `grep -rn` over `components`, `patterns`, `markdown` and
+  `workbench` finds no text size set beside a role; a test that each
+  role's size and weight equal the reference's row; green in
+  `theme`, `effects/transition` by name, `components`, `patterns`,
+  `markdown`, `workbench` root and every app module by name; guard
+  OK; gofmt gate OK; layers gate OK; the guide lines that describe
+  the roles' sizes and weights in `workbench/llms.txt` and the
+  touched READMEs say what ships after this task, in the same
+  commit; guides gate OK; commit and push per repo; no tag.
 
 #### CM1.23: A field's text is set in the Label role and the field is the measured height
 
@@ -26729,12 +26731,14 @@ order.
   golden in `components` and `patterns` that shows a standing bar
   regenerates with the cause named, `markdown`'s included.
 - [ ] Exit: a test that the bar at Always is drawn at the measured
-  lane width with the measured track, upright and sideways; green
-  in `theme`, `components` (scrollbar, list, gallery, inventory,
-  picker and scrollarea by name and the whole module), `patterns`
-  (shell by name), `markdown`, `effects/transition` and
-  `workbench/themer` by name; guard OK; gofmt gate OK; commit and
-  push per repo; no tag.
+  lane width with the measured track, upright and sideways; green in
+  `theme`, `components` (scrollbar, list, gallery, inventory, picker
+  and scrollarea by name and the whole module), `patterns` (shell by
+  name), `markdown`, `effects/transition` and `workbench/themer` by
+  name; guard OK; gofmt gate OK; the guide lines that describe the
+  standing scrollbar in `workbench/llms.txt` and the touched READMEs
+  say what ships after this task, in the same commit; guides gate
+  OK; commit and push per repo; no tag.
 
 #### CM1.29: Vaultview's rails keep the one measured lane and every window draws the standing bar from it
 
@@ -26934,10 +26938,12 @@ order.
   the measured size at the body's trailing end and no accent dot,
   and a test that an in-flight sidebar row draws it at the row's
   trailing end.
-- [ ] Exit: `grep -rn 'WaitingDots\|StreamDot'` in `workbench`
-  finds nothing; green in `workbench/mindchat` by name and
-  workbench root; guard OK; gofmt gate OK; layers gate OK; one
-  commit in workbench, push; no tag.
+- [ ] Exit: `grep -rn 'WaitingDots\|StreamDot'` in `workbench` finds
+  nothing; green in `workbench/mindchat` by name and workbench root;
+  guard OK; gofmt gate OK; layers gate OK; the guide lines that
+  describe mindchat's arriving turn in `workbench/llms.txt` and the
+  touched READMEs say what ships after this task, in the same
+  commit; guides gate OK; one commit in workbench, push; no tag.
 
 #### CM1.41: The highlighter style is applied, and markdown says so
 
@@ -27074,8 +27080,10 @@ order.
 - [ ] Exit: `grep -rn 'Disabled()' patterns/shell/toolbar.go` finds
   nothing; green in `patterns` (shell by name), `workbench/feeds`,
   `mindchat`, `themer`, `vaultview`, `todos` by name and workbench
-  root; guard OK; gofmt gate OK; layers gate OK; commit and push
-  per repo; no tag.
+  root; guard OK; gofmt gate OK; layers gate OK; the guide lines
+  that describe a toolbar control's width in `workbench/llms.txt`
+  and the touched READMEs say what ships after this task, in the
+  same commit; guides gate OK; commit and push per repo; no tag.
 
 ### G-CM2: Every window offers its actions through the menu bar
 
