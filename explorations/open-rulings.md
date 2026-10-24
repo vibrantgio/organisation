@@ -3828,8 +3828,3 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
 
-## IP. From CN1.1, the workbench guide
-
-Filed 2026-10-24 from CN1.1's reading of the workbench and organisation guides against the code. Each is outside that task's files or is code, and stands here unfixed.
-
-1220. **[feature]** **`workbench/sk150/tip.go` is a trimmed copy of `components/tooltip`.** Its header says the tooltip centres its trigger on the space it is handed and sizes the bubble from that space, so it cannot be a cell's label inline; the copy keeps the dwell, the surface and the one-visible-at-a-time rule. Under [[DOMAIN#Tooltip]] the trigger is any control or signal; whether `components/tooltip` takes an inline trigger so the application copy goes is unasked.

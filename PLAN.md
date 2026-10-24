@@ -26833,6 +26833,39 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   OK; gofmt gate OK; one commit in workbench, theme and
   organisation each, push; no tag.
 
+### G-CN2: Every application copy of a component that the guide sweep finds is the library's component
+
+The sweep reads code beside the guides; where an application keeps
+its own copy of a library component, the ontology session rules and
+the copy goes.
+
+#### CN2.1: Sk150's hint cells are the library's tooltip
+
+- [ ] Ruled on finding 1220 under [[DOMAIN#Tooltip]] and
+  [[DOMAIN#0002 — extend-the-component]]: `components/tooltip`
+  takes a trigger the caller drew (`Props.Anchor` is documented for
+  a word in a paragraph or a cell of a table, the anchored tooltip
+  is placed against the anchor inside the room `Props.AvailableRoom`
+  reports, it registers no hit area of its own), so sk150's hint
+  cells use it. The cell keeps its own pass-through hover tracker,
+  lays `tooltip.Tooltip` out after the cell's content with Anchor
+  reporting the cell's rectangle while the cell is hovered or holds
+  the keyboard and the empty rectangle otherwise, Placement Bottom,
+  AvailableRoom from the shell as the demo button's tooltip in
+  `view.go` does, one Arbiter per window, and the tooltip's own
+  delay. `workbench/sk150/tip.go` is deleted whole, its dwell
+  constant, bubble painter and window-width bookkeeping with it,
+  and the header claim that the library tooltip cannot be inline
+  goes with the file. The Tooltip entry's wrapping applies to these
+  cells; the copy's one-line bubble goes with it. The sk150 goldens
+  regenerate with the cause named.
+- [ ] Exit: `test ! -e workbench/sk150/tip.go`; `grep -rn 'tip\.' workbench/sk150/*.go`
+  finds no reference to the deleted package's names; a test that a
+  hovered hint cell shows the library tooltip below the cell and an
+  unhovered one shows none; green in `workbench/sk150` by name and
+  workbench root; guard OK; gofmt gate OK; layers gate OK; one
+  commit in workbench, push; no tag.
+
 ## Phase CO: The remaining rulings of the hidden-sidebar round are built
 
 Owner-ruled 2026-10-24
