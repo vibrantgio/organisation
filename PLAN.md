@@ -26598,7 +26598,227 @@ order.
   `effects/transition`, `workbench/themer` by name and workbench
   root; guard OK; gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.22: The type set's roles are the platform's text sizes and weights
+## Phase CN: The guides describe what the tree ships
+
+Owner-ruled 2026-10-24, his word: "split". Rene asked that the
+documentation in the repos be updated to the code; the guides had
+drifted from it in every repository but mvu. Phase CM ends with
+CM1.21, this phase brings the guides to the code, and every task of
+Phase CM unchecked at the ruling runs in Phase CO in its order.
+Three read-only surveys of 2026-10-24 compared every README, every
+AGENTS.md, `workbench/llms.txt` and the design repository's guides
+against the sources; their lists are leads, and a worker re-reads
+each claim from the code before rewriting its sentence. A guide says
+what ships today in plain words, in the Language's terms, and names
+no plan, no history and no decision number; a support library's
+guide names no consumer; where a guide disagrees with the Language
+the guide follows the Language, and where the code disagrees with
+the Language that is a review-pool finding, never a doc edit.
+
+### G-CN1: Every live guide says what the code ships
+
+The tasks run in order, one worker each, no pixel moves anywhere.
+
+#### CN1.1: Workbench's guide and README and the organisation README say what the tree ships
+
+- [ ] Rene's request 2026-10-24: the documentation in the repos is
+  updated to the code. Under [[DOMAIN#Workbench]] and the standing
+  rules on published text, `workbench/llms.txt`, `workbench/README.md`
+  and `organisation/README.md` are corrected claim by claim, each
+  claim re-read from the source before its sentence is rewritten.
+  The guide: nine applications, sk150 named in the canonical list
+  and given its own "Where to look" section; the components list
+  gains composite, elide, pointershape, progress, golden and
+  gallery/inventory and the patterns list gains splitter; the
+  sentence on AGENTS.md says each repository's managed block points
+  to `organisation/AGENTS.md`; the font licences as the LICENSE
+  files say; no §Branding, `WithSeed` or `WithPalette`, the brand is
+  kept with `brand.Kept().Options()`; `theme/window.New` takes no
+  options; vaultview's frame is described with the identifiers it
+  uses (`desktop.InsetTop`, `shell.TwoColumn`'s Inspector) and its
+  backdrop as the flattened under-page and window backgrounds; the
+  density paragraph states the heights `theme/tokens/density.go`
+  measures (button 24, field 28, toolbar control 36) and agrees
+  with the Density table; `markdown.FromTokens` with its three
+  parameters; the icon set by the names in `components/icons`,
+  square-and-arrow-up included; todos' add action is a toolbar
+  action; no `PlatformColors.Icon`; iconbrowser runs from its own
+  module, uses `input.SearchField` and shows the marks above the
+  Material icons; `theme/system.LiveTheme`. The README: nine
+  applications; the stack table with components above theme,
+  pagination under components, tokens, the theme contract and
+  a11y under theme, transitions under effects, and markdown, kiwi,
+  csg, gradient and circle in the supporting list; the tiles are
+  groups; workbench carries no tags; llms.txt is kept in workbench.
+  `apps.go`'s Site Docs text says six tabs. Line counts are
+  deleted, not updated. `organisation/README.md`: the AGENTS.md
+  sentence as above; the phase count deleted; the module count
+  read from `go.work` (41 members) with `scripts/retiredwords`
+  beside them, and `check-no-workspace.sh`'s header and bullet say
+  what it tests; `scripts/retiredwords/` and `design-project.txt`
+  named in the layout. `organisation/AGENTS.md`'s doubled paragraph
+  is one. No history, no task or decision numbers, no plan named;
+  a guide sentence that needs a word the Language does not have is
+  a question to the orchestrator, never a coinage. No pixel moves.
+- [ ] Exit: `grep -n 'WithSeed\|WithPalette\|ButtonRunAt\|BandLead\|aside slot\|the FAB\|Five-tab\|~700\|all OFL\|§Branding' workbench/llms.txt workbench/README.md workbench/apps.go`
+  finds nothing; green in `workbench/sitedocs` by name (it reads
+  `../llms.txt`) and workbench root; guides gate OK; guard OK;
+  gofmt gate OK; `scripts/sync-agents.sh check` OK; one commit in
+  workbench and one in organisation, push both; no tag.
+
+#### CN1.2: The theme, components, patterns and effects READMEs describe the packages that ship
+
+- [ ] Rene's request 2026-10-24, continued. The four READMEs are
+  corrected claim by claim, each re-read from the source. All
+  four: the sentence that AGENTS.md has the build, test and golden
+  commands is replaced by where they are, `organisation/AGENTS.md`.
+  theme: Comfortable 24 and Compact 19 as `tokens/density.go` has
+  them; the colour package is OKLab and OKLCh, APCA and the
+  compositing helpers, no CIELAB and no generated palette, the
+  colours are `PlatformLight` and `PlatformDark`; the packages
+  that import Gio are named (tokens, typeset, system/openpanel);
+  the poll interval as `Live`'s doc comment says; brand,
+  imagecolor, typeset, system/naming, system/openpanel and
+  cmd/a11y-check each get a row. components: the breadcrumb draws
+  every segment in Label and its chevrons in SecondaryLabel;
+  `components/icons` fills the registry; `button.Props.Icon` is
+  the painter function; the coordination row says what the package
+  is today and the removal promise in `coordination/types.go` is
+  deleted with it; chip, composite, elide, icons, picker,
+  pointershape, progress, button/gallery, icon/gallery,
+  gallery/inventory and gallery/palette each get a row; the tier
+  paragraph names font. patterns: seventeen patterns with pane and
+  splitter rows; the components and mvu imports as `go.mod` and
+  the import lines have them; the one-signature paragraph is
+  replaced by each package's own entry points as its doc comment
+  states them; `shell.Props` with the fields `shell.go` has and
+  shell's entry point `RenderStackedPage`. effects: the transition
+  row names `LerpPlatformColors`, `PlatformColorsTween` and
+  `LerpDropShadow`; depth's `Shadow` takes a `tokens.DropShadow`,
+  draws its interior at the caller's radius in the shadow's peak
+  colour and is faded with `WithPeak`; blur's use as it is; the
+  tooltip delay is `components/tooltip`'s. No history, no
+  consumer named, no task or decision numbers; the same Language
+  rule as CN1.1. No pixel moves.
+- [ ] Exit: `grep -n 'ColorTokens\|ElevationLevel\|Level3,\|CIELAB\|36 dp\|28 dp\|ships empty\|golden line there\|v1.0.0\|sixteen composed\|Aside' theme/README.md components/README.md patterns/README.md effects/README.md`
+  finds nothing; green in `components/coordination` by name; guides
+  gate OK; guard OK; gofmt gate OK; one commit per repo, push; no
+  tag.
+
+#### CN1.3: The READMEs of backdrop, circle, csg, font, gradient, kiwi, noise, style, textdraw and traer say what ships
+
+- [ ] Rene's request 2026-10-24, continued. Each README is corrected
+  claim by claim, re-read from the source. In all ten the sentence
+  that AGENTS.md has the build and test commands is replaced by
+  where they are; noise's sentence that AGENTS.md explains the
+  reference images is replaced by the regeneration step itself.
+  Every sentence that counts or names the library's consumers is
+  deleted, never recounted; every `file.go:N` reference is
+  replaced by the function or type name. backdrop: the themed
+  snippet uses `tokens.PlatformColors` and `WindowBackground`, no
+  `ColorTokens`, no scrim literal. circle and gradient: both ship
+  a LICENSE; the licence census is deleted. font: the Roboto
+  package count as the tree has it. kiwi: the gio example requires
+  the kiwi version its `go.mod` names. style: the archive and
+  last-tag sentences are deleted, the file length is not stated.
+  textdraw: no `style.H6`, no `typ.Notice`; the snippet is one the
+  tree has. csg and traer: the shared sentence only. No history,
+  no consumer named, no task or decision numbers; the same
+  Language rule as CN1.1.
+- [ ] Exit: `grep -rn 'ColorTokens\|style.H6\|typ.Notice\|no LICENSE\|v0.0.6\|has the build and test commands' --include=README.md backdrop circle csg font gradient kiwi noise style textdraw traer`
+  finds nothing; guides gate OK; guard OK; one commit per repo
+  whose README changes, push each; no tag.
+
+#### CN1.4: The READMEs of ivg, markdown, mvu, seen and svg say what ships
+
+- [ ] Rene's request 2026-10-24, continued, under the same rules as
+  CN1.3. ivg: the package is `generate`, decoding is
+  `decode.Decode`, `render.Gradient` implements `GradientConfig`,
+  the rasterizer is `raster/img`, the examples are arrow, info,
+  blend and logo, no `svgicon`; `raster/gio` (a nested module with
+  `Widget`, `GioPaint`, `ImagePaint`, `NewRasterizer`),
+  `cmd/disivg` and `cmd/mdicons` each get a row. markdown: the
+  imports as the import lines have them, `FromTokens` with three
+  parameters, the tag sentence deleted, the consumer sentence
+  deleted. mvu: `mvu/desktop` gets a row. seen: the go.work
+  sentence deleted, the driver/seen build sentence deleted, the
+  example count as the tree has it, the shader names as
+  `shader` exports them, the provenance sentence true or deleted,
+  `face` and `layer/bsort/bsp` in the package table, the consumer
+  sentences deleted. svg: the version sentences deleted, the
+  AGENTS.md mention deleted, the consumer sentence deleted.
+- [ ] Exit: `grep -rn 'svgicon\|raster/vec\|decode/Decoder\|generator package\|v0.0.7\|v0.0.8\|v0.2.0\|two consumers\|Phong\b' --include=README.md ivg markdown mvu seen svg`
+  finds nothing; guides gate OK; guard OK; one commit per repo
+  whose README changes, push each; no tag.
+
+#### CN1.5: The design repository's DESIGN.md and conventions describe the system as shipped
+
+- [ ] Rene's request 2026-10-24, continued; ruled by the ontology
+  session 2026-10-24. `design/DESIGN.md` is a live guide: it is
+  rewritten to the present in the Language's terms and checked
+  against the code, section by section: what the system is, the
+  tier table as `scripts/check-layers.sh` enforces it, the colour
+  model under [[DOMAIN#Coverage]] and [[DOMAIN#Fill]], the levels
+  under [[DOMAIN#Level]] and [[DOMAIN#Elevation]], density under
+  [[DOMAIN#Density]], motion, typography under
+  [[DOMAIN#Typography role]] and [[DOMAIN#Platform]], blur, the
+  export, and the application model with nine applications.
+  Deleted under Drop old information: the status paragraph's
+  history, "The road from v1", the compatibility shims paragraph,
+  all seven decision records and every ADR citation in the body;
+  a decision that still holds is stated as present fact where it
+  applies (the theme owns the typeface; the guide for building
+  with the system is `workbench/llms.txt`; theme is the
+  foundation); tag and workspace rules are not stated there.
+  `design/DESIGN-v1.md` is deleted; the gate exclusions for it and
+  for DESIGN.md's records in `scripts/check-guides.sh` and
+  `scripts/check-retired-words.sh` go with it, and llms.txt's
+  ADR-008 record under Coordination is deleted the same way.
+  Reworded to the Language: "the touch-first reference" and
+  "reference system" (the divergences section becomes a statement
+  of the platform's values under Density, Elevation and Level);
+  "effects components are variants" (they are components of their
+  own in the effects repository that draw the library's components
+  with their effect); "plane" (level or surface); "the scrollbar's
+  knob" (thumb); "the measured reach" of a shadow (measured, drawn
+  around); "tonal elevation", "palettes generate from a seed",
+  "contrast floors" as a mechanism and the pointer-target floor
+  are deleted with their claims. The claims the survey named are
+  corrected from the code: the trunk is `organisation`, two
+  shapers, no `--color-<role>` family, Comfortable 24 and Compact
+  19, the density table as `density.go`'s comment has it,
+  springbutton's own rate, no CIELAB, the section headings as they
+  are, the measured fills counted from `PlatformColors`.
+  `design/.design-sync/conventions.md` is corrected against
+  `styles.css` (badge fill and padding, no ghost re-derivation, no
+  `.btn.selected`, row height token, the alternating row fill, no
+  `.current`, the tooltip's fills, the dialog snippet as
+  `dialog.html` has it, six levels), and `theme/export/readme.go`
+  names the six component pages and the three shadow-step
+  variables so `design/readme.md` regenerates true. No history, no
+  task or decision numbers, no plan named. No pixel moves.
+- [ ] Exit: `grep -n 'ADR-\|road from v1\|DESIGN-v1\|CIELAB\|--color-\|36 dp\|44 dp\|tonal\|seed\|knob\|plane\b\|touch-first' design/DESIGN.md workbench/llms.txt`
+  finds nothing and `design/DESIGN-v1.md` does not exist; green in
+  `theme/export` by name and `design/mirror` by name; guides gate
+  OK with its exclusion removed; guard OK with its exclusion
+  removed; one commit in design, theme, workbench and organisation
+  each, push; no tag.
+
+## Phase CO: The remaining rulings of the hidden-sidebar round are built
+
+Owner-ruled 2026-10-24 ("split"): Phase CM ends with CM1.21, Phase
+CN brings the guides to the code, and every task of Phase CM
+unchecked at that ruling runs here in its order. Phase CM's rules
+stand: the recorder's requests come first, captures run only on an
+open desktop, and the tasks here run when none is waiting. CO1.1
+dispatches only on the owner's explicit go.
+
+### G-CO1: Every remaining ruling of the hidden-sidebar round that takes no capture is built
+
+The tasks are G-CM1's tasks unchecked at the ruling, in their
+order.
+
+#### CO1.1: The type set's roles are the platform's text sizes and weights
 
 - [ ] Under [[DOMAIN#Typography role]] and [[DOMAIN#Platform]], ruled
   on finding 1215: a role's size and weight are the platform's for
@@ -26631,7 +26851,7 @@ order.
   touched READMEs say what ships after this task, in the same
   commit; guides gate OK; commit and push per repo; no tag.
 
-#### CM1.23: A field's text is set in the Label role and the field is the measured height
+#### CO1.2: A field's text is set in the Label role and the field is the measured height
 
 - [ ] Under [[DOMAIN#Field]] and [[DOMAIN#Typography role]], ruled
   on finding 1185: a field's text is set in the Label role at the
@@ -26651,7 +26871,7 @@ order.
   `patterns` and every text field caller by name and workbench
   root; guard OK; gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.24: Chevron-down is redrawn at chevron-right's extent
+#### CO1.3: Chevron-down is redrawn at chevron-right's extent
 
 - [ ] Under [[DOMAIN#Icon]] and [[DOMAIN#Disclosure]], ruled on
   finding 1186: chevron-down is chevron-right's figure turned a
@@ -26667,10 +26887,10 @@ order.
   and workbench root; guard OK; gofmt gate OK; commit and push per
   repo; no tag.
 
-#### CM1.25: An open disclosure draws chevron-down
+#### CO1.4: An open disclosure draws chevron-down
 
 - [ ] Under [[DOMAIN#Disclosure]], ruled on finding 1186, after
-  CM1.24: `patterns/sidebar`'s `PaintDisclosure`,
+  CO1.3: `patterns/sidebar`'s `PaintDisclosure`,
   `workbench/sitedocs`' `drawOutlineDisclosure` and
   `workbench/vaultview`'s `drawDisclosure` draw the set's
   chevron-down for an open row instead of turning chevron-right,
@@ -26683,7 +26903,7 @@ order.
   `workbench/vaultview` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.26: Iconbrowser's search field keeps the measured width
+#### CO1.5: Iconbrowser's search field keeps the measured width
 
 - [ ] Under [[DOMAIN#Search field]], ruled on finding 1189: on the
   content the field keeps the width the reference measures for
@@ -26698,7 +26918,7 @@ order.
   `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.27: Iconbrowser's page with no match shows one empty state
+#### CO1.6: Iconbrowser's page with no match shows one empty state
 
 - [ ] Under [[DOMAIN#Empty state]], ruled on finding 1188: a
   section of a filtered collection with no match is removed with
@@ -26714,7 +26934,7 @@ order.
   `workbench/iconbrowser` by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.28: The standing scrollbar is drawn from the measured lane, track and thumb
+#### CO1.7: The standing scrollbar is drawn from the measured lane, track and thumb
 
 - [ ] Under [[DOMAIN#Scrollbar]], ruled on findings 1137, 1144, 1145
   and 1147, from the MEASURED rows of "What the standing scrollbar
@@ -26740,9 +26960,9 @@ order.
   say what ships after this task, in the same commit; guides gate
   OK; commit and push per repo; no tag.
 
-#### CM1.29: Vaultview's rails keep the one measured lane and every window draws the standing bar from it
+#### CO1.8: Vaultview's rails keep the one measured lane and every window draws the standing bar from it
 
-- [ ] Under [[DOMAIN#Scrollbar]], after CM1.28: vaultview's
+- [ ] Under [[DOMAIN#Scrollbar]], after CO1.7: vaultview's
   `asideIndicator` passes no padding of its own, so the rails keep
   the one measured lane as every other column; every workbench
   golden that shows a standing bar regenerates with the cause
@@ -26757,9 +26977,9 @@ order.
   every workbench app by name and workbench root; guard OK; gofmt
   gate OK; commit and push per repo; no tag.
 
-#### CM1.30: A table header's hairline ends at the lane
+#### CO1.9: A table header's hairline ends at the lane
 
-- [ ] Under [[DOMAIN#Seam]], ruled on finding 1191, after CM1.28: a
+- [ ] Under [[DOMAIN#Seam]], ruled on finding 1191, after CO1.7: a
   table header's hairline is the header's own edge, part of the
   table's structure, not a seam; it ends where the header's rows
   end, at the lane, while the header's fill spans the lane.
@@ -26773,7 +26993,7 @@ order.
   and every table caller by name and workbench root; guard OK;
   gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.31: Todos' rows are the platform's measured row height
+#### CO1.10: Todos' rows are the platform's measured row height
 
 - [ ] Under [[DOMAIN#Row]], ruled on finding 1193: a list's row
   height is the platform's measured row for the list's kind, never
@@ -26786,7 +27006,7 @@ order.
   green in `workbench/todos` by name and workbench root; guard OK;
   gofmt gate OK; one commit in workbench, push; no tag.
 
-#### CM1.32: Todos' list selects a row
+#### CO1.11: Todos' list selects a row
 
 - [ ] Under [[DOMAIN#List]] and [[DOMAIN#Selection]], ruled on
   finding 1194: a content list selects as the platform's does: a
@@ -26797,14 +27017,14 @@ order.
   measures" and the row's own text colour, draws the delete mark
   on the selected row as on the hovered one, and opens the edit
   dialog from the selected row's text, not from the click that
-  selects; Delete in CM2.1 acts on the selection. Goldens
+  selects; Delete in CO2.1 acts on the selection. Goldens
   regenerate with the cause named.
 - [ ] Exit: a test that a click selects the row and draws the
   MEASURED fill and the mark, and that no row is selected at
   start; green in `workbench/todos` by name and workbench root;
   guard OK; gofmt gate OK; one commit in workbench, push; no tag.
 
-#### CM1.33: Todos' unchecked checkbox is drawn at the measured contrast
+#### CO1.12: Todos' unchecked checkbox is drawn at the measured contrast
 
 - [ ] Under [[DOMAIN#Checkbox]], found under CK10.73 (finding
   1195): todos' unchecked checkbox reads (243,243,243) on white
@@ -26820,7 +27040,7 @@ order.
   by name and workbench root; guard OK; gofmt gate OK; commit and
   push per repo; no tag.
 
-#### CM1.34: The status footer's seam is the status bar's measured seam
+#### CO1.13: The status footer's seam is the status bar's measured seam
 
 - [ ] Under [[DOMAIN#Seam]] and [[DOMAIN#Footer]], ruled on finding
   1198: a seam's colour is measured per scheme and per place; a
@@ -26838,7 +27058,7 @@ order.
   `workbench/themer`, `workbench/sk150` by name and workbench root;
   guard OK; gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.35: Sk150's link explanation is the setting's description
+#### CO1.14: Sk150's link explanation is the setting's description
 
 - [ ] Under [[DOMAIN#Footer]], ruled on finding 1200: a footer of
   status text holds status only; an explanation of a setting is
@@ -26853,7 +27073,7 @@ order.
   `workbench/sk150` by name and workbench root; guard OK; gofmt
   gate OK; one commit in workbench, push; no tag.
 
-#### CM1.36: Feeds' Unread tooltip hover test reads the window's own props
+#### CO1.15: Feeds' Unread tooltip hover test reads the window's own props
 
 - [ ] Found under CM1.1 (finding 1206): feeds'
   `TestUnreadTooltipHoverHeadless` builds its own copy of the
@@ -26866,7 +27086,7 @@ order.
   workbench root; guard OK; gofmt gate OK; one commit in workbench,
   push; no tag.
 
-#### CM1.37: A tooltip's text and an empty state's line are set on more lines, never truncated
+#### CO1.16: A tooltip's text and an empty state's line are set on more lines, never truncated
 
 - [ ] Under [[DOMAIN#Truncation]], [[DOMAIN#Tooltip]] and
   [[DOMAIN#Empty state]], ruled on finding 1204: prose, a tooltip's
@@ -26874,7 +27094,7 @@ order.
   field are never truncated; they are set on more lines up to their
   measure. `components/tooltip` sets its text on more lines up to
   the tooltip's width, a DERIVED row in `reference/macos/controls.md`
-  with its arithmetic stated until CM3.1 measures it; the empty
+  with its arithmetic stated until CO3.1 measures it; the empty
   state's line is set on more lines in its frame; the
   middle-ellipsis code is removed from both. Goldens that show a
   tooltip or an empty state with long text regenerate with the cause
@@ -26886,7 +27106,7 @@ order.
   name and workbench root; guard OK; gofmt gate OK; commit and push
   per repo; no tag.
 
-#### CM1.38: The available room is a value of mvu's context and the cap moves it
+#### CO1.17: The available room is a value of mvu's context and the cap moves it
 
 - [ ] Under [[DOMAIN#Tooltip]], ruled on finding 1205 by the
   orchestrator: the value both layers need is defined in the lowest
@@ -26904,7 +27124,7 @@ order.
   `workbench/sk150` by name and workbench root; layers gate OK;
   guard OK; gofmt gate OK; commit and push per repo; no tag.
 
-#### CM1.39: The workbench shows a running application with a Neutral badge
+#### CO1.18: The workbench shows a running application with a Neutral badge
 
 - [ ] Under [[DOMAIN#Badge]] and [[DOMAIN#Accent]], ruled on finding
   1207: "running" is the system's word about the application's
@@ -26919,7 +27139,7 @@ order.
   no badge; green in `workbench` root by name; guard OK; gofmt gate
   OK; one commit in workbench, push; no tag.
 
-#### CM1.40: Mindchat's arriving turn and its sidebar row draw the indeterminate indicator
+#### CO1.19: Mindchat's arriving turn and its sidebar row draw the indeterminate indicator
 
 - [ ] Under [[DOMAIN#Progress]], ruled on finding 1209: a turn still
   arriving is content still arriving, a task with no known end, so
@@ -26945,7 +27165,7 @@ order.
   touched READMEs say what ships after this task, in the same
   commit; guides gate OK; one commit in workbench, push; no tag.
 
-#### CM1.41: The highlighter style is applied, and markdown says so
+#### CO1.20: The highlighter style is applied, and markdown says so
 
 - [ ] Under [[DOMAIN#Syntax highlighter style]], ruled 2026-10-23 by
   the Language steward: "wear" and "dress" are retired in the
@@ -26966,7 +27186,7 @@ order.
   other "wear", "wears", "wearing", "worn", "dress", "dresses" and
   "dressed" in `markdown`'s code, comments, tests, README and
   guide is reworded from the row. No alias is kept. No pixel
-  moves. The retired row waits for CM1.43, so the gate stays
+  moves. The retired row waits for CO1.22, so the gate stays
   green.
 - [ ] Exit: `grep -rniE '\b(wear|wears|wearing|worn|dress|dresses|dressed|dressing)\b'`
   over `markdown` finds nothing and `grep -rn 'highlight\.Wear'`
@@ -26974,24 +27194,26 @@ order.
   (gallery and inventory by name) and workbench root and every
   caller by name; guard OK; gofmt gate OK; guides gate OK; commit
   and push per repo; no tag.
-#### CM1.42: Components and patterns say what a thing is drawn in
+
+#### CO1.21: Components and patterns say what a thing is drawn in
 
 - [ ] Under [[DOMAIN#Syntax highlighter style]] and the ruling of
-  CM1.41, with its replacement per sense: every "wear", "wears",
+  CO1.20, with its replacement per sense: every "wear", "wears",
   "wearing", "worn", "dress", "dresses" and "dressed" in
   `components` and `patterns` (code, comments, tests, READMEs and
   guides) is reworded from the row, identifiers included where one
   has the word; a comment that only said a thing "wears" what its
   field already says is deleted. No pixel moves. The retired row
-  waits for CM1.43.
-- [ ] Exit: the grep of CM1.41's Exit over `components` and
+  waits for CO1.22.
+- [ ] Exit: the grep of CO1.20's Exit over `components` and
   `patterns` finds nothing; green in `components` and `patterns`,
   the whole modules; guard OK; gofmt gate OK; guides gate OK;
   commit and push per repo; no tag.
-#### CM1.43: Theme and the workbench say what a thing is drawn in, and the words are retired
+
+#### CO1.22: Theme and the workbench say what a thing is drawn in, and the words are retired
 
 - [ ] Under [[DOMAIN#Syntax highlighter style]] and the ruling of
-  CM1.41, with its replacement per sense: every "wear", "wears",
+  CO1.20, with its replacement per sense: every "wear", "wears",
   "wearing", "worn", "dress", "dresses" and "dressed" in `theme`
   and `workbench` (code, comments, tests, `llms.txt`, READMEs and
   guides) is reworded from the row, identifiers included where one
@@ -27006,13 +27228,13 @@ order.
   gate goes red and green in one step; the frozen records keep
   theirs under the guard's measured exclusions;
   `scripts/sync-agents.sh` runs clean. No pixel moves.
-- [ ] Exit: the grep of CM1.41's Exit over `theme`, `workbench`,
+- [ ] Exit: the grep of CO1.20's Exit over `theme`, `workbench`,
   `markdown`, `components` and `patterns` finds nothing; green in
   `theme`, `effects/transition` by name, `workbench` root and
   every app module by name; guard OK with the new row; gofmt gate
   OK; guides gate OK; commit and push per repo; no tag.
 
-#### CM1.44: Vaultview's note column, outline and backlinks draw the indicator while a note arrives
+#### CO1.23: Vaultview's note column, outline and backlinks draw the indicator while a note arrives
 
 - [ ] Under [[DOMAIN#Progress]] and [[DOMAIN#Empty state]], ruled on
   finding 1213: a region whose content is derived from content
@@ -27035,7 +27257,7 @@ order.
   root; guard OK; gofmt gate OK; one commit in workbench, push; no
   tag.
 
-#### CM1.45: The toolbar control's shadow is read at its corners
+#### CO1.24: The toolbar control's shadow is read at its corners
 
 - [ ] Under [[DOMAIN#Shadow]], ruled on finding 1214: the light
   toolbar control's shadow is measured in every direction in
@@ -27059,7 +27281,7 @@ order.
   ramp changed; guard OK; gofmt gate OK; commit and push per repo;
   no tag.
 
-#### CM1.46: A toolbar control states its own width and the toolbar lays it out once
+#### CO1.25: A toolbar control states its own width and the toolbar lays it out once
 
 - [ ] Under [[DOMAIN#Toolbar]], ruled on finding 1216: a toolbar
   control is as wide as its content between its measured insets,
@@ -27068,7 +27290,7 @@ order.
   reference, never found by laying it out. The control reports its
   width (the measured 38 px capsule for a symbol-only control, the
   text's measured width plus the inset each side for a titled one,
-  the inset the row CM3.3 reads once it is MEASURED and the
+  the inset the row CO3.3 reads once it is MEASURED and the
   PUBLISHED row until then); the toolbar takes that width and lays
   the control out once; the held-back measure pass CM1.20 added
   and its event rule are deleted; vaultview's find field keeps the
@@ -27085,7 +27307,7 @@ order.
   and the touched READMEs say what ships after this task, in the
   same commit; guides gate OK; commit and push per repo; no tag.
 
-### G-CM2: Every window offers its actions through the menu bar
+### G-CO2: Every window offers its actions through the menu bar
 
 Under [[DOMAIN#Action]]: every action a window
 offers through a control also stands in the menu bar with its key
@@ -27101,7 +27323,7 @@ standard items where a field exists, View with the pane's toggle
 where a pane exists; the chords the window already binds move into
 the table so one place states them. Each menu item posts the message
 its control posts.
-#### CM2.1: Vaultview, todos and themer offer their actions through the menu bar
+#### CO2.1: Vaultview, todos and themer offer their actions through the menu bar
 
 - [ ] The three windows gain their menu bars: vaultview (File: Open
   Vault… and Switch Vault… on the chords it binds, Rescan, Find on
@@ -27115,7 +27337,7 @@ its control posts.
 - [ ] Exit: green in each app by name; guard OK; gofmt gate OK; commit
   and push in `workbench` and `organisation`; no tag.
 
-#### CM2.2: The workbench, sitedocs, iconbrowser, marketing and sk150 offer their actions through the menu bar
+#### CO2.2: The workbench, sitedocs, iconbrowser, marketing and sk150 offer their actions through the menu bar
 
 - [ ] The five windows gain their menu bars the same way: the
   workbench (File: Launch for the selected application if one is
@@ -27129,13 +27351,12 @@ its control posts.
 - [ ] Exit: green in each app by name; guard OK; gofmt gate OK; commit
   and push in `workbench` and `organisation`; no tag.
 
-
-### G-CM3: The reference gaps Phase CM finds are captured
+### G-CO3: The reference gaps Phase CO finds are captured
 
 The tasks take captures: each runs only on an open desktop the owner
 has left, under Phase CK's caffeinate rule, after the tasks above it.
 
-#### CM3.1: The platform's help tag with long text is measured into the reference
+#### CO3.1: The platform's help tag with long text is measured into the reference
 
 - [ ] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Truncation]], ruled on
   finding 1204: a tooltip's text is set on more lines up to the
@@ -27144,7 +27365,7 @@ has left, under Phase CK's caffeinate rule, after the tasks above it.
   and stored under `reference/macos`, and the tag's width, the
   lines' count and pitch and the text's padding are read into
   `reference/macos/controls.md` as MEASURED rows; the DERIVED row
-  CM1.37 wrote is replaced by them, and `components/tooltip` takes
+  CO1.16 wrote is replaced by them, and `components/tooltip` takes
   the MEASURED width. This task takes a capture: it runs only on an
   open desktop the owner has left.
 - [ ] Exit: the captures and the MEASURED rows are in the reference;
@@ -27152,8 +27373,7 @@ has left, under Phase CK's caffeinate rule, after the tasks above it.
   `components` (tooltip by name) and workbench root; guard OK; gofmt
   gate OK; commit and push per repo; no tag.
 
-
-#### CM3.2: The platform's selected row in a list inside a grouped box is measured into the reference
+#### CO3.2: The platform's selected row in a list inside a grouped box is measured into the reference
 
 - [ ] Under [[DOMAIN#Selection]] and [[DOMAIN#Row]], ruled on finding
   1210: a content list's selected row has the fill the reference
@@ -27172,8 +27392,7 @@ has left, under Phase CK's caffeinate rule, after the tasks above it.
 - [ ] Exit: the captures and the MEASURED rows are in the reference;
   guard OK; one commit in organisation, push; no tag.
 
-
-#### CM3.3: The platform's titled toolbar controls are measured into the reference
+#### CO3.3: The platform's titled toolbar controls are measured into the reference
 
 - [ ] Under [[DOMAIN#Toolbar]], ruled on finding 1216: the inset each
   side of a title in a bordered toolbar button is PUBLISHED ("about
@@ -27190,18 +27409,17 @@ has left, under Phase CK's caffeinate rule, after the tasks above it.
 - [ ] Exit: the captures and the MEASURED rows are in the reference;
   guard OK; one commit in organisation, push; no tag.
 
+### G-CO4: Every ruling that waits on a Phase CO capture is built
 
-### G-CM4: Every ruling that waits on a Phase CM capture is built
+The tasks follow the captures of G-CO3 and read their MEASURED rows.
 
-The tasks follow the captures of G-CM3 and read their MEASURED rows.
-
-#### CM4.1: Themer's style column draws its selected row as measured
+#### CO4.1: Themer's style column draws its selected row as measured
 
 - [ ] Under [[DOMAIN#Selection]] and [[DOMAIN#Row]], ruled on finding
   1210: themer's style column is a content list inside a titled
   grouped box, and a content list's selected row has the fill the
   reference measures for its platform counterpart, with the row's
-  own text colour. The chosen row is drawn as CM3.2's MEASURED rows
+  own text colour. The chosen row is drawn as CO3.2's MEASURED rows
   read: the fill's extent, inset, corner and colour, the text
   colour on it, and a hovered row's fill only if the capture shows
   one; the accent fill and the AccentForeground text are removed.
@@ -27210,3 +27428,4 @@ The tasks follow the captures of G-CM3 and read their MEASURED rows.
   MEASURED values in both schemes; green in `workbench/themer` by
   name and workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
+
