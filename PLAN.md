@@ -26891,32 +26891,42 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 The sweep reads code beside the guides; what it finds in the code
 goes to the review pool, the ontology session rules, and the ruling
 is built here in its order.
-#### CN2.1: Sk150's hint cells are the library's tooltip
+#### CN2.1: Components' list moves the available room through its rows and sk150's hint cells are the library's tooltip
 
 - [ ] Ruled on finding 1220 under [[DOMAIN#Tooltip]] and
-  [[DOMAIN#0002 — extend-the-component]]: `components/tooltip`
-  takes a trigger the caller drew (`Props.Anchor` is documented for
-  a word in a paragraph or a cell of a table, the anchored tooltip
-  is placed against the anchor inside the room `Props.AvailableRoom`
+  [[DOMAIN#0002 — extend-the-component]]: `components/tooltip` takes
+  a trigger the caller drew (`Props.Anchor` is documented for a word
+  in a paragraph or a cell of a table, the anchored tooltip is
+  placed against the anchor inside the room `Props.AvailableRoom`
   reports, it registers no hit area of its own), so sk150's hint
   cells use it. The cell keeps its own pass-through hover tracker,
   lays `tooltip.Tooltip` out after the cell's content with Anchor
   reporting the cell's rectangle while the cell is hovered or holds
   the keyboard and the empty rectangle otherwise, Placement Bottom,
-  AvailableRoom from the shell as the demo button's tooltip in
-  `view.go` does, one Arbiter per window, and the tooltip's own
-  delay. `workbench/sk150/tip.go` is deleted whole, its dwell
-  constant, bubble painter and window-width bookkeeping with it,
-  and the header claim that the library tooltip cannot be inline
-  goes with the file. The Tooltip entry's wrapping applies to these
-  cells; the copy's one-line bubble goes with it. The sk150 goldens
-  regenerate with the cause named.
-- [ ] Exit: `test ! -e workbench/sk150/tip.go`; `grep -rn 'tip\.' workbench/sk150/*.go`
-  finds no reference to the deleted package's names; a test that a
-  hovered hint cell shows the library tooltip below the cell and an
-  unhovered one shows none; green in `workbench/sk150` by name and
+  the available room from the shell, moved through every layer
+  between the shell and the cell: `components/list` places its rows'
+  floating surfaces (`tooltip.Surfaces`, or the room moved by each
+  row's offset and the scroll, as `shell.AvailableRoomAt` does) so a
+  row's tooltip reads the window's room, which the list did not do,
+  and sk150 moves the room through its own inset and its grid's flex
+  by the offsets it knows; no offset arithmetic is done by hand in
+  the application beyond its own layers. One Arbiter per window, and
+  the tooltip's own delay. `workbench/sk150/tip.go` is deleted
+  whole, its dwell constant, bubble painter and window-width
+  bookkeeping with it, and the header claim that the library tooltip
+  cannot be inline goes with the file. The Tooltip entry's wrapping
+  applies to these cells; the copy's one-line bubble goes with it.
+  The sk150 goldens regenerate with the cause named.
+- [ ] Exit: `test ! -e workbench/sk150/tip.go`;
+  `grep -rn 'tip\.' workbench/sk150/*.go` finds no reference to the
+  deleted package's names; a test that a hovered hint cell shows the
+  library tooltip below the cell and an unhovered one shows none; a
+  test in `components/list` that a scrolled row's tooltip is placed
+  inside the window's room, flipping up at the bottom edge; green in
+  `components` (list and tooltip by name), `workbench/sk150` by
+  name, every workbench module that uses `list` by name, and
   workbench root; guard OK; gofmt gate OK; layers gate OK; one
-  commit in workbench, push; no tag.
+  commit in components and one in workbench, push; no tag.
 
 #### CN2.2: The popover's surface takes the side that has room
 
