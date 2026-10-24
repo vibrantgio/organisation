@@ -26809,7 +26809,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 
 - [ ] Findings 1217, 1218, 1219 and 1221 of the review pool, from
   CN1.1's reading, 1223, 1225 and 1226 from CN1.2's, 1227, 1228 and
-  1229 from CN1.3's, and 1230 and 1231 from CN1.4's. Under
+  1229 from CN1.3's, and 1230, 1231 and 1232 from CN1.4's. Under
   [[DOMAIN#Workbench]]: the workbench's Icon Browser text says the
   application shows the marks of `components/icons` above the
   Material Design icons, and the workbench window goldens regenerate
@@ -26848,7 +26848,10 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   directories and the window call the tree has. seen's README shader
   row also names the exported `Shader` values `DiffusePhong`,
   `DiffuseAndSpecularPhong` and `Phong`, which CN1.4's Exit grep
-  kept it from naming. No history, no task or decision numbers. No
+  kept it from naming. Ruled on 1232: `seen/PLAN.md` and
+  `components/PLAN.md`, both finished and linked from nothing, are
+  deleted; the commit body names the trunk's plan as the one plan
+  and nothing else. No history, no task or decision numbers. No
   pixel moves beyond the Icon Browser text line.
 - [ ] Exit:
   `grep -n '961\|card\|separate tags' workbench/apps.go workbench/launch.go`
@@ -26864,11 +26867,12 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   `grep -rn 'onFill\|FillLabel\|textdraw\.Label\b' textdraw` finds
   nothing; `grep -n 'variant' components/button/button.go` finds
   nothing; `grep -n 'once per second' theme/cmd/a11y-check/*.go`
-  finds nothing; green in workbench root, `components` (button by
-  name), `theme` by name, `textdraw` and `mvu/desktop` by name;
-  guides gate OK; guard OK; gofmt gate OK; one commit in workbench,
-  components, theme, textdraw, mvu, ivg, seen and organisation each,
-  push; no tag.
+  finds nothing;
+  `test ! -e seen/PLAN.md -a ! -e components/PLAN.md`; green in
+  workbench root, `components` (button by name), `theme` by name,
+  `textdraw` and `mvu/desktop` by name; guides gate OK; guard OK;
+  gofmt gate OK; one commit in workbench, components, theme,
+  textdraw, mvu, ivg, seen and organisation each, push; no tag.
 
 ### G-CN2: Every ruling on a code finding of the guide sweep is built
 
