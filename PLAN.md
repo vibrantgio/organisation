@@ -26966,32 +26966,43 @@ is built here in its order.
 
 #### CN2.3: The popover's surface takes the side that has room
 
-- [ ] Ruled on finding 1222 under [[DOMAIN#Attachment]] and
-  [[DOMAIN#0007 — shared-recipes]]: `patterns/popover` takes the
-  moved room from CN2.2's package, an `AvailableRoom` in its Props,
-  and inside it the surface takes the opposite side when the
-  preferred side has no room and the other holds it whole, is
-  shifted inward along the cross axis when it would cross the room's
-  edge, scrolls inside itself when taller than the side it wins, and
-  the tail points at the anchor through all of it. The doc comment's
-  deferral sentence is deleted. The tooltip and the picker's menu
-  already do this: the flip arithmetic becomes one recipe the three
-  share, `components/attachment`, whose doc states that it is the
-  recipe every floating surface places itself with and not a
-  component (ruled 2026-10-24: the Attachment entry's restriction is
-  on Anchor as a component's name), never a third copy; the Toolbar
-  trigger's menu inherits the fix through the popover. Every window
-  that opens a popover passes the room. The goldens that move
-  regenerate with the cause named.
+- [ ] Ruled on finding 1244 under [[DOMAIN#Attachment]], first:
+  CN2.2's mechanism moves whole to `components/attachment` (the room
+  key and its window setter, the one mover of room and surfaces,
+  `Surfaces` and `PlaceSurfacesAt`, `PlacingFlex`), because these
+  are the attachment's arbitration of placement shared by every
+  floating surface and a list or a scroller that moves the room has
+  no tooltip in it; `components/tooltip` becomes a reader of the
+  package like the picker, the popover and the shell; the package
+  exports no component, and a parameter or type for the anchor
+  rectangle may be called the anchor. Then, ruled on finding 1222
+  under [[DOMAIN#Attachment]] and [[DOMAIN#0007 — shared-recipes]]:
+  `patterns/popover` takes the moved room from CN2.2's package, an
+  `AvailableRoom` in its Props, and inside it the surface takes the
+  opposite side when the preferred side has no room and the other
+  holds it whole, is shifted inward along the cross axis when it
+  would cross the room's edge, scrolls inside itself when taller
+  than the side it wins, and the tail points at the anchor through
+  all of it. The doc comment's deferral sentence is deleted. The
+  tooltip and the picker's menu already do this: the flip arithmetic
+  becomes one recipe the three share, `components/attachment`, whose
+  doc states that it is the recipe every floating surface places
+  itself with and not a component (ruled 2026-10-24: the Attachment
+  entry's restriction is on Anchor as a component's name), never a
+  third copy; the Toolbar trigger's menu inherits the fix through
+  the popover. Every window that opens a popover passes the room.
+  The goldens that move regenerate with the cause named.
 - [ ] Exit: a test that a popover whose preferred side has no room
   is drawn whole on the other side with the tail at the anchor, and
   one that a popover taller than both sides scrolls inside itself;
   `grep -rn 'flip' components/tooltip components/picker patterns/popover`
-  finds the arithmetic in one package; green in `components`
-  (tooltip, picker and the flip's package by name), `patterns`
-  (popover, shell and toolbar by name), workbench root and every app
-  module that opens a popover by name; guard OK; gofmt gate OK;
-  layers gate OK; commit and push per repo; no tag.
+  finds the arithmetic in one package;
+  `grep -rn 'func WithAvailableRoom\|func AvailableRoomAt\|type Surfaces\|func PlacingFlex' components/tooltip`
+  finds nothing; green in `components` (attachment, tooltip, picker,
+  list and scrollarea by name), `patterns` (popover, shell, toolbar,
+  navbar and tabs by name), workbench root and every app module by
+  name; guard OK; gofmt gate OK; layers gate OK; commit and push per
+  repo; no tag.
 
 #### CN2.4: `tokens.ElevationScale` is deleted and elevation is spoken in levels
 
