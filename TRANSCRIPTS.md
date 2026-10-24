@@ -1369,3 +1369,7 @@ Leftovers
 To stop it happening again
 
 The fix belongs in vibrantgio's agent instructions, not here. Add a rule along the lines of "never background-parallelize go test across modules; run them sequentially, or as a single go test over the go.work modules so one build shares the CPU limit." I can add that to vibrantgio's AGENTS.md/CLAUDE.md if you want.
+
+## 2026-10-24
+
+Rene (to the vibrantgio session, relayed by it): See if you can update the documentation in the repos to reflect the code reality
