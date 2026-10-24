@@ -26805,6 +26805,34 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   removed; one commit in design, theme, workbench and organisation
   each, push; no tag.
 
+#### CN1.6: The code text and comments the guide sweep found say what ships
+
+- [ ] Findings 1217, 1218, 1219 and 1221 of the review pool, from
+  CN1.1's reading. Under [[DOMAIN#Workbench]]: the workbench's Icon
+  Browser text says the application shows the marks of
+  `components/icons` above the Material Design icons, and the
+  workbench window goldens regenerate with the cause named. Under
+  [[DOMAIN#Group]]: the comments in `workbench/apps.go` and
+  `workbench/launch.go` say group, never card, and say that the
+  workbench repository carries no tags. Under [[DOMAIN#Density]]:
+  the pointer-target paragraph of `theme/tokens/density.go` states
+  the floor and the drawn height as its own table has them.
+  `organisation/scripts/check-layers.sh`'s header states what
+  `--edges` covers without a module count and without a plan
+  number. In `workbench/llms.txt`, the chrome-column line says
+  "level" or "surface" where it says "plane", and its sentence
+  on patterns/pane's top strip is re-read against `patterns/pane`
+  as it is after CM1.18 and states what the package has. No
+  history, no task or decision numbers. No pixel moves beyond the
+  Icon Browser text line.
+- [ ] Exit: `grep -n '961\|card\|separate tags' workbench/apps.go workbench/launch.go`
+  finds nothing; `grep -n 'all 39' organisation/scripts/check-layers.sh`
+  finds nothing; `grep -n 'draws 19 and offers' theme/tokens/density.go`
+  finds nothing; `grep -n 'plane' workbench/llms.txt` finds nothing;
+  green in workbench root and `theme` by name; guides gate OK; guard
+  OK; gofmt gate OK; one commit in workbench, theme and
+  organisation each, push; no tag.
+
 ## Phase CO: The remaining rulings of the hidden-sidebar round are built
 
 Owner-ruled 2026-10-24

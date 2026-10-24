@@ -3234,7 +3234,6 @@ consume a pending `Reveal`. No fresh-eyes review was named for the task.
 
 809. **[note]** **Every other list in the tree still registers a focus filter per row.** vaultview's outline and backlinks asides, its vault picker and its chooser, and mindchat's rail all hold `[]*widget.Clickable`, so Tab walks their rows one by one — the defect CG7.9 took out of the two rails, left standing everywhere else. `patterns/sidebar.RowTarget` is the shape they would all take. CG7.12 takes the picker, the chooser and mindchat's rail; what remains here is vaultview's aside (outline and backlinks), whose rows still register a focus filter each, fenced by Rene's boundary and put to him.
 
-
 ## DD. From CG7.12, mindchat's rail and the dialog lists
 
 Filed 2026-09-24 from the work itself: mindchat's rail took feeds' shape,
@@ -3261,7 +3260,6 @@ walk so a heading can hold the cursor, and vaultview's tree learned Left and
 Right over its folds. No fresh-eyes review was named for the task.
 
 823. **[note]** **vaultview's tree posts its fold messages through a seam only a test fills.** `treeView.post` is nil in the window, where a message rides the frame's ops, and a recorder in the test — mindchat's rail takes the same sink as a named parameter of its layout, and vaultview's rows still reach `mvu.MessageOp` directly from `activateTreeRow`. Whether the window's two paths should be one named sink is unasked.
-
 
 ## DH. From CG7.16, sk150's opening height
 
@@ -3357,7 +3355,6 @@ named for the task.
 
 896. **[note]** **A kept sense split across a wrap inside a Go comment is not excluded, because the guard's window carries the `//` markers.** `check-retired-words.sh` judges a `ctx` rule against the three cleaned lines around the hit joined with single spaces, and `cleanLine` strips whitespace alone — so a comment reading "the chrome" at the end of one line and "material where the rows are bare" at the start of the next is judged against "...the chrome // material where...", which the `chrome[- ]?material` rule cannot match. `retiredwords`' own doc comment states the opposite, that a kept sense may span a wrap. It surfaced here because reflowing one comment in `workbench/vaultview/outline_test.go` moved the two words apart and the gate failed; the comment was reflowed so the pair stands together on one line. Whether the window should drop a comment's own markers before a rule reads it is unasked.
 
-
 ## ED. From CI6.1, the guides' history
 
 Filed 2026-10-10 from the work itself: `workbench/llms.txt` lost its two
@@ -3372,7 +3369,6 @@ the task.
 904. **[note]** **Phase and task IDs are still cited in published READMEs, which the no-jargon convention excludes from emitted text.** `theme/README.md` cites `G-F4` and `FX.5` twice, `font/README.md` cites `C1.2`, `G-F0`, `G-AC1`, `G-AD1` and `G-F4`, and `effects/README.md` cites `E4.4` twice. CI6.1 removed the ADR citations, because the task named them, and dropped the task IDs that stood inside sentences it was already rewriting — leaving these, which stand in sentences the sweep had no reason to touch. A reader outside the organization cannot resolve any of them. Whether the gate's phrase list should grow a task-ID pattern, with the plan root's own documents exempt, is unasked.
 905. **[decide]** **"Body" names two things in the Language.** The typography table's Body is the platform's text style for reading text, and the Dialog, Card and Structure entries use "body" for the part between a header and a footer. One word for one thing is the rule, and both uses are the platform's own terms, so neither can be coined away by the ontology session; the Header and Footer entries were written on 2026-10-10 without a Body entry for that reason. Whether the middle part takes another term (the platform says "content" for a sheet's middle) or the two senses are allowed to stand is the owner's.
 
-
 ## EF. From CJ1.2, the round of 2026-10-10
 
 Filed 2026-10-10 from the work itself: seventeen library repositories and
@@ -3384,7 +3380,6 @@ was named for the task.
 912. **[note]** **GitHub's dependency scanner reports six vulnerabilities on `ivg`'s default branch, two of them high.** The notice came back on the push of `raster/gio/v0.2.0` and names `https://github.com/vibrantgio/ivg/security/dependabot`; no other repository printed one across the round's thirty pushes. The round read neither the advisories nor whether they sit in `ivg`'s own requirements or a transitive one, and nothing in the checkout re-measures this. Whether the advisories are reachable from the code `ivg` ships, and whether a scanner report on a published module is a task or a standing gate, is unasked.
 913. **[note]** **`scripts/check-retired-words.sh` is the one gate that reports nothing when run the way the others are run.** With no argument it prints its usage and exits 2; the verdict needs `check-retired-words.sh check`. `check-layers.sh`, `check-versions.sh`, `check-no-workspace.sh`, `check-gofmt.sh` and `check-guides.sh` all judge the tree when run bare. A worker who runs it bare reads a usage page, sees no FAILED line, and can take that for a pass. Whether the bare invocation should default to `check` is unasked.
 
-
 ## EJ. From CJ1.6, the sloped shoulder
 
 Filed 2026-10-10 from the work itself: the folder's square mitre became a
@@ -3393,7 +3388,6 @@ second reading, and twenty-two goldens regenerated across two repositories.
 No fresh-eyes review was named for the task.
 
 928. **[note]** **Two stroke readings now stand recorded as below what a 1x capture can state, and no 2x capture of either figure exists.** `document.svg` reads its top and foot at 1.47 px where its two sides read 1.390 and 1.400, and the ruling calls the 0.08 px the pixel grid's phase; the folder on the other stored capture reads its sides at 1.50 against 1.49 across, the other way about, which is the evidence that it is not one axis being heavier. A capture at 2x would separate a phase from a weight at four times the sampling, and the reference holds neither figure at that scale. Whether the two figures are recaptured at 2x, and whether a reading below a tenth of a pixel should be recorded at all rather than dropped, is unasked.
-
 
 ## EK. From CJ2.1, the treated window's close
 
@@ -3408,7 +3402,6 @@ review was named for the task.
 932. **[note]** **A click posted into this process does not reach a window button.** A left mouse down and up posted with `CGEventPostToPid` at the close button's own screen point left the window untouched — still visible, the button still enabled — where sending the same button its own target and action closed it at once. So the stored input-synthesis facts hold for Gio's own view and not for AppKit's title-bar controls, whose tracking does not read a posted event. The route that measures such a control is its action, not a click. Whether a click through the HID tap with assistive access does reach them is untested here.
 933. **[note]** **The application guide's module table describes `mvu/desktop` by its chrome alone.** The entry reads "native macOS window chrome (FullSizeContent, traffic-light unhide, queried top inset) on an mvu window", and the guide's window section covers the strip, the button run and the drag claim; neither mentions that the window's close is this module's too, so a developer reading the guide does not learn that a close exists or that it is what ends a run. The table's numbers are generated; its prose is not. Whether the guide gains a sentence on the close, and where it belongs, is unasked.
 
-
 ## EL. From CJ3.1, the path bar's look
 
 Filed 2026-10-11 from the work itself: `components/breadcrumb` took the
@@ -3417,7 +3410,6 @@ and four goldens regenerated across two modules. No fresh-eyes review was
 named for the task.
 
 934. **[note]** **No capture in the reference holds the platform's path bar, so every number the new look stands on is a substitute.** Finder's path bar is switched off in `finder-window-light.png`, `finder-window.png` and both untinted pairs — the strip at the window's foot is the file list in all four — and `controls.md` carries no path bar reading. The task therefore took the sidebar's row titles and section headings for the two colours and `patterns/sidebar`'s own chevron box for the square, each recorded in the code's comments as a substitute. What stays unmeasured: the place titles' own colour (the toolbar's title is `#4d4d4d`, the toolbar label, and the window's label is a different reading), the separator's square and the gap each side of it, and whether the first place carries a folder symbol as the sidebar's rows do. One capture closes it: a Finder window at 1x with the path bar shown, wallpaper tinting off, in both schemes, and a second frame with the pointer resting on an earlier place. Whether the capture is taken and the substitutes replaced is unasked.
-
 
 ## EM. From CJ3.2, the trail in the toolbar
 
@@ -3432,7 +3424,6 @@ No fresh-eyes review was named for the task.
 942. **[note]** **Both of this window's trails flatten the platform's label onto the window's plane while standing on another fill.** `breadcrumb.TrailProps.Surface` is a colour fixed when the stream is built, and the window leaves it zero, which the component reads as the window background; the band's trail stands over the note column's text background and the picker's over the dialog's. The label and the secondary label are coverages, so each place and each separator is composited against a fill it is not on. The find field beside it takes its surface as a function of the palette and so follows the appearance; the trail cannot, because its props are not re-read. Whether `TrailProps` takes a function as the field does, or the component reads the surface per frame, is unasked.
 943. **[note]** **Every row of the outline moved one indent deeper and nothing re-measured the rail against it.** The vault's row stands at depth 0 and what used to stand there now stands at depth 1, so every name in the rail is 14 dp further in and a note three folders down is four indents from the rail's edge. The rail's own bounds are unchanged — 160 dp minimum, 240 default — and its minimum was set where a name at the old depths still read rather than ellipsing. Whether the minimum rises by an indent, or the tree stops indenting past some depth as the platform's own browsers do, is unasked.
 
-
 ## EN. From CJ3.3, the chevrons' names
 
 Filed 2026-10-11 from the work itself: `disclosure`, `history-back` and
@@ -3443,7 +3434,6 @@ named for the task.
 
 945. **[note]** **The gallery's Icon specimen now samples three of the set's fourteen marks and the sheet beside it carries all fourteen.** The specimen's cells were sidebar, disclosure, back and forward; two of those were one drawing, so collapsing them leaves sidebar, chevron-right and chevron-left, and the row reads as an arbitrary three. `TestIconSheetGolden` already stores every mark at every size with its name, and `TestTheIconSheetShowsEveryMark` holds that sheet to the set, so nothing is unreviewed — the question is what the components page's own cell is for. Whether the specimen shows the whole set, keeps a named sample with a stated rule for what is in it, or goes and leaves the sheet the one place the set is shown, is unasked.
 946. **[note]** **The set carries three chevrons and no up-pointing one, and the pair is the only drawing that can say up.** `chevron-right` is mirrored to make `chevron-left` but `chevron-down` has no mirror, so a control that must point up — a collapsing section that closes upward, a sort column reading ascending, a scroll-to-top — has only `chevron-pair`, which says a value can move either way and cannot say a direction. Nothing in the tree asks for one today. Whether `chevron-up` is drawn now as the pair's upper half, or waits for the first control that needs it, is unasked.
-
 
 ## EO. From CJ4.1, the strip's marks
 
@@ -3752,7 +3742,6 @@ the four applications that render markdown now spend theirs on the code
 block's bar. What the work left open, and what it found beside its own
 subject, stands here.
 
-
 ## GB. From CK10.9, feeds' Share button
 
 Filed 2026-10-22 from the work itself: `components/icons` gained the
@@ -3843,12 +3832,4 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 Filed 2026-10-24 from CN1.1's reading of the workbench and organisation guides against the code. Each is outside that task's files or is code, and stands here unfixed.
 
-1217. **[bug]** **The workbench's Icon Browser text still says "Searchable catalogue of the 961 bundled Material icons".** `workbench/apps.go`'s Icon Browser entry; iconbrowser shows two sets, the marks of `components/icons` above the Material Design icons. Under [[DOMAIN#Workbench]] the entry's text is what the workbench shows for that application, and the workbench golden moves with it, so the fix regenerates `workbench/testdata/golden/{light,dark}-window.png`.
-
-1218. **[bug]** **Comments in `workbench/apps.go` and `workbench/launch.go` describe the workbench's entries as cards and the applications as products on separate tags.** `apps.go` says "every card's icon" and "Blurbs run to two lines on a card"; `launch.go`'s `appInvocation` doc says the apps are "separate products on separate tags". Under [[DOMAIN#Group]] each entry is a group, not a card, and the workbench repository carries no tags, so `@latest` resolves to the newest commit of the default branch.
-
-1219. **[bug]** **`theme/tokens/density.go`'s pointer-target paragraph says "a Compact control draws 19 and offers 19".** The table above it in the same comment shows a Compact button drawing 20 dp (LabelLarge's 20 dp line box over the 19 dp floor) and a Compact field 24. Under [[DOMAIN#Density]] the control height is a floor; the sentence states the floor as the drawn height.
-
 1220. **[feature]** **`workbench/sk150/tip.go` is a trimmed copy of `components/tooltip`.** Its header says the tooltip centres its trigger on the space it is handed and sizes the bubble from that space, so it cannot be a cell's label inline; the copy keeps the dwell, the surface and the one-visible-at-a-time rule. Under [[DOMAIN#Tooltip]] the trigger is any control or signal; whether `components/tooltip` takes an inline trigger so the application copy goes is unasked.
-
-1221. **[bug]** **`organisation/scripts/check-layers.sh`'s header says `--edges` covers "every module beside organisation, all 39".** The generated `go.work` lists 41 members; the count in that comment is stale, and the comment also cites the plan's numbers, which a script header names no more than a guide does. Under [[DOMAIN#Workbench]] the workbench holds nine applications, which the count leaves out.
