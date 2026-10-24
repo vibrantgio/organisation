@@ -26808,23 +26808,23 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 #### CN1.6: The code text and comments the guide sweep found say what ships
 
 - [ ] Findings 1217, 1218, 1219 and 1221 of the review pool, from
-  CN1.1's reading, 1223, 1225 and 1226 from CN1.2's, and 1227, 1228
-  and 1229 from CN1.3's. Under [[DOMAIN#Workbench]]: the workbench's
-  Icon Browser text says the application shows the marks of
-  `components/icons` above the Material Design icons, and the
-  workbench window goldens regenerate with the cause named. Under
-  [[DOMAIN#Group]]: the comments in `workbench/apps.go` and
-  `workbench/launch.go` say group, never card, and say that the
-  workbench repository carries no tags. Under [[DOMAIN#Density]]:
-  the pointer-target paragraph of `theme/tokens/density.go` states
-  the floor and the drawn height as its own table has them.
-  `organisation/scripts/check-layers.sh`'s header states what
-  `--edges` covers without a module count and without a plan number.
-  In `workbench/llms.txt`, the chrome-column line says "level" or
-  "surface" where it says "plane", and its sentence on
-  patterns/pane's top strip is re-read against `patterns/pane` as it
-  is after CM1.18 and states what the package has. Under
-  [[DOMAIN#Emphasis]] and [[DOMAIN#Variant]]:
+  CN1.1's reading, 1223, 1225 and 1226 from CN1.2's, 1227, 1228 and
+  1229 from CN1.3's, and 1230 and 1231 from CN1.4's. Under
+  [[DOMAIN#Workbench]]: the workbench's Icon Browser text says the
+  application shows the marks of `components/icons` above the
+  Material Design icons, and the workbench window goldens regenerate
+  with the cause named. Under [[DOMAIN#Group]]: the comments in
+  `workbench/apps.go` and `workbench/launch.go` say group, never
+  card, and say that the workbench repository carries no tags. Under
+  [[DOMAIN#Density]]: the pointer-target paragraph of
+  `theme/tokens/density.go` states the floor and the drawn height as
+  its own table has them. `organisation/scripts/check-layers.sh`'s
+  header states what `--edges` covers without a module count and
+  without a plan number. In `workbench/llms.txt`, the chrome-column
+  line says "level" or "surface" where it says "plane", and its
+  sentence on patterns/pane's top strip is re-read against
+  `patterns/pane` as it is after CM1.18 and states what the package
+  has. Under [[DOMAIN#Emphasis]] and [[DOMAIN#Variant]]:
   `components/button/button.go` documents Filled, Tonal and Ghost as
   emphases, never variants. `theme/cmd/a11y-check`'s doc comment
   says it prints at start and on each change, and `theme/system`'s
@@ -26841,20 +26841,33 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   contract change for textdraw's next tag. Under [[DOMAIN#Backdrop]]
   and [[DOMAIN#Level]]: the `backdrop.go` doc comments of marketing,
   mindchat, iconbrowser, sk150 and todos say the backdrop, level 0,
-  where they say "plane". No history, no task or decision numbers.
-  No pixel moves beyond the Icon Browser text line.
-- [ ] Exit: `grep -n '961\|card\|separate tags' workbench/apps.go
-  workbench/launch.go` finds nothing; `grep -n 'all 39'
-  organisation/scripts/check-layers.sh` finds nothing; `grep -n
-  'draws 19 and offers' theme/tokens/density.go` finds nothing;
+  where they say "plane". `mvu/desktop`'s package comment states why
+  the package is a nested module in a sentence the root's
+  `frame_darwin.go` keeps true; the cgo-free claim is deleted. ivg's
+  `raster/gio/example/README.md` names the module path, the example
+  directories and the window call the tree has. seen's README shader
+  row also names the exported `Shader` values `DiffusePhong`,
+  `DiffuseAndSpecularPhong` and `Phong`, which CN1.4's Exit grep
+  kept it from naming. No history, no task or decision numbers. No
+  pixel moves beyond the Icon Browser text line.
+- [ ] Exit:
+  `grep -n '961\|card\|separate tags' workbench/apps.go workbench/launch.go`
+  finds nothing;
+  `grep -n 'all 39' organisation/scripts/check-layers.sh` finds
+  nothing; `grep -n 'draws 19 and offers' theme/tokens/density.go`
+  finds nothing;
   `grep -rn 'plane' workbench/llms.txt workbench/*/backdrop.go`
-  finds nothing; `grep -rn 'onFill\|FillLabel\|textdraw\.Label\b'
-  textdraw` finds nothing; `grep -n 'variant'
-  components/button/button.go` finds nothing; `grep -n 'once per
-  second' theme/cmd/a11y-check/*.go` finds nothing; green in
-  workbench root, `components` (button by name), `theme` by name and
-  `textdraw`; guides gate OK; guard OK; gofmt gate OK; one commit in
-  workbench, components, theme, textdraw and organisation each,
+  finds nothing;
+  `grep -rn 'reactivego\|PlayArrow' ivg/raster/gio/example/README.md`
+  finds nothing; `grep -n 'cgo-free' mvu/desktop/*.go` finds
+  nothing;
+  `grep -rn 'onFill\|FillLabel\|textdraw\.Label\b' textdraw` finds
+  nothing; `grep -n 'variant' components/button/button.go` finds
+  nothing; `grep -n 'once per second' theme/cmd/a11y-check/*.go`
+  finds nothing; green in workbench root, `components` (button by
+  name), `theme` by name, `textdraw` and `mvu/desktop` by name;
+  guides gate OK; guard OK; gofmt gate OK; one commit in workbench,
+  components, theme, textdraw, mvu, ivg, seen and organisation each,
   push; no tag.
 
 ### G-CN2: Every ruling on a code finding of the guide sweep is built
