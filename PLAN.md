@@ -26708,7 +26708,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 
 #### CN1.3: The READMEs of backdrop, circle, csg, font, gradient, kiwi, noise, style, textdraw and traer say what ships
 
-- [ ] Rene's request 2026-10-24, continued. Each README is corrected
+- [x] Rene's request 2026-10-24, continued. Each README is corrected
   claim by claim, re-read from the source. In all ten the sentence
   that AGENTS.md has the build and test commands is replaced by
   where they are; noise's sentence that AGENTS.md explains the
@@ -26726,7 +26726,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   tree has. csg and traer: the shared sentence only. No history,
   no consumer named, no task or decision numbers; the same
   Language rule as CN1.1.
-- [ ] Exit: `grep -rn 'ColorTokens\|style.H6\|typ.Notice\|no LICENSE\|v0.0.6\|has the build and test commands' --include=README.md backdrop circle csg font gradient kiwi noise style textdraw traer`
+- [x] Exit: `grep -rn 'ColorTokens\|style.H6\|typ.Notice\|no LICENSE\|v0.0.6\|has the build and test commands' --include=README.md backdrop circle csg font gradient kiwi noise style textdraw traer`
   finds nothing; guides gate OK; guard OK; one commit per repo
   whose README changes, push each; no tag.
 

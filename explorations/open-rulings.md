@@ -3828,3 +3828,11 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
 
+
+## IR. From CN1.3, the small-library guides
+
+Filed 2026-10-24 from CN1.3, which brought the READMEs of backdrop, circle, csg, font, gradient, kiwi, noise, style, textdraw and traer up to date with the code.
+
+1227. **[bug]** **`textdraw.FillLabel` and `textdraw.Label` name their text colour `onFill`.** The parameter is the colour of the text drawn on the rounded background, which the Language calls the foreground ([[DOMAIN#Foreground]]). The on- prefix is retired in that sense. The guide quotes the identifier because it is the real parameter name, so the name has to change in `textdraw/label.go`.
+1228. **[bug]** **The backdrop layers of five workbench applications say "plane" in their doc comments.** `marketing`, `mindchat` and `iconbrowser` say "the platform's window plane", and `sk150` and `todos` say "the window's own plane", in `backdrop.go`. "Plane" is not a Language word. The layer fills the backdrop ([[DOMAIN#Backdrop]]), level 0 of the levels ([[DOMAIN#Level]]).
+1229. **[decide]** **`textdraw.FillLabel`'s rounded background has no Language term.** The Language's Pill ([[DOMAIN#Pill]]) is the rounded fill behind a selected row, so the guide calls `FillLabel`'s shape "a rounded background". If the shape needs a name, the Language has to give it one. The function itself is named after a label, which the Language keeps for text standing by itself.
