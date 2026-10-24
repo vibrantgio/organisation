@@ -3,19 +3,16 @@
 # Build and test every module with GOWORK=off — the way CI, pkg.go.dev and
 # every consumer outside this working tree sees them.
 #
-# The workspace at ../go.work makes the 39 modules resolve each other from the
-# checkout. That is the right thing while developing and the wrong thing to
-# trust: it hides version skew, because a module can build against a sibling's
-# uncommitted state and still be pinned to a stale tag in its own go.mod. This
-# script is what closes that gap. The difference between a green run here and a
-# green run under the workspace is exactly the debt ADR-006 manages.
+# "Every module" is every go.mod under the workspace root outside a .claude
+# directory: the members the generated ../go.work lists and the organisation
+# repository's own nested module scripts/retiredwords, which go.work leaves
+# out. Under the workspace a module resolves its siblings from the checkout,
+# so it can build against a sibling's uncommitted state while its own go.mod
+# still points at a stale tag; this script is what shows that skew.
 #
-# It reports; it does not fix. Failures are expected from B3.3 onward, when the
-# alias shims land and a module's go.mod points at a tag that does not exist
-# yet. That is the plan working as intended — the seam is paid off at G-F3,
-# where the tags are cut and pushed in dependency order.
+# It reports; it does not fix.
 #
-# It also fails on a `replace` directive in any member. A replace committed to
+# It also fails on a `replace` directive in any module. A replace committed to
 # a public module silently redirects every consumer outside this tree, and it
 # is the most tempting wrong way to make this script go green.
 #

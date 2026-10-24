@@ -26622,7 +26622,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 
 #### CN1.1: Workbench's guide and README and the organisation README say what the tree ships
 
-- [ ] Rene's request 2026-10-24: the documentation in the repos is
+- [x] Rene's request 2026-10-24: the documentation in the repos is
   updated to the code. Under [[DOMAIN#Workbench]] and the standing
   rules on published text, `workbench/llms.txt`, `workbench/README.md`
   and `organisation/README.md` are corrected claim by claim, each
@@ -26661,7 +26661,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   is one. No history, no task or decision numbers, no plan named;
   a guide sentence that needs a word the Language does not have is
   a question to the orchestrator, never a coinage. No pixel moves.
-- [ ] Exit: `grep -n 'WithSeed\|WithPalette\|ButtonRunAt\|BandLead\|aside slot\|the FAB\|Five-tab\|~700\|all OFL\|§Branding' workbench/llms.txt workbench/README.md workbench/apps.go`
+- [x] Exit: `grep -n 'WithSeed\|WithPalette\|ButtonRunAt\|BandLead\|aside slot\|the FAB\|Five-tab\|~700\|all OFL\|§Branding' workbench/llms.txt workbench/README.md workbench/apps.go`
   finds nothing; green in `workbench/sitedocs` by name (it reads
   `../llms.txt`) and workbench root; guides gate OK; guard OK;
   gofmt gate OK; `scripts/sync-agents.sh check` OK; one commit in

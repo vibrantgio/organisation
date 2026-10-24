@@ -3838,3 +3838,17 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 ## HV. From CL1.1, the move to the organisation repository
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
+
+## IP. From CN1.1, the workbench guide
+
+Filed 2026-10-24 from CN1.1's reading of the workbench and organisation guides against the code. Each is outside that task's files or is code, and stands here unfixed.
+
+1217. **[bug]** **The workbench's Icon Browser text still says "Searchable catalogue of the 961 bundled Material icons".** `workbench/apps.go`'s Icon Browser entry; iconbrowser shows two sets, the marks of `components/icons` above the Material Design icons. Under [[DOMAIN#Workbench]] the entry's text is what the workbench shows for that application, and the workbench golden moves with it, so the fix regenerates `workbench/testdata/golden/{light,dark}-window.png`.
+
+1218. **[bug]** **Comments in `workbench/apps.go` and `workbench/launch.go` describe the workbench's entries as cards and the applications as products on separate tags.** `apps.go` says "every card's icon" and "Blurbs run to two lines on a card"; `launch.go`'s `appInvocation` doc says the apps are "separate products on separate tags". Under [[DOMAIN#Group]] each entry is a group, not a card, and the workbench repository carries no tags, so `@latest` resolves to the newest commit of the default branch.
+
+1219. **[bug]** **`theme/tokens/density.go`'s pointer-target paragraph says "a Compact control draws 19 and offers 19".** The table above it in the same comment shows a Compact button drawing 20 dp (LabelLarge's 20 dp line box over the 19 dp floor) and a Compact field 24. Under [[DOMAIN#Density]] the control height is a floor; the sentence states the floor as the drawn height.
+
+1220. **[feature]** **`workbench/sk150/tip.go` is a trimmed copy of `components/tooltip`.** Its header says the tooltip centres its trigger on the space it is handed and sizes the bubble from that space, so it cannot be a cell's label inline; the copy keeps the dwell, the surface and the one-visible-at-a-time rule. Under [[DOMAIN#Tooltip]] the trigger is any control or signal; whether `components/tooltip` takes an inline trigger so the application copy goes is unasked.
+
+1221. **[bug]** **`organisation/scripts/check-layers.sh`'s header says `--edges` covers "every module beside organisation, all 39".** The generated `go.work` lists 41 members; the count in that comment is stale, and the comment also cites the plan's numbers, which a script header names no more than a guide does. Under [[DOMAIN#Workbench]] the workbench holds nine applications, which the count leaves out.

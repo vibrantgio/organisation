@@ -13,7 +13,7 @@ not this one, is the org page. This README renders only on
 [this repository's own page](https://github.com/vibrantgio/organisation), so
 the two are edited separately and say different things.
 
-**[`PLAN.md`](PLAN.md) — the plan.** How Vibrant Gio itself is built. Eight
+**[`PLAN.md`](PLAN.md) — the plan.** How Vibrant Gio itself is built: the
 phases that turn the repositories from a loose collection into one design
 system. The architecture decisions behind them are ADRs in its Reference
 section. Work is picked up one `####` task at a time —
@@ -27,7 +27,10 @@ not how you work this plan. Its URL is
 
     https://raw.githubusercontent.com/vibrantgio/workbench/master/llms.txt
 
-Every sibling's `AGENTS.md` is a short static pointer to that URL.
+Every sibling's `AGENTS.md` carries a managed block, written by
+`scripts/sync-agents.sh`, that points to this repository's
+[`AGENTS.md`](AGENTS.md) and its Retired words table; `workbench`'s block
+also points to its own `llms.txt`.
 
 ## Working tree
 
@@ -38,7 +41,12 @@ shared parent, the workspace root, is not a repository; `go.work` lives there,
 the modules so they resolve each other from the checkout — the members never
 carry a workspace themselves, and the workspace itself is committed nowhere.
 
-Twelve scripts live in `scripts/`. Five of them do work.
+Twelve scripts live in `scripts/`, beside the nested Go module
+[`scripts/retiredwords/`](scripts/retiredwords) that
+`check-retired-words.sh` runs, the fixtures in `scripts/testdata/` and
+[`scripts/design-project.txt`](scripts/design-project.txt), which records
+the Claude Design project `push-design.sh` uploads to. Five of the scripts
+do work.
 
 - [`scripts/clone-all.sh`](scripts/clone-all.sh) — clone all twenty-one siblings
   beside this checkout, pulling any already present, then regenerate `go.work`. The whole set every time: the
@@ -74,11 +82,12 @@ kind of wrong thing be committed quietly.
   intended. Run it here, from the plan root. Its `--edges` mode reports
   that one walk as TSV instead of judging it.
 - [`scripts/check-no-workspace.sh`](scripts/check-no-workspace.sh) — refuses to
-  let the workspace flatter the tree. It builds and tests all 39 modules with
+  let the workspace flatter the tree. It builds and tests every module in the
+  checkout — the 41 members of `go.work` and `scripts/retiredwords` — with
   `GOWORK=off`, the way `go get` and pkg.go.dev see them, because under
   `go.work` a module compiles against a sibling's working copy while its own
   `go.mod` still points at a stale tag. It also fails on a `replace` directive
-  in any member.
+  in any module.
 - [`scripts/check-versions.sh`](scripts/check-versions.sh) — refuses a typed
   version number in `llms.txt`. It runs `sync-versions.sh -n` and fails on any
   difference, so the guide cannot claim a tag the repositories do not carry.
@@ -106,11 +115,12 @@ kind of wrong thing be committed quietly.
   would rewrite. It lists every such file across the whole checkout and exits
   non-zero on any; `gofmt -w` on what it names is the fix.
 
-Across the twenty-one repositories there are 39 modules — twenty-one at
-repository roots, eleven nested in subdirectories with tags that carry the
-subdirectory as a prefix, and seven applications in `workbench` beside that
-repository's root module. `workbench` and `design` carry no tags; they are
+Across the twenty-one sibling repositories there are 41 modules — twenty-one
+at repository roots, eleven nested in subdirectories with tags that carry the
+subdirectory as a prefix, and nine applications in `workbench` beside that
+repository's root module. This repository adds one more, the nested
+`scripts/retiredwords`, which `go.work` leaves out. `workbench` and `design` carry no tags; they are
 consumed from the branch tip.
-All 39 declare Go 1.25.1; every one that depends on Gio is on
+All 42 declare Go 1.25.1; every one that depends on Gio is on
 gioui.org v0.10.2 and every one that depends on rx is on
 github.com/reactivego/rx v0.3.0 — one version of each, organization-wide.

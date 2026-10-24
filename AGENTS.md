@@ -85,6 +85,3 @@ the rules against the tree.
 
 The nested module `scripts/retiredwords` is built and tested with `GOWORK=off`,
 because the generated `go.work` excludes the organisation repository.
-
-The nested module `scripts/retiredwords` is built and tested with `GOWORK=off`,
-because the generated `go.work` excludes the organisation repository.
