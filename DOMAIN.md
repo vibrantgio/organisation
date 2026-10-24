@@ -73,11 +73,13 @@ what it floats from. Its parts, which any component can play:
 | **Surface** | the floating thing itself |
 | **Placement** | which side it opens on — the developer's preference, arbitrated by the attachment against fit |
 
-Placement is preference plus fit: the developer states the preferred
-side, and the attachment arbitrates against reality — the surface
-must land fully visible inside the window. No room on the preferred
-side flips it to the side that has room; a surface taller than the
-room it wins scrolls inside itself. Content is never cut off.
+Placement is preference plus fit. The developer states the preferred
+side; the attachment arbitrates it against the available room. The
+available room is the window's whole area: every window has it, and a
+floating surface may occupy any of it. The surface lands fully visible
+inside it. No room on the preferred side flips the surface to the side
+that has room. A surface taller than the room on that side scrolls
+inside itself. Content is never cut off.
 Placement is against the window, not the region the anchor is in: a
 floating surface leaves that region — a scroller, a column — and is
 clipped by the window alone. It is dismissed with its anchor: when the

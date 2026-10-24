@@ -1375,3 +1375,11 @@ The fix belongs in vibrantgio's agent instructions, not here. Add a rule along t
 Rene (to the vibrantgio session, relayed by it): See if you can update the documentation in the repos to reflect the code reality ^0005-documentation-reflects-code
 
 Rene (to the vibrantgio session, relayed by it; his one word on splitting Phase CM at the guide tasks): split ^0005-split-cm-at-the-guides
+
+Rene (to the vibrantgio session, relayed in its words): asked for an audit of the CN2.3 landing.
+
+Rene (to the vibrantgio session, relayed by it): fix the mindchat window and the popover fallback, no new tasks
+
+Rene (to the vibrantgio session, relayed by it; his one word, holding the dispatch queue): STOP
+
+Rene (to the vibrantgio session, relayed in its words): "a window without a room" is not Language; every window has the available room, a window not reporting it is a code defect.
