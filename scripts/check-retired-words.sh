@@ -46,12 +46,11 @@
 #
 # Frozen records. A record of what was found, measured or said on a date is
 # not rewritten to follow a later Language: reviews/, TRANSCRIPTS.md, PLAN.md
-# above the first unchecked task, DOMAIN.md from its Decisions down,
-# design/DESIGN.md from its Decision records down, and
+# above the first unchecked task, DOMAIN.md from its Decisions down, and
 # explorations/open-rulings.md's "Review provenance" foot are excluded for
-# that reason and say so in `excluded` output. The two boundaries inside a
+# that reason and say so in `excluded` output. The boundaries inside a
 # file are measured, not written down — the first unchecked box, the
-# Decisions heading, the Decision records heading, the provenance heading —
+# Decisions heading, the provenance heading —
 # so they move as the documents are worked. Everything else in organisation
 # is judged: AGENTS.md, DOMAIN's Language, the READMEs, the live pool items
 # and the plan from the task in hand downward are the texts a packet is
@@ -125,7 +124,6 @@ author::comment,doc::line::(the go authors|copyright)::A third party's copyright
 widget::doc,comment::line::[a-z]+\.widget\(::A call to a real exported function named Widget in a code fence or a doc comment; renaming it is the identifier round's.
 widget::doc::line::ui-widget::jQuery UI's own CSS class name in a third-party example page.
 *::doc::path::^seen/plan\.md$::A repo-local plan awaiting the owner's ruling on its future.
-*::doc::path::^design/design-v1\.md$::A superseded document kept for history, frozen like the other records.
 furniture::doc::ctx::^organisation/domain\.md .*the window's furniture: every region::DOMAIN's Chrome entry keeps the phrase as its own definition; nowhere else.
 paper::comment,doc::line::(cassowary paper|rock-paper-scissors|the paper by|this paper|in the paper|academic paper|white ?paper)::A published paper, or the game; not the content level.
 
@@ -275,11 +273,6 @@ if [ -f "$here/DOMAIN.md" ]; then
   domain_frozen=$(grep -n '^## Decisions' "$here/DOMAIN.md" | head -1 | cut -d: -f1)
   [ -n "$domain_frozen" ] || domain_frozen=0
 fi
-design_frozen=0
-if [ -f "$root/design/DESIGN.md" ]; then
-  design_frozen=$(grep -n '^## Decision records' "$root/design/DESIGN.md" | head -1 | cut -d: -f1)
-  [ -n "$design_frozen" ] || design_frozen=0
-fi
 pool_frozen=0
 if [ -f "$here/explorations/open-rulings.md" ]; then
   pool_frozen=$(grep -n '^## Review provenance' "$here/explorations/open-rulings.md" | head -1 | cut -d: -f1)
@@ -297,8 +290,7 @@ export RETIRED_RULES="$EXCLUSIONS"
 # multi-byte rune nor rejects one it cannot decode.
 report=$(printf '%s\n' "$hits" | LC_ALL=C awk -F'\t' \
   -v mode="$MODE" -v kinds="$KINDS" -v only="$ONLY_WORDS" \
-  -v planfrozen="$plan_frozen" -v poolfrozen="$pool_frozen" -v domainfrozen="$domain_frozen" \
-  -v designfrozen="$design_frozen" '
+  -v planfrozen="$plan_frozen" -v poolfrozen="$pool_frozen" -v domainfrozen="$domain_frozen" '
 function lc(s) { return tolower(s) }
 BEGIN {
   n = split(ENVIRON["RETIRED_RULES"], rl, "\n")
@@ -353,8 +345,6 @@ function inlist(what, list,   m, a, i) {
     why = "The Language is present tense; the decisions and the recorded dialogue below it are dated records."
   else if (path == "organisation/explorations/open-rulings.md" && poolfrozen+0 > 0 && line+0 >= poolfrozen+0)
     why = "Review provenance keeps each section preamble verbatim, as a record of what a reviewer was handed."
-  else if (path == "design/DESIGN.md" && designfrozen+0 > 0 && line+0 >= designfrozen+0)
-    why = "A decision record states what was decided on a date and in the language of that day; the copies of these ADRs in the plan are frozen for the same reason."
 
   # The three-line window — the line before the match, the matched line
   # and the line after — so a kept sense named across a wrap ("material"

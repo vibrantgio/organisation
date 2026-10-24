@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # check-guides.sh — refuse migration history in a live guide.
 #
-# The live guides are workbench/llms.txt and the README of every repository.
+# The live guides are workbench/llms.txt, design/DESIGN.md and the README of
+# every repository.
 # They describe what ships and how to use it. What a module was called, what
 # a version broke, which identifier is gone and what to do if an older answer
 # mentions it are not part of that: a reader who never saw the old shape is
@@ -41,8 +42,8 @@
 #   toast.Notifications
 #
 # WHAT IS NOT JUDGED. A frozen record is not rewritten to follow a later
-# decision: reviews/, TRANSCRIPTS.md, PLAN.md, DOMAIN.md, design/DESIGN-v1.md
-# and the pool are records of what was said on a date, and none of them is a
+# decision: reviews/, TRANSCRIPTS.md, PLAN.md, DOMAIN.md and the pool are
+# records of what was said on a date, and none of them is a
 # README. Testdata READMEs are fixtures, judged by the tests that read them.
 # Another session's .claude worktree is a second checkout of the same
 # sources, not this tree's. Code comments are out of scope on purpose: a
@@ -95,7 +96,7 @@ guides=$(
 		-path '*/.claude/*' -prune -o \
 		-path '*/.git/*' -prune -o \
 		-path '*/testdata/*' -prune -o \
-		\( -name 'README.md' -o -name 'llms.txt' \) -print | sort
+		\( -name 'README.md' -o -name 'llms.txt' -o -path "$WS/design/DESIGN.md" \) -print | sort
 )
 [ -n "$guides" ] || {
 	printf 'check-guides: no guide found under %s — run scripts/clone-all.sh first\n' "$WS" >&2

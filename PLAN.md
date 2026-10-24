@@ -26754,7 +26754,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
 
 #### CN1.5: The design repository's DESIGN.md and conventions describe the system as shipped
 
-- [ ] Rene's request 2026-10-24, continued; ruled by the ontology
+- [x] Rene's request 2026-10-24, continued; ruled by the ontology
   session 2026-10-24. `design/DESIGN.md` is a live guide: it is
   rewritten to the present in the Language's terms and checked
   against the code, section by section: what the system is, the
@@ -26798,7 +26798,7 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   names the six component pages and the three shadow-step
   variables so `design/readme.md` regenerates true. No history, no
   task or decision numbers, no plan named. No pixel moves.
-- [ ] Exit:
+- [x] Exit:
   `grep -n 'ADR-\|road from v1\|DESIGN-v1\|CIELAB\|--color-\|44 dp\|tonal\|seed\|knob\|plane\b\|touch-first' design/DESIGN.md`
   finds nothing,
   `grep -n 'ADR-\|DESIGN-v1\|plane\b' workbench/llms.txt` finds
