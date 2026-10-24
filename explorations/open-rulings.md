@@ -3828,16 +3828,3 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
 
-## IT. From CN1.5, the design repository's guides
-
-Filed 2026-10-24 from CN1.5's reading of the theme, components, effects and design sources and its fresh-eyes review.
-
-1233. **[bug]** **`controlface.Fill`'s doc says the toolbar button is the one control that tints under the pointer.** `components/internal/controlface/controlface.go:115-120` says a push button, a list row and a sidebar row do not tint and that the overlay is applied "here and nowhere else in this library"; `controlface.FormFill` in the same file and `components/button/button.go:770-781` lay the hover and press overlays over the push button's fill and over the surface beneath a Ghost button. The code disagrees with itself; the [[DOMAIN#Fill]] entry says transient states lay the overlays over the fill. A ruling says which places tint, and the doc or the code follows.
-
-1236. **[decide]** **The dismissable dialog is called a pane.** `design/.design-sync/conventions.md`, `design/components/dialog.html:147-163` and `patterns/dialog/dialog.go:32-35` call a dialog without a footer a "pane", and the [[DOMAIN#Pane]] entry names a chrome pattern. A ruling names the dialog form without the footer, and the three texts take the name.
-
-1238. **[decide]** **On macOS with no theme colour chosen, three accent fills keep the recorded blue.** `SidebarSelection`, `SidebarSelectionUnemphasizedLabel` and `DefaultButtonFill` are measured fills that `WithAccent` rebuilds (`platform.go:1003-1009`), but the live reader skips them (`theme/system/nscolors_darwin.go:55`) and `theme/system` calls `WithAccent` only when a theme colour is pinned (`system.go:308-310`), so a user whose system accent is not blue gets a blue sidebar pill and default button. Under [[DOMAIN#Accent]] and [[DOMAIN#Fill]]: a ruling says whether those fills follow the platform's accent on macOS.
-
-1240. **[decide]** **The tooltip floats with no shadow.** The [[DOMAIN#Level]] entry puts tooltips at the floating level under the platform's shadow; `components/tooltip` and `.tooltip` in `styles.css:1561-1566` draw none ("what places it draws whatever shadow the placement owes"), and the [[DOMAIN#Tooltip]] entry says it floats "at level 3", a number the Level entry does not use.
-
-1241. **[decide]** **Three Compact heights are derived or published, against the Density entry.** The [[DOMAIN#Density]] entry says the field, row and checkbox heights are measured into the reference, not derived; `theme/tokens/density.go` takes the Compact control (19) from the published guideline and derives the Compact field (21) and checkbox row (17) by ratio, because no capture holds a small control. A capture of the platform's small controls, or an entry sentence for the gap, closes it.

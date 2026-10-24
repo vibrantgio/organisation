@@ -26886,6 +26886,33 @@ The tasks run in order, one worker each, no pixel moves anywhere.
   gofmt gate OK; one commit in workbench, components, theme,
   textdraw, mvu, ivg, seen and organisation each, push; no tag.
 
+#### CN1.7: No guide or comment cites a numbered level, and the toolbar control's overlay doc names only the toolbar control
+
+- [ ] Under [[DOMAIN#Level]], ruled 2026-10-24: the Language names
+  the levels (backdrop, chrome, content, raised, floating) and no
+  text cites a numbered one. Every guide, README, comment and the
+  retired-words table's replacement column that says "level 0",
+  "level 2" or "level 3" for an elevation level
+  (`markdown/README.md`, `components/toast/toast.go`,
+  `theme/export/doc.go`, the five workbench `backdrop.go` comments,
+  `organisation/AGENTS.md`, and whatever `grep -rniw 'level [0-3]'`
+  finds beside them outside the frozen records) says the level's
+  name; a heading level or a typography level is another sense and
+  stays. Under [[DOMAIN#Fill]] and [[DOMAIN#State]], the mechanical
+  half of finding 1233: `controlface.Fill`'s doc states the toolbar
+  control's overlays and says nothing about other controls; the
+  sentence claiming a push button does not tint cites a capture the
+  reference does not hold and is deleted. `scripts/sync-agents.sh`
+  runs clean after the AGENTS.md row changes. No history, no task or
+  decision numbers. No pixel moves.
+- [ ] Exit: `grep -rniw 'level [0-3]' --include='*.go' --include='*.md' --include='*.txt' --include='*.css' --include='*.html' .`
+  from the tree root finds nothing outside `organisation/PLAN.md`,
+  `TRANSCRIPTS.md`, `reviews/`, `explorations/`, `reference/` and
+  the markdown heading-level sense; `grep -n 'push button' components/internal/controlface/controlface.go`
+  finds no sentence about tinting; guides gate OK; guard OK;
+  `scripts/sync-agents.sh check` OK; gofmt gate OK; one commit per
+  repo touched, push; no tag.
+
 ### G-CN2: Every ruling on a code finding of the guide sweep is built
 
 The sweep reads code beside the guides; what it finds in the code
@@ -27005,6 +27032,46 @@ is built here in its order.
   name and the module) and in every module that imports
   springbutton, by name; guard OK; gofmt gate OK; guides gate OK;
   one commit in effects, push; no tag.
+
+#### CN2.5: The dialog without a footer is the dismissible dialog
+
+- [ ] Ruled on finding 1236 under [[DOMAIN#Dialog]]: the entry has
+  two forms, a dialog asking a decision, with the footer and no
+  close, and a dismissible dialog, with the close and no footer,
+  its changes applied as they are made, left by its close, Escape
+  or a click outside. The name is "dismissible dialog", spelt as
+  the Badge entry spells it; "pane" leaves `patterns/dialog`
+  (`PurposePane` and its `String`, the doc comments),
+  `design/.design-sync/conventions.md`, `design/components/dialog.html`
+  and the fixture name. Every caller of the renamed identifier
+  follows. No pixel moves; the design bundle regenerates if a page
+  changes.
+- [ ] Exit: `grep -rn 'PurposePane\|"pane"' patterns/dialog design/components/dialog.html design/.design-sync/conventions.md`
+  finds nothing; green in `patterns` (dialog by name), every
+  workbench module that opens a dialog by name, workbench root,
+  and `design/mirror` by name; guard OK; gofmt gate OK; guides gate
+  OK; commit and push per repo; no tag.
+
+#### CN2.6: The three measured accent fills follow the user's accent on macOS
+
+- [ ] Ruled on finding 1238 under [[DOMAIN#Accent]]: the platform's
+  selection colour for the place follows the user's accent on
+  macOS as everywhere. `SidebarSelection`,
+  `SidebarSelectionUnemphasizedLabel` and `DefaultButtonFill` are
+  measured fills the live reader cannot ask AppKit for, so on macOS
+  with no theme colour pinned `theme/system` rebuilds those three
+  rows alone from the live `ControlAccent` by `WithAccent`'s rule,
+  the NSColor-named rows staying as read; with the recorded blue as
+  the live accent nothing changes. `WithAccent`'s doc names its
+  eight rows. The field walkers `effects/transition` and
+  `workbench/themer` run by name. No pixel moves with the recorded
+  accent.
+- [ ] Exit: a test that with a live accent other than the recorded
+  blue and no theme colour the three rows equal `WithAccent`'s
+  values for that accent, and one that with the recorded blue they
+  equal the measured values; green in `theme`, `effects/transition`
+  by name, `workbench/themer` by name and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
 
 ## Phase CO: The remaining rulings of the hidden-sidebar round are built
 
@@ -27568,8 +27635,11 @@ has left, under Phase CK's caffeinate rule, after the tasks above it.
   lines' count and pitch and the text's padding are read into
   `reference/macos/controls.md` as MEASURED rows; the DERIVED row
   CO1.16 wrote is replaced by them, and `components/tooltip` takes
-  the MEASURED width. This task takes a capture: it runs only on an
-  open desktop the owner has left.
+  the MEASURED width. Ruled on finding 1240 under [[DOMAIN#Level]]:
+  the same capture is read for whether the help tag has a hairline
+  and a shadow, and their values, into MEASURED rows beside them.
+  This task takes a capture: it runs only on an open desktop the
+  owner has left.
 - [ ] Exit: the captures and the MEASURED rows are in the reference;
   the tooltip's width test reads the MEASURED value; green in
   `components` (tooltip by name) and workbench root; guard OK; gofmt
@@ -27611,6 +27681,38 @@ has left, under Phase CK's caffeinate rule, after the tasks above it.
 - [ ] Exit: the captures and the MEASURED rows are in the reference;
   guard OK; one commit in organisation, push; no tag.
 
+#### CO3.4: The platform's push button under the pointer is measured into the reference
+
+- [ ] Under [[DOMAIN#Fill]] and [[DOMAIN#State]], ruled on finding
+  1233: the reference holds no push button under the pointer, so
+  whether the platform lays a hover overlay on one is unread. One
+  capture of the Save panel's Cancel button under the pointer, both
+  appearances, window-bounded, at 1x, is taken and stored under
+  `reference/macos`, and the button's fill under the pointer is
+  read against its resting fill into `reference/macos/controls.md`
+  as MEASURED rows, a hover overlay or none. This task takes a
+  capture: it runs only on an open desktop the owner has left.
+- [ ] Exit: the captures and the MEASURED rows are in the reference;
+  guard OK; one commit in organisation, push; no tag.
+
+#### CO3.5: The platform's small controls are measured into the reference
+
+- [ ] Under [[DOMAIN#Density]], ruled on finding 1241: the Compact
+  control, field, checkbox row and row heights are measured, never
+  derived or published. Captures of the platform's small controls,
+  both appearances, window-bounded, at 1x: Finder's search criteria
+  rows (small pop-ups and a small text field), Finder's View
+  Options window (small checkboxes, pop-ups and its Use as Defaults
+  push button), and the Finder sidebar with the Sidebar icon size
+  set to Small for the small row. The Compact control, field,
+  checkbox row and row heights and their paddings are read into
+  `reference/macos/controls.md` as MEASURED rows and the PUBLISHED
+  and DERIVED rows they replace are deleted. This task takes
+  captures: it runs only on an open desktop the owner has left.
+- [ ] Exit: the captures and the MEASURED rows are in the reference
+  and no PUBLISHED or DERIVED Compact row remains; guard OK; one
+  commit in organisation, push; no tag.
+
 ### G-CO4: Every ruling that waits on a Phase CO capture is built
 
 The tasks follow the captures of G-CO3 and read their MEASURED rows.
@@ -27630,4 +27732,48 @@ The tasks follow the captures of G-CO3 and read their MEASURED rows.
   MEASURED values in both schemes; green in `workbench/themer` by
   name and workbench root; guard OK; gofmt gate OK; one commit in
   workbench, push; no tag.
+
+
+#### CO4.2: The push button's overlays follow the measured capture
+
+- [ ] Under [[DOMAIN#Fill]] and [[DOMAIN#State]], ruled on finding
+  1233: `components/button` and `controlface.FormFill` lay a hover
+  overlay on the push button only if CO3.4's MEASURED rows show
+  one, and otherwise lay none; the press overlay stays as measured.
+  The button goldens regenerate with the cause named.
+- [ ] Exit: a test that the push button's fill under the pointer
+  equals the MEASURED value in both schemes; green in `components`
+  (button and controlface by name) and workbench root; guard OK;
+  gofmt gate OK; commit and push per repo; no tag.
+
+#### CO4.3: The tooltip's edge and shadow are the help tag's, measured
+
+- [ ] Under [[DOMAIN#Tooltip]] and [[DOMAIN#Level]], ruled on
+  finding 1240: the tooltip is at the floating level and has the
+  platform's shadow; its edge and shadow are the help tag's,
+  measured. `components/tooltip` and `design/styles.css`'s
+  `.tooltip` draw the hairline and the shadow from CO3.1's MEASURED
+  rows, or none where the rows say none; the tooltip goldens and
+  the design bundle regenerate with the cause named.
+- [ ] Exit: a test that the tooltip's edge and shadow equal the
+  MEASURED rows in both schemes; green in `components` (tooltip by
+  name), `theme/export` by name, `design/mirror` by name and
+  workbench root; guard OK; gofmt gate OK; commit and push per
+  repo; no tag.
+
+#### CO4.4: Density's Compact heights are the measured rows
+
+- [ ] Under [[DOMAIN#Density]], ruled on finding 1241:
+  `theme/tokens/density.go`'s Compact control, field, checkbox row
+  and row heights and paddings are CO3.5's MEASURED values, its
+  comment's table cites the captures, and no PUBLISHED or DERIVED
+  value remains in the file. Every golden that moves regenerates
+  with the cause named; `effects/transition` and `workbench/themer`
+  run by name.
+- [ ] Exit: `grep -n 'PUBLISHED\|DERIVED\|guideline\|ratio' theme/tokens/density.go`
+  finds nothing; a test that each Compact height equals its
+  MEASURED row; green in `theme`, `components`, `patterns`,
+  `effects/transition` by name, `workbench/themer` by name and
+  workbench root; guard OK; gofmt gate OK; commit and push per
+  repo; no tag.
 
