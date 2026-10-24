@@ -3828,13 +3828,3 @@ Filed 2026-10-22 from CK10.74. Finding 1197 is ruled and in CM1.16. Nothing stay
 
 1201. **[bug]** **The organisation repository's GitHub description reads "Organization profile".** The description is the one the repository had before the rename, and the repository holds the trunk and no profile; the profile is in the `.github` repository, whose description is "Vibrant Gio organisation profile". The fix is `gh repo edit vibrantgio/organisation --description …` with a sentence the owner approves.
 
-## IQ. From CN1.2, the library READMEs
-
-Filed 2026-10-24 from CN1.2, which brought the theme, components, patterns
-and effects READMEs to the code. What the work found in the code beside
-its own subject stands here.
-
-1222. **[bug]** **The popover does not flip to the side that has room.** `patterns/popover`'s doc comment says automatic flip to the opposite side of the anchor is not done: the clamp is a cross-axis nudge, not a placement search, so a popover whose chosen side has no room is cut off along the placement's axis. The [[DOMAIN#Attachment]] entry says a surface whose side has no room flips to the side that has room. The README now states what ships.
-
-1224. **[decide]** **`ElevationScale` has six fields against the Language's five levels.** `theme/tokens/elevation.go` carries `Backdrop`, `Chrome`, `Level0`, `Level1`, `Level2` and `Level3`, with Level2 and Level3 both floating (a dialog and a menu), and its comment speaks of "the six levels" and of "the window's plane". The [[DOMAIN#Level]] entry names five levels: backdrop, chrome, content, raised, floating. Whether the floating level carries two shadow depths, and what the fields are named, is unasked.
-
