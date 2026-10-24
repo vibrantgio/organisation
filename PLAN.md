@@ -26976,9 +26976,12 @@ is built here in its order.
   the tail points at the anchor through all of it. The doc comment's
   deferral sentence is deleted. The tooltip and the picker's menu
   already do this: the flip arithmetic becomes one recipe the three
-  share, in a package the tiers allow, never a third copy; the
-  Toolbar trigger's menu inherits the fix through the popover. Every
-  window that opens a popover passes the room. The goldens that move
+  share, `components/attachment`, whose doc states that it is the
+  recipe every floating surface places itself with and not a
+  component (ruled 2026-10-24: the Attachment entry's restriction is
+  on Anchor as a component's name), never a third copy; the Toolbar
+  trigger's menu inherits the fix through the popover. Every window
+  that opens a popover passes the room. The goldens that move
   regenerate with the cause named.
 - [ ] Exit: a test that a popover whose preferred side has no room
   is drawn whole on the other side with the tail at the anchor, and
